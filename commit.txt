@@ -1,0 +1,3 @@
+git add --all
+git commit -m "mensaje que identifica el commit"
+git push origin master
