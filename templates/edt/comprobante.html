@@ -1,0 +1,32 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<div id="permisousuario" class="msg-comprobante">
+<ul class="list-group">
+	<li class="list-group-item"><h4>Comprobante de permiso administrativo N° {{permiso.id}} </h4></li>
+	<li class="list-group-item">Solicitante : {{permiso.usuario.nombre}},{{permiso.usuario.apellido}}</li>
+	<li class="list-group-item">Rut : {{permiso.usuario.rut}}-{{permiso.usuario.dv}}</li>
+	<li class="list-group-item">Fecha Solicitud : {{permiso.fecha_creacion}}</li>
+	<li class="list-group-item">Cantidad de horas solcitadas : {{permiso.horas_solicitadas}}</li>
+	<li class="list-group-item">Reemplazante : {{permiso.reemplazante}}</li>
+	<li class="list-group-item">Archivo Adjunto : {% if permiso.documento_adjunto.name %} <a target="_blank" href="/media/{{permiso.documento_adjunto}}">Ver Documento</a> {% else %} Sin documento adjunto{% endif %} </li>
+</ul>
+
+<ul class="list-group">
+	<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;">Detalle de Solicitud</h4></li>
+	{% for eventoObj in permiso.eventos_en_permisos_set.all %}	
+
+	<li class="list-group-item" >
+	<span class="badge">{{eventoObj.delta}}</span>
+		{{eventoObj.numero_evento.start|date:"M d"}}{{"   "}}{{eventoObj.numero_evento.start|date:"P"}}{{"-"}} {{eventoObj.numero_evento.end|date:"P"}}</li>
+	{% endfor %}
+	<li class="list-group-item" >
+	<span class="badge">Total{{"  "}}{{permiso.horas_solicitadas}}</span>
+	</li>
+</ul>
+
+</div>
+
+{% endblock  %}
+

@@ -1,0 +1,26 @@
+from django.contrib import admin
+from edt.models import *
+# Register your models here.
+### Admin
+
+class EntryAdmin(admin.ModelAdmin):
+    list_display = ["creator", "date", "title", "snippet"]
+    list_filter = ["creator"]
+    
+admin.site.register(Usuario)
+admin.site.register(Rol)
+admin.site.register(Permiso)
+admin.site.register(Resolucion)
+admin.site.register(Cargo)
+admin.site.register(Estadoaprovacion)
+admin.site.register(Document)
+admin.site.register(Evento)
+admin.site.register(Eventos_en_Permisos)
+admin.site.register(Sexo)
+admin.site.register(Entry, EntryAdmin)
+admin.site.register(Centrocosto)
+admin.site.register(Estamento)
+admin.site.register(Jefatura)
+admin.site.register(Nacionalidad)
+admin.site.register(Contrato)
+admin.site.register(Funcion)

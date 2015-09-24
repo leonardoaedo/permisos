@@ -1,0 +1,24 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block contenido %}
+	<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+	 <!--<p>CATEGORIES {{CATEGORIES}}</p>
+	 <p>DTSTAMP {{DTSTAMP}}</p>
+	 <p>DTSTART {{DTSTART}}</p>
+     <p>DTEND {{DTEND}}</p> 
+     <p>SUMMARY {{SUMMARY}}</p>
+     <p>LOCATION {{LOCATION}}</p>
+     <p>DESCRIPTION {{DESCRIPTION}}</p>
+     <p>{{document.DELETE}}</p>--> 
+    <div class="alert alert-success"> 
+
+    <p style="color:#000000;">Registros guardados :  {{contador}}</p>     	
+           
+    <p style="color:#000000;">Funcionario : {{nombre_funcionario}}{{" "}}{{apellido_funcionario}} </p>
+</div>
+
+    </form>
+{% endblock  %}

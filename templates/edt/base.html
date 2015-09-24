@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<script src="/static/js/jquery-2.1.4.min.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+	   <!--     <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+		<!-- JS ###################################################################################-->
+		<script src="/static/js/bootstrap.js" /> </script>
+		<script src="/static/js/jquery.qtip.js" /> </script>
+		<link href="/static/css/print.css" rel="stylesheet" type="text/css" media="print" />
+		<script type="text/javascript" src="/static/js/jquery.datetimepicker.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/css/jquery.datetimepicker.css"/ >
+		<link rel='stylesheet' href='/static/fullcalendar/fullcalendar.css' />
+		<script src='/static/fullcalendar/lib/moment.min.js'></script>
+		<script src='/static/fullcalendar/fullcalendar.js'></script>
+		<script src='/static/fullcalendar/lang/es.js'></script>
+		<!-- CSS ################################################################################# -->
+		<link rel="icon" href="/static/img/favicon.png" type="image/x-icon"/>
+		<link rel="stylesheet" href="/static/css/bootstrap.css">
+		<link rel="stylesheet" href="/static/css/style.css">
+		<link rel="stylesheet" href="/static/css/freelancer.css">
+		<link rel="stylesheet" href="/static/css/jquery.qtip.css">
+		<link rel="stylesheet" href="/static/css/hover-min.css" media="all">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		</head>
+		<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">	
+				  <div class="navbar-header">
+				    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+				      <span class="sr-only">Toggle navigation</span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				    </button>
+				    <a href="/" class="navbar-brand">SCPA</a>
+				  </div>
+				  <div class="navbar-collapse collapse">
+				    <ul class="nav navbar-nav">
+				      <li class="hvr-underline-from-center page-scroll"><a href="/">Inicio</a></li>
+				      <li class="hvr-underline-from-center page-scroll"><a href="/main/">Solicitar</a></li>
+				      <li class="dropdown">
+					<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" class="hvr-underline-from-center">Utilidades<span class="caret"></span></a>
+					<ul role="menu" class="dropdown-menu">
+					  <li class="hvr-underline-from-center page-scroll"><a href="/permisolst/">Revisar permisos</a></li>
+					  <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
+					  <li><a href="#">link3</a></li>
+					  <li class="divider"></li>
+					  <li class="dropdown-header">subtitulo</li>
+					  <li><a href="#">link4</a></li>
+					  <li><a href="#">link5</a></li>
+					</ul>
+				      </li>
+				      <li class="hvr-underline-from-center"><a href="/logout/">Cerrar Sesión</a></li>	
+				    </ul>
+				    <div class="hvr-underline-from-center" style="float:right;">
+					    <ul class="usuarioactivo">
+					    	<li>Usuario Activo</li>
+					    	<li>
+					    		{% block usuario %}
+					    		{{ usuario.nombre }}{{" "}}{{usuario.apellido1}}
+					    		{% endblock %}
+					    	</li>
+					    </ul>
+					</div>    
+					</div>
+				  </div><!--/.nav-collapse -->
+				  <div class="logonav"></div>
+				  
+				</div>
+			      </nav>
+
+		<div id="contenedor">
+
+			 <header>    
+			<a href="/login/" ><h1>Sistema permisos administrativos</h1></a>
+			<h2>Lycée Charles de Gaulle</h2>
+			</header>			
+			<section>
+				<div id="permisos">
+				{% block contenido %}
+
+
+				{% endblock %}
+				</div>
+			</section>
+			<div style="clear:both;"></div>
+			
+			<footer>
+				<p>Leonardo Aedo (c) 2014
+				 
+				<a href="/logout/" title="salir">Cerrar Sesión</a></p>
+			</footer>
+		</div>
+
+    <!-- Plugin JavaScript -->
+ 
+    <script src="/static/js/classie.js"></script>
+    <script src="/static/js/cbpAnimatedHeader.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/js/freelancer.js"></script>
+	</body>
+
+

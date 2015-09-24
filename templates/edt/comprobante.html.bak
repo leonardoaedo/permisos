@@ -1,0 +1,26 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<div id="permisousuario" class="msg-comprobante">
+<ul>
+	<li><h4>Comprobante de permiso administrativo N° {{permiso.id}} </h4></li>
+	<li>Solicitante : {{permiso.usuario.nombre}},{{permiso.usuario.apellido}}</li>
+	<li>Rut : {{permiso.usuario.rut}}-{{permiso.usuario.dv}}</li>
+	<li>Fecha Solicitud : {{permiso.fecha_creacion}}</li>
+	<li>Cantidad de horas solcitadas : {{permiso.horas_solicitadas}}</li>
+	<li>Reemplazante : {{permiso.reemplazante}}</li>
+	<li>Archivo Adjunto : {% if permiso.documento_adjunto.name %} <a target="_blank" href="/media/{{permiso.documento_adjunto}}">Ver Documento</a> {% else %} Sin documento adjunto{% endif %} </li>
+</ul>
+
+<ul>
+	{% for eventoObj in eventoObj_list %}
+	<li> {{eventoObj.id}}</li>
+	{% endfor %}
+
+</ul>
+
+</div>
+
+{% endblock  %}
+

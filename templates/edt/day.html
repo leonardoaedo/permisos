@@ -1,0 +1,25 @@
+{% extends "edt/base.html" %}
+{% load staticfiles %}
+<!-- ... -->
+{% block contenido %}
+<h4>Entradas</h4>
+<form action="{% url 'edt.views.day' year month day %}" method="POST"> {% csrf_token %}
+
+{{ entries.management_form }}
+
+{% for entry in entries.forms %}
+    {{ entry.id }}
+    <div class="entry">
+        <div class="del">Delete {{ entry.DELETE }}</div>
+        <div id="inp1">
+            <p>Titulo: {{ entry.title }}</p>
+            <p>Resumen: {{ entry.snippet }}</p>
+        </div>
+        <p>Recordatorio: {{ entry.remind }}</p>
+        {{ entry.body }}
+    </div>
+{% endfor %}
+
+<input type="submit" value="Save" /> </form>
+
+{% endblock  %}

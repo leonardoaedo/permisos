@@ -1,0 +1,18 @@
+#comprobante {
+	margin: auto;	
+}
+nav {
+	display: none;
+}
+
+footer p{
+        display: none;
+}
+header a {
+        display: none;
+}
+header p {
+	margin: auto;
+}
+	
+

@@ -1,0 +1,26 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+{{form.errors}}
+<div id="solicitud" class="msg-solicitud">
+<h2>Solicitud de permiso</h2>
+<form method="post" class="permiso" enctype="multipart/form-data">{% csrf_token %}
+<p class="fecha_devuelve_horas">
+        <label for="fecha_devuelve_horas">Devuelve horas?</label>
+	{{form.devuelve_horas}}
+</p>
+<p class="fecha_reemplazante">
+        <label for="fecha_reemplazante">Reemplazante</label>
+	{{form.reemplazante}}
+</p>
+<p class="fecha_documento_adjunto">
+        <label for="fecha_documento_adjunto">Documento adjunto</label>
+	{{form.documento_adjunto}}
+</p>
+
+<button type="submit"  value="Solicitar Permiso" class="btn btn-success btn-lg">Solcitar Permiso</button>
+
+</div>
+</form>
+{% endblock  %}

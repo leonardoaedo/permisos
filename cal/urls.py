@@ -1,0 +1,34 @@
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+from django.conf.urls import *
+
+
+urlpatterns = [
+
+    # Examples:
+    # url(r'^$', 'cal.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^login/','edt.views.login' ),
+    url(r'^$','edt.views.index' ),
+    url(r"^verpermiso/(?P<pk>\d+)/$","edt.views.verpermiso"),
+    url(r'^logout/','edt.views.logout' ),
+    url(r'^upload/(?P<pk>\d+?)/$',"edt.views.upload" ),
+    url(r'^main/(\d+)/$', "edt.views.main"),
+    url(r"^comprobante/(?P<pk>\d+)/$","edt.views.comprobante" ),
+    url(r'^urlcalendario/$', "edt.views.urlcalendario"),
+    url(r'^wsCalendari/', "edt.views.wsCalendario"),
+    url(r'^main/', "edt.views.main"),
+    url(r'^permiso/','edt.views.ingresapermiso' ),
+    url(r'^permisolst/','edt.views.permisolst' ),
+    url(r'^resolucion/','edt.views.aprobarRechazar' ),
+    url(r"^respuesta/(?P<pk>\d+)/$","edt.views.mostrar_respuesta" ),
+    url(r'^grafico/','edt.views.grafico' ),
+
+
+   
+
+
+
+
+]

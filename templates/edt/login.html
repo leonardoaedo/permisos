@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+{% for usuario in usuarios %}
+	<div>{{usuario.username}}</div>
+{% endfor %}
+
+<section class="container">
+    <div class="login">
+      <img src="/static/img/escudo_lycee2.png" width="250" height="201" alt=""/>
+      <h1>Ingreso</h1>
+      <form method="post">
+	{% csrf_token %}
+        <p><input type="text" name="username" value="" placeholder="Usuario"></p>
+        <p><input type="password" name="password" value="" placeholder="Password"></p>
+        <p class="remember_me">
+          
+        </p>
+        <p><input class="submit" type="submit" name="commit" value="Login"></p>
+      </form>
+    </div>
+
+    
+  </section>
+
