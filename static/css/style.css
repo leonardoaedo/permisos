@@ -1,7 +1,7 @@
 body{
 				margin:0px;
 				padding:0px;
-				background:rgb(221,221,221);
+				background:rgb(255,255,255);
 
 			}
 #contenedor{
@@ -190,6 +190,7 @@ input:focus, textarea:focus {
 	overflow: hidden;
 	width: 	%;
 	height: 100%;
+	background-color: #FFFFFF;
 }
 #main{
 	margin-left: 3px;

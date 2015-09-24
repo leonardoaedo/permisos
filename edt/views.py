@@ -430,11 +430,16 @@ def aprobarRechazar(request):
 
         return redirect("/respuesta/%d"%(resu.id))
 
-def grafico(request):
+def wsGenero(request):
     if not estaLogeado(request):
         return redirect("/login")
-    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-
-    return render_to_response("edt/grafico.html",{"usuario" : usuarioObj},context_instance=RequestContext(request))
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])    
+    sexos = []    
+    femenino = len(Usuario.objects.filter(sexo=2))
+    masculino = len(Usuario.objects.filter(sexo=1))
+    #sexos.append({ 'hombre' : masculino, 'mujer' : femenino})        
+    sexos = [['Varones',masculino],['Damas',femenino]]
+    #return HttpResponse(json.dumps(sexos))
+    return render_to_response("edt/genero.html",{"usuario" : usuarioObj,"sexos" : sexos})
 
                    

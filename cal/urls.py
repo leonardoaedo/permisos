@@ -23,12 +23,5 @@ urlpatterns = [
     url(r'^permisolst/','edt.views.permisolst' ),
     url(r'^resolucion/','edt.views.aprobarRechazar' ),
     url(r"^respuesta/(?P<pk>\d+)/$","edt.views.mostrar_respuesta" ),
-    url(r'^grafico/','edt.views.grafico' ),
-
-
-   
-
-
-
-
+    url(r'^genero/','edt.views.wsGenero' ),
 ]
