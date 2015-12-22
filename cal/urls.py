@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls import *
+from edt.views import PermisoListView
+# from edt.views import PermisoDetailView
 
 
 urlpatterns = [
@@ -24,4 +26,16 @@ urlpatterns = [
     url(r'^resolucion/','edt.views.aprobarRechazar' ),
     url(r"^respuesta/(?P<pk>\d+)/$","edt.views.mostrar_respuesta" ),
     url(r'^genero/','edt.views.wsGenero' ),
+    url(r'^jefaturas/','edt.views.wsJefaturas' ),
+    url(r'^edades/','edt.views.wsEdades' ),
+    url(r'^bitacora/', PermisoListView.as_view()),
+    url(r'^anularlst/','edt.views.anularlst' ),
+    url(r"^anulapermiso/(?P<pk>\d+)/$","edt.views.anulapermiso"),
+    url(r'^anula/','edt.views.anula'),
+    url(r"^anulado/(?P<pk>\d+)/$","edt.views.mostrar_anulado" ),
+    url(r'^horas/', "edt.views.horas"),
+
+
+    # url(r'^(?P<slug>[-\w]+)/$', PermisoDetailView.as_view(), name='permiso-detail'),
+
 ]

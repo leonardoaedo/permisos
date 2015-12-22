@@ -1,0 +1,17 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+{{form.errors}}
+<h3>Eliminación de  Horarios</h3>
+<h4>Seleccione Funcionario</h4>
+<form  method="post" enctype="multipart/form-data" class="form-inline" >{% csrf_token %}
+	<div class="upload">
+		<ul class="list-group">
+			<li class="list-group-item">Funcionario : {{form.usuario}}</li>
+		</ul>
+ 		<button type="submit"  value="Solicitar Permiso" class="btn btn-success btn-lg btn-block" >Eliminar</button>
+ 	</div>
+</form>
+{% endblock  %}

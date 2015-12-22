@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="/static/css/jquery.qtip.css">
 		<link rel="stylesheet" href="/static/css/hover-min.css" media="all">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>SCA - Lycée Charles de Gaulle</title>
 		</head>
 		<body>
 
@@ -35,23 +36,37 @@
 				      <span class="icon-bar"></span>
 				      <span class="icon-bar"></span>
 				    </button>
-				    <a href="/" class="navbar-brand">SCPA</a>
+				    <a href="/" class="navbar-brand">SCA</a>
 				  </div>
 				  <div class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav">
 				      <li class="hvr-underline-from-center page-scroll"><a href="/">Inicio</a></li>
 				      <li class="hvr-underline-from-center page-scroll"><a href="/main/">Solicitar</a></li>
 				      <li class="dropdown">
-					<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" class="hvr-underline-from-center">Utilidades<span class="caret"></span></a>
-					<ul role="menu" class="dropdown-menu">
-					  <li class="hvr-underline-from-center page-scroll"><a href="/permisolst/">Revisar permisos</a></li>
-					  <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
-					  <li><a href="/genero/">Distribusión por Genero</a></li>
-					  <li class="divider"></li>
-					  <li class="dropdown-header">subtitulo</li>
-					  <li><a href="#">link4</a></li>
-					  <li><a href="#">link5</a></li>
-					</ul>
+							<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" class="hvr-underline-from-center">Utilidades<span class="caret"></span></a>
+								<ul role="menu" class="dropdown-menu">
+								  <li class="hvr-underline-from-center page-scroll"><a href="/permisolst/">Revisar permisos</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/anularlst/">Anular permisos</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/bitacora">Bitacora</a></li>								 
+								  <li class="divider"></li>
+								  <li class="dropdown-header">subtitulo</li>
+								  <li><a href="#">link4</a></li>
+								  <li><a href="#">link5</a></li>
+								</ul>
+				      </li>
+				      <li class="dropdown">
+				      		<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" class="hvr-underline-from-center">Gráficos<span class="caret"></span></a>
+				      			<ul role="menu" class="dropdown-menu">								
+								  <li class="hvr-underline-from-center page-scroll"><a href="/genero/">Distribusion por genero</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/jefaturas/">Distribusion por jefaturas</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/edades/">Distribusion por edad</a></li>
+								  <li class="divider"></li>
+								  <li class="dropdown-header">subtitulo</li>
+								  <li><a href="#">link4</a></li>
+								  <li><a href="#">link5</a></li>
+								</ul>
+
 				      </li>
 				      <li class="hvr-underline-from-center"><a href="/logout/">Cerrar Sesión</a></li>	
 				    </ul>
@@ -75,8 +90,8 @@
 		<div id="contenedor">
 
 			 <header>    
-			<a href="/login/" ><h1>Sistema permisos administrativos</h1></a>
-			<h2>Lycée Charles de Gaulle</h2>
+			<a href="/login/" ><h1>sistema de control de ausencias</h1></a>
+			<h5>Lycée Charles de Gaulle</h5>
 			</header>			
 			<section>
 				<div id="permisos">
@@ -89,7 +104,7 @@
 			<div style="clear:both;"></div>
 			
 			<footer>
-				<p>Leonardo Aedo (c) 2014
+				<p>
 				 
 				<a href="/logout/" title="salir">Cerrar Sesión</a></p>
 			</footer>

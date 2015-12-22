@@ -1,0 +1,54 @@
+{% extends "edt/base.html" %}
+{% load staticfiles %}
+{% block contenido %}
+<h4>bitacora</h4>
+<div>
+
+{% if bitacora %}
+	<table class="table table-bordered table-hover " >
+            <thead>
+                <tr>
+                  <th scope="row">N° Permiso</th>
+                  <th>Funcionario</th>
+                  <th>Fecha</th>
+                  <th>Actividad</th>
+                </tr>
+              </thead>
+            <tbody>  	
+	{% for bitacora in object_list %}
+	    
+            <tr>
+                <th scope="row" >{{bitacora.permiso.id}} </th>
+                <td>{{bitacora.usuario.nombre}}</td>
+                <td>{{bitacora.fecha|date:"M d, Y G:i"}}</td>
+                <td>{{bitacora.actividad}}</td>
+            </tr>   
+	{% empty %}
+	    <tr>
+        <td class="list-group-item">En este momento no hay ningun elemento para mostrar</td>
+    </tr>
+        {% endfor %}
+        </tbody>    
+    </table>
+	</ul>
+	{# .... **Comienzo de la paginacion** .... #}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"><img width="25px" height="25px" src='/static/img/back.png' alt='Volver'/></a>
+                {% endif %}
+                <span class="page-current">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><img width="25px" height="25px" src='/static/img/next.png' alt='Siguiente'/></a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+
+{% endif %}
+
+</div>
+{% endblock  %}

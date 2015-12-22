@@ -2,17 +2,19 @@
 {% load staticfiles %}
 
 {% block contenido %}
-<div >
+<div ><H4>Revisión de permisos</H4>
 	<ul class="list-group">
 	{% for permisoObj in permisoObj_list %}
 
-	<li><a class="list-group-item" href="{% url 'edt.views.verpermiso' permisoObj.pk %}"> {{ permisoObj.usuario.nombre }} {{ permisoObj.usuario.apellido1}} {{ permisoObj.fecha_creacion }}</a>
-		
+	<li><a class="list-group-item" href="{% url 'edt.views.verpermiso' permisoObj.pk %}"> N° {{permisoObj.id}} - {{ permisoObj.usuario.nombre }} {{ permisoObj.usuario.apellido1 }} {{ permisoObj.fecha_creacion |date:"M d Y" }} | {{permisoObj.tipo}} </a>		
 	</li>
+
+	{% empty %}
+    <li class="list-group-item">En este momento no hay ningun elemento para mostrar</li>
 
 	{% endfor %}
 	</ul>
-
+ 
 		    <nav>
 			{% if permiso.has_previous %}
 				<a href="?page={{ permiso.previous_page_number }}">Página anterior</a>
@@ -20,7 +22,7 @@
 			<p class="paginador">Página {{ permiso.number }} de {{ permiso.paginator.num_pages }}</p>
 			{% if permiso.has_next %}
 			<a href="?page={{ permiso.next_page_number }}">Página siguiente</a>
-			{% endif %}
+			{% endif %} 
 	        </nav>
 </div>	        
 {% endblock  %}

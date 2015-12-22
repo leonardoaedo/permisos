@@ -1,0 +1,13 @@
+{% extends "edt/base.html" %}
+{% load staticfiles %}
+{% block contenido %}
+<h1>bitacora</h1>
+
+<ul class="list-group">	
+{% for bitacora in object_list %}
+    <li class="list-group-item"><a href="#">   N° {{ bitacora.permiso.id }} - {{bitacora.usuario.nombre}} - {{ bitacora.fecha|date }}  ===> {{bitacora.actividad}}</a></li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+{% endblock  %}

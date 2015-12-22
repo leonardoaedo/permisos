@@ -82,6 +82,15 @@ input[type='text'] , input[type='password'],textarea {
 	background-color: rgb(250, 255, 189);
 }
 
+.comentario {
+	margin: auto;
+	width: 400px;
+	height: 25px;
+	max-width: 400px;
+	line-height: 18px;
+	background-color: rgb(250, 255, 189);
+}
+
 input:hover, textarea:hover,
 input:focus, textarea:focus {
 	border-color: 1px solid #C9C9C9;
@@ -96,21 +105,24 @@ input:focus, textarea:focus {
 		margin-bottom: 5px;
 		width: 100%;
 		font-size: 10px;
-		background-color: #18bc9c;
+		background-color: #FFFFFF;
 		padding: 5px;
+		border-bottom: 1px solid #000;
 }
 .permiso label {
-		display: inline-block;
+		display:block;
    	    font-weight: normal;
         margin-bottom: 5px;
         width: 100%;
         font-weight: bold;
         color: #000000;
+
 }
 .permiso p {
 	float: left;
 	font-size: 15px;
 	margin-left: 5px;
+	overflow: hidden;
 
 }
 .permiso select {
@@ -122,8 +134,8 @@ input:focus, textarea:focus {
     -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    background: #f8f8f8;
-    color:#888;
+    background: rgb(250, 255, 189);
+    color:#000;
     border:none;
     outline:none;
     display: inline-block;
@@ -131,6 +143,10 @@ input:focus, textarea:focus {
     -moz-appearance:none;
     appearance:none;
     cursor:pointer;
+    width: 200px;
+}
+.permiso input[type="file"] {
+  cursor: pointer;
 }
 .upload {
 	width: 100%;
@@ -147,8 +163,8 @@ input:focus, textarea:focus {
     -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    background: #f8f8f8;
-    color:#888;
+    background: #FFD062;
+    color:#000;
     border:none;
     outline:none;
     display: inline-block;
@@ -156,6 +172,7 @@ input:focus, textarea:focus {
     -moz-appearance:none;
     appearance:none;
     cursor:pointer;
+    width: 200px;
 }
 .upload li{
 	float: left;
@@ -176,6 +193,11 @@ input:focus, textarea:focus {
 .upload input[type="text"]:focus {
   outline: none;
 }
+
+.upload input[type="file"] {
+  cursor: pointer;
+}
+
 .upload input[type="text"] {
   padding: 0;
   border: solid 1px #dcdcdc;

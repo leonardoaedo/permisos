@@ -2,20 +2,47 @@
 {% load staticfiles %}
 <!-- ... -->
 {% block contenido %}
+{{form.errors}}
 <form id="main" class="form-horizontal" action="/urlcalendario/" method="post" enctype="multipart/form-data">
 	<div  class="permiso" >
+		<p>
+		<label for="tipo" >Tipo de Permiso<br/> a solicitar  </label>
+		{{form.tipo}}
+		</p>
+
 		<p class="devuelve_horas">
-		        <label for="fecha_devuelve_horas">Devuelve horas?</label>
+		        <label for="fecha_devuelve_horas">Me comprometo a recuperar <br/> la(s) hora(s) </label>
 			{{form.devuelve_horas}}
 		</p>
+
+		<p class="sueldo">
+		        <label for="sueldo">Solicitud con o sin <br/>goce de sueldo</label>
+			{{form.sueldo}}
+		</p>
+
+		
+		
+	</div>
+	<div class="permiso">
+	<p>
+		<label for="motivo" >Motivo</label>
+		{{form.motivo}}
+		</p>		
+
+		<p><label for="comentario">Comentario:</label>
+		<textarea class="comentario" name="comentario"></textarea>
+		</p>
+
 		<p class="reemplazante">
-		        <label for="reemplazante">Reemplazante</label>
+		        <label for="reemplazante">Propuesta de Reemplazante</label>
 			{{form.reemplazante}}
 		</p>
+
 		<p class="documento_adjunto">
 		        <label for="documento_adjunto">Documento adjunto</label>
-			{{form.documento_adjunto}}
-		</p>
+		        			{{form.documento_adjunto}}
+		</p>		
+
 	</div>	
 	<div id='calendar'></div>
 		<input type="hidden" id="calendario-data" name="data-calendario">
@@ -37,18 +64,19 @@ $(document).ready(function(){
        height: "auto",
        lang: 'es',
        defaultView: 'agendaWeek',
+       schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
        header:
 	       {
 	       left:   'title',
 	       center: '',
-	       right:  'agendaWeek  prev,next'
+	       right:  'month agendaWeek agendaDay  prev,next'
 	       },
        weekends: false,
        businessHours:true, 
        businessHours:
 	       {
 		   start: '08:00', // a start time (10am in this example)
-	   	   end: '18:30', // an end time (6pm in this example)
+	   	   end: '19:30', // an end time (6pm in this example)
 	   	   dow: [ 1, 2, 3, 4 ,5]	
 	   	   },
 	events: 'http://cal.cdegaulle.cl/wsCalendari/',
@@ -56,8 +84,8 @@ $(document).ready(function(){
 		if(event.used){
 			$(element).css('background','red');
 			$(element).css('font-weight', 'bold');
-			$(element).css('border-color','black')
-			$(element).css('border','3')
+			$(element).css('border-color','black');
+			$(element).css('border','3');
 			}	
 	},
 	 
@@ -75,9 +103,11 @@ $(document).ready(function(){
 			$(this).css('background', '#3a87ad');
 			$(this).css('color', '#ffffff');
 			$(this).css('font-weight', 'bold');
+			
+
 			}
-				//console.log(event.used);
-				//console.log(seleccionados);	
+				//console.log(event.start);
+				console.log(seleccionados);	
 								}, // end fullcalendar       						 		
 		})//end function 
 })// end ready

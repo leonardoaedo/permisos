@@ -18,11 +18,13 @@
 
         // Create the data table.
         console.log({{sexos|safe}});
+        console.log({{usuarios|safe}});
         var sexos = {{sexos|safe}};
+        // var jefaturas = {{jefaturas|safe}};
         //var data = google.visualization.arrayToDataTable(sexos);
 
         var data = new google.visualization.DataTable();
-         data.addColumn('string', 'sexo');
+         data.addColumn('string', 'sexos');
          data.addColumn('number', 'cantidad');
 	       data.addRows(sexos)
         //  data.addRows([{{ data|safe }}
@@ -34,10 +36,10 @@
          //]);
 
         // Set chart options
-        var options = {'title':'Distribusión por Genero',
+        var options = {'title':'Distribusión por genero',
                        'is3D':true,
-                       'width':400,
-                       'height':300};
+                       'width':800,
+                       'height':400};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

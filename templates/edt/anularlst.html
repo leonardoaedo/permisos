@@ -1,0 +1,27 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<div ><h4>Anulación de permisos</h4>
+	<ul class="list-group">
+	{% for permiso in permiso %}
+
+	<li><a class="list-group-item" href="{% url 'edt.views.anulapermiso' permiso.pk %}"> Permiso N° {{ permiso.id }} - {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }} {{ permiso.fecha_creacion |date:"M d Y" }} | {{permiso.tipo}}</a>	
+	</li>
+
+	{% empty %}
+    <li class="list-group-item">En este momento no hay ningun elemento para mostrar</li>
+	{% endfor %}
+	</ul>
+ 
+		    <nav>
+			{% if permiso.has_previous %}
+				<a href="?page={{ permiso.previous_page_number }}">anterior</a>
+			{% endif %}
+			<p class="paginador">Página {{ permiso.number }} de {{ permiso.paginator.num_pages }}</p>
+			{% if permiso.has_next %}
+			<a href="?page={{ permiso.next_page_number }}">siguiente</a>
+			{% endif %}
+	        </nav>
+</div>
+{% endblock  %}

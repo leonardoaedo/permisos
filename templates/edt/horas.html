@@ -1,0 +1,38 @@
+{% extends  "edt/base.html" %}
+{% load staticfiles %}
+
+{% block contenido %}
+
+<div ><h4>Resumen de horas solicitadas</h4>
+	
+		<table class="table table-bordered table-hover " >
+			<thead>
+			    <tr>
+			      <th>Funcionario</th>
+			      <th>Horas Solicitadas</th>
+			      <th>Horas Devueltas</th>
+			      <th>Saldo</th>
+			    </tr>
+			  </thead>
+			<tbody>  
+		{% for horas in horas %}
+			<tr>
+				<th scope="row" >{{horas.nombre}} </th>
+				<td>{{horas.horas_sol}}</td>
+				<td>{{horas.horas_dev}}</td>
+				<td>{{horas.total}}</td>
+			</tr>	
+			
+
+	{% empty %}
+    <tr>
+    	<td class="list-group-item">En este momento no hay ningun elemento para mostrar</td>
+    </tr>
+		{% endfor %}
+		</tbody>	
+	</table>
+
+	
+
+</div>	
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends  "edt/base.html" %}
+{% load staticfiles %}
+
+{% block contenido %}
+
+<form method="post" action="/anularlst/">
+{% csrf_token %}
+	<ul>
+		<li class="list-group-item">El permiso {{bitacora.permiso.id}} solicitado por {{bitacora.permiso.usuario.nombre}} {{bitacora.permiso.usuario.apellido1}} ha sido {{bitacora.actividad}} exitosamente</li>
+		<li class="list-group-item"> <button type="submit" class="btn btn-success ">Continuar</button></li>
+	</ul>
+</form>
+{% endblock  %}

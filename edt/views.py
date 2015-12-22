@@ -33,8 +33,15 @@ from django.forms.models import modelformset_factory
 from datetime import date, datetime, timedelta
 from django.core import serializers
 from funciones.session import estaLogeado
+from funciones.funciones import *
+from forms import *
 from datetime import datetime
 from dateutil import tz
+from collections import Counter
+from django.views.generic import ListView,DetailView
+from django.views.generic.edit import CreateView,FormView
+from django.views.generic.base import ContextMixin
+from django.db.models import Count, Min, Sum, Avg , F
 import time
 import calendar
 import icalendar
@@ -44,9 +51,29 @@ import json
 import urllib
 import time
 
-
 #from icalendar import UTC # timezone
 # Create your views here.
+
+# Generic View de Bitacora
+class PermisoListView(ListView):
+    template_name = 'edt/bitacora.html'
+    context_object_name = 'bitacora'
+    paginate_by = 2
+
+    def get_queryset(self):
+        return Bitacora.objects.order_by('-fecha')[:10]
+
+# class PermisoDetailView(DetailView):
+
+#     model = Permiso
+
+#     def get_context_data(self, **kwargs):
+#         context = super(PermisoDetailView, self).get_context_data(**kwargs)
+#         context['now'] = timezone.now()
+#         return context
+
+#-----------------------------------------------------------------------------------------
+
 def login(request):
         if request.session.get('usuario',False):
                 return redirect('/')#puse esa url para probar nomas
@@ -93,8 +120,8 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         for evento in Evento.objects.filter(usuario_id=usuario_id):
                 evento.flageado = evento.id in ids                   
                 #formateo de timezone a milisegundos
-                from_zone = tz.gettz('UTC')
-                to_zone = tz.gettz('America/Boise') 
+                from_zone = tz.gettz('Universal')
+                to_zone = tz.gettz('America/El_Salvador') 
                 start = datetime.timetuple(evento.start)
                 start = time.strftime('%Y-%m-%dT%H:%M:%SZ', start)
                 start = datetime.strptime(start, '%Y-%m-%dT%H:%M:%SZ')
@@ -129,31 +156,24 @@ def comprobante(request, pk):
 	
  
         return render_to_response("edt/comprobante.html",{ "permiso" : permiso,"usuario" : usuarioObj})
-        #return HttpResponse({ "permiso" : permiso,"usuario" : usuarioObj,"evento" : evento})     
+        #return HttpResponse({ "permiso" : permiso,"usuario" : usuarioObj,"evento" : evento}) 
 
-class PermisoFormSet(forms.ModelForm):
-    class Meta:
-       model = Permiso
-       exclude = ["entrada","usuario","horas_solicitadas"]
-    
-class ResolucionFormSet(forms.ModelForm):
-        class Meta:
-           model = Resolucion
-           exclude = [""]
-
-        
 @csrf_exempt
 def urlcalendario(request):
     if not estaLogeado(request):
                 return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    actividad = Actividad.objects.get(id=5)
     usuario_id=request.session['usuario']
 
     if request.method == 'POST':
         arrayDeEventos = json.loads(request.POST['data-calendario'])  #cargo los id de los eventos seleccionados
         reemplazante = request.POST.get('reemplazante')
         devuelve_horas = request.POST.get('devuelve_horas')
+        sueldo = request.POST.get('sueldo')
+        comentario = request.POST.get('comentario')
         documento_adjunto = request.POST.get('documento_adjunto')
+        motivo = request.POST.get('motivo')
                                                                       #en el calendario en formato json a una lista           
         eventos = Evento.objects.filter(id__in=arrayDeEventos) #consulto los eventos en la tabla Eventos segun los Id de la lista
 
@@ -162,12 +182,14 @@ def urlcalendario(request):
     formset = PermisoFormSet(request.POST, request.FILES) 
    
     if formset.is_valid():
-        permiso= formset.save(commit=False)
-        
+        permiso = formset.save(commit=False)        
         permiso.usuario = usuarioObj
-        permiso.relevante = reemplazante
-        devuelve_horas = devuelve_horas
-        documenot_adjunto = documento_adjunto
+        reemplazante = reemplazante
+        permiso.sueldo = sueldo
+        permiso.comentario = comentario
+        permiso.devuelve_horas = devuelve_horas
+        permiso.documenot_adjunto = documento_adjunto
+        motivo = motivo
         permiso.save() # guardo los datos de Permiso en la BD
 
         if len(Permiso.objects.all()) == 0: # verifico si la tabla permisos esta vacia
@@ -177,39 +199,90 @@ def urlcalendario(request):
             ultimopermiso = Permiso.objects.all().order_by("-id")[0]
 
         suma = 0
+        sumafuncionario = 0
         i = 0
-        deltas = []        
+        deltas = []
+        deltaf = []  
+
         for evento in eventos:
             delta = evento.end - evento.start # calculo de la cantidad de horas solicitadas en segundos
-            suma += delta.seconds / 55 / 55 / 0.75 #se divide por 55 por que los bloques son de 55 minutos, y equivalen a 1 hora // formula aplicable a las horas frente a alumnos
-            deltag = delta.seconds / 55 / 55 / 0.75
-            deltas.append(round(deltag,2))           
-            suma = round(suma,2) # redondeo a 2 decimales
-            evento_en_permiso = Eventos_en_Permisos(numero_evento=evento,numero_permiso=ultimopermiso,delta=deltas[i])
-            i += 1
-            evento_en_permiso.save()
-            permiso.horas_solicitadas = suma
-            permiso.save() # guardo suma aca despues de hacer el calculo
-        
+            
+            if (usuarioObj.estamento.id == 5 or usuarioObj.estamento.id == 4 ):  
+                #CALCULO PARA SECUNDARIA
+                suma += float(delta.seconds) / 3600 / 0.75 # calculo para  Informes
+                deltag = float(delta.seconds) / 3600 / 0.75 # calculo para  Informes
+                deltas.append(round(deltag,2))
+                sumafuncionario += float(delta.seconds) / 3600  # calculo para  funcionario
+                deltafuncionario = float(delta.seconds) / 3600  # calculo para  funcionario
+                deltaf.append(round(deltafuncionario,2))  
+                  
+                suma = round(suma,2) # redondeo a 2 decimales
+                evento_en_permiso = Eventos_en_Permisos(numero_evento=evento,numero_permiso=ultimopermiso,deltainforme=deltas[i],deltafuncionario=deltaf[i])
+                i += 1
+                evento_en_permiso.save()
+                
 
-        #email a funcionario
-        template = loader.get_template('edt/email_solicitud.html')
-        context = RequestContext(request, {'nombre' : usuarioObj.nombre,'apellido' : usuarioObj.apellido1,'horas':permiso.horas_solicitadas,'numero':permiso.id})
-        html = template.render(context)
-        msg = EmailMessage('Solicitud de permiso', html, 'scpa@cdegaulle.cl', [usuarioObj.correo])
-        msg.content_subtype = "html"  # Main content is now text/html
-        msg.send()
+            if (usuarioObj.estamento.id == 2 or usuarioObj.estamento.id == 3):
+                #CALCULO DE HORAS PARA PRIMARIA
+                suma += float(delta.seconds) / 3600 / 0.75
+                deltag = float(delta.seconds) / 3600 / 0.75
+                deltas.append(round(deltag,2))
+                suma = round(suma,2) # redondeo a 2 decimales
+                sumafuncionario += float(delta.seconds) / 3600   # calculo para  funcionario
+                deltafuncionario = float(delta.seconds) / 3600  # calculo para  funcionario
+                deltaf.append(round(deltafuncionario,2))
+                evento_en_permiso = Eventos_en_Permisos(numero_evento=evento,numero_permiso=ultimopermiso,deltainforme=deltas[i],deltafuncionario=deltaf[i])
+                i += 1
+                evento_en_permiso.save()
+                        
 
-        #email a jefatura
-        template = loader.get_template('edt/email_jefatura.html')
-        context = RequestContext(request, {'jefe' : usuarioObj.jefatura.nombre,'horas':permiso.horas_solicitadas,'numero':permiso.id,'nombre' : usuarioObj.nombre,'apellido' : usuarioObj.apellido1,'rut': usuarioObj.rut,'dv':usuarioObj.dv,'nom_reemplazante':permiso.reemplazante.nombre,'ap_reemplazante':permiso.reemplazante.apellido1,'fecha': permiso.fecha_creacion})
-        html = template.render(context)
-        msg = EmailMessage('Solicitud de permiso', html, 'scpa@cdegaulle.cl', [usuarioObj.jefatura.correo1])
-        msg.content_subtype = "html"  # Main content is now text/html
-        msg.send()
+            if (usuarioObj.estamento.id == 1 or usuarioObj.estamento.id == 6 or usuarioObj.estamento.id == 7):
+                #CALCULO DE HORAS PARA ADMINISTRACION
+                suma += float(delta.seconds) / 3600  
+                deltag = float(delta.seconds) / 3600
+                deltas.append(round(deltag,2))
+                suma = round(suma,2) # redondeo a 2 decimales
+
+                # sumafuncionario += float(delta.seconds) / 3600   # calculo para  funcionario
+                # deltafuncionario = float(delta.seconds) / 3600  # calculo para  funcionario
+                # deltaf.append(round(deltafuncionario,2))
+
+                
+                evento_en_permiso = Eventos_en_Permisos(numero_evento=evento,numero_permiso=ultimopermiso,deltainforme=deltas[i],deltafuncionario=deltas[i])
+                i += 1
+                evento_en_permiso.save()
+
+        permiso.horas_solicitadas = suma
+        permiso.horas_solicitadas_funcionario =  suma
+        permiso.save() # guardo suma aca despues de hacer el calculo
+
+        #guardo en horas para gestion de devolucion de horas
+        horas = Horas(horas_solicitadas=suma,permiso=ultimopermiso,usuario=usuarioObj)
+        horas.save()
+        #guardado en bitacora
+        bitacora = Bitacora(actividad=actividad,usuario=usuarioObj,permiso=ultimopermiso)            
+        bitacora.save()
+
+
+        # #email a funcionario
+        # template = loader.get_template('edt/email_solicitud.html')
+        # context = RequestContext(request, {'nombre' : usuarioObj.nombre,'apellido' : usuarioObj.apellido1,'horas':permiso.horas_solicitadas,'numero':permiso.id})
+        # html = template.render(context)
+        # msg = EmailMessage('Solicitud de permiso', html, 'scpa@cdegaulle.cl', [usuarioObj.correo])
+        # msg.content_subtype = "html"  # Main content is now text/html
+        # msg.send()
+
+        # #email a jefatura
+        # template = loader.get_template('edt/email_jefatura.html')
+        # context = RequestContext(request, {'jefe' : usuarioObj.jefatura.nombre,'horas':permiso.horas_solicitadas,'numero':permiso.id,'nombre' : usuarioObj.nombre,'apellido' : usuarioObj.apellido1,'rut': usuarioObj.rut,'dv':usuarioObj.dv,'nom_reemplazante':permiso.reemplazante.nombre,'ap_reemplazante':permiso.reemplazante.apellido1,'fecha': permiso.fecha_creacion})
+        # html = template.render(context)
+        # msg = EmailMessage('Solicitud de permiso', html, 'scpa@cdegaulle.cl', [usuarioObj.jefatura.correo1])
+        # msg.content_subtype = "html"  # Main content is now text/html
+        # msg.send()
 
         
         return redirect("/comprobante/%d"%(ultimopermiso.id))
+        #return HttpResponse(sumafuncionario)
     # data = json.dumps({"suma" : suma,"ultimo" : ultimopermiso,"largo":len(eventos),"usuario":usuario_id,"reemplazante" : reemplazante,"devuelve_horas":devuelve_horas})
     # return HttpResponse(data, content_type = "application/json")
     else:
@@ -217,13 +290,6 @@ def urlcalendario(request):
     return render_to_response("edt/main.html", {
         "form": formset,
     },context_instance=RequestContext(request)) 
-
-
-class DocumentFormSet(forms.ModelForm):
-        class Meta:
-           model = Document
-           exclude = [""]
-
 
 def index(request):
         if not estaLogeado(request):
@@ -252,9 +318,10 @@ def permisolst(request):
 
     if  usuarioObj.rol.id != 2:
         #permiso =  Permiso.objects.all().order_by("-fecha_creacion")
-        #IMPORTANTE: el codigo siguiente crea un campo virtual y luego cuenta cuantas resolciones tiene asociadas y si el contador es mayor a cero no lo toma en cuenta 
-        permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b=0).order_by("-fecha_creacion")
+        #IMPORTANTE: el codigo siguiente crea un campo virtual y luego cuenta cuantas resoluciones tiene asociadas y si el contador es mayor a cero no lo toma en cuenta 
+        ids = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
 
+        permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b=0).exclude(id__in=ids).order_by("-fecha_creacion") 
         paginator = Paginator(permiso,10) 
         
         try: pagina = int(request.GET.get("page",'1'))
@@ -266,11 +333,13 @@ def permisolst(request):
             permiso = paginator.page(paginator.num_pages)   
             
         return render_to_response("edt/permisolst.html",{"permiso": permiso,"usuario" : usuarioObj,"permisoObj_list" : permiso.object_list,"months" : mkmonth_lst()})
+        #return HttpResponse(permiso)
 
     else:
         #if     usuarioObj.username == request.session['usuario']:
         if  usuarioObj.rol.id == 2:
-            permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(usuario=usuarioObj.id).order_by("-fecha_creacion")
+            ids = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+            permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(usuario=usuarioObj.id).exclude(id__in=ids).order_by("-fecha_creacion")
             
 
             paginator = Paginator(permiso,10)       
@@ -333,6 +402,26 @@ def main(request):
 
    # return render_to_response("edt/main.html", {"user" : usuarioObj},context_instance=RequestContext(request))
 
+def devuelvehoras(request):
+    if not estaLogeado(request):
+            return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+    if  usuarioObj.rol.id == 1:
+        if request.method == 'POST':
+            formset = HorasFormSet(request.POST, request.FILES)
+            if formset.is_valid():
+                horas= formset.save(commit=False)
+                horas.save()
+                return redirect('/devueltas/%d'%(horas.id)) #<-- cambiar
+            else:
+                
+                  formset = HorasFormSet()
+                  return render_to_response("edt/devuelve.html", {"form": formset,"usuario": usuarioObj,},context_instance=RequestContext(request))
+        else:
+                return redirect("/main")
+    
+   
 def mkmonth_lst():
 
     if not Permiso.objects.count(): return[]
@@ -361,6 +450,7 @@ def verpermiso(request, pk):
      if not estaLogeado(request):
             return redirect("/login")
      else:
+         permiso_formset = PermisoFormSet()
          usuarioObj = Usuario.objects.get(id=request.session['usuario'])
          idpermiso = Permiso.objects.get(pk=int(pk))
          permiso = Permiso.objects.get(id=pk)
@@ -371,7 +461,7 @@ def verpermiso(request, pk):
             
 
      if  usuarioObj.rol.id == 1:
-        return render_to_response("edt/verpermiso.html",{ "permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+        return render_to_response("edt/verpermiso.html",{ "permiso_formset" : permiso_formset,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
 
      if  usuarioObj.rol.id == 2:
         return render_to_response("edt/verpermisousuario.html",{ "resolucion" : resolucion,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
@@ -412,34 +502,167 @@ def aprobarRechazar(request):
     if not estaLogeado(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])     
-    
-    if request.POST:
-        resu = Resolucion()
-        resu.respuesta = request.POST['respuesta']
-        resu.resolutor = Usuario.objects.get(id=request.session['usuario'])
-        resu.razon = request.POST.get('razon')
-        resu.permiso = Permiso.objects.get(id=request.POST['permiso'])  
-        resu.save()
+   
+    if request.POST:        
 
-        template = loader.get_template('edt/email_respuesta.html')
-        context = RequestContext(request, {'nombre' : usuarioObj.nombre,'apellido' : usuarioObj.apellido1,'horas':resu.permiso.horas_solicitadas,'permiso':resu.permiso.id,'respuesta' : resu.respuesta})
-        html = template.render(context)
-        msg = EmailMessage('Respuesta a solicitud de permiso', html, 'scpa@cdegaulle.cl', [usuarioObj.correo])
-        msg.content_subtype = "html"  # Main content is now text/html
-        msg.send()
+        if request.POST['respuesta'] == 'Aprovado' :
+            actividad = Actividad.objects.get(id=2)
+            resu = procesa_resolucion(request,actividad,usuarioObj)
+
+        if request.POST['respuesta'] == 'Rechazado' :
+            actividad = Actividad.objects.get(id=3)
+            resu = procesa_resolucion(request,actividad,usuarioObj)        
+
 
         return redirect("/respuesta/%d"%(resu.id))
 
-def wsGenero(request):
+
+def anularlst(request):
     if not estaLogeado(request):
         return redirect("/login")
-    usuarioObj = Usuario.objects.get(id=request.session['usuario'])    
-    sexos = []    
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+    ids = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    #permiso = Permiso.objects.exclude(id__in=ids)
+    permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b=0).exclude(id__in=ids).order_by("-fecha_creacion")
+
+
+    paginator = Paginator(permiso,2)       
+    try: pagina = int(request.GET.get("page",'1'))
+    except ValueError: pagina = 1       
+    try:
+        permiso = paginator.page(pagina)
+    except (InvalidPage, EmptyPage):
+        permiso = paginator.page(paginator.num_pages)
+
+    return render_to_response("edt/anularlst.html",{"permiso": permiso,"usuario" : usuarioObj,"permisoObj_list" : permiso.object_list,"months" : mkmonth_lst()},context_instance=RequestContext(request))
+    #return HttpResponse(ids)
+
+def anulapermiso(request,pk):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+    idpermiso = Permiso.objects.get(pk=int(pk))
+    permiso = Permiso.objects.get(id=pk)
+
+    return render_to_response("edt/anulapermiso.html",{ "permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+
+def anula(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+    if request.POST:        
+
+        if request.POST['respuesta'] == 'Anulado' :
+            permiso_id = request.POST.get('permiso')
+            permiso = Permiso.objects.get(id=permiso_id)
+            actividad = Actividad.objects.get(id=4)
+            bitacora = Bitacora(actividad=actividad,usuario=usuarioObj,permiso=permiso)            
+            bitacora.save()
+
+        if request.POST['respuesta'] == 'Cancelado':
+
+            return redirect("/anularlst")    
+            
+    return redirect("/anulado/%d"%(bitacora.id))
+
+
+def mostrar_anulado(request,pk):
+    if not estaLogeado(request):
+        return redirect("/login")
+
+    else:   
+        usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+        idbitacora = Bitacora.objects.get(pk=int(pk))
+        bitacora = Bitacora.objects.get(id=pk)
+        permiso = bitacora.permiso.id    
+
+    
+    return render_to_response("edt/anulado.html",{ "bitacora" : bitacora, "usuario" : usuarioObj,"permiso" : permiso},context_instance=RequestContext(request)) 
+
+def horas(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario']) 
+
+    #Calculo de Horas Solicitadas, Devueltas por Usuario
+    horas =  Usuario.objects.annotate(horas_sol=Sum("horas__horas_solicitadas")).annotate(horas_dev=Sum("horas__horas_devueltas")).annotate(total=F('horas_sol') - F('horas_dev')).annotate(h=Count('horas')).exclude(h=0).order_by("apellido1")
+
+    paginator = Paginator(horas,10)       
+    try: pagina = int(request.GET.get("page",'1'))
+    except ValueError: pagina = 1       
+    try:
+        permiso = paginator.page(pagina)
+    except (InvalidPage, EmptyPage):
+        permiso = paginator.page(paginator.num_pages)
+
+    return render_to_response("edt/horas.html",{"usuario": usuarioObj,"horas":horas,"permisoObj_list" : permiso.object_list,"months" : mkmonth_lst()},context_instance=RequestContext(request))
+
+def wsGenero(request):
+    if not estaLogeado(request): 
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+    # 3 formas de generar arrays====================================    
+    sexos = []
+    listausr = []    
     femenino = len(Usuario.objects.filter(sexo=2))
     masculino = len(Usuario.objects.filter(sexo=1))
-    #sexos.append({ 'hombre' : masculino, 'mujer' : femenino})        
+        
     sexos = [['Varones',masculino],['Damas',femenino]]
+
+    for usuario in Usuario.objects.all():       
+        listausr.append([usuario.nombre,usuario.apellido1])
+
+   #generacion de array desde una queryset
+    data = Usuario.objects.values("jefatura__nombre").annotate(cantidad=Count("jefatura__id"))
+    
+    jefaturas = [ [ x["jefatura__nombre"] , x["cantidad"] ] for x in data]    
+        
+
     #return HttpResponse(json.dumps(sexos))
-    return render_to_response("edt/genero.html",{"usuario" : usuarioObj,"sexos" : sexos})
+    return render_to_response("edt/genero.html",{"usuario" : usuarioObj,"sexos" : sexos,"usuarios" : json.dumps(listausr),"jefaturas" : json.dumps(jefaturas)})
+
+def wsJefaturas(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])        
+   
+    jefaturas = []
+    CPE = len(Usuario.objects.filter(jefatura=1))
+    PrimSecu = len(Usuario.objects.filter(jefatura=2))
+    Dirgen = len(Usuario.objects.filter(jefatura=3))
+    Primaria = len(Usuario.objects.filter(jefatura=4))
+    Secundaria = len(Usuario.objects.filter(jefatura=5))
+    Gerencia = len(Usuario.objects.filter(jefatura=6))
+    Mantencion = len(Usuario.objects.filter(jefatura=7))
+ 
+    jefaturas = [['CPE',CPE],['D. Primaria/D. Secundaria',PrimSecu ],['Dir. General', Dirgen],['Primaria',Primaria],['Secundaria',Secundaria],['Gerencia',Gerencia],['Mantencion',Mantencion]]
+    # #generacion de array desde una queryset
+    # data = Usuario.objects.values("jefatura__nombre").annotate(cantidad=Count("jefatura"))   
+    # jefaturas = [ [ x["jefatura__nombre"] , x["cantidad"] ] for x in data]    
+        
+
+    #return HttpResponse(json.dumps(jefaturas))
+    return render_to_response("edt/jefaturas.html",{"usuario" : usuarioObj,"jefaturas" : jefaturas })
+
+def wsEdades(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])        
+   
+    hoy = datetime.now()
+    
+    data = Usuario.objects.values("fecha_nac") #seleccion de fechas de nacimiento  
+    edad = [  hoy.year - x["fecha_nac"].year  for x in data] #calculo de edad de funcionario
+
+    edades = [ [""+str(y)+"",edad.count(y)] for y in set(edad)]#generacion de array [edad,cantidad]
+
+    edades = sorted(edades, key=lambda k: k[1], reverse=True) 
+
+    #return HttpResponse(edades)
+    return render_to_response("edt/edades.html",{"usuario" : usuarioObj,"edades":edades})    
 
                    
