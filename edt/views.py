@@ -97,7 +97,7 @@ def login(request):
                         try:
                                 usuarioObj = Usuario.objects.get(username=usuario,password=password)
                                 request.session['usuario'] = usuarioObj.id
-                                return redirect('/')
+                                return redirect('/main/')
                         except Exception as e:
                                 return HttpResponseRedirect("/login/","El usuario o la contraseña son incorrectos!!!")
 
@@ -646,9 +646,19 @@ def aprobarRechazar(request):
 
         if request.POST['respuesta'] == 'A' :
             permiso = Permiso.objects.get(id=request.POST['permiso'])
-            horas = Horas.objects.get(permiso=permiso)
-            horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_aprobadas=permiso.horas_solicitadas,horas_por_devolver=permiso.horas_solicitadas)
+            horas = Horas.objects.get(permiso=permiso)            
+            #horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_aprobadas=permiso.horas_solicitadas,horas_por_devolver=permiso.horas_solicitadas)
+            horas.permiso = permiso
+            horas.usuario = permiso.usuario
+            horas.horas_solicitadas = permiso.horas_solicitadas
+            horas.horas_aprobadas = permiso.horas_solicitadas
+            if permiso.devuelve_horas == 'S':
+                horas.horas_por_devolver = permiso.horas_solicitadas
+            else:
+                horas.horas_por_devolver = 0
+
             horas.save()
+
             form = PermisoFormSetEdit(request.POST,instance=permiso)
             if form.is_valid():
                 form.save()
@@ -659,7 +669,12 @@ def aprobarRechazar(request):
         if request.POST['respuesta'] == 'R' :
             permiso = Permiso.objects.get(id=request.POST['permiso'])
             horas = Horas.objects.get(permiso=permiso)
-            horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_rechazadas=permiso.horas_solicitadas)
+            #horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_rechazadas=permiso.horas_solicitadas)
+            horas.permiso = permiso
+            horas.usuario = usuario
+            horas.horas_horas_solicitadas = permiso.horas_solicitadas
+            horas.horas_rechazadas = permiso.horas_solicitadas
+
             horas.save()
             actividad = Actividad.objects.get(id=3)
             resu = procesa_resolucion(request,actividad,usuarioObj)        
