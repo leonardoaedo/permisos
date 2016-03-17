@@ -2,11 +2,13 @@
 {% load staticfiles %}
 
 {% block contenido %}
-<form method="post" action="/permisolst/">
-{% csrf_token %}
-	<ul>
-		<li class="list-group-item">El permiso {{resolucion.permiso.id}} solicitado por {{resolucion.permiso.usuario.nombre}} {{resolucion.permiso.usuario.apellido1}} ha sido {{resolucion.get_respuesta_display}} exitosamente</li>
-		<li class="list-group-item"> <button type="submit" class="btn btn-success ">Continuar</button></li>
-	</ul>
-</form>
+
+<script type="text/javascript">
+function redireccionar(){
+window.location="/permisolst/";
+}
+
+setTimeout ("redireccionar()", 2500);
+</script>
+
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends  "edt/base.html" %}
+{% load staticfiles %}
+
+{% block contenido %}
+
+{{form.errors}}
+<h3>Devolución de horas</h3>
+<h5>Seleccione Funcionario e ingrese la cantidad de horas a devueltas</h5>
+<form id="main" class="form-horizontal"  method="post" > {% csrf_token %}
+	<div class="upload">	
+		<ul class="list-group">
+			<li class="list-group-item">Funcionario : {{form.usuario}}</li>
+			<li class="list-group-item">{{form.horas_devueltas}}</li>
+			<li class="list-group-item"><button type="submit"  value="Solicitar Permiso" class="btn btn-danger btn-sm" >Guardar</button></li>
+		</ul>
+
+	</div>
+</form>
+{% endblock %}

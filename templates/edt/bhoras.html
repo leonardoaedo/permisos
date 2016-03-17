@@ -1,0 +1,90 @@
+{% extends "edt/base.html" %}
+{% load staticfiles %}
+{% block contenido %}
+<h4>Informe de horas a devolución</h4>
+<div>
+<div class="hero-unit fechas">
+                <div class="input-daterange" id="datepicker" >
+                    <span  style="vertical-align: top;height:20px">Desde</span>
+                    <input type="text" class="input-small" name="start" />
+                    <span  style="vertical-align: top;height:20px">Hasta</span>
+                    <input type="text" class="input-small" name="end" />
+                </div>
+            </div>
+{% if usuarios %}
+  <table class=" table-bordered table-hover bgeneral TFtable" >
+            <thead>
+                <tr>
+                  
+                  <th class="nombre">Nombre</th>
+                  <th>Estamento</th>
+                  <th>Horas solicitadas</th>
+                  <th>Horas Aprobadas</th>
+                  <th>Horas Rechazadas</th>
+                  <th>Horas a Recuperar</th>
+                  <th>Horas Recuperadas</th>
+                  <th>Horas pendientes de Recuperación</th>
+                  
+                </tr>
+              </thead>
+            <tbody>   
+  {% for usuario in usuarios %}     
+            <tr {% if  permiso.ultimaBitacora.actividad.nombre == 'Anulado' %} class='anulado' {% endif %} >
+                <td>{{usuario.apellido1}} {{usuario.apellido2}} {{usuario.nombre}}</td>                
+                <td>{{usuario.estamento.nombre}}</td>
+                <td class="horas">{{usuario.total_horas}}</td>
+                <td class="horas">{{usuario.aprobadas}}</td>
+                <td class="horas">{{usuario.rechazadas}}</td>
+                <td class="horas">{{usuario.devolver}}</td>           
+                <td class="horas">{{usuario.devueltas}}</td>
+                <td class="horas">{{usuario.saldo}}</td>               
+            </tr>       
+
+            <!-- <tr>
+                <td>{{resolucion.id }}</td>
+                <td>{% if resolucion.ultimaResolucion %} {{ resolucion.ultimaResolucion.get_respuesta_display }}  {% endif %}</td>
+                <td></td>
+                <td></td>
+
+            </tr> -->
+
+  {% empty %}
+      <tr>
+        <td class="list-group-item">En este momento no hay ningun elemento para mostrar</td>
+      </tr>
+        {% endfor %}           
+        </tbody>    
+    </table>
+  </ul>
+  {# .... **Comienzo de la paginacion** .... #}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"><img width="25px" height="25px" src='/static/img/back.png' alt='Volver'/></a>
+                {% endif %}
+                <span class="page-current">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><img width="25px" height="25px" src='/static/img/next.png' alt='Siguiente'/></a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+
+{% endif %}
+
+</div>
+<script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                
+                $('.input-daterange').datepicker({
+                    todayBtn: "linked"
+                });
+            
+            });
+        </script>
+{% endblock  %}
+

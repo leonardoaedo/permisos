@@ -1,0 +1,11 @@
+{% extends  "edt/base.html" %}
+{% load staticfiles %}
+
+{% block contenido %}
+<h4>detalle de devolución de horas</h4>
+<div id="devuelve" class="panel panel-default"><p>El funcionario {{horas.usuario.nombre}} {{horas.usuario.apellido1}} a devuelto el dia {{horas.fecha|date:"d M, Y"}} la cantidad de {{horas.horas_devueltas}} horas.</p></div>
+
+
+
+
+{% endblock %}

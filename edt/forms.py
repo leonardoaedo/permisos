@@ -6,7 +6,14 @@ from edt.models import *
 class PermisoFormSet(forms.ModelForm):
     class Meta:
        model = Permiso
-       exclude = ["entrada","usuario","horas_solicitadas","horas_solicitadas_funcionario"]
+  
+       exclude = ["usuario","horas_solicitadas","horas_solicitadas_funcionario"]
+        
+
+class PermisoFormSetEdit(forms.ModelForm):
+    class Meta:
+       model = Permiso
+       exclude = ["usuario","horas_solicitadas","horas_solicitadas_funcionario","motivo","tipo","reemplazante","documento_adjunto"]       
 
     
 class ResolucionFormSet(forms.ModelForm):
@@ -18,7 +25,7 @@ class ResolucionFormSet(forms.ModelForm):
 class HorasFormSet(forms.ModelForm):
     class Meta:
         model = Horas
-        exclude = ["horas_solicitadas"]
+        exclude = ["horas_solicitadas","permiso"]
 
 
 class DocumentFormSet(forms.ModelForm):

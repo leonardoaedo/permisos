@@ -38,6 +38,7 @@ class Jefatura (models.Model):
         nombre = models.CharField(max_length=128)
         correo1 = models.EmailField(max_length=128)
         correo2 = models.EmailField(max_length=128)
+        correo3 = models.EmailField(max_length=128)
         def __unicode__(self):              # __unicode__ on Python 2
             return self.nombre
 
@@ -57,7 +58,7 @@ class Sexo (models.Model):
             return self.nombre
 
 class Motivo (models.Model):
-        nombre = models.CharField(max_length=32)
+        nombre = models.CharField(max_length=100)
         def __unicode__(self):              # __unicode__ on Python 2
             return self.nombre
 
@@ -95,8 +96,6 @@ class Usuario(models.Model):
 
         def __unicode__(self):              # __unicode__ on Python 2
             return "%s %s"%(self.apellido1,self.nombre)
-
-
 devuelve = (
         ("S","SI"),
         ("N","NO")
@@ -109,19 +108,44 @@ goce = (
 )
 
 class Permiso (models.Model):
-        usuario = models.ForeignKey(Usuario,related_name="usuario")
-        fecha_creacion = models.DateTimeField(auto_now_add=True)
+        usuario = models.ForeignKey(Usuario,null=True,blank=True)
+        fecha_creacion = models.DateTimeField(auto_now_add=True,null=True,blank=True)
         horas_solicitadas = models.CharField(max_length=32,default=0)
-        horas_solicitadas_funcionario = models.CharField(max_length=32,default=0)        
+        horas_solicitadas_funcionario = models.CharField(max_length=32,default=0,null=True,blank=True)        
         devuelve_horas = models.CharField(max_length=1,choices=devuelve)
         motivo = models.ForeignKey(Motivo,related_name="motivo")
         sueldo = models.CharField(max_length=1,choices=goce)
-        reemplazante = models.ForeignKey(Usuario,related_name="reemplazante",null=True,blank=True)
+        reemplazante = models.ForeignKey(Usuario,related_name="reemplazante",null=True,blank=True,default=162)
         tipo = models.ForeignKey(Tipo_Permiso,related_name="tipo_permiso")
-        comentario = models.CharField(max_length=32, null=True,blank=True)
+        comentario = models.CharField(max_length=500)
         documento_adjunto = models.FileField(null=True,blank=True)
         def __unicode__(self):              # __unicode__ on Python 2
                 return u"%s el %s"%(self.usuario,self.fecha_creacion)
+
+        def ultimaResolucion(self):
+            if len(self.resolucion_set.all()) < 1:
+                return None
+            return self.resolucion_set.all().order_by('-id')[0]
+
+        def ultimaBitacora(self):
+            if len(self.bitacora_set.all()) < 1:
+                return None
+            return self.bitacora_set.all().order_by('-id')[0]
+
+        def ultimoEvento(self):
+            if len(self.eventos_en_permisos_set.all()) < 1:
+                return None
+            return self.eventos_en_permisos_set.all().order_by('-id')[0]
+
+        def primerEvento(self):
+            if len(self.eventos_en_permisos_set.all()) < 1:
+                return None
+            return self.eventos_en_permisos_set.all().order_by('id')[0]
+        def horas(self):
+            if len(self.horas_set.all()) < 1 :
+                return None
+            return self.horas_set.all()             
+                                                                              
 
 
 #esto no es una clase, solo una lista con listas inmutables (Tupla)
@@ -132,10 +156,35 @@ opciones = (
 )
 
 
+class Foliocpe(models.Model):
+    permiso = models.ForeignKey(Permiso)
+
+class Folioprimaria(models.Model):
+    permiso = models.ForeignKey(Permiso)
+
+class Foliosecundaria(models.Model):
+    permiso = models.ForeignKey(Permiso)   
+
+class Foliogerencia(models.Model):
+    permiso = models.ForeignKey(Permiso)
+
+class Foliodirgen(models.Model):
+    permiso = models.ForeignKey(Permiso)
+
+class Foliomantencion(models.Model):
+    permiso = models.ForeignKey(Permiso)
+
+class Anulado(models.Model):
+    permiso = models.ForeignKey(Permiso)
+    anuladopor  = models.ForeignKey(Usuario)
+    def __unicode__(self):
+         return "permiso %s anulador por %s"%(self.permiso.id,self.anuladopor.nombre)
+
+
 class Resolucion (models.Model):
         respuesta = models.CharField(max_length=1,choices=opciones)
         resolutor = models.ForeignKey(Usuario)
-        razon = models.CharField(max_length=32, null=True)
+        razon = models.CharField(max_length=500, null=True)
         fecha_resolucion = models.DateField(auto_now_add=True)
         permiso = models.ForeignKey(Permiso)
         def __unicode__(self):              # __unicode__ on Python 2
@@ -172,7 +221,7 @@ class Actividad(models.Model):
         return self.nombre
 
 class Bitacora(models.Model):
-    permiso = models.ForeignKey(Permiso) 
+    permiso = models.ForeignKey(Permiso,null=True) 
     usuario = models.ForeignKey(Usuario)
     actividad = models.ForeignKey(Actividad)
     fecha = models.DateTimeField(auto_now_add=True,null=True)
@@ -180,11 +229,15 @@ class Bitacora(models.Model):
         return "%s  %s"%(self.usuario,self.actividad)
 
 class Horas(models.Model):
-    permiso = models.ForeignKey(Permiso)
+    permiso = models.ForeignKey(Permiso,null=True)
     fecha = models.DateTimeField(auto_now_add=True,null=True)
     usuario = models.ForeignKey(Usuario)
-    horas_solicitadas = models.CharField(max_length=32,default=0)
-    horas_devueltas = models.CharField(max_length=32,default=0)
+    horas_solicitadas = models.FloatField(default=0)
+    horas_aprobadas = models.FloatField(default=0)
+    horas_rechazadas = models.FloatField(default=0)
+    horas_por_devolver = models.FloatField(default=0)
+    horas_devueltas = models.FloatField(default=0)
+
     def __unicode__(self):
         return "%s %s"%(self.horas_solicitadas,self.permiso)
 

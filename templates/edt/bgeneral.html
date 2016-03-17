@@ -1,0 +1,107 @@
+{% extends "edt/base.html" %}
+{% load staticfiles %}
+{% block contenido %}
+<h4>Bitacora General</h4>
+<div>
+
+{% if permisos %}
+	<table class=" table-bordered table-hover bgeneral " >
+            <thead>
+                <tr>
+                  <th scope="row">N° I</th>
+                  <th>N° SPJ</th>
+                  <th>Fecha</th>
+                  <th>Rut</th>
+                  <th class="nombre">Nombre</th>
+                  <th>Estamento</th>
+                  <th>Tipo</th>
+                  <th>Fecha Desde</th>
+                  <th>Fecha Hasta</th>
+                  <th>Hora Desde</th>
+                  <th>Hora Hasta</th>
+                  <th>N° horas aula Solicitadas</th>
+                  <th>N° horas totales Solicitadas</th>
+                  <th>Motivo</th>
+                  <th>Resolución</th>
+                  <th>Devuelve horas</th>
+                </tr>
+              </thead>
+            <tbody>  	
+	{% for permiso in permisos %}	    
+             <tr {% if  permiso.ultimaBitacora.actividad.nombre == 'Anulado' %} class='anulado' {% endif %}>
+                <th scope="row" >{{permiso.id}} </th>
+                <td> </td>
+                <td>{{permiso.fecha_creacion|date:"d-M-Y"}}</td>
+                <td>{{permiso.usuario.rut}}-{{permiso.usuario.dv}}</td>                
+                <td>{{permiso.usuario.apellido1}} {{permiso.usuario.apellido2}} {{permiso.usuario.nombre}}</td>                
+                <td>{{permiso.usuario.estamento.nombre}}</td>
+                <td>{{permiso.tipo.nombre}}</td>
+                <td>{{permiso.primerEvento.numero_evento.start|date:"d-M-Y"}}</td>
+                <td>{{permiso.ultimoEvento.numero_evento.end|date:"d-M-Y"}}</td>
+                <td>{{permiso.primerEvento.numero_evento.start|date:"H:i"}}</td>
+                <td>{{permiso.ultimoEvento.numero_evento.end|date:"H:i"}}</td>
+                <td>{{permiso.horas_solicitadas_funcionario|floatformat:2}}</td>
+                <td>{{permiso.horas_solicitadas|floatformat:2}}</td>
+                <td>{{permiso.motivo.nombre}}</td>
+                <td> {% if permiso.ultimaResolucion != None %}
+                      {{ permiso.ultimaResolucion.get_respuesta_display }}
+                     {% else %}
+                      {{ permiso.ultimaBitacora.actividad.nombre }} 
+                     {% endif %}</td>
+                <td>{{permiso.get_devuelve_horas_display}}</td>     
+            </tr>       
+
+            <!-- <tr>
+                <td>{{resolucion.id }}</td>
+                <td>{% if resolucion.ultimaResolucion %} {{ resolucion.ultimaResolucion.get_respuesta_display }}  {% endif %}</td>
+                <td></td>
+                <td></td>
+
+            </tr> -->
+
+	{% empty %}
+	    <tr>
+        <td class="list-group-item">En este momento no hay ningun elemento para mostrar</td>
+      </tr>
+        {% endfor %}
+      <tr >
+                <th></th>
+                <td> </td>
+                <td></td>
+                <td></td>                
+                <td></td>                
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ sumafuncionario }}</td>
+                <td>{{ sumainforme }}</td>
+                <td></td>
+                <td></td>
+            </tr>       
+        </tbody>    
+    </table>
+	</ul>
+	{# .... **Comienzo de la paginacion** .... #}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"><img width="25px" height="25px" src='/static/img/back.png' alt='Volver'/></a>
+                {% endif %}
+                <span class="page-current">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><img width="25px" height="25px" src='/static/img/next.png' alt='Siguiente'/></a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+
+{% endif %}
+
+</div>
+{% endblock  %}

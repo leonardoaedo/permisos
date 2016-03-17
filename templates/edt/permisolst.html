@@ -2,11 +2,12 @@
 {% load staticfiles %}
 
 {% block contenido %}
-<div ><H4>Revisión de permisos</H4>
+<div ><H4>Revisión de permisos <!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </H4>
+	
 	<ul class="list-group">
 	{% for permisoObj in permisoObj_list %}
 
-	<li><a class="list-group-item" href="{% url 'edt.views.verpermiso' permisoObj.pk %}"> N° {{permisoObj.id}} - {{ permisoObj.usuario.nombre }} {{ permisoObj.usuario.apellido1 }} {{ permisoObj.fecha_creacion |date:"M d Y" }} | {{permisoObj.tipo}} </a>		
+	<li><a class="list-group-item" href="{% url 'edt.views.verpermiso' permisoObj.pk %}"> N° {{permisoObj.id}} - {{ permisoObj.usuario.nombre }} {{ permisoObj.usuario.apellido1 }} {{ permisoObj.fecha_creacion |date:"M d Y" }} | {{permisoObj.tipo}}  <span class="badge">{{permisoObj.usuario.jefatura.nombre}}</span> </a>		
 	</li>
 
 	{% empty %}

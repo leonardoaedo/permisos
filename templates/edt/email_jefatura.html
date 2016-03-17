@@ -1,3 +1,11 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +19,7 @@
 <body>
 
 <div  style="background-color: #FFFFFF;	background-color: #FFFFFF;  border: 2px solid #FFFD00;  background-image: background-position: 320px 10%;background-repeat: no-repeat; margin-top: 10px;margin-bottom: 20px;margin-left: 15px;padding: 10px;width: 420px;-moz-box-shadow: 14px 11px 19px 1px #888888;	-webkit-box-shadow: 14px 11px 19px 1px #888888;	box-shadow: 14px 11px 19px 1px #888888;	border: 1px #888888 solid;	-moz-box-shadow: 14px 11px 19px 1px #888888;	-webkit-box-shadow: 14px 11px 19px 1px #888888;	box-shadow: 14px 11px 19px 1px #888888;	font: 14px Tahoma, Geneva, sans-serif;    -moz-border-radius-topleft: 5px;    -moz-border-radius-topright:5px;    -moz-border-radius-bottomleft:5px;    -moz-border-radius-bottomright:5px;    -webkit-border-top-left-radius:5px;    -webkit-border-top-right-radius:5px;    -webkit-border-bottom-left-radius:5px;    -webkit-border-bottom-right-radius:5px;    border-top-left-radius:5px;    border-top-right-radius:5px;    border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
-
+	<div style="position:relative;"><img style="margin-left:120px;" src="http://rrhh.cdegaulle.cl/static/img/escudo_lycee2.png" width="186" height="153" /></div>
 	<ul style=" margin-bottom: 20px;padding-left: 0;list-style-type: none;">	
 		<li style="background-color: #2c3e50;border-color: #2c3e50;color: #ffffff;z-index: 2;padding: 5px;"  ><h3 style="color:#FFFFFF !important;">Permiso administrativo N° {{numero}} </h3></li>
 		<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;">Solicitante : {{nombre}} {{apellido}}</li>
@@ -20,11 +28,29 @@
 		<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;" >
 		<span style="display: inline-block;  min-width: 10px;  padding: 3px 7px;  font-size: 13px;  font-weight: bold;  color: #ffffff;  line-height: 1;  vertical-align: baseline; white-space: nowrap;  text-align: center;  background-color: #2c3e50;  border-radius: 10px;">Total{{"  "}}{{horas}}</span>
 		</li>
-		<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;">Reemplazante : {{nom_reemplazante}} {{ap_reemplazante}}</li>
+		<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;">Reemplazante :  {{ap_reemplazante}} {{nom_reemplazante}}</li>
 		
 	</ul>
-	
+ <ul style=" margin-bottom: 20px;padding-left: 0;list-style-type: none;">
+	<li style="background-color: #2c3e50;border-color: #2c3e50;color: #ffffff;z-index: 2;padding: 5px;"  ><h3 style="color:#FFFFFF !important;"><h4 style="color:#FFFFFF !important;">Detalle </h4></li>
+	{% for eventoObj in permiso.eventos_en_permisos_set.all %}	
+
+	<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;" >
+	<span style="display: inline-block;  min-width: 10px;  padding: 3px 7px;  font-size: 13px;  font-weight: bold;  color: #ffffff;  line-height: 1;  vertical-align: baseline; white-space: nowrap;  text-align: center;  background-color: #2c3e50;  border-radius: 10px;">{{eventoObj.delta}}</span>
+		{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|date:"G:i"}}</li>
+	{% endfor %}
+	<li class="list-group-item" >
+	<span style="display: inline-block;  min-width: 10px;  padding: 3px 7px;  font-size: 13px;  font-weight: bold;  color: #ffffff;  line-height: 1;  vertical-align: baseline; white-space: nowrap;  text-align: center;  background-color: #2c3e50;  border-radius: 10px;">Total{{"  "}}{{permiso.horas_solicitadas}}</span>
+	</li>
+</ul>
+<div><a style="display: block;width: 200px;background: #18bc9c; height: 25px;padding: 10px; text-align: center;border-radius: 5px;color: black;font-weight: bold; text-decoration:none;">Revisar permiso</a></div>   	
 </div>
+
+
+
+</body>
+</html>
+
 
 </body>
 </html>

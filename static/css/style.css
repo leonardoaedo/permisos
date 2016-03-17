@@ -84,11 +84,12 @@ input[type='text'] , input[type='password'],textarea {
 
 .comentario {
 	margin: auto;
-	width: 400px;
-	height: 25px;
+	width: 295px;
+	height: 74px;
 	max-width: 400px;
 	line-height: 18px;
-	background-color: rgb(250, 255, 189);
+	color: #000000;
+	background-color: #3498DB;
 }
 
 input:hover, textarea:hover,
@@ -134,7 +135,7 @@ input:focus, textarea:focus {
     -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    background: rgb(250, 255, 189);
+    background: #3498DB;
     color:#000;
     border:none;
     outline:none;
@@ -143,10 +144,28 @@ input:focus, textarea:focus {
     -moz-appearance:none;
     appearance:none;
     cursor:pointer;
-    width: 200px;
+    width: 295px;
 }
 .permiso input[type="file"] {
   cursor: pointer;
+}
+
+.permiso input[type="text"]{
+	margin: auto;
+	width: 295px;
+	height: 30px;
+	max-width: 400px;
+	line-height: 18px;
+	color: #000000;
+	background-color: #3498DB;
+
+}
+
+.btn-sm {
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 3px 9px;
 }
 .upload {
 	width: 100%;
@@ -177,9 +196,12 @@ input:focus, textarea:focus {
 .upload li{
 	float: left;
 	display: inline;
-	width: 30%;
+	width: 25%;
 }
 
+#id_horas_devueltas {
+	width: 35%;
+}
 .upload input[type="text"] {
   display: block;
   margin: 0;
@@ -312,7 +334,7 @@ input:focus, textarea:focus {
 	margin-bottom: 20px;
 	margin-left: 15px; 
 	padding: 10px;
-	width: 420px;
+	width: 480px;
 	-moz-box-shadow: 14px 11px 19px 1px #888888;
 	-webkit-box-shadow: 14px 11px 19px 1px #888888;
 	box-shadow: 14px 11px 19px 1px #888888;
@@ -582,4 +604,82 @@ padding: 5px 5px 5px 25px;
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+#devuelve{
+
+	width: 800px;
+	margin: 10px;
+}
+#frmpermiso {
+	width: 300px;
+	height: 90px;
+	overflow: hidden;
+	float: left;
+}
+.errorlist{
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	display: block;
+	background-color: red;
+	color: white;
+	width: 280px;
+	margin: auto;
+}
+
+.bgeneral {
+	font-size: 12.5px;
+}
+.bgeneral th {
+	text-align: center;	
+}
+.bgeneral td{
+	padding: 3px;
+}
+.nombre{
+	width: 200px;
+}
+.anulado{
+	background-color: MediumPurple;
+	color: white;	
+}
+.anulado:hover {
+	background-color: MediumPurple;
+	color: black;
+}
+
+.TFtable{
+	width:100%; 
+	border-collapse:collapse;
+
+}
+.TFtable td{ 
+	padding:7px; 
+	border:#4e95f4 1px solid;
+
+}
+/* provide some minimal visual accomodation for IE8 and below */
+.TFtable tr{
+	background: #b8d1f3;
+}
+/*  Define the background color for all the ODD background rows  */
+.TFtable tr:nth-child(odd){ 
+	background: #b8d1f3;
+}
+/*  Define the background color for all the EVEN background rows  */
+.TFtable tr:nth-child(even){
+	background: #dae5f4;
+}
+.horas{
+	text-align: center;
+	font-weight: bolder;
+}
+.fechas {
+	padding: 5px;
+	height: 60px;
+	overflow: hidden;
+}
+.fechas span {
+	height: 27px;
 }
