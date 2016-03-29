@@ -3,6 +3,8 @@
 from django.db.models import Max
 from dateutil.parser import *
 from dateutil.tz import *
+from django.utils.dateparse import parse_datetime
+from django.utils.dateparse import parse_date
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.shortcuts import get_object_or_404, render
@@ -320,8 +322,10 @@ def urlcalendario(request):
 
         ##########################################################################################################
         #guardo en horas para gestion de devolucion de horas
+        
         horas = Horas(horas_solicitadas=suma,permiso=ultimopermiso,usuario=usuarioObj)
         horas.save()
+
         #guardado en bitacora
         bitacora = Bitacora(actividad=actividad,usuario=usuarioObj,permiso=ultimopermiso)            
         bitacora.save()
@@ -339,7 +343,7 @@ def urlcalendario(request):
         template = loader.get_template('edt/email_jefatura.html')
         context = RequestContext(request, {'permiso' : ultimopermiso,'jefe' : usuarioObj.jefatura.nombre,'horas':permiso.horas_solicitadas,'numero':permiso.id,'nombre' : usuarioObj.nombre,'apellido' : usuarioObj.apellido1,'rut': usuarioObj.rut,'dv':usuarioObj.dv,'nom_reemplazante':permiso.reemplazante.nombre,'ap_reemplazante':permiso.reemplazante.apellido1,'fecha': permiso.fecha_creacion})
         html = template.render(context)
-        msg = EmailMessage('Solicitud de permiso', html, 'scpa@cdegaulle.cl', [usuarioObj.jefatura.correo1])
+        msg = EmailMessage('Solicitud de permiso ' , html, 'scpa@cdegaulle.cl', [usuarioObj.jefatura.correo1])
         msg.content_subtype = "html"  # Main content is now text/html
         msg.send()
 
@@ -370,20 +374,65 @@ def bitgeneral(request):
      return redirect("/main")
 
 def bithoras(request):
-    if not estaLogeado(request):
-        return redirect("/login")
-    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-    
-    if  usuarioObj.rol.id == 1:
+	if not estaLogeado(request):
+		return redirect("/login")
+	usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+	if usuarioObj.rol.id == 1:
+		
+		usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).exclude(permiso__horas__horas_solicitadas=None)
 
-    
-        usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).exclude(permiso__horas__horas_solicitadas=None)
-        return render_to_response("edt/bhoras.html",{"usuarios" : usuarios,"usuario": usuarioObj},context_instance=RequestContext(request))
+		data = {
+			"usuario": usuarioObj,
+			"usuarios_filtro" : Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+		}
+		if "start" in request.GET and request.GET.get("start") != "":
+			start = request.GET.get("start")
+			data["start"] = start
+			usuarios = usuarios.filter(permiso__fecha_creacion__gte=start)
+		if "end" in request.GET and request.GET.get("end") != "":
+			end = request.GET.get("end")
+			data["end"] = end 
+			usuarios = usuarios.filter(permiso__fecha_creacion__lte=end)
+
+		if "persona" in request.GET and request.GET.get("persona") != 0:			
+			persona = request.GET.get("persona")
+			data["persona_activa"] = persona
+			usuarios = usuarios.filter(pk=persona)
+
+			
+		data["usuarios"] = usuarios
+
+		return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
+	else:
+		return redirect("/main")	
+'''	if  usuarioObj.rol.id == 1:
+
+	if "start" in request.GET:
+		.filter(permiso__fecha_creacion__gte=start,permiso__fecha_creacion__lte=end)            
+
+        #if request.method == 'POST':
+            start = request.GET.get('start')
+            end = request.GET.get('end')
+
+            #return HttpResponse(end)
 
 
+		return render_to_response("edt/bhoras.html",{"usuarios" : usuarios,"usuario": usuarioObj},context_instance=RequestContext(request))
+	else:
+		return redirect("/main")    '''
 
-    else:
-     return redirect("/main")     
+# def horasdescontar(request):
+#      if not estaLogeado(request):
+#         return redirect("/login")
+#     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+#     if  usuarioObj.rol.id == 1:
+
+#         usuarios = Usuario.objects.annotate()
+#         return render_to_response("edt/horasdescontar.html",{"usuarios" : usuarios,"usuario": usuarioObj},context_instance=RequestContext(request))
+
+#     else:
+#      return redirect("/main") 
 
 def bitfuncionario(request):
     if not estaLogeado(request):
@@ -410,7 +459,7 @@ def index(request):
                 if formset.is_valid():
                         document= formset.save(commit=False)
                         document.save()
-                return redirect('/upload/%d'%(document.id))
+                        return redirect('/upload/%d'%(document.id))
             
                 
             formset = DocumentFormSet()
@@ -646,6 +695,10 @@ def aprobarRechazar(request):
 
         if request.POST['respuesta'] == 'A' :
             permiso = Permiso.objects.get(id=request.POST['permiso'])
+            permiso.comentario = request.POST.get('comentario')
+            permiso.sueldo = request.POST.get('sueldo')
+            permiso.devuelve_horas = request.POST.get('devuelve_horas')
+            permiso.save()
             horas = Horas.objects.get(permiso=permiso)            
             #horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_aprobadas=permiso.horas_solicitadas,horas_por_devolver=permiso.horas_solicitadas)
             horas.permiso = permiso
@@ -653,9 +706,15 @@ def aprobarRechazar(request):
             horas.horas_solicitadas = permiso.horas_solicitadas
             horas.horas_aprobadas = permiso.horas_solicitadas
             if permiso.devuelve_horas == 'S':
-                horas.horas_por_devolver = permiso.horas_solicitadas
-            else:
+                horas.horas_por_devolver = permiso.horas_solicitadas                
+
+            if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'S'):          
+                horas.horas_descontar = permiso.horas_solicitadas
                 horas.horas_por_devolver = 0
+
+            if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'C'):
+                horas.horas_descontar = 0
+
 
             horas.save()
 
@@ -674,7 +733,6 @@ def aprobarRechazar(request):
             horas.usuario = usuario
             horas.horas_horas_solicitadas = permiso.horas_solicitadas
             horas.horas_rechazadas = permiso.horas_solicitadas
-
             horas.save()
             actividad = Actividad.objects.get(id=3)
             resu = procesa_resolucion(request,actividad,usuarioObj)        

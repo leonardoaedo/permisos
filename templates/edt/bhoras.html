@@ -3,14 +3,16 @@
 {% block contenido %}
 <h4>Informe de horas a devolución</h4>
 <div>
-<div class="hero-unit fechas">
-                <div class="input-daterange" id="datepicker" >
-                    <span  style="vertical-align: top;height:20px">Desde</span>
-                    <input type="text" class="input-small" name="start" />
-                    <span  style="vertical-align: top;height:20px">Hasta</span>
-                    <input type="text" class="input-small" name="end" />
-                </div>
-            </div>
+<form id="horas" class="form-horizontal" method="get">
+<select name="persona">
+	{% for persona in usuarios_filtro %}	
+		<option value="{{persona.id}}">{{persona}}</option>
+	{% endfor %}
+</select>
+<input id="periodpickerstart" type="text" name="start" value="{{start}}"/>
+<input id="periodpickerend" type="text" name="end" value="{{end}}"/>  
+<input class=" btn-success " type="submit" value="Filtrar" id="filtrar"/>
+</form>            
 {% if usuarios %}
   <table class=" table-bordered table-hover bgeneral TFtable" >
             <thead>
@@ -24,6 +26,7 @@
                   <th>Horas a Recuperar</th>
                   <th>Horas Recuperadas</th>
                   <th>Horas pendientes de Recuperación</th>
+                  <th>Horas a descontar</th>
                   
                 </tr>
               </thead>
@@ -37,7 +40,8 @@
                 <td class="horas">{{usuario.rechazadas}}</td>
                 <td class="horas">{{usuario.devolver}}</td>           
                 <td class="horas">{{usuario.devueltas}}</td>
-                <td class="horas">{{usuario.saldo}}</td>               
+                <td class="horas">{{usuario.saldo}}</td>
+                <td class="horas">{{usuario.descontar}}</td>              
             </tr>       
 
             <!-- <tr>
@@ -76,15 +80,27 @@
 {% endif %}
 
 </div>
-<script type="text/javascript">
-            // When the document is ready
-            $(document).ready(function () {
-                
-                $('.input-daterange').datepicker({
-                    todayBtn: "linked"
-                });
-            
-            });
-        </script>
+
+<script>
+
+jQuery('#periodpickerstart').periodpicker({
+ end: '#periodpickerend', 
+ lang :'es',
+ resizeButton: false, // deny resize picker
+ fullsizeButton: false,
+ fullsizeOnDblClick: false,
+
+ timepicker: true, // use timepicker
+ timepickerOptions: {
+    hours: true,
+    minutes: true,
+    seconds: false,
+    ampm: true
+  },
+ formatDateTime: 'YYYY-MM-DD HH:mm:ss',
+ cells: [1, 3],
+
+});
+</script>
 {% endblock  %}
 

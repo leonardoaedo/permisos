@@ -24,12 +24,14 @@
                   <th>Motivo</th>
                   <th>Resolución</th>
                   <th>Devuelve horas</th>
+                  <th>Goce de sueldo</th>
+
                 </tr>
               </thead>
             <tbody>  	
 	{% for permiso in permisos %}	    
              <tr {% if  permiso.ultimaBitacora.actividad.nombre == 'Anulado' %} class='anulado' {% endif %}>
-                <th scope="row" >{{permiso.id}} </th>
+                <th scope="row"><a href="/verpermiso/{{permiso.id}}/">{{permiso.id}}</a>  </th>
                 <td> </td>
                 <td>{{permiso.fecha_creacion|date:"d-M-Y"}}</td>
                 <td>{{permiso.usuario.rut}}-{{permiso.usuario.dv}}</td>                
@@ -48,7 +50,8 @@
                      {% else %}
                       {{ permiso.ultimaBitacora.actividad.nombre }} 
                      {% endif %}</td>
-                <td>{{permiso.get_devuelve_horas_display}}</td>     
+                <td>{{permiso.get_devuelve_horas_display}}</td>
+                <td>{{permiso.get_sueldo_display}}</td>     
             </tr>       
 
             <!-- <tr>

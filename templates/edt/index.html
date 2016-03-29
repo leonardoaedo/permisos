@@ -3,16 +3,17 @@
 
 {% block contenido %}
 
-{{form.errors}}
+
 <h3>Carga de Horarios</h3>
 <h4>Seleccione Funcionario, detalle y archivo en formatos .ics</h4>
 <form  method="post" enctype="multipart/form-data" class="form-inline" >{% csrf_token %}
 	<div class="upload">
 		<ul class="list-group">
+			{{form.funcionario.errors}}	
 			<li class="list-group-item">Funcionario : {{form.usuario}}</li>
-
+			{{form.filename.errors}}
 			<li class="list-group-item">{{form.filename}}</li>
-			
+			{{form.docfile.errors}}
 			<li class="list-group-item">{{form.docfile}}</li>
 		</ul>
  		<button type="submit"  value="Solicitar Permiso" class="btn btn-success btn-lg btn-block" >Cargar</button>

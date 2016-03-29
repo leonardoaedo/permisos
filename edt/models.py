@@ -237,6 +237,7 @@ class Horas(models.Model):
     horas_rechazadas = models.FloatField(default=0)
     horas_por_devolver = models.FloatField(default=0)
     horas_devueltas = models.FloatField(default=0)
+    horas_descontar = models.FloatField(default=0)
 
     def __unicode__(self):
         return "%s %s"%(self.horas_solicitadas,self.permiso)
