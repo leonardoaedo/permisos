@@ -36,13 +36,16 @@
 
 <div id="resolucion" class="msg-comprobante">
 	<ul class="list-group">	
-		<li class="list-group-item active" ><h4 style="color:#FFFFFF !important;"></h4></li>
+		<li class="list-group-item active" ><h4 style="color:#FFFFFF !important;">Anulación de permiso</h4></li>
 		<li class="list-group-item" >{{form.errors}}
 			<form method="post" action="/anula/">
 			{% csrf_token %}
 				<input type="hidden" name="permiso" value="{{permiso.id}}">
 				<p class="resolut">		        
-					<div>							
+					<div>
+						<label for="motivo"><p class="resolut">Motivo:</p>
+						<textarea class="razon" name="motivo"></textarea>
+						</label>							
 						<div class="botones">
 							<button type="submit" value="Cancelado" name="respuesta" id="cancelar" class="btn btn-success ">Cancelar</button>
 							<button type="submit" value="Anulado"  name="respuesta" id="anula" class="btn btn-danger ">Anular</button>

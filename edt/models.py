@@ -177,6 +177,7 @@ class Foliomantencion(models.Model):
 class Anulado(models.Model):
     permiso = models.ForeignKey(Permiso)
     anuladopor  = models.ForeignKey(Usuario)
+    motivo = models.CharField(max_length=500, null=True)
     def __unicode__(self):
          return "permiso %s anulador por %s"%(self.permiso.id,self.anuladopor.nombre)
 

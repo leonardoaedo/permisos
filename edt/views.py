@@ -374,37 +374,45 @@ def bitgeneral(request):
      return redirect("/main")
 
 def bithoras(request):
-	if not estaLogeado(request):
-		return redirect("/login")
-	usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-	if usuarioObj.rol.id == 1:
-		
-		usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).exclude(permiso__horas__horas_solicitadas=None)
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    if usuarioObj.rol.id == 1:
+        usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).annotate(descontar=Sum('permiso__horas__horas_descontar')).exclude(permiso__horas__horas_solicitadas=None)
+        data = {
+            "usuario": usuarioObj,
+            "usuarios_filtro" : Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None),
+            "estamento_filtro" : Estamento.objects.all(),
+            "usuarios" : usuarios
+                }		
+        if "filtrar" in request.GET :
 
-		data = {
-			"usuario": usuarioObj,
-			"usuarios_filtro" : Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
-		}
-		if "start" in request.GET and request.GET.get("start") != "":
-			start = request.GET.get("start")
-			data["start"] = start
-			usuarios = usuarios.filter(permiso__fecha_creacion__gte=start)
-		if "end" in request.GET and request.GET.get("end") != "":
-			end = request.GET.get("end")
-			data["end"] = end 
-			usuarios = usuarios.filter(permiso__fecha_creacion__lte=end)
+            if "start" in request.GET and request.GET.get("start") != "":
+                start = request.GET.get("start")
+                data["start"] = start
+                usuarios = usuarios.filter(permiso__fecha_creacion__gte=start)
+            if "end" in request.GET and request.GET.get("end") != "":
+                end = request.GET.get("end")
+                data["end"] = end 
+                usuarios = usuarios.filter(permiso__fecha_creacion__lte=end)
+            if "persona" in request.GET and request.GET.get("persona") != 0:			
+                persona = request.GET.get("persona")
+                data["persona_activa"] = persona
+                usuarios = usuarios.filter(pk=persona)                
+            # if "estamento" in request.GET and request.GET.get("estamento") !=0:
+            #     estamento = request.GET.get("estamento")
+            #     data["estamento_activo"] = estamento
+            #     usuarios = usuarios.filter(estamento=estamento)
+            data["usuarios"] = usuarios
+            return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
 
-		if "persona" in request.GET and request.GET.get("persona") != 0:			
-			persona = request.GET.get("persona")
-			data["persona_activa"] = persona
-			usuarios = usuarios.filter(pk=persona)
+        elif "limpiar" in request.GET:
+            return redirect("/bhoras")
 
-			
-		data["usuarios"] = usuarios
-
-		return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
-	else:
-		return redirect("/main")	
+        else :
+            return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request)) 
+    else:
+        return redirect("/main")	
 '''	if  usuarioObj.rol.id == 1:
 
 	if "start" in request.GET:
@@ -492,7 +500,7 @@ def permisolst(request):
 
      
         permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
-        paginator = Paginator(permiso,10)
+        paginator = Paginator(permiso,30)
         
         try: pagina = int(request.GET.get("page",'1'))
         except ValueError: pagina = 1
@@ -786,6 +794,7 @@ def anula(request):
 
         if request.POST['respuesta'] == 'Anulado' :
             permiso_id = request.POST.get('permiso')
+            motivo = request.POST.get('motivo')
             #guardo en permiso reseteando las horas a 0 
             permiso = Permiso.objects.get(id=permiso_id)
             permiso.horas_solicitadas = 0
@@ -795,7 +804,7 @@ def anula(request):
             bitacora = Bitacora(actividad=actividad,usuario=usuarioObj,permiso=permiso)            
             bitacora.save()
             #guardo en Anulado para el registro de los permisos anulados
-            anulado = Anulado(permiso=permiso,anuladopor=usuarioObj)
+            anulado = Anulado(permiso=permiso,anuladopor=usuarioObj,motivo=motivo)
             anulado.save()
             #libero los eventos para poder ser reutilizados
             eventos = Eventos_en_Permisos.objects.filter(numero_permiso=permiso).delete()            

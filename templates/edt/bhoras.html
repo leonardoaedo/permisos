@@ -9,9 +9,16 @@
 		<option value="{{persona.id}}">{{persona}}</option>
 	{% endfor %}
 </select>
+
+<!-- <select name="estamento">
+  {% for estamento in estamento_filtro %}
+  <option value="{{estamento.id}}">{{estamento}}</option>
+  {% endfor %}
+</select> -->
 <input id="periodpickerstart" type="text" name="start" value="{{start}}"/>
 <input id="periodpickerend" type="text" name="end" value="{{end}}"/>  
-<input class=" btn-success " type="submit" value="Filtrar" id="filtrar"/>
+<input class=" btn-success " type="submit" value="Filtrar" id="filtrar" name="filtrar" />
+<input class=" btn-danger " type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
 </form>            
 {% if usuarios %}
   <table class=" table-bordered table-hover bgeneral TFtable" >
