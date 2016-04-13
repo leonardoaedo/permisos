@@ -2,24 +2,46 @@
 {% load staticfiles %}
 {% block contenido %}
 <h4>Informe de horas a devolución</h4>
-<div>
-<form id="horas" class="form-horizontal" method="get">
-<select name="persona">
-	{% for persona in usuarios_filtro %}	
-		<option value="{{persona.id}}">{{persona}}</option>
-	{% endfor %}
-</select>
 
-<!-- <select name="estamento">
-  {% for estamento in estamento_filtro %}
-  <option value="{{estamento.id}}">{{estamento}}</option>
-  {% endfor %}
-</select> -->
-<input id="periodpickerstart" type="text" name="start" value="{{start}}"/>
-<input id="periodpickerend" type="text" name="end" value="{{end}}"/>  
-<input class=" btn-success " type="submit" value="Filtrar" id="filtrar" name="filtrar" />
-<input class=" btn-danger " type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
-</form>            
+<div>
+  <div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+  <fieldset>
+    <legend>Filtros</legend>
+  <ul>
+    <li>
+      <label class="label label-primary" > Funcionario</label>
+      <select name="persona" >
+        <option value="0">Seleccione Funcionario</option>
+        {% for persona in usuarios_filtro %}  
+        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}} </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <label class="label label-primary" >Estamento</label>
+      <select name="estamento">
+        <option value="0">Seleccione Estamento</option>
+        {% for estament in estamento_filtro %}
+        <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <label class="label label-primary" >Rango de fechas</label>
+      <input id="periodpickerstart" type="text" name="start" value="{{start}}"/>
+      <input id="periodpickerend" type="text" name="end" value="{{end}}"/>      
+    </li>
+
+    <li class="botfiltro">
+      <input class=" btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
+      <input class=" btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
+
+    </li>
+  </ul>
+  </fieldset> 
+  </form>
+ </div>             
 {% if usuarios %}
   <table class=" table-bordered table-hover bgeneral TFtable" >
             <thead>
@@ -96,7 +118,7 @@ jQuery('#periodpickerstart').periodpicker({
  resizeButton: false, // deny resize picker
  fullsizeButton: false,
  fullsizeOnDblClick: false,
-
+ clearButtonInButton: true,
  timepicker: true, // use timepicker
  timepickerOptions: {
     hours: true,

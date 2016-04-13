@@ -378,6 +378,7 @@ def bithoras(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     if usuarioObj.rol.id == 1:
+
         usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).annotate(descontar=Sum('permiso__horas__horas_descontar')).exclude(permiso__horas__horas_solicitadas=None)
         data = {
             "usuario": usuarioObj,
@@ -385,24 +386,35 @@ def bithoras(request):
             "estamento_filtro" : Estamento.objects.all(),
             "usuarios" : usuarios
                 }		
+        
+
         if "filtrar" in request.GET :
 
             if "start" in request.GET and request.GET.get("start") != "":
                 start = request.GET.get("start")
                 data["start"] = start
                 usuarios = usuarios.filter(permiso__fecha_creacion__gte=start)
+                
             if "end" in request.GET and request.GET.get("end") != "":
                 end = request.GET.get("end")
                 data["end"] = end 
                 usuarios = usuarios.filter(permiso__fecha_creacion__lte=end)
-            if "persona" in request.GET and request.GET.get("persona") != 0:			
+            
+            if "persona" in request.GET and request.GET.get("persona") != "0":
                 persona = request.GET.get("persona")
-                data["persona_activa"] = persona
-                usuarios = usuarios.filter(pk=persona)                
-            # if "estamento" in request.GET and request.GET.get("estamento") !=0:
-            #     estamento = request.GET.get("estamento")
-            #     data["estamento_activo"] = estamento
-            #     usuarios = usuarios.filter(estamento=estamento)
+                usuarios = usuarios.filter(pk=persona)
+                for usuario in data["usuarios_filtro"]:
+                    usuario.usuario_activo = usuario.id == int(persona)
+                
+                                           
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")                
+                usuarios = usuarios.filter(estamento=estamento)
+                for estament in data["estamento_filtro"]:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+
+
             data["usuarios"] = usuarios
             return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
 
@@ -412,22 +424,7 @@ def bithoras(request):
         else :
             return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request)) 
     else:
-        return redirect("/main")	
-'''	if  usuarioObj.rol.id == 1:
-
-	if "start" in request.GET:
-		.filter(permiso__fecha_creacion__gte=start,permiso__fecha_creacion__lte=end)            
-
-        #if request.method == 'POST':
-            start = request.GET.get('start')
-            end = request.GET.get('end')
-
-            #return HttpResponse(end)
-
-
-		return render_to_response("edt/bhoras.html",{"usuarios" : usuarios,"usuario": usuarioObj},context_instance=RequestContext(request))
-	else:
-		return redirect("/main")    '''
+        return redirect("/main")
 
 # def horasdescontar(request):
 #      if not estaLogeado(request):
