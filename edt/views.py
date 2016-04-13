@@ -384,6 +384,8 @@ def bithoras(request):
         if "filtrar" in request.GET:
             if "start" in request.GET:
                 permisos = permisos.filter(fecha_creacion__gte=request.GET.get("start"))
+            if "persona" in request.GET:
+                permisos = permisos.filter(usuario=request.GET.get("persona"))
 
 
 
@@ -405,8 +407,10 @@ def bithoras(request):
 
             usuarios[idUsuario]["total"] += hora.horas_solicitadas
             usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
+            
+            usuariosLista = [value for key,value in usuarios.iteritems()]
 
-        return HttpResponse(json.dumps(usuarios)) 
+        return HttpResponse(json.dumps(usuariosLista)) 
 
         usuarios = Usuario.objects.all()
         data = {
