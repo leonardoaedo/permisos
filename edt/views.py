@@ -379,12 +379,40 @@ def bithoras(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     if usuarioObj.rol.id == 1:
 
-        usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).annotate(descontar=Sum('permiso__horas__horas_descontar')).exclude(permiso__horas__horas_solicitadas=None)
+        permisos = Permiso.objects.all()
+        
+        if "filtrar" in request.GET:
+            if "start" in request.GET:
+                permisos = permisos.filter(fecha_creacion__gte=request.GET.get("start"))
+
+
+
+        usuarios = {}
+        for permiso in permisos:
+            idUsuario = permiso.usuario.id
+            if idUsuario not in usuarios:
+                usuarios[idUsuario] = {
+                    "nombre" : permiso.usuario.nombre,
+                    "total" : 0,
+                    "aprobadas" : 0,
+                }
+            
+            horas = permiso.horas_set.all()
+            if len(horas) == 0:
+                continue
+
+            hora = horas[0]
+
+            usuarios[idUsuario]["total"] += hora.horas_solicitadas
+            usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
+
+        return HttpResponse(json.dumps(usuarios)) 
+
+        usuarios = Usuario.objects.all()
         data = {
             "usuario": usuarioObj,
             "usuarios_filtro" : Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None),
             "estamento_filtro" : Estamento.objects.all(),
-            "usuarios" : usuarios
                 }		
         
 
@@ -415,7 +443,7 @@ def bithoras(request):
 
 
 
-            data["usuarios"] = usuarios
+            data["usuarios"] = usuarios.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).annotate(descontar=Sum('permiso__horas__horas_descontar')).exclude(permiso__horas__horas_solicitadas=None)
             return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
 
         elif "limpiar" in request.GET:
