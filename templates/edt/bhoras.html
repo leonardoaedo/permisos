@@ -14,7 +14,7 @@
       <select name="persona" >
         <option value="0">Seleccione Funcionario</option>
         {% for persona in usuarios_filtro %}  
-        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}} </option>
+        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}  <!--{{persona.usuario_activo}}--> </option>
         {% endfor %}
       </select>
     </li>
@@ -63,7 +63,7 @@
   {% for usuario in usuarios %}     
             <tr {% if  permiso.ultimaBitacora.actividad.nombre == 'Anulado' %} class='anulado' {% endif %} >
                 <td>{{usuario.apellido1}} {{usuario.apellido2}} {{usuario.nombre}}</td>                
-                <td>{{usuario.estamento.nombre}}</td>
+                <td>{{usuario.estamento}}</td>
                 <td class="horas">{{usuario.total_horas}}</td>
                 <td class="horas">{{usuario.aprobadas}}</td>
                 <td class="horas">{{usuario.rechazadas}}</td>

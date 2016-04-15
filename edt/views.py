@@ -379,7 +379,89 @@ def bithoras(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     if usuarioObj.rol.id == 1:
 
-        usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).annotate(descontar=Sum('permiso__horas__horas_descontar')).exclude(permiso__horas__horas_solicitadas=None)
+        permisos = Permiso.objects.all()
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
+         
+        if "filtrar" in request.GET:
+            if "start" in request.GET and request.GET.get("start") != "":
+                permisos = permisos.filter(fecha_creacion__gte=request.GET.get("start"))
+
+            if "end" in request.GET and request.GET.get("end") != "":
+                permisos = permisos.filter(fecha_creacion__lte=request.GET.get("end"))
+
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")
+                permisos = permisos.filter(usuario=request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+
+        elif "limpiar" in request.GET:
+            return redirect("/bhoras")
+
+        #else :
+         #   return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
+
+        usuarios = {}
+        for permiso in permisos:
+            idUsuario = permiso.usuario.id
+            if idUsuario not in usuarios:
+                usuarios[idUsuario] = {
+                     "nombre" : permiso.usuario.nombre,
+                     "apellido1"  :permiso.usuario.apellido1,
+                     "apellido2" : permiso.usuario.apellido2,
+                     "estamento" : permiso.usuario.estamento.nombre,
+                     "total_horas" : 0,
+                     "aprobadas" : 0,
+                     "rechazadas" : 0,
+                     "devolver" : 0,
+                     "devueltas" : 0,
+                     "saldo" : 0,
+                     "descontar" : 0,
+                 }
+             
+            horas = permiso.horas_set.all()
+            if len(horas) == 0:
+                 continue
+ 
+            hora = horas[0]
+            usuarios[idUsuario]["total_horas"] += hora.horas_solicitadas
+            usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
+            usuarios[idUsuario]["rechazadas"] += hora.horas_rechazadas
+            usuarios[idUsuario]["devolver"] += hora.horas_por_devolver
+            usuarios[idUsuario]["devueltas"] += hora.horas_devueltas
+            usuarios[idUsuario]["saldo"] = usuarios[idUsuario]["devolver"] - usuarios[idUsuario]["devueltas"]
+            usuarios[idUsuario]["descontar"] += hora.horas_descontar
+             
+        usuariosLista = [value for key,value in usuarios.iteritems()]
+ 
+
+        data = {
+
+            "usuario": usuarioObj,
+            "usuarios" : usuariosLista,
+            "usuarios_filtro" : usuarios_filtro,
+            "estamento_filtro" : estamento_filtro,
+                }
+
+        return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
+
+        
+        #return HttpResponse(json.dumps(usuarios)) 
+        #return HttpResponse(json.dumps(usuariosLista))
+
+       
+
+
+        '''usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).annotate(descontar=Sum('permiso__horas__horas_descontar')).exclude(permiso__horas__horas_solicitadas=None)
         data = {
             "usuario": usuarioObj,
             "usuarios_filtro" : Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None),
@@ -422,7 +504,7 @@ def bithoras(request):
             return redirect("/bhoras")
 
         else :
-            return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request)) 
+            return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))''' 
     else:
         return redirect("/main")
 
