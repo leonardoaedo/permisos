@@ -53,8 +53,8 @@ $(document).ready(function(){
        selectable:true,
        selectHelper:true,
        unselectAuto:false,
-       minTime:"06:00:00",
-       maxTime : '23:00:00',
+       // minTime:"00:00:00",
+       // maxTime : '00:00:00',
        height: "auto",
        lang: 'es',
        defaultView: 'agendaWeek',
@@ -74,6 +74,10 @@ $(document).ready(function(){
 	   	   dow: [ 1, 2, 3, 4 , 5, 6]	
 	   	   },
 	events: 'http://cal.cdegaulle.cl/wsCalendari/',
+
+
+    	
+
 	eventAfterRender: function(event,element){
 		if(event.used){
 			$(element).css('background','red');

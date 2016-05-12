@@ -167,6 +167,7 @@ input:focus, textarea:focus {
     line-height: 1.5;
     padding: 3px 9px;
 }
+
 .upload {
 	width: 100%;
 	height: 200px;
@@ -709,7 +710,7 @@ padding: 5px 5px 5px 25px;
     -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    background: #3498DB;
+    background: #FFFFFF;
     color:#000;
     border:none;
     outline:none;
@@ -721,9 +722,294 @@ padding: 5px 5px 5px 25px;
     width: 200px;
 
 }
+
 .filtros li{
 
 }
+
 .botfiltro .btn {
 	width: 120px;
+}
+
+.devhoras {
+	width: 100%;
+	
+	overflow: hidden;
+
+}
+.devhoras select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    color:#000;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    width: 200px;
+}
+.devhoras li{
+	float: left;
+	display: inline;
+	width: 25%;
+}
+.devhoras input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
+.devhoras input[type="text"]:focus {
+  outline: none;
+}
+
+.devhoras input[type="file"] {
+  cursor: pointer;
+}
+
+.devhoras input[type="text"] {
+  padding: 0;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.DEVtable{
+  width:25%;
+  overflow: hidden;
+  float: left; 
+  border-collapse:collapse;
+}
+.DEVtable caption {
+	font-size: 18px;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+
+}
+.DEVtable td{ 
+  padding:7px; 
+  border:#4e95f4 1px solid;
+
+}
+/* provide some minimal visual accomodation for IE8 and below */
+.DEVtable tr{
+  background: #b8d1f3;
+}
+/*  Define the background color for all the ODD background rows  */
+.DEVtable tr:nth-child(odd){ 
+  background: #b8d1f3;
+}
+/*  Define the background color for all the EVEN background rows  */
+.DEVtable tr:nth-child(even){
+  background: #dae5f4;
+}
+
+.DEVtable a:link{
+	text-decoration: none;
+}
+.DEVtable a {
+	display: block;
+	padding: 4px;
+	text-align: center;	
+}
+.DEVtable a:hover{
+	color: red;
+	font-weight: bold;
+}
+.anulalst span{
+	margin-right: 45%;
+}
+
+.hrsinput{
+	width: 180px;
+	padding-left: 10px;
+}
+.hrsdiv{
+	margin-top: 41px;
+}
+
+.exito {
+	width: 100%;
+	padding: 0;
+	margin-left: 0;
+	margin-top: 15px;
+	background-color:#CBF9BD;
+	border-top: 2px solid green;
+	border-bottom: 2px solid green;
+	-moz-border-radius: 7px;
+	-moz-box-shadow: 0 0 3px #999999;
+	position:relative;	
+
+}
+/*.exito img {
+	position:absolute;
+	right: -11px;
+	top: -11px;
+	}*/
+
+.exito h1 {
+	font: 18px Arial;
+	margin-bottom: 5px;
+
+}
+
+.exito p {
+	margin-left: 5px;	
+}	
+
+.fechasfiltro{
+	margin: auto;
+	width: 650px;
+}
+.badge2{
+	background-color: green;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 160px;
+}
+
+.badge3{
+    background-color: #2c3e50;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 150px;
+}
+.badge4{
+    background-color: green;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    float: right;    
+    width: 100px;
+}
+.badge5{
+    background-color: #1a75ff;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    float: right;    
+    width: 100px;
+}
+.pxp h4{
+	margin: 10px;
+
+}
+.panular {
+	width: 800px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.panular li{
+	display: inline;
+	width: 200px;
+	overflow: hidden;
+	position: relative;
+}
+
+.npermiso{
+	font-weight: bold;
+	width: 100px;
+	margin-right: 15px;
+
+}
+.nfuncionario{
+	margin-right: 15px;
+
+}
+.fpermiso{
+	margin-right: 15px;
+
+}
+.tpermiso{
+	margin-right: 15px;
+
+}
+
+.detpermiso li{
+	display: inline;
+	overflow: hidden;
+	position: relative;
+	padding: 5px 5px 5px 25px;
+}
+
+.detpermisofecha{
+	font-weight: bold;
+	margin-right: 15px;
+
+}
+.detpermisoinicio{
+	margin-right: 15px;
+	width: 45px;
+}
+.detpermisoseparador{
+	font-weight: bolder;
+	width: 20px;
+}
+
+.detpermisofin{
+	margin-left: 15px;
+	width: 45px;
+}
+.cambiarusuario{
+	width: 50%;
+	overflow: hidden;
+	float: left;
+	border: 1px solid #ecf0f1;
+	margin-left: 3px;
+}
+.cambiarusuario a{
+	margin-left: 52%;
 }

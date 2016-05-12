@@ -2,6 +2,20 @@
 {% load staticfiles %}
 
 {% block contenido %}
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#anular").click(function(e){			
+			if($("#motivo").val().length < 1) {			
+				alert("Debe ingresar un motivo de anulación");
+				e.preventDefault(e);
+			}
+
+
+		});
+	});
+
+
+</script>
 
 <div id="resolucion" class="msg-comprobante">
 <ul class="list-group">	
@@ -44,11 +58,11 @@
 				<p class="resolut">		        
 					<div>
 						<label for="motivo"><p class="resolut">Motivo:</p>
-						<textarea class="razon" name="motivo"></textarea>
+						<textarea class="razon" name="motivo" id="motivo"></textarea>
 						</label>							
 						<div class="botones">
-							<button type="submit" value="Cancelado" name="respuesta" id="cancelar" class="btn btn-success ">Cancelar</button>
-							<button type="submit" value="Anulado"  name="respuesta" id="anula" class="btn btn-danger ">Anular</button>
+							<button  value="Cancelado" name="cancelar" id="cancelar" class="btn btn-success ">Cancelar</button>
+							<button  value="Anulado"  name="anular" id="anular" class="btn btn-danger ">Anular</button>
 				
 
 						</div>

@@ -2,11 +2,71 @@
 {% load staticfiles %}
 
 {% block contenido %}
+{% if usuario.rol.nivel_acceso == 0 %}
+  <div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+  <fieldset>
+  <ul>
+    <li>
+      <label class="label label-primary" > Funcionario</label>
+      <select name="persona" >
+        <option value="0">Seleccione Funcionario</option>
+        {% for persona in usuarios_filtro %}  
+        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}  <!--{{persona.usuario_activo}}--> </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <label class="label label-primary" >Estamento</label>
+      <select name="estamento">
+        <option value="0">Seleccione Estamento</option>
+        {% for estament in estamento_filtro %}
+        <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
+        {% endfor %}
+      </select>
+    </li> 
+    <li class="botfiltro">
+      <input class=" btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
+      <input class=" btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
+
+    </li>
+  </ul>
+  </fieldset> 
+  </form>
+ </div> 
+ {% endif %}
+
 <div ><h4>Anulación de permisos</h4>
 	<ul class="list-group">
-	{% for permiso in permiso %}
+	{% for permiso in permisos %}
 
-	<li><a class="list-group-item" href="{% url 'edt.views.anulapermiso' permiso.pk %}"> Permiso N° {{ permiso.id }} - {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }} {{ permiso.fecha_creacion |date:"M d Y" }} | {{permiso.tipo}}</a>	
+	<li>
+      <a class="list-group-item" href="{% url 'edt.views.anulapermiso' permiso.pk %}"> 
+         <ul class="panular" >
+            <li class="npermiso">Permiso N° {{ permiso.id }}</li>
+            <li class="nfuncionario">{{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }}</li>
+            <li class="fpermiso"> {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}</li>
+            <li class="tpermiso" >{{permiso.tipo}}</li>
+            <li> {% if  permiso.ultimaBitacora.actividad.nombre == 'Rechazado' %}           
+                    <span class="badge4">Rechazado</span>          
+                 {% elif  permiso.ultimaBitacora.actividad.nombre == 'Aprobado' %}         
+                    <span class="badge4">Aprobado</span>
+                 {% elif permiso.ultimaBitacora.actividad.nombre != 'Aprobado' and permiso.ultimaBitacora.actividad.nombre != 'Rechazado'  %} 
+                    <span class="badge5">Sin revisar</span> 
+                 {% endif %}
+        </li>
+
+         </ul>
+
+
+
+
+
+
+         
+          
+       
+      </a>	
 	</li>
 
 	{% empty %}
@@ -15,12 +75,12 @@
 	</ul>
  
 		    <nav>
-			{% if permiso.has_previous %}
-				<a href="?page={{ permiso.previous_page_number }}">anterior</a>
+			{% if permisos.has_previous %}
+				<a href="?page={{ permisos.previous_page_number }}">anterior</a>
 			{% endif %}
-			<p class="paginador">Página {{ permiso.number }} de {{ permiso.paginator.num_pages }}</p>
-			{% if permiso.has_next %}
-			<a href="?page={{ permiso.next_page_number }}">siguiente</a>
+			<p class="paginador">Página {{ permisos.number }} de {{ permisos.paginator.num_pages }}</p>
+			{% if permisos.has_next %}
+			<a href="?page={{ permisos.next_page_number }}">siguiente</a>
 			{% endif %}
 	        </nav>
 </div>

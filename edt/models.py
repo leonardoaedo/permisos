@@ -175,6 +175,7 @@ class Foliomantencion(models.Model):
     permiso = models.ForeignKey(Permiso)
 
 class Anulado(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True,null=True,blank=True)
     permiso = models.ForeignKey(Permiso)
     anuladopor  = models.ForeignKey(Usuario)
     motivo = models.CharField(max_length=500, null=True)
@@ -239,6 +240,7 @@ class Horas(models.Model):
     horas_por_devolver = models.FloatField(default=0)
     horas_devueltas = models.FloatField(default=0)
     horas_descontar = models.FloatField(default=0)
+    horas_descontadas = models.FloatField(default=0)
 
     def __unicode__(self):
         return "%s %s"%(self.horas_solicitadas,self.permiso)

@@ -4,43 +4,43 @@
 {% block contenido %}
 <script type="text/javascript">
   $(document).ready(function(){
-    $("#devolver").click(function(e){  
+    $("#descontar").click(function(e){  
       if( !$("#main input[name='permisoid']:radio").is(':checked')) {        
         alert("Seleccione un permiso");
           e.preventDefault(e);
-      }else{
+      } else{
                var permisoid = $('input:radio[name=permisoid]:checked').val();
                var horas_solicitadas = $('input:radio[name=permisoid]:checked').data("valor"); 
-               var horas_devolver = $('input[name=horasdevolver]').val();
-               // if ((horas_descontar > horas_solicitadas)){
-               //    if((horas_descontar == horas_solicitadas)){
-               //        continue
-               //    }else{
-               //          alert('Las horas a devolver no pueden ser mayores a las horas solicitadas');
-               //          e.preventDefault(e);
-               //  }
-               // }
-               if (horas_devolver <= 0 ){
-                alert('Las horas a devolver deben ser mayor que 0');
+               var horas_descontar = $('input[name=horasdescontar]').val();
+               if ((horas_descontar > horas_solicitadas)){
+                  if((horas_descontar == horas_solicitadas)){
+                      return true;
+                      
+                  }else{
+                        alert('Las horas a descontar no pueden ser mayores a las horas solicitadas');
+                        e.preventDefault(e);
+                }
+               }
+               if (horas_descontar <= 0 ){
+                alert('Las horas a descontar deben ser mayor que 0');
                 e.preventDefault(e);
                }
-           }          
+           }         
     });
    });
 </script>
 
 {{form.errors}}
 
-<h3>Devolución de horas</h3>
-<h5>Seleccione Funcionario y permiso asociado a horas a devolver</h5>
+<h3>Descuento de horas</h3>
+<h5>Seleccione Funcionario y permiso asociado a horas a descontar</h5>
 <div class="cambiarusuario list-group-item">
-  <a href="http://cal.cdegaulle.cl/devolver" class="btn btn-warning btn-sm">Seleccionar otro funcionario</a>
+  <a href="http://cal.cdegaulle.cl/descontar" class="btn btn-warning btn-sm">Seleccionar otro funcionario</a>
 </div>
-
 <form id="main" class="form-horizontal"  method="post" > {% csrf_token %}
-  <div class="devhoras">  
-    <ul class="list-group">
-       <li class="list-group-item">
+	<div class="devhoras">	
+		<ul class="list-group">
+			 <li class="list-group-item">
           <label class="label label-primary" > Funcionario</label>
           <select name="usuario" >
                <option value="0">Seleccione Funcionario</option>
@@ -49,12 +49,12 @@
             {% endfor %}
           </select>
        </li>
-      
+  	  
        <li class="list-group-item">
          <button {% if permisos %} disabled {% endif %} type="submit"  name="seleccionar" value="seleccionar" class="btn btn-success btn-sm" >Seleccionar</button>
-       </li>
+	     </li>
     </ul>
-  </div>
+	</div>
 
 {% if horas %}
 <hr>
@@ -66,8 +66,7 @@
                   <th></th>
                   <th>N° Permiso - click para ver</th>                              
                   <th>Horas solicitadas</th>
-                  <th>Horas por devolver</th>
-                  <th>Horas devueltas</th>
+                  <th>Horas descontadas</th>
                 
                   
                 </tr>
@@ -75,14 +74,14 @@
             <tbody>   
   {% for horas in horas %}     
             <tr {% if  horas.permiso.ultimaBitacora.actividad.nombre == 'Anulado' %} class='anulado' {% endif %} >
-                <td><input type="radio" value="{{horas.permiso.id}}" id="{{horas.permiso.id}}" name="permisoid" data-valor="{{horas.horas_solicitadas}}"></td>
-                <td><a  href="{% url 'edt.views.verpermiso2' horas.permiso.pk %}">{{horas.permiso.id}}</a></td>                  
+              	<td><input type="radio" value="{{horas.permiso.id}}" id="{{horas.permiso.id}}" name="permisoid" data-valor="{{horas.horas_solicitadas}}"></td>
+              	<td><a  href="{% url 'edt.views.verpermiso2' horas.permiso.pk %}">{{horas.permiso.id}}</a></td>                 	
                 <td class="horas">{{horas.horas_solicitadas}}</td>
-                <td class="horas">{{horas.horas_por_devolver}}</td>
-                <td class="horas">{{horas.horas_devueltas}}</td>                           
+                <td class="horas">{{horas.horas_descontadas}}</td>                           
             </tr>
-    {% empty %}
-  <td >En este momento no hay ningun elemento para mostrar</td>         
+
+   {% empty %}
+    <td >En este momento no hay ningun elemento para mostrar</td> 
   {% endfor %}           
         </tbody>    
     </table>
@@ -90,16 +89,16 @@
  <div class="DEVtable hrsdiv">      
   <div class="form-group">
   <fieldset>  
-    <label class="col-md-1 control-label" for=""></label>  
+    <label class="col-md-1 control-label" for="descontar"></label>  
         <div class="">
-          <input name="horasdevolver" id="horasdevolver" type="number" placeholder="Horas a devolver" class="form-control input-md hrsinput" step="any">      
+          <input name="horasdescontar" id="horasdescontar" type="number" placeholder="Horas a descontar" class="form-control input-md hrsinput" step="any">      
         </div>
   </div>
 <!-- Button -->
 <div class="form-group">
-   <label class="col-md-1 control-label" for="devolver"></label>
+   <label class="col-md-1 control-label" for="descontar"></label>
   <div class="">
-    <button id="devolver" name="devolver" value="devolver" class="btn btn-danger btn-sm">Devolver</button>
+    <button id="descontar" name="descontar" value="descontar" class="btn btn-danger btn-sm">Descontar</button>
   </div>
 </div>
 </fieldset>

@@ -1,0 +1,25 @@
+{% extends  "edt/base.html" %}
+{% load staticfiles %}
+
+{% block contenido %}
+
+<script type="text/javascript">
+$(document).ready(function(){
+      setTimeout(function() {
+       window.location.href = "http://cal.cdegaulle.cl/descontar/;"
+      }, 1000);
+    });
+</script>
+<div class="exito">
+		<!-- <img src="/media/tick.png" /> -->
+		<h1>Resumen de horas descontadas</h1>
+		<p>Funcionario :{{permiso.usuario.nombre}}  {{permiso.usuario.apellido1}}  {{permiso.usuario.apellido2}} </p>
+		<p>Horas descontadas : {{horasdescontar}}</p>
+		<p></p>
+	</div>
+
+
+
+
+
+{% endblock %}

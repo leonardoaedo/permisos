@@ -1,8 +1,8 @@
 {% extends "edt/base.html" %}
 {% load staticfiles %}
 {% block contenido %}
-<h4>Informe de horas a devolución</h4>
-
+<h4>Informe de horas</h4>
+<div class="fechasfiltro" ><h4>{% if start %} Periodo comprendido entre {{inicio|date:"d F Y"}} y {{termino|date:"d F Y"}} {% endif %}</h4></div> 
 <div>
   <div class="filtros">
   <form id="horas" class="form-horizontal" method="get">
@@ -26,6 +26,19 @@
         <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
         {% endfor %}
       </select>
+    </li>
+    <li>
+      <label class="label label-primary">Horas</label>
+        <select name="thora">
+          <option value ="0" >Seleccione Opción</option>
+          <option value="Seleccione Opción" {% if thora %}selected {% endif %}>{{thora}}</option>
+          <option value ="Horas por Descontar">Horas por Descontar</option>
+          <option value ="Horas por Devolver">Horas por Devolver</option>
+          <option value="Horas Descontadas">Horas Descontadas</option>
+          <option value="Horas Devueltas">Horas Devueltas</option>
+
+        </select>
+
     </li>
     <li>
       <label class="label label-primary" >Rango de fechas</label>
@@ -52,10 +65,12 @@
                   <th>Horas solicitadas</th>
                   <th>Horas Aprobadas</th>
                   <th>Horas Rechazadas</th>
-                  <th>Horas a Recuperar</th>
+                  <th>Horas a Recuperar Acumuladas</th>
                   <th>Horas Recuperadas</th>
-                  <th>Horas pendientes de Recuperación</th>
-                  <th>Horas a descontar</th>
+                  <th>Saldo Horas por Recuperar</th>                  
+                  <th>Horas por Descontar Acumuladas</th>
+                  <th>Horas Descontadas</th>
+                  <th>Saldo Horas por Descontar</th>
                   
                 </tr>
               </thead>
@@ -67,10 +82,13 @@
                 <td class="horas">{{usuario.total_horas}}</td>
                 <td class="horas">{{usuario.aprobadas}}</td>
                 <td class="horas">{{usuario.rechazadas}}</td>
-                <td class="horas">{{usuario.devolver}}</td>           
+                <td class="horas">{{usuario.devolveracumuladas}}</td>           
                 <td class="horas">{{usuario.devueltas}}</td>
-                <td class="horas">{{usuario.saldo}}</td>
-                <td class="horas">{{usuario.descontar}}</td>              
+                <td class="horas">{{usuario.saldodevolucion}}</td>
+                <td class="horas">{{usuario.descontaracumuladas}}</td>
+                <td class="horas">{{usuario.descontadas}}</td>                
+                <td class="horas">{{usuario.saldodescontar}}</td>
+                              
             </tr>       
 
             <!-- <tr>
@@ -88,7 +106,7 @@
         {% endfor %}           
         </tbody>    
     </table>
-  </ul>
+ 
   {# .... **Comienzo de la paginacion** .... #}
     {% if is_paginated %}
         <div class="pagination">

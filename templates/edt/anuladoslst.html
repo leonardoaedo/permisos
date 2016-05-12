@@ -36,17 +36,17 @@
   </form>
  </div> 
  {% endif %}
-<div class="pxp" ><h4>permisos pendientes de aprovación <!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </h4>
+<div class="pxp" ><h4>Permisos Anulados <!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </h4>
 	
 	<ul class="list-group">
 	{% for permiso in permisos_list %}
 
 	<li>
-    <a class="list-group-item" href="{% url 'edt.views.verpermiso' permiso.pk %}">
+    <a class="list-group-item" href="{% url 'edt.views.verpermiso2' permiso.pk %}">
      N° {{permiso.id}} - {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }} {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}  | {{permiso.tipo}} 
      <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span> 
 
-     {%  for bitacora in bitacoras %}
+     <!-- {%  for bitacora in bitacoras %}
 
      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 27 %} <span class="badge2"> Dirección Secundaria </span>{% endif %}
 
@@ -64,7 +64,7 @@
       {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 15 %} <span class="badge2"> CPE </span>
       {% endif %}
 
-     {% endfor %}
+     {% endfor %} -->
            
     </a>		
 	</li>

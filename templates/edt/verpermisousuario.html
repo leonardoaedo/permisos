@@ -26,8 +26,14 @@
 	{% for eventoObj in permiso.eventos_en_permisos_set.all %}	
 
 	<li class="list-group-item" >
-	<span class="badge">{{eventoObj.delta}}</span>
-		{{eventoObj.numero_evento.start|date:"M d"}}{{"   "}}{{eventoObj.numero_evento.start|date:"P"}}{{"-"}} {{eventoObj.numero_evento.end|date:"P"}}</li>
+		<ul class="detpermiso">
+			<li class="detpermisofecha" >{{eventoObj.numero_evento.start|date:"d F Y "}}</li>
+			<li class="detpermisoinicio" >{{eventoObj.numero_evento.start|date:"P"}}</li>
+			<li>-</li>
+			<li class="detpermisofin" >{{eventoObj.numero_evento.end|date:"P"}}</li>
+		</ul>	
+	
+	</li>
 	{% endfor %}
 	<li class="list-group-item" >
 	<span class="badge">Total{{"  "}}{{permiso.horas_solicitadas}}</span>

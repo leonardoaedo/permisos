@@ -53,6 +53,8 @@ import os
 import json
 import urllib
 import time
+import tablib
+
 
 #from icalendar import UTC # timezone
 # Create your views here.
@@ -65,7 +67,6 @@ class PermisoListView(ListView):
 
     def get_queryset(self):
         return Bitacora.objects.order_by('-fecha')
-
 
 # class BitGeneral(ListView):
 #     template_name = 'edt/bgeneral.html'
@@ -379,17 +380,22 @@ def bithoras(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     if usuarioObj.rol.id == 1:
 
-        permisos = Permiso.objects.all()
+        permisos = Permiso.objects.all().order_by("usuario__apellido1")
         estamento = Estamento.objects.all()
         usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
         estamento_filtro = Estamento.objects.all()
+        thora = "Seleccione Opción";
          
         if "filtrar" in request.GET:
             if "start" in request.GET and request.GET.get("start") != "":
                 permisos = permisos.filter(fecha_creacion__gte=request.GET.get("start"))
+                start = request.GET.get("start")
+
 
             if "end" in request.GET and request.GET.get("end") != "":
                 permisos = permisos.filter(fecha_creacion__lte=request.GET.get("end"))
+                end = request.GET.get("end")
+
 
             if "persona" in request.GET and request.GET.get("persona") != "0":
                 persona = request.GET.get("persona")
@@ -402,6 +408,17 @@ def bithoras(request):
                 permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
                 for estament in estamento_filtro:
                     estament.estamento_activo = estament.id == int(estamento)
+
+            if "thora" in request.GET and request.GET.get("thora") != "0" :
+                thora = request.GET.get("thora")
+                if thora == 'Horas por Descontar':
+                    permisos = permisos.filter(horas__horas_descontar__gt=0)
+                if thora == 'Horas por Devolver':
+                    permisos = permisos.filter(horas__horas_por_devolver__gt=0)
+                if thora == 'Horas Descontadas':
+                    permisos = permisos.filter(horas__horas_descontadas__gt=0)
+                if thora == 'Horas Devueltas':
+                    permisos = permisos.filter(horas__horas_devueltas__gt=0)
 
 
         elif "limpiar" in request.GET:
@@ -422,10 +439,11 @@ def bithoras(request):
                      "total_horas" : 0,
                      "aprobadas" : 0,
                      "rechazadas" : 0,
-                     "devolver" : 0,
+                     "devolveracumuladas" : 0,
                      "devueltas" : 0,
-                     "saldo" : 0,
-                     "descontar" : 0,
+                     "saldodevolucion" : 0,
+                     "descontaracumuladas" : 0,
+                     "descontadas" : 0,
                  }
              
             horas = permiso.horas_set.all()
@@ -436,13 +454,19 @@ def bithoras(request):
             usuarios[idUsuario]["total_horas"] += hora.horas_solicitadas
             usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
             usuarios[idUsuario]["rechazadas"] += hora.horas_rechazadas
-            usuarios[idUsuario]["devolver"] += hora.horas_por_devolver
+            usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver
             usuarios[idUsuario]["devueltas"] += hora.horas_devueltas
-            usuarios[idUsuario]["saldo"] = usuarios[idUsuario]["devolver"] - usuarios[idUsuario]["devueltas"]
-            usuarios[idUsuario]["descontar"] += hora.horas_descontar
+            usuarios[idUsuario]["saldodevolucion"] = usuarios[idUsuario]["devolveracumuladas"] - usuarios[idUsuario]["devueltas"]
+            usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar
+            usuarios[idUsuario]["descontadas"] += hora.horas_descontadas
+            usuarios[idUsuario]["saldodescontar"] = usuarios[idUsuario]["descontaracumuladas"] - usuarios[idUsuario]["descontadas"]
              
         usuariosLista = [value for key,value in usuarios.iteritems()]
  
+        # headers = ('Nombre','Estamento','Horas solicitadas')
+        # excel = []
+        # excel = tablib.Dataset()
+        # excel.headers = 
 
         data = {
 
@@ -450,7 +474,25 @@ def bithoras(request):
             "usuarios" : usuariosLista,
             "usuarios_filtro" : usuarios_filtro,
             "estamento_filtro" : estamento_filtro,
+            "thora" :thora,            
                 }
+
+        if "filtrar" in request.GET:
+            if "start" in request.GET and request.GET.get("start") != "":
+                permisos = permisos.filter(fecha_creacion__gte=request.GET.get("start"))
+                start = request.GET.get("start")
+                inicio = datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
+                data["inicio"] = inicio
+                data["start"] = start 
+
+
+            if "end" in request.GET and request.GET.get("end") != "":
+                permisos = permisos.filter(fecha_creacion__lte=request.GET.get("end"))
+                end = request.GET.get("end")
+                termino = datetime.strptime(end, "%Y-%m-%d %H:%M:%S")
+                data["termino"] = termino
+                data["end"] = end
+
 
         return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
 
@@ -458,68 +500,8 @@ def bithoras(request):
         #return HttpResponse(json.dumps(usuarios)) 
         #return HttpResponse(json.dumps(usuariosLista))
 
-       
-
-
-        '''usuarios = Usuario.objects.annotate(total_horas=Sum('permiso__horas__horas_solicitadas')).annotate(aprobadas=Sum('permiso__horas__horas_aprobadas')).annotate(rechazadas=Sum('permiso__horas__horas_rechazadas')).annotate(devolver=Sum('permiso__horas__horas_por_devolver')).annotate(devueltas=Sum('permiso__horas__horas_devueltas')).annotate(saldo=F('devolver') - F('devueltas')).annotate(descontar=Sum('permiso__horas__horas_descontar')).exclude(permiso__horas__horas_solicitadas=None)
-        data = {
-            "usuario": usuarioObj,
-            "usuarios_filtro" : Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None),
-            "estamento_filtro" : Estamento.objects.all(),
-            "usuarios" : usuarios
-                }		
-        
-
-        if "filtrar" in request.GET :
-
-            if "start" in request.GET and request.GET.get("start") != "":
-                start = request.GET.get("start")
-                data["start"] = start
-                usuarios = usuarios.filter(permiso__fecha_creacion__gte=start)
-                
-            if "end" in request.GET and request.GET.get("end") != "":
-                end = request.GET.get("end")
-                data["end"] = end 
-                usuarios = usuarios.filter(permiso__fecha_creacion__lte=end)
-            
-            if "persona" in request.GET and request.GET.get("persona") != "0":
-                persona = request.GET.get("persona")
-                usuarios = usuarios.filter(pk=persona)
-                for usuario in data["usuarios_filtro"]:
-                    usuario.usuario_activo = usuario.id == int(persona)
-                
-                                           
-            if "estamento" in request.GET and request.GET.get("estamento") != "0":
-                estamento = request.GET.get("estamento")                
-                usuarios = usuarios.filter(estamento=estamento)
-                for estament in data["estamento_filtro"]:
-                    estament.estamento_activo = estament.id == int(estamento)
-
-
-
-            data["usuarios"] = usuarios
-            return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))
-
-        elif "limpiar" in request.GET:
-            return redirect("/bhoras")
-
-        else :
-            return render_to_response("edt/bhoras.html",data,context_instance=RequestContext(request))''' 
     else:
         return redirect("/main")
-
-# def horasdescontar(request):
-#      if not estaLogeado(request):
-#         return redirect("/login")
-#     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-
-#     if  usuarioObj.rol.id == 1:
-
-#         usuarios = Usuario.objects.annotate()
-#         return render_to_response("edt/horasdescontar.html",{"usuarios" : usuarios,"usuario": usuarioObj},context_instance=RequestContext(request))
-
-#     else:
-#      return redirect("/main") 
 
 def bitfuncionario(request):
     if not estaLogeado(request):
@@ -558,6 +540,16 @@ def permisolst(request):
     if not estaLogeado(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+    gerencia = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).filter(usuario__jefatura=6)
+    dirgen = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).filter(usuario__jefatura=3)
+
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    
+
+    bitacoras = Bitacora.objects.all()
+
 
     cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1)
     foliocpe = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=cpe))
@@ -566,31 +558,58 @@ def permisolst(request):
     folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
 
     secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5)
-    foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))
-
-    
-     
+    foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))    
 
     if  usuarioObj.rol.nivel_acceso == 0:
-        #permiso =  Permiso.objects.all().order_by("-fecha_creacion")
-        #IMPORTANTE: el codigo siguiente crea un campo virtual y luego cuenta cuantas resoluciones tiene asociadas y si el contador es mayor a cero no lo toma en cuenta 
-        anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
-        rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
 
-     
-        permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
-        paginator = Paginator(permiso,30)
+        
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
+
+        if "filtrar" in request.GET:           
+
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")
+                permisos = permisos.filter(usuario=request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)   
+        elif "limpiar" in request.GET:
+            return redirect("/permisolst")       
+        paginator = Paginator(permisos,30)
         
         try: pagina = int(request.GET.get("page",'1'))
         except ValueError: pagina = 1
             
         try:
-            permiso = paginator.page(pagina)
+            permisos = paginator.page(pagina)
         except (InvalidPage, EmptyPage):
-            permiso = paginator.page(paginator.num_pages)   
-            
-        return render_to_response("edt/permisolst.html",{"foliocpe":foliocpe,"folioprimaria" :folioprimaria,"foliosecundaria" :foliosecundaria ,"permiso": permiso,"usuario" : usuarioObj,"permisoObj_list" : permiso.object_list,"months" : mkmonth_lst()})
-        #return HttpResponse(permiso)
+            permisos = paginator.page(paginator.num_pages)
+
+
+        data = {
+                 "estamento":estamento,
+                 "foliocpe":foliocpe,
+                 "folioprimaria" :folioprimaria,
+                 "foliosecundaria" :foliosecundaria ,
+                 "permisos": permisos,
+                 "usuario" : usuarioObj,
+                 "permisos_list" : permisos.object_list,
+                 "months" : mkmonth_lst(),
+                 "usuarios_filtro" : usuarios_filtro,
+                 "estamento_filtro" : estamento_filtro,
+                 "bitacoras" : bitacoras,
+                 }
+
+
+        return render_to_response("edt/permisolst.html",data)
+        #return HttpResponse(administracion)
 
     else:
         #if     usuarioObj.username == request.session['usuario']:
@@ -607,10 +626,123 @@ def permisolst(request):
             except (InvalidPage, EmptyPage):
                 permiso = paginator.page(paginator.num_pages)
 
+        data = {
+                 "foliocpe":foliocpe,
+                 "folioprimaria" :folioprimaria,
+                 "foliosecundaria" :foliosecundaria ,
+                 "permisos": permiso,
+                 "usuario" : usuarioObj,
+                 "permisos_list" : permiso.object_list,
+                 "months" : mkmonth_lst(),
+               }
+            
+        return render_to_response("edt/permisolst.html",data)
+
+
+def anuladoslst(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+    gerencia = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).filter(usuario__jefatura=6)
+    dirgen = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).filter(usuario__jefatura=3)
+
+    permisos = Permiso.objects.filter(id__in=anulados)
+    
+
+    bitacoras = Bitacora.objects.all()
+
+
+    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1)
+    foliocpe = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=cpe))
+    
+    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4)
+    folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
+
+    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5)
+    foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))    
+
+    if  usuarioObj.rol.nivel_acceso == 0:
+
+        
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
+
+        if "filtrar" in request.GET:           
+
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")
+                permisos = permisos.filter(usuario=request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)   
+        elif "limpiar" in request.GET:
+            return redirect("/permisolst")       
+        paginator = Paginator(permisos,30)
+        
+        try: pagina = int(request.GET.get("page",'1'))
+        except ValueError: pagina = 1
+            
+        try:
+            permisos = paginator.page(pagina)
+        except (InvalidPage, EmptyPage):
+            permisos = paginator.page(paginator.num_pages)
+
+
+        data = {
+                 "estamento":estamento,
+                 "foliocpe":foliocpe,
+                 "folioprimaria" :folioprimaria,
+                 "foliosecundaria" :foliosecundaria ,
+                 "permisos": permisos,
+                 "usuario" : usuarioObj,
+                 "permisos_list" : permisos.object_list,
+                 "months" : mkmonth_lst(),
+                 "usuarios_filtro" : usuarios_filtro,
+                 "estamento_filtro" : estamento_filtro,
+                 "bitacoras" : bitacoras,
+                 }
+
+
+        return render_to_response("edt/anuladoslst.html",data)
+        #return HttpResponse(administracion)
+
+    else:
+        #if     usuarioObj.username == request.session['usuario']:
+        if  usuarioObj.rol.nivel_acceso == 1:
+        
+            anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+            permiso = Permiso.objects.filter(id__in=anulados)
+            
+
+            paginator = Paginator(permiso,10)       
+            try: pagina = int(request.GET.get("page",'1'))
+            except ValueError: pagina = 1       
+            try:
+                permiso = paginator.page(pagina)
+            except (InvalidPage, EmptyPage):
+                permiso = paginator.page(paginator.num_pages)
+
 
             
-        return render_to_response("edt/permisolst.html",{"foliocpe":foliocpe,"folioprimaria" :folioprimaria,"foliosecundaria" :foliosecundaria ,"permiso": permiso,"usuario" : usuarioObj,"permisoObj_list" : permiso.object_list,"months" : mkmonth_lst()})
-
+        data = {
+                 "foliocpe":foliocpe,
+                 "folioprimaria" :folioprimaria,
+                 "foliosecundaria" :foliosecundaria ,
+                 "permisos": permiso,
+                 "usuario" : usuarioObj,
+                 "permisos_list" : permiso.object_list,
+                 "months" : mkmonth_lst(),
+               }
+            
+        return render_to_response("edt/anuladoslst.html",data)
 
 def upload(request, pk):
         if not estaLogeado(request):
@@ -656,29 +788,122 @@ def main(request):
 
     formset = PermisoFormSet()
     return render_to_response("edt/main.html", {"form": formset,"usuario": usuarioObj})
-
    # return render_to_response("edt/main.html", {"user" : usuarioObj},context_instance=RequestContext(request))
+
+def descontar(request):
+    if not estaLogeado(request):
+            return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])    
+    revisados = Resolucion.objects.values_list('permiso')        
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+    sindevolucion= Permiso.objects.filter(devuelve_horas='N')
+   
+
+    if  usuarioObj.rol.nivel_acceso == 0: 
+        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+
+        if request.method == 'POST':
+            if "usuario" in request.POST and request.POST.get("usuario") != "":
+                seleccionado = request.POST.get("usuario")
+                permisos  = Permiso.objects.filter(usuario=seleccionado)
+                horas = Horas.objects.filter(permiso__usuario=seleccionado)
+                horas = horas.exclude(permiso__id__in=anulados)
+                horas = horas.filter(permiso__id__in=revisados)
+                horas = horas.exclude(permiso__id__in=rechazados)
+               
+                for user in usuarios:
+                    user.usuario_activo = user.id == int(seleccionado)
+
+            if "horasdescontar" in request.POST and request.POST.get("horasdescontar") != "":
+                permisoid = request.POST.get("permisoid")
+                horasdescontar = request.POST.get("horasdescontar")
+                permisodesc  = Permiso.objects.get(id=permisoid)
+                if len(permisodesc.horas_set.all()) > 0:
+                    horas = Horas.objects.get(permiso=permisoid)
+                    horas.horas_descontadas = horasdescontar
+                    horas.save()
+                    data = {
+                        "usuario": usuarioObj,
+                        "horasdescontar" : horasdescontar,
+                        "permiso" : permisodesc,
+
+                    }
+
+                    return render_to_response("edt/horasdescontadas.html",data,context_instance=RequestContext(request))
+                    #return HttpResponse(horasdescontar)
+                else:
+                    return HttpResponse("mejor que 0")    
+
+                return HttpResponse(horasdescontar)    
+
+            return render_to_response("edt/descontarhoras.html",{"horas" : horas,"usuarios" : usuarios,"permisos":permisos,"usuario"  :usuarioObj },context_instance=RequestContext(request))    
+
+            #return HttpResponse(permisos)
+            #return redirect('/devueltas/%d'%(horas.id))
+        else:                
+                
+            return render_to_response("edt/descontarhoras.html",{"anulados" : anulados,"usuarios": usuarios,"usuario": usuarioObj},context_instance=RequestContext(request))
+    
+    else:
+        return redirect("/main")
 
 def devuelvehoras(request):
     if not estaLogeado(request):
             return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    revisados = Resolucion.objects.values_list('permiso')        
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+    sindevolucion= Permiso.objects.filter(devuelve_horas='N')
+   
 
-    if  usuarioObj.rol.nivel_acceso == 0:
+    if  usuarioObj.rol.nivel_acceso == 0: 
+        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
 
         if request.method == 'POST':
-            formset = HorasFormSet(request.POST, request.FILES)
-            if formset.is_valid():
-                actividad = Actividad.objects.get(id=6)                
-                horas = formset.save(commit=False)
-                horas.save()
-                bitacora = Bitacora(actividad=actividad,usuario=usuarioObj)
-                bitacora.save()
+            if "usuario" in request.POST and request.POST.get("usuario") != "":
+                seleccionado = request.POST.get("usuario")
+                permisos  = Permiso.objects.filter(usuario=seleccionado)
+                horas = Horas.objects.filter(permiso__usuario=seleccionado)
+                horas = horas.exclude(permiso__id__in=anulados)
+                horas = horas.filter(permiso__id__in=revisados)
+                horas = horas.exclude(permiso__id__in=rechazados)
+                horas = horas.exclude(permiso__id__in=sindevolucion)
 
-            return redirect('/devueltas/%d'%(horas.id))
+                for user in usuarios:
+                    user.usuario_activo = user.id == int(seleccionado)
+
+            if "horasdevolver" in request.POST and request.POST.get("horasdevolver") != "":
+                permisoid = request.POST.get("permisoid")
+                horasdevueltas = request.POST.get("horasdevolver")
+                permisodesc  = Permiso.objects.get(id=permisoid)
+                if len(permisodesc.horas_set.all()) > 0:                    
+                    horas = Horas.objects.get(permiso=permisoid)                    
+                    horas.horas_por_devolver = horas.horas_por_devolver - horasdevueltas
+                    horas.horas_devueltas = horasdevueltas
+                    horas.save()
+                    data = {
+                        "usuario": usuarioObj,
+                        "horasdevueltas" : horasdevueltas,
+                        "permiso" : permisodesc,                        
+                    }
+
+                    return render_to_response("edt/devueltas.html",data,context_instance=RequestContext(request))
+                    #return HttpResponse(horasdescontar)
+                else:
+                    return HttpResponse("mayor que 0")    
+
+                return HttpResponse(horasdevolver)    
+
+            return render_to_response("edt/devuelvehoras.html",{"horas" : horas,"usuarios" : usuarios,"permisos":permisos,"usuario"  :usuarioObj },context_instance=RequestContext(request))    
+
+            #return HttpResponse(permisos)
+            #return redirect('/devueltas/%d'%(horas.id))
         else:                
-            formset = HorasFormSet()
-            return render_to_response("edt/devuelvehoras.html",{"form": formset,"usuario": usuarioObj},context_instance=RequestContext(request))
+                
+            #return HttpResponse(anulados)
+            return render_to_response("edt/devuelvehoras.html",{"anulados" : anulados,"usuarios": usuarios,"usuario": usuarioObj},context_instance=RequestContext(request))
     
     else:
         return redirect("/main")
@@ -740,6 +965,32 @@ def verpermiso(request, pk):
 
      if  usuarioObj.rol.id == 2:
         return render_to_response("edt/verpermisousuario.html",{ "resolucion" : resolucion,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+
+def verpermiso2(request, pk):
+     if not estaLogeado(request):
+            return redirect("/login")
+     else:
+         permiso = Permiso.objects.get(id=pk)
+         permiso_formset = PermisoFormSet(instance=permiso)
+         usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+         idpermiso = Permiso.objects.get(pk=int(pk))         
+         if len(permiso.resolucion_set.all()) > 0:
+            resolucion = permiso.resolucion_set.all()[0]
+         else:
+            resolucion = "Sin revisar"
+            
+
+     if  usuarioObj.rol.id == 1:
+        if len(permiso.resolucion_set.all()) > 0:
+            revisiones = Resolucion.objects.filter(permiso=permiso)
+        else:
+            revisiones = ""            
+        #return HttpResponse(resolucion)
+        return render_to_response("edt/verpermiso2.html",{ "revisiones" : revisiones,"permiso_formset" : permiso_formset,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+
+     if  usuarioObj.rol.id == 2:
+        return render_to_response("edt/verpermisousuario.html",{ "resolucion" : resolucion,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+
 
 
 def ingresapermiso(request):
@@ -817,7 +1068,7 @@ def aprobarRechazar(request):
             horas = Horas.objects.get(permiso=permiso)
             #horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_rechazadas=permiso.horas_solicitadas)
             horas.permiso = permiso
-            horas.usuario = usuario
+            horas.usuario = permiso.usuario
             horas.horas_horas_solicitadas = permiso.horas_solicitadas
             horas.horas_rechazadas = permiso.horas_solicitadas
             horas.save()
@@ -832,23 +1083,71 @@ def anularlst(request):
     if not estaLogeado(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+
+    
+
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=5).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+
+    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1)
+    foliocpe = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=cpe))
+    
+    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4)
+    folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
+
+    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5)
+    foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))
 
     if  usuarioObj.rol.nivel_acceso == 0:
-        ids = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
-        #permiso = Permiso.objects.exclude(id__in=ids)
-        permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b=0).exclude(id__in=ids).order_by("-fecha_creacion")
 
+        
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
 
-        paginator = Paginator(permiso,10)       
+        if "filtrar" in request.GET:           
+
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")
+                permisos = permisos.filter(usuario=request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)   
+        elif "limpiar" in request.GET:
+            return redirect("/anularlst")  
+
+        paginator = Paginator(permisos,30)
+        
         try: pagina = int(request.GET.get("page",'1'))
-        except ValueError: pagina = 1       
+        except ValueError: pagina = 1
+            
         try:
-            permiso = paginator.page(pagina)
+            permisos = paginator.page(pagina)
         except (InvalidPage, EmptyPage):
-            permiso = paginator.page(paginator.num_pages)
+            permisos = paginator.page(paginator.num_pages)
 
-        return render_to_response("edt/anularlst.html",{"permiso": permiso,"usuario" : usuarioObj,"permisoObj_list" : permiso.object_list,"months" : mkmonth_lst()},context_instance=RequestContext(request))
-        #return HttpResponse(ids)
+
+        data = {
+                 "estamento":estamento,
+                 "foliocpe":foliocpe,
+                 "folioprimaria" :folioprimaria,
+                 "foliosecundaria" :foliosecundaria ,
+                 "permisos": permisos,
+                 "usuario" : usuarioObj,
+                 "permisos_list" : permisos.object_list,
+                 "months" : mkmonth_lst(),
+                 "usuarios_filtro" : usuarios_filtro,
+                 "estamento_filtro" : estamento_filtro,
+                 }
+
+
+        return render_to_response("edt/anularlst.html",data)
     else:
         return redirect("/main")
 
@@ -871,7 +1170,7 @@ def anula(request):
 
     if request.POST:        
 
-        if request.POST['respuesta'] == 'Anulado' :
+        if request.POST['anular'] == 'Anulado' :
             permiso_id = request.POST.get('permiso')
             motivo = request.POST.get('motivo')
             #guardo en permiso reseteando las horas a 0 
@@ -884,16 +1183,19 @@ def anula(request):
             bitacora.save()
             #guardo en Anulado para el registro de los permisos anulados
             anulado = Anulado(permiso=permiso,anuladopor=usuarioObj,motivo=motivo)
-            anulado.save()
+            #anulado.save()
             #libero los eventos para poder ser reutilizados
             eventos = Eventos_en_Permisos.objects.filter(numero_permiso=permiso).delete()            
             #guardo en horas reseteando las horas_solicitadas a 0 
             horas = Horas.objects.get(permiso=permiso)
             horas.horas_solicitadas = 0
-            horas.save()
+            horas.horas_descontar = 0
+            horas.horas_por_devolver = 0
+            horas.horas_aprobadas = 0 
+            #horas.save()
 
 
-        if request.POST['respuesta'] == 'Cancelado':
+        if request.POST.get('cancelar') == 'Cancelado':
 
             return redirect("/anularlst")    
             
