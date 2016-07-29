@@ -215,7 +215,17 @@ class Eventos_en_Permisos(models.Model):
     #numero_permiso = models.CharField(max_length=32)
     #numero_evento = models.CharField(max_length=32) 
     def __unicode__(self):              # __unicode__ on Python 2
-            return "%s  %s"%(self.numero_permiso,self.numero_evento)   
+            return "%s  %s"%(self.numero_permiso,self.numero_evento)
+
+class Eventos_en_Permisos_Anulados(models.Model):
+    permiso = models.ForeignKey(Permiso)
+    evento = models.ForeignKey(Evento)
+    deltainforme = models.CharField(max_length=32)
+    deltafuncionario = models.CharField(max_length=32)
+    #numero_permiso = models.CharField(max_length=32)
+    #numero_evento = models.CharField(max_length=32) 
+    def __unicode__(self):              # __unicode__ on Python 2
+            return "%s  %s"%(self.numero_permiso,self.numero_evento)               
                 
 class Actividad(models.Model):
      nombre = models.CharField(max_length=32)
@@ -244,6 +254,17 @@ class Horas(models.Model):
 
     def __unicode__(self):
         return "%s %s"%(self.horas_solicitadas,self.permiso)
+
+class Revisor(models.Model):
+    estamento = models.ForeignKey(Estamento)
+    primero = models.ForeignKey(Funcion,related_name="primero")
+    segundo = models.ForeignKey(Funcion,related_name="segundo")
+    tercero = models.ForeignKey(Funcion,related_name="tercero")
+
+    def __unicode__(self):
+        return "%s es revisado por %s, %s, %s"%(self.estamento,self.primero,self.segundo,self.tercero)
+
+
 
 #######################################################################################################
 

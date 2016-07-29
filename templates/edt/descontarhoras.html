@@ -12,7 +12,8 @@
                var permisoid = $('input:radio[name=permisoid]:checked').val();
                var horas_solicitadas = $('input:radio[name=permisoid]:checked').data("valor"); 
                var horas_descontar = $('input[name=horasdescontar]').val();
-               if ((horas_descontar > horas_solicitadas)){
+               var horas_solicitadas = horas_solicitadas.replace(",",".");//cambio la , por . para evitar problemas al comparar               
+               if ((horas_descontar >= horas_solicitadas)){                  
                   if((horas_descontar == horas_solicitadas)){
                       return true;
                       
@@ -29,9 +30,7 @@
     });
    });
 </script>
-
 {{form.errors}}
-
 <h3>Descuento de horas</h3>
 <h5>Seleccione Funcionario y permiso asociado a horas a descontar</h5>
 <div class="cambiarusuario list-group-item">

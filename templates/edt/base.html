@@ -49,21 +49,26 @@
 				  </div>
 				  <div class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav">
+				      {% if  usuario.rol.nivel_acceso == 0 %}
 				      <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
+				      {% endif %}
 				      <li class="hvr-underline-from-center page-scroll"><a href="/main/">Solicitar</a></li>
 				      <li class="dropdown">
 							<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" class="hvr-underline-from-center">Utilidades<span class="caret"></span></a>
 								<ul role="menu" class="dropdown-menu">
-								  <li class="hvr-underline-from-center page-scroll"><a href="/permisolst/">Revisar permisos</a></li>
-								  <li class="hvr-underline-from-center page-scroll"><a href="/anularlst/">Anular permisos</a></li>
-								  <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
-								  <li class="hvr-underline-from-center page-scroll"><a href="/horas">Horas solicitadas</a></li>
-								  <li class="hvr-underline-from-center page-scroll"><a href="/devuelvehoras">Devolución de Horas</a></li>
-								  <!-- <li class="hvr-underline-from-center page-scroll"><a href="/bitacora">Bitacora</a></li> -->  						 
+								  <li class="hvr-underline-from-center page-scroll"><a href="/permisolst/">Revisar permisos</a></li>	
+								  							  
+								  <!-- <li class="hvr-underline-from-center page-scroll"><a href="/bitacora">Bitacora</a></li> -->
+								  {% if  usuario.rol.nivel_acceso == 0 %}  						 
 								  <li class="divider"></li>
-								  <li class="dropdown-header">subtitulo</li>
-								  <li><a href="#">link4</a></li>
-								  <li><a href="#">link5</a></li>
+								  <li class="dropdown-header">Administración</li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/bhoras">Informe Horas</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/horas">Horas solicitadas</a></li>	
+								  <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/anularlst/">Anular permisos</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/devolver">Devolución de Horas</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/descontar">Descuento de Horas</a></li>
+								  {% endif %}	
 								</ul>
 				      </li>
 				   <!--    <li class="dropdown">
@@ -86,7 +91,7 @@
 					    	<li>Usuario Activo</li>
 					    	<li>
 					    		{% block usuario %}
-					    		{{ usuario.nombre }}{{" "}}{{usuario.apellido1}}
+					    		{{ usuario.nombre }}{{" "}}{{usuario.apellido1}} 
 					    		{% endblock %}
 					    	</li>
 					    </ul>

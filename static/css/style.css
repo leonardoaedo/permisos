@@ -873,6 +873,26 @@ padding: 5px 5px 5px 25px;
 	margin: auto;
 	width: 650px;
 }
+
+.badgerojo{
+	background-color: red;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 160px;
+}
+
 .badge2{
 	background-color: green;
     border-radius: 10px;
@@ -1012,4 +1032,15 @@ padding: 5px 5px 5px 25px;
 }
 .cambiarusuario a{
 	margin-left: 52%;
+}
+.mostrarocultar{
+	width: 100%;
+	font-weight: bolder;
+
+}
+.listapermisos{
+	padding: 5px;
+	border : 2px solid black;
+	overflow: hidden;
+	width: 100%;
 }

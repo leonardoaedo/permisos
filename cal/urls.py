@@ -1,10 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls import *
-from edt.views import PermisoListView
-# from edt.views import PermisoDetailView
-
-
+from edt.views import PermisoListView,BitHorasPDF,BitHorasExcel
 urlpatterns = [
 
     # Examples:
@@ -43,6 +40,9 @@ urlpatterns = [
     url(r'^bgeneral/', "edt.views.bitgeneral"),
     url(r'^bfuncionario/',"edt.views.bitfuncionario"),
     url(r'^bhoras/',"edt.views.bithoras"),
+    url(r'^bhorasPDF/',BitHorasPDF.as_view()),
+    url(r'^permisosusuario/(?P<pk>\d+)/$',"edt.views.permisosusuario"),
+    url(r'^bhorasEXCEL/$',BitHorasExcel.as_view(), name="BitHorasExcel"),
 
 
 

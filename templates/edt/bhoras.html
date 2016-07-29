@@ -1,6 +1,25 @@
 {% extends "edt/base.html" %}
 {% load staticfiles %}
 {% block contenido %}
+<div class='form-group'>
+    <div class="row">                 
+        <div class="col-lg-8">    
+                                                                 
+        </div>  
+        <div class="col-lg-1">                            
+            <a href="/bhorasEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+                <img src="/static/img/xls.png" width="35" height="35">
+            </a>                          
+        </div>
+        
+        <div class="col-lg-1">                            
+            <a href="/bhorasPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+                <img src="/static/img/pdf.png" width="35" height="35">
+            </a>                          
+        </div>                                                    
+    </div>
+</div>
+
 <h4>Informe de horas</h4>
 <div class="fechasfiltro" ><h4>{% if start %} Periodo comprendido entre {{inicio|date:"d F Y"}} y {{termino|date:"d F Y"}} {% endif %}</h4></div> 
 <div>
@@ -76,8 +95,8 @@
               </thead>
             <tbody>   
   {% for usuario in usuarios %}     
-            <tr {% if  permiso.ultimaBitacora.actividad.nombre == 'Anulado' %} class='anulado' {% endif %} >
-                <td>{{usuario.apellido1}} {{usuario.apellido2}} {{usuario.nombre}}</td>                
+            <tr>
+                <td><a href="/permisosusuario/{{usuario.id}}/">{{usuario.apellido1}} {{usuario.apellido2}} {{usuario.nombre}}</a></td>                
                 <td>{{usuario.estamento}}</td>
                 <td class="horas">{{usuario.total_horas}}</td>
                 <td class="horas">{{usuario.aprobadas}}</td>

@@ -14,8 +14,8 @@
 				<li class="list-group-item">Motivo : {{permiso.motivo}}</li>
 				<li class="list-group-item">Comentario : {{permiso.comentario}}</li>
 				<li class="list-group-item">Cantidad de horas solcitadas : {{permiso.horas_solicitadas}}</li>
-				<li class="list-group-item">Devuelve Horas : {{permiso.devuelve_horas }}</li>
-				<li class="list-group-item">Con o sin goce de sueldo : {{permiso.sueldo}}</li>
+				<li class="list-group-item">Devuelve Horas : {{permiso.get_devuelve_horas_display }}</li>
+				<li class="list-group-item">Con o sin goce de sueldo : <b>{{permiso.get_sueldo_display}}</b></li>
 				<li class="list-group-item">Reemplazante : {{permiso.reemplazante}}</li>
 				<li class="list-group-item">Archivo Adjunto : {% if permiso.documento_adjunto.name %} <a target="_blank" href="/media/{{permiso.documento_adjunto}}">Ver Documento</a> {% else %} Sin documento adjunto{% endif %} </li>
 			</ul>

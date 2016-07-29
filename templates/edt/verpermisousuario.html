@@ -7,6 +7,7 @@
 	<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;">Permiso administrativo N° {{permiso.id}} </h4></li>
 	<li class="list-group-item">Solicitante : {{permiso.usuario.nombre}},{{permiso.usuario.apellido}}</li>
 	<li class="list-group-item">Rut : {{permiso.usuario.rut}}-{{permiso.usuario.dv}}</li>
+	<li class="list-group-item">Fecha de solicitud : {{permiso.fecha_creacion|date:"d F Y "}}</li>
 	<li class="list-group-item">Reemplazante : {{permiso.reemplazante}}</li>
 	<li class="list-group-item">Archivo Adjunto : {% if permiso.documento_adjunto.name %} <a target="_blank" href="/media/{{permiso.documento_adjunto}}">Ver Documento</a> {% else %} Sin documento adjunto{% endif %} </li>
 	<li class="list-group-item">Estado  :
@@ -29,6 +30,7 @@
 		<ul class="detpermiso">
 			<li class="detpermisofecha" >{{eventoObj.numero_evento.start|date:"d F Y "}}</li>
 			<li class="detpermisoinicio" >{{eventoObj.numero_evento.start|date:"P"}}</li>
+			<input type="hidden" value="{{eventoObj.numero_evento}}">
 			<li>-</li>
 			<li class="detpermisofin" >{{eventoObj.numero_evento.end|date:"P"}}</li>
 		</ul>	

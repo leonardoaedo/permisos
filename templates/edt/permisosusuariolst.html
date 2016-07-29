@@ -1,0 +1,46 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+<div class="pxp" ><h4>permisos<!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </h4>
+	
+	<ul class="list-group">
+	{% for permiso in permisos %}
+
+	<li>
+    <a class="list-group-item" href="{% url 'edt.views.verpermiso2' permiso.pk %}">
+     N° {{forloop.counter}} - {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }} {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}  | {{permiso.tipo}} 
+     <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span> 
+
+     {%  for bitacora in bitacoras %}
+
+     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 27 %} <span class="badge2"> Dirección Secundaria </span>{% endif %}
+
+     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 7 %} <span class="badge2"> Dirección General </span>{% endif %}
+
+     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 26 %} <span class="badge2"> Dirección Primaria </span>
+      {% endif %}
+
+      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 13 %} <span class="badge2"> Gerencia </span>
+      {% endif %}
+
+      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 10 %} <span class="badge2"> Encargado Mantención </span>
+      {% endif %}
+
+      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 15 %} <span class="badge2"> CPE </span>
+      {% endif %}
+
+     {% endfor %}
+           
+    </a>		
+	</li>
+
+	{% empty %}
+    <li class="list-group-item">En este momento no hay ningun elemento para mostrar</li>
+
+	{% endfor %}
+	</ul>
+ 
+</div>	        
+{% endblock  %}

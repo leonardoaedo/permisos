@@ -3,7 +3,116 @@
 <!-- ... -->
 
 {% block contenido %}
+<a href="#" id="mostrarocultar" name="mostrarocultar" value="mostrarocultar" class="mostrarocultar btn btn-info btn-sm">Click para Mostrar/Ocultar Resumen</a>
 
+<div id="listapermisos" class="listapermisos"> 
+	{% if usuarios %}
+  <table class=" table-bordered table-hover bgeneral TFtable" >
+            <thead>
+                <tr>
+                  
+                  <th class="nombre">Nombre</th>
+                  <th>Estamento</th>
+                  <th>Horas solicitadas</th>
+                  <th>Horas Aprobadas</th>
+                  <th>Horas Rechazadas</th>
+                  <th>Horas a Recuperar Acumuladas</th>
+                  <th>Horas Recuperadas</th>
+                  <th>Saldo Horas por Recuperar</th>                  
+                  <th>Horas por Descontar Acumuladas</th>
+                  <th>Horas Descontadas</th>
+                  <th>Saldo Horas por Descontar</th>
+                  
+                </tr>
+              </thead>
+            <tbody>   
+  {% for usuario in usuarios %}     
+            <tr {% if  permiso.ultimaBitacora.actividad.nombre == 'Anulado' %} class='anulado' {% endif %} >
+                <td>{{usuario.apellido1}} {{usuario.apellido2}} {{usuario.nombre}}</td>                
+                <td>{{usuario.estamento}}</td>
+                <td class="horas">{{usuario.total_horas}}</td>
+                <td class="horas">{{usuario.aprobadas}}</td>
+                <td class="horas">{{usuario.rechazadas}}</td>
+                <td class="horas">{{usuario.devolveracumuladas}}</td>           
+                <td class="horas">{{usuario.devueltas}}</td>
+                <td class="horas">{{usuario.saldodevolucion}}</td>
+                <td class="horas">{{usuario.descontaracumuladas}}</td>
+                <td class="horas">{{usuario.descontadas}}</td>                
+                <td class="horas">{{usuario.saldodescontar}}</td>
+                              
+            </tr>       
+
+            <!-- <tr>
+                <td>{{resolucion.id }}</td>
+                <td>{% if resolucion.ultimaResolucion %} {{ resolucion.ultimaResolucion.get_respuesta_display }}  {% endif %}</td>
+                <td></td>
+                <td></td>
+
+            </tr> -->
+
+  {% empty %}
+      <tr>
+        <td class="list-group-item">En este momento no hay ningun elemento para mostrar</td>
+      </tr>
+        {% endfor %}           
+        </tbody>    
+    </table>
+ 
+  {# .... **Comienzo de la paginacion** .... #}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"><img width="25px" height="25px" src='/static/img/back.png' alt='Volver'/></a>
+                {% endif %}
+                <span class="page-current">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><img width="25px" height="25px" src='/static/img/next.png' alt='Siguiente'/></a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+
+{% endif %}
+
+	<ul class="list-group">
+	{% for permiso in permisos %}
+
+	<li>
+    <a class="list-group-item" href="{% url 'edt.views.verpermiso2' permiso.pk %}">
+     N° {{forloop.counter}} - {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }} {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}  | {{permiso.tipo}} 
+     <!-- <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span> --> 
+
+     {%  for bitacora in bitacoras %}
+
+     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 27 %} <span class="badge2"> Dirección Secundaria </span>{% endif %}
+
+     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 7 %} <span class="badge2"> Dirección General </span>{% endif %}
+
+     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 26 %} <span class="badge2"> Dirección Primaria </span>
+      {% endif %}
+
+      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 13 %} <span class="badge2"> Gerencia </span>
+      {% endif %}
+
+      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 10 %} <span class="badge2"> Encargado Mantención </span>
+      {% endif %}
+
+      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 15 %} <span class="badge2"> CPE </span>
+      {% endif %}
+
+     {% endfor %}
+           
+    </a>		
+	</li>
+
+	{% empty %}
+    <li class="list-group-item">En este momento no hay ningun elemento para mostrar</li>
+
+	{% endfor %}
+</div>
 
 <form id="main" name="main" class="form-horizontal" action="/urlcalendario/" method="post" enctype="multipart/form-data">
 	<div  class="permiso" >
@@ -37,7 +146,8 @@
 		<p class="documento_adjunto"><label for="documento_adjunto">Documento adjunto</label>{{form.documento_adjunto}}</p>	
 		</div>		
 
-	</div>	
+	</div>
+		
 	<div id='calendar'></div>
 		<input type="hidden" id="calendario-data" name="data-calendario">
 
@@ -57,6 +167,7 @@ $(document).ready(function(){
        // maxTime : '00:00:00',
        height: "auto",
        lang: 'es',
+       timezone:'America/Santiago',
        defaultView: 'agendaWeek',
        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
        header:
@@ -73,10 +184,7 @@ $(document).ready(function(){
 	   	   end: '22:30', // an end time (6pm in this example)
 	   	   dow: [ 1, 2, 3, 4 , 5, 6]	
 	   	   },
-	events: 'http://cal.cdegaulle.cl/wsCalendari/',
-
-
-    	
+	events: 'http://cal.cdegaulle.cl/wsCalendari/',	
 
 	eventAfterRender: function(event,element){
 		if(event.used){
@@ -140,6 +248,10 @@ $(document).ready(function(){
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
+	$("#mostrarocultar").click(function(){
+        $("#listapermisos").toggle();
+    });
+
 	$("#main").submit(function(e){
 		if(seleccionados.length == 0){
 			alert("Debe seleccionar al menos un bloque de su horario");
