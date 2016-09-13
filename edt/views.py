@@ -54,7 +54,7 @@ from funciones.session import estaLogeado
 from funciones.funciones import *
 from forms import *
 from datetime import datetime
-from dateutil import tz
+from dateutil import tz, parser 
 from collections import Counter
 from django.views.generic import ListView,DetailView
 from django.views.generic.edit import CreateView,FormView,UpdateView
@@ -117,6 +117,9 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
 
         usuario_id=request.session['usuario']
         #lista de los ids de los eventos ya ocupados
+        hoy = datetime.now()
+        fecha_cambio_TZ = parser.parse("Nov 01 2016 01:00AM")
+
         ids = []
         for lista_ids in Eventos_en_Permisos.objects.all():
             ids.append(int(lista_ids.numero_evento.id))
@@ -127,11 +130,16 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         for evento in Evento.objects.filter(usuario_id=usuario_id):
                 evento.flageado = evento.id in ids                   
                 #formateo de timezone a milisegundos
-                from_zone = tz.gettz('Europe/Paris')
-                to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 
-                start = datetime.timetuple(evento.start)
+                from_zone = tz.gettz('Europe/Paris') 
+
+                start = datetime.timetuple(evento.start)                 
                 start = time.strftime('%Y-%m-%dT%H:%M:%SZ', start)
                 start = datetime.strptime(start, '%Y-%m-%dT%H:%M:%SZ')
+                #adaptacion de la TZ a partir del 01 de noviembre
+                if start >= fecha_cambio_TZ :                   
+                    to_zone = tz.gettz('America/Monterrey')
+                else:  
+                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
