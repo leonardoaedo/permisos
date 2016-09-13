@@ -13,7 +13,7 @@
 	<li class="list-group-item">Fecha Solicitud : {{permiso.fecha_creacion}}</li>
 	<li class="list-group-item">Motivo : {{permiso.motivo}}</li>
 	<li class="list-group-item">Comentario : {{permiso_formset.comentario}}</li>
-	<li class="list-group-item">Cantidad de horas solcitadas : {{permiso.horas_solicitadas}}</li>
+	<li class="list-group-item">Cantidad de horas/bloques solcitados : {{permiso.horas_solicitadas}}</li>
 	<li class="list-group-item">Devuelve Horas : {{permiso_formset.devuelve_horas }}</li>
 	<li class="list-group-item">Con o sin goce de sueldo : {{permiso_formset.sueldo}}</li>
 	<li class="list-group-item">Reemplazante : {{permiso.reemplazante}}</li>
@@ -28,7 +28,9 @@
 		{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|date:"G:i"}}</li>
 	{% endfor %}
 	<li class="list-group-item" >
-	<span class="badge">Total{{"  "}}{{permiso.horas_solicitadas}}</span>
+	<span class="badge">{% if permiso.usuario.jefatura.id == 1 or permiso.usuario.jefatura.id == 6 or permiso.usuario.jefatura.id == 7 %}Total{{"  "}}{{permiso.horas_solicitadas}} {% else %}
+							   Total{{"  "}}{{permiso.horas_solicitadas}}{{"  Bloques Solicitados"}} 
+				        {% endif %}</span>
 	</li>
 </ul>
 

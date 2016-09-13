@@ -66,6 +66,11 @@ class Tipo_Permiso (models.Model):
         nombre = models.CharField(max_length=32)
         def __unicode__(self):              # __unicode__ on Python 2
             return self.nombre            
+class Estado_Permiso(models.Model):
+        estado = models.CharField(max_length=32)
+        def __unicode__(self):              # __unicode__ on Python 2
+                return self.estado 
+
 
 # Create your models here.
 class Usuario(models.Model):
@@ -119,6 +124,8 @@ class Permiso (models.Model):
         tipo = models.ForeignKey(Tipo_Permiso,related_name="tipo_permiso")
         comentario = models.CharField(max_length=500)
         documento_adjunto = models.FileField(null=True,blank=True)
+        estado = models.ForeignKey(Estado_Permiso,null=True,blank=True)
+
         def __unicode__(self):              # __unicode__ on Python 2
                 return u"%s el %s"%(self.usuario,self.fecha_creacion)
 

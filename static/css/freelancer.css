@@ -6,7 +6,6 @@
 
 body {
     overflow-x: hidden;
-     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 p {
@@ -23,26 +22,18 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #000;
-
+    color: #18bc9c;
 }
 
 h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
-    margin-left: 10px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-    color: #000000;
-}
-h2{
-    margin-left: 10px;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #00000;
 }
 
 hr.star-light,
@@ -89,8 +80,8 @@ hr.star-primary:after {
 }
 
 header {
-    text-align: left;
-    color: #000;
+    text-align: center;
+    color: #fff;
     background: #ffffff;
 }
 
@@ -180,10 +171,7 @@ header .intro-text .skills {
 }
 
 section {
-    padding-top: 25px;
-    padding-bottom: 50px;
-    background-color: #fff;
-
+margin-top: -15px; 
 }
 
 section h2 {
@@ -337,10 +325,8 @@ form .row:first-child .floating-label-form-group {
     border-top: 1px solid #eee;
 }
 
-footer  a{
-
-    color: #000;
-
+footer {
+    color: #fff;
 }
 
 footer h3 {

@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls import *
-from edt.views import PermisoListView,BitHorasPDF,BitHorasExcel
+from edt.views import PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF
 urlpatterns = [
 
     # Examples:
@@ -38,11 +38,14 @@ urlpatterns = [
     url(r"^devolver/","edt.views.devuelvehoras"),
     url(r"^descontar/","edt.views.descontar"),
     url(r'^bgeneral/', "edt.views.bitgeneral"),
-    url(r'^bfuncionario/',"edt.views.bitfuncionario"),
-    url(r'^bhoras/',"edt.views.bithoras"),
-    url(r'^bhorasPDF/',BitHorasPDF.as_view()),
+    url(r'^bfuncionario/',"edt.views.bitfuncionario"),       
     url(r'^permisosusuario/(?P<pk>\d+)/$',"edt.views.permisosusuario"),
     url(r'^bhorasEXCEL/$',BitHorasExcel.as_view(), name="BitHorasExcel"),
+    url(r'^bhorasPDF/',BitHorasPDF.as_view()),
+    url(r'^bhoras/',"edt.views.bithoras"),
+    url(r'^estadisticapermisosPDF/',EstadisticaPermisosPDF.as_view()),
+    url(r'^estadisticapermisosEXCEL/$',EstadisticaPermisosExcel.as_view(), name="EstadisticaPermisosExcel"),
+    url(r'^estadisticapermisos/',"edt.views.EstadisticaPermisos"),
 
 
 

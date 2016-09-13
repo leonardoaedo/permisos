@@ -1,6 +1,9 @@
 {% extends "edt/base.html" %}
 {% load staticfiles %}
 {% block contenido %}
+<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
 <div class='form-group'>
     <div class="row">                 
         <div class="col-lg-8">    
@@ -75,7 +78,7 @@
   </form>
  </div>             
 {% if usuarios %}
-  <table class=" table-bordered table-hover bgeneral TFtable" >
+  <table class=" table-bordered table-hover bgeneral TFtable " >
             <thead>
                 <tr>
                   
@@ -96,7 +99,7 @@
             <tbody>   
   {% for usuario in usuarios %}     
             <tr>
-                <td><a href="/permisosusuario/{{usuario.id}}/">{{usuario.apellido1}} {{usuario.apellido2}} {{usuario.nombre}}</a></td>                
+                <td class="funcionario" ><a href="/permisosusuario/{{usuario.id}}/" >{{usuario.apellido1}} {{usuario.apellido2}} {{usuario.nombre}}</a></td>                
                 <td>{{usuario.estamento}}</td>
                 <td class="horas">{{usuario.total_horas}}</td>
                 <td class="horas">{{usuario.aprobadas}}</td>

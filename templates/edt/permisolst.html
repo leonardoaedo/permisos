@@ -44,27 +44,46 @@
 	<li>
     <a class="list-group-item" href="{% url 'edt.views.verpermiso' permiso.pk %}">
      N° {{permiso.id}} - {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }} {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}  | {{permiso.tipo}} 
-     <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span> 
+     <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span>
 
-     {%  for bitacora in bitacoras %}
+        <!-- {% for revisor in revisores %}
+            {% if permiso.usuario.estamento.id == 5 and revisor.estamento.id == 5 %}  
+              {%  for bitacora in bitacoras %}  
+                    {% if bitacora.permiso.id == permiso.id %}                 
+                    <span class="{% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 5 %} badgerojo {% elif  bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2  %} badge2 {% endif %}">{{revisor.primero}} </span>
+                    {% endif %} 
+                    
+                    {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.funcion.id == 29 %}
+                          <span class="badge2">{{revisor.segundo}} </span>                    
+                    {% endif %}
 
-     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 27 %} <span class="badge2"> Dirección Secundaria </span>{% endif %}
+                    {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.funcion.id == 26 %}
+                          <span class="badge2">{{revisor.tercero}} </span>                 
+                    {% endif %}               
+              
+              {% endfor %}
+            {% endif %}  
+     {% endfor %}    -->
 
-     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 7 %} <span class="badge2"> Dirección General </span>{% endif %}
+       {%  for bitacora in bitacoras %}
 
-     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 26 %} <span class="badge2"> Dirección Primaria </span>
-      {% endif %}
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 27 %} <span class="badge2"> Dirección Secundaria </span>{% endif %}  
+          
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 7 %} <span class="badge2"> Dirección General </span>{% endif %}
 
-      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 13 %} <span class="badge2"> Gerencia </span>
-      {% endif %}
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 26 %} <span class="badge2"> Dirección Primaria </span>
+          {% endif %}
 
-      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 10 %} <span class="badge2"> Encargado Mantención </span>
-      {% endif %}
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 13 %} <span class="badge2"> Gerencia </span>
+          {% endif %}
 
-      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 15 %} <span class="badge2"> CPE </span>
-      {% endif %}       
-    
-     {% endfor %}
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 10 %} <span class="badge2"> Encargado Mantención </span>
+          {% endif %}
+
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 15 %} <span class="badge2"> CPE </span>
+          {% endif %}      
+      
+       {% endfor %}   
            
     </a>		
 	</li>

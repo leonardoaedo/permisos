@@ -220,11 +220,11 @@ def urlcalendario(request):
             
             if (usuarioObj.estamento.id == 5 or usuarioObj.estamento.id == 4 ):  
                 #CALCULO PARA SECUNDARIA
-                suma += float(delta.seconds) / 3600 / 0.75 # calculo para  Informes
-                deltag = float(delta.seconds) / 3600 / 0.75 # calculo para  Informes
+                suma += float(delta.seconds) / 3300 # calculo para  Informes
+                deltag = float(delta.seconds) / 3300 # calculo para  Informes
                 deltas.append(round(deltag,2))
-                sumafuncionario += float(delta.seconds) / 3600  # calculo para  funcionario
-                deltafuncionario = float(delta.seconds) / 3600  # calculo para  funcionario
+                sumafuncionario += float(delta.seconds) / 3300  # calculo para  funcionario
+                deltafuncionario = float(delta.seconds) / 3300  # calculo para  funcionario
                 deltaf.append(round(deltafuncionario,2))  
                   
                 suma = round(suma,2) # redondeo a 2 decimales
@@ -235,12 +235,12 @@ def urlcalendario(request):
 
             if (usuarioObj.estamento.id == 2 or usuarioObj.estamento.id == 3):
                 #CALCULO DE HORAS PARA PRIMARIA
-                suma += float(delta.seconds) / 3600 / 0.75
-                deltag = float(delta.seconds) / 3600 / 0.75
+                suma += float(delta.seconds) / 2700
+                deltag = float(delta.seconds) / 2700
                 deltas.append(round(deltag,2))
                 suma = round(suma,2) # redondeo a 2 decimales
-                sumafuncionario += float(delta.seconds) / 3600   # calculo para  funcionario
-                deltafuncionario = float(delta.seconds) / 3600  # calculo para  funcionario
+                sumafuncionario += float(delta.seconds) / 2700   # calculo para  funcionario
+                deltafuncionario = float(delta.seconds) / 2700  # calculo para  funcionario
                 deltaf.append(round(deltafuncionario,2))
                 evento_en_permiso = Eventos_en_Permisos(numero_evento=evento,numero_permiso=ultimopermiso,deltainforme=deltas[i],deltafuncionario=deltaf[i])
                 i += 1
@@ -317,7 +317,7 @@ def urlcalendario(request):
         ##########################################################################################################
         #guardo en horas para gestion de devolucion de horas
         
-        horas = Horas(horas_solicitadas=sumafuncionario,permiso=ultimopermiso,usuario=usuarioObj)
+        horas = Horas(horas_solicitadas=suma,permiso=ultimopermiso,usuario=usuarioObj)
         horas.save()
 
         #guardado en bitacora
@@ -366,6 +366,59 @@ def bitgeneral(request):
         return render_to_response("edt/bgeneral.html",{"permisos" : permisos,"usuario": usuarioObj},context_instance=RequestContext(request))
     else:
      return redirect("/main")
+
+def EstadisticaPermisos(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+    if usuarioObj.rol.id == 1:
+        permisos = Permiso.objects.all().order_by("id")        
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        
+
+        if "filtrar" in request.GET:
+            if "start" in request.GET and request.GET.get("start") != "":
+                permisos = permisos.filter(fecha_creacion__gte=request.GET.get("start"))
+                start = request.GET.get("start")
+
+
+            if "end" in request.GET and request.GET.get("end") != "":
+                permisos = permisos.filter(fecha_creacion__lte=request.GET.get("end"))
+                end = request.GET.get("end")
+
+        elif "limpiar" in request.GET:
+                return redirect("/estadisticapermisos")
+            
+        data = {
+                "usuario": usuarioObj,
+                "permisos" : permisos,
+                "query_string" : request.META["QUERY_STRING"],
+               }
+
+
+        #Filtros para generar la fecha e el Titulo
+        if "filtrar" in request.GET:
+            if "start" in request.GET and request.GET.get("start") != "":
+                permisos = permisos.filter(fecha_creacion__gte=request.GET.get("start"))
+                start = request.GET.get("start")
+                inicio = datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
+                data["inicio"] = inicio
+                data["start"] = start 
+
+
+            if "end" in request.GET and request.GET.get("end") != "":
+                permisos = permisos.filter(fecha_creacion__lte=request.GET.get("end"))
+                end = request.GET.get("end")
+                termino = datetime.strptime(end, "%Y-%m-%d %H:%M:%S")
+                data["termino"] = termino
+                data["end"] = end       
+
+        return render_to_response("edt/estadisticapermisos.html",data,context_instance=RequestContext(request))  
+
+    else:
+        return redirect("/main")    
+
 
 def bithoras(request):
     if not estaLogeado(request):
@@ -502,9 +555,139 @@ def bithoras(request):
 
 ##########Generacion de informes################
 
+class EstadisticaPermisosExcel(TemplateView):
+    """docstring for BitHorasExcel"""
+    def get(self, request, *args, **kwargs):
+
+        usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
+        permisos = Permiso.objects.all().order_by("id")
+        eventos_en_permisos = Eventos_en_Permisos.objects.all()      
+         
+        if "filtrar" in self.request.GET:
+            if "start" in self.request.GET and self.request.GET.get("start") != "":
+                permisos = permisos.filter(fecha_creacion__gte=self.request.GET.get("start"))
+                start = self.request.GET.get("start")
+
+
+            if "end" in self.request.GET and self.request.GET.get("end") != "":
+                permisos = permisos.filter(fecha_creacion__lte=self.request.GET.get("end"))
+                end = self.request.GET.get("end")
+
+
+        hoy = datetime.now()
+        #Creamos el libro de trabajo
+        wb= Workbook()
+        #Definimos como nuestra hoja de trabajo, la hoja activa, por defecto la primera del libro
+        ws = wb.active
+        #En la celda B1 ponemos el texto 'ESTADISTICA PERMISOS'
+        ws['B1'] = 'ESTADISTICA PERMISOS'
+        ws['B2'] = ''
+        #Juntamos las celdas desde la B1 hasta la E1, formando una sola celda
+        ws.merge_cells('B1:E1')
+        #Creamos los encabezados desde la celda B3 hasta la L3
+        ws['B3'] = 'Correlativo'
+        ws['C3'] = 'Solicitante'
+        ws['D3'] = 'Rut'
+        ws['E3'] = 'Funcion/Cargo'
+        ws['F3'] = 'Fecha de solicitud'
+        ws['G3'] = 'Tipo'
+        ws['H3'] = 'Dia del permiso'
+        ws['I3'] = 'Motivo'
+        ws['J3'] = 'Comentario'
+        ws['K3'] = 'Bloques'
+        ws['L3'] = 'Resolución'
+        ws['M3'] = 'Devuelve horas'
+        ws['N3'] = 'Con o sin goce de sueldo'
+        ws['O3'] = 'Reemplazante'        
+        ws['P3'] = 'Archivo adjunto'
+
+
+        cont=4
+        for permiso in permisos:
+
+            ws.cell(row=cont,column=2).value = permiso.id
+            ws.cell(row=cont,column=3).value = permiso.usuario.apellido1+" "+permiso.usuario.apellido1+" "+permiso.usuario.nombre
+            ws.cell(row=cont,column=4).value = permiso.usuario.rut+"-"+permiso.usuario.dv
+            ws.cell(row=cont,column=5).value = permiso.usuario.cargo.nombre
+            ws.cell(row=cont,column=6).value = permiso.fecha_creacion
+            ws.cell(row=cont,column=7).value = permiso.tipo.nombre
+            if permiso.primerEvento():
+                ws.cell(row=cont,column=8).value = permiso.primerEvento().numero_evento.start
+            ws.cell(row=cont,column=9).value = permiso.motivo.nombre
+            ws.cell(row=cont,column=10).value = permiso.comentario  
+            ws.cell(row=cont,column=11).value = permiso.horas_solicitadas
+            if permiso.ultimaResolucion():
+                ws.cell(row=cont,column=12).value = permiso.ultimaResolucion().get_respuesta_display()    
+            ws.cell(row=cont,column=13).value = permiso.get_devuelve_horas_display()
+            ws.cell(row=cont,column=14).value = permiso.get_sueldo_display()
+            ws.cell(row=cont,column=15).value = permiso.reemplazante.apellido1+" "+permiso.reemplazante.nombre
+            if permiso.documento_adjunto.name:
+                ws.cell(row=cont,column=16).value =  "Con documento Adjunto"      
+            cont = cont + 1
+        #Establecemos el nombre del archivo
+        nombre_archivo ="estadistica_pemisos.xlsx"
+        response = HttpResponse(content_type="application/ms-excel") 
+        contenido = "attachment; filename={0}".format(nombre_archivo)
+        response["Content-Disposition"] = contenido
+        wb.save(response)
+        return response
+
+
+class EstadisticaPermisosPDF(PDFTemplateView):
+    template_name = "edt/estadisticapermisosPDF.html"
+
+    def get_context_data(self, **kwargs):
+        context =  super(EstadisticaPermisosPDF,self).get_context_data(
+            pagesize="letter",
+            title="Informe PDF",
+            **kwargs
+            )
+
+        usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
+        permisos = Permiso.objects.all().order_by("id")
+        eventos_en_permisos = Eventos_en_Permisos.objects.all()
+
+        if "filtrar" in self.request.GET:
+            if "start" in self.request.GET and self.request.GET.get("start") != "":
+                permisos = permisos.filter(fecha_creacion__gte=self.request.GET.get("start"))
+                start = self.request.GET.get("start")
+
+
+            if "end" in self.request.GET and self.request.GET.get("end") != "":
+                permisos = permisos.filter(fecha_creacion__lte=self.request.GET.get("end"))
+                end = self.request.GET.get("end")
+
+
+        context = {
+                "usuario": usuarioObj,
+                "permisos" : permisos,
+                "query_string" : self.request.META["QUERY_STRING"],
+               }
+        context['hoy'] =  datetime.now()       
+
+
+        #Filtros para generar la fecha e el Titulo
+        if "filtrar" in self.request.GET:
+            if "start" in self.request.GET and self.request.GET.get("start") != "":
+                permisos = permisos.filter(fecha_creacion__gte=self.request.GET.get("start"))
+                start = self.request.GET.get("start")
+                inicio = datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
+                context["inicio"] = inicio
+                context["start"] = start 
+
+
+            if "end" in self.request.GET and self.request.GET.get("end") != "":
+                permisos = permisos.filter(fecha_creacion__lte=self.request.GET.get("end"))
+                end = self.request.GET.get("end")
+                termino = datetime.strptime(end, "%Y-%m-%d %H:%M:%S")
+                context["termino"] = termino
+                context["end"] = end
+
+        return context
+
+
 class BitHorasPDF(PDFTemplateView):
     template_name= "edt/bhorasPDF.html"
-
 
     def get_context_data(self, **kwargs):
         context =  super(BitHorasPDF,self).get_context_data(
@@ -817,10 +1000,11 @@ def permisolst(request):
     gerencia = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=2).filter(usuario__jefatura=6)
     dirgen = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=2).filter(usuario__jefatura=3)
 
-    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=1).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
     
 
     bitacoras = Bitacora.objects.all()
+    revisores = Revisor.objects.all()
 
 
     cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1)
@@ -828,7 +1012,6 @@ def permisolst(request):
     
     primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4)
     folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
-
     secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5)
     foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))    
 
@@ -854,6 +1037,7 @@ def permisolst(request):
                     estament.estamento_activo = estament.id == int(estamento)   
         elif "limpiar" in request.GET:
             return redirect("/permisolst")       
+        
         paginator = Paginator(permisos,30)
         
         try: pagina = int(request.GET.get("page",'1'))
@@ -877,6 +1061,7 @@ def permisolst(request):
                  "usuarios_filtro" : usuarios_filtro,
                  "estamento_filtro" : estamento_filtro,
                  "bitacoras" : bitacoras,
+                 "revisores" : revisores,
                  }
 
 
@@ -1201,8 +1386,9 @@ def devuelvehoras(request):
                 permisodesc  = Permiso.objects.get(id=permisoid)
                 if len(permisodesc.horas_set.all()) > 0:                    
                     horas = Horas.objects.get(permiso=permisoid)                    
-                    horas.horas_por_devolver = horas.horas_por_devolver - horasdevueltas
-                    horas.horas_devueltas = horasdevueltas
+                    horas.horas_por_devolver = float(horas.horas_por_devolver) - float(horasdevueltas)
+
+                    horas.horas_devueltas = float(horasdevueltas) + float(horas.horas_devueltas)
                     horas.save()
                     data = {
                         "usuario": usuarioObj,
@@ -1357,6 +1543,7 @@ def aprobarRechazar(request):
             permiso.comentario = request.POST.get('comentario')
             permiso.sueldo = request.POST.get('sueldo')
             permiso.devuelve_horas = request.POST.get('devuelve_horas')
+            #permiso.estado = Estado_Permiso.objects.filter(id=4) 
             permiso.save()
             horas = Horas.objects.get(permiso=permiso)            
             #horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_aprobadas=permiso.horas_solicitadas,horas_por_devolver=permiso.horas_solicitadas)
@@ -1486,6 +1673,7 @@ def anula(request):
     if not estaLogeado(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    estado_permiso = Estado_Permiso.objects.get(id=6)
 
     if request.POST:        
 
@@ -1495,8 +1683,10 @@ def anula(request):
             motivo = request.POST.get('motivo')
             #guardo en permiso reseteando las horas a 0 
             permiso = Permiso.objects.get(id=permiso_id)
-            permiso.horas_solicitadas = 0
-            permiso.horas_solicitadas_funcionario = 0
+            # permiso.horas_solicitadas = 0
+            # permiso.horas_solicitadas_funcionario = 0
+            permiso.estado = estado_permiso
+            permiso.save()
             #guardo en Bitacora
             actividad = Actividad.objects.get(id=4)
             bitacora = Bitacora(actividad=actividad,usuario=usuarioObj,permiso=permiso)            
@@ -1630,6 +1820,4 @@ def wsEdades(request):
     edades = sorted(edades, key=lambda k: k[1], reverse=True) 
 
     #return HttpResponse(edades)
-    return render_to_response("edt/edades.html",{"usuario" : usuarioObj,"edades":edades})    
-
-                   
+    return render_to_response("edt/edades.html",{"usuario" : usuarioObj,"edades":edades})

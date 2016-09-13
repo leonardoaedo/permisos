@@ -16,12 +16,14 @@
 		<script src="/static/js/jquery.datetimepicker.full.js"></script>
 		<script type="text/javascript" src="/static/js/jquery.alerts.js"></script>
 		<script type="text/javascript" src="/static/js/jquery.ui.draggable.js"></script>		
-		<link rel='stylesheet' href='/static/fullcalendar/fullcalendar.css' />
 		<script src='/static/fullcalendar/lib/moment.min.js'></script>
 		<script src='/static/fullcalendar/fullcalendar.js'></script>
 		<script src='/static/fullcalendar/lang/es.js'></script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js'></script>
+		<script src='/static/js/jquery.stickyheader.js'></script>
 
 		<!-- CSS ################################################################################# -->
+		<link rel='stylesheet' href='/static/fullcalendar/fullcalendar.css' />
 		<link rel="stylesheet" type="text/css" href="/static/css/jquery.periodpicker.min.css"/ >
 		<link rel="icon" href="/static/img/favicon.png" type="image/x-icon"/>
 		<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
@@ -31,6 +33,7 @@
 		<link rel="stylesheet" href="/static/css/freelancer.css">
 		<link rel="stylesheet" href="/static/css/jquery.qtip.css">
 		<link rel="stylesheet" href="/static/css/hover-min.css" media="all">
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>SCA - Lycée Charles de Gaulle</title>
 		</head>
@@ -56,14 +59,14 @@
 				      <li class="dropdown">
 							<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" class="hvr-underline-from-center">Utilidades<span class="caret"></span></a>
 								<ul role="menu" class="dropdown-menu">
-								  <li class="hvr-underline-from-center page-scroll"><a href="/permisolst/">Revisar permisos</a></li>	
+								  <li class="hvr-underline-from-center page-scroll"><a href="/permisolst/">Permisos Pendientes</a></li>	
 								  							  
 								  <!-- <li class="hvr-underline-from-center page-scroll"><a href="/bitacora">Bitacora</a></li> -->
 								  {% if  usuario.rol.nivel_acceso == 0 %}  						 
 								  <li class="divider"></li>
 								  <li class="dropdown-header">Administración</li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/bhoras">Informe Horas</a></li>
-								  <li class="hvr-underline-from-center page-scroll"><a href="/horas">Horas solicitadas</a></li>	
+								  <!-- <li class="hvr-underline-from-center page-scroll"><a href="/horas">Horas solicitadas</a></li>	 -->
 								  <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/anularlst/">Anular permisos</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/devolver">Devolución de Horas</a></li>

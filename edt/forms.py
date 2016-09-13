@@ -7,13 +7,13 @@ class PermisoFormSet(forms.ModelForm):
     class Meta:
        model = Permiso
   
-       exclude = ["usuario","horas_solicitadas","horas_solicitadas_funcionario"]
+       exclude = ["usuario","horas_solicitadas","horas_solicitadas_funcionario","estado"]
         
 
 class PermisoFormSetEdit(forms.ModelForm):
     class Meta:
        model = Permiso
-       exclude = ["usuario","horas_solicitadas","horas_solicitadas_funcionario","motivo","tipo","reemplazante","documento_adjunto"]       
+       exclude = ["usuario","horas_solicitadas","horas_solicitadas_funcionario","motivo","tipo","reemplazante","documento_adjunto","estado"]       
 
     
 class ResolucionFormSet(forms.ModelForm):
