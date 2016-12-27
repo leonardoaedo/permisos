@@ -2,45 +2,54 @@
 {% load staticfiles %}
 
 {% block contenido %}
+<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+<div class="pxp" ><h4>permisos</h4>
+	<table class=" table-bordered table-hover bgeneral TFtable" >
+            <thead>
+                <tr>  
+                  <th></th>
+                  <th>Fecha</th>
+                  <th>Tipo</th>
+                  <th>Horas solicitadas</th>
+                  <th>Horas Aprobadas</th>
+                  <th>Horas Rechazadas</th>
+                  <th>Horas a Recuperar Acumuladas</th>
+                  <th>Horas Recuperadas</th>
+                  <th>Saldo Horas por Recuperar</th>                  
+                  <th>Horas por Descontar Acumuladas</th>
+                  <th>Horas Descontadas</th>
+                  <th>Saldo Horas por Descontar</th>
+                  <th>Horas sin Recuperación con Goce de Sueldo</th>
+                  <th>Horas pendientes de Revisión</th>                  
+                </tr>
+              </thead>
+            <tbody>
+{% for hora in horas %}
+      <tr {% if  hora.permiso.estado.id == 6 %} class='anulado' {% endif %} >
+                <td class="horas">
+                  <a class="list-group-item" href="{% url 'edt.views.verpermiso2' hora.permiso.pk %}"> {{forloop.counter}}</a>
+                </td>
+          <td class="horas">{{ hora.permiso.primerEvento.numero_evento.start |date:"d F Y" }}</td>                  
+                <td class="horas">{{hora.permiso.tipo}}</td>
+                <td class="horas negrita">{{hora.horas_solicitadas}}</td>
+                <td class="horas">{{hora.horas_aprobadas}}</td>
+                <td class="horas">{{hora.horas_rechazadas}}</td>
+                <td class="horas">{{hora.horas_por_devolver_acumuladas}}</td>           
+                <td class="horas">{{hora.horas_devueltas}}</td>
+                <td class="horas negrita">{{hora.horas_por_devolver}}</td>
+                <td class="horas">{{hora.horas_descontar_acumuladas}}</td>
+                <td class="horas">{{hora.horas_descontadas}}</td>                
+                <td class="horas negrita">{{hora.horas_descontar}}</td>
+                <td class="horas">{{hora.horas_sin_recuperacion_con_goce}}</td>
+                <td class="horas">{{hora.horas_pendientes_por_aprobar}}</td>
+                              
+            </tr>
 
-<div class="pxp" ><h4>permisos<!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </h4>
+{% endfor %}
+</tbody>    
+    </table>
 	
-	<ul class="list-group">
-	{% for permiso in permisos %}
-
-	<li>
-    <a class="list-group-item" href="{% url 'edt.views.verpermiso2' permiso.pk %}">
-     N° {{forloop.counter}} - {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }} {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}  | {{permiso.tipo}} 
-     <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span> 
-
-     {%  for bitacora in bitacoras %}
-
-     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 27 %} <span class="badge2"> Dirección Secundaria </span>{% endif %}
-
-     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 7 %} <span class="badge2"> Dirección General </span>{% endif %}
-
-     {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 26 %} <span class="badge2"> Dirección Primaria </span>
-      {% endif %}
-
-      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 13 %} <span class="badge2"> Gerencia </span>
-      {% endif %}
-
-      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 10 %} <span class="badge2"> Encargado Mantención </span>
-      {% endif %}
-
-      {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 15 %} <span class="badge2"> CPE </span>
-      {% endif %}
-
-     {% endfor %}
-           
-    </a>		
-	</li>
-
-	{% empty %}
-    <li class="list-group-item">En este momento no hay ningun elemento para mostrar</li>
-
-	{% endfor %}
-	</ul>
- 
 </div>	        
 {% endblock  %}

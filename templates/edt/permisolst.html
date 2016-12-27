@@ -38,12 +38,23 @@
  {% endif %}
 <div class="pxp" ><h4>permisos pendientes de aprobación <!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </h4>
 	
-	<ul class="list-group">
+	<ul class="list-group permisolst">
 	{% for permiso in permisos_list %}
 
 	<li>
-    <a class="list-group-item" href="{% url 'edt.views.verpermiso' permiso.pk %}">
-     N° {{permiso.id}} - {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }} {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}  | {{permiso.tipo}} 
+    <a class="list-group-item"  href="{% url 'edt.views.verpermiso' permiso.pk %}">
+      <div class="numeropermiso">
+          N° {{permiso.id}} 
+      </div>  
+      <div class="nombrefuncionario">
+          {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }}
+      </div>
+      <div class="fechapermiso">
+          {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}
+      </div>  
+      <div >
+          {{permiso.tipo}} 
+      </div>
      <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span>
 
         <!-- {% for revisor in revisores %}

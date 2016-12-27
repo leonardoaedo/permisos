@@ -127,7 +127,7 @@ class Permiso (models.Model):
         estado = models.ForeignKey(Estado_Permiso,null=True,blank=True)
 
         def __unicode__(self):              # __unicode__ on Python 2
-                return u"%s el %s"%(self.usuario,self.fecha_creacion)
+                return u"%s solicitado el  %s"%(self.id,self.fecha_creacion)
 
         def ultimaResolucion(self):
             if len(self.resolucion_set.all()) < 1:
@@ -151,7 +151,9 @@ class Permiso (models.Model):
         def horas(self):
             if len(self.horas_set.all()) < 1 :
                 return None
-            return self.horas_set.all()             
+            return self.horas_set.all()
+        def eventos_en_permisos_ordenados(self):
+            return self.eventos_en_permisos_set.all().order_by("numero_evento__start")                
                                                                               
 
 
@@ -212,7 +214,7 @@ class Evento (models.Model):
     start = models.DateTimeField(null=True)
     end = models.DateTimeField(null=True)
     def __unicode__(self):
-            return " %d"%(self.id)
+            return " %d - %s %s"%(self.id ,self.usuario.nombre, self.usuario.apellido1)
 
 class Eventos_en_Permisos(models.Model):
     numero_permiso = models.ForeignKey(Permiso)
@@ -254,10 +256,14 @@ class Horas(models.Model):
     horas_solicitadas = models.FloatField(default=0)
     horas_aprobadas = models.FloatField(default=0)
     horas_rechazadas = models.FloatField(default=0)
+    horas_por_devolver_acumuladas = models.FloatField(default=0)
     horas_por_devolver = models.FloatField(default=0)
     horas_devueltas = models.FloatField(default=0)
+    horas_descontar_acumuladas = models.FloatField(default=0)
     horas_descontar = models.FloatField(default=0)
     horas_descontadas = models.FloatField(default=0)
+    horas_sin_recuperacion_con_goce = models.FloatField(default=0)
+    horas_pendientes_por_aprobar = models.FloatField(default=0)
 
     def __unicode__(self):
         return "%s %s"%(self.horas_solicitadas,self.permiso)

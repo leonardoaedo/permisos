@@ -23,11 +23,11 @@
 				<li class="list-group-item active"  >
 					<h4 style="color:#FFFFFF !important;">Detalle </h4>
 				</li>
-				{% for eventoObj in permiso.eventos_en_permisos_set.all %}	
+				{% for evento in permiso.eventos_en_permisos_ordenados %}	
 
 				<li class="list-group-item" >
-					<span class="badge">{{eventoObj.delta}}</span>
-					{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|date:"G:i"}}
+					<span class="badge">{{evento.delta}}</span>
+					{{evento.numero_evento.start|date:"D d M "}}{{"   "}}{{evento.numero_evento.start|date:"G:i"}}{{"-"}} {{evento.numero_evento.end|date:"G:i"}}
 				</li>
 				{% endfor %}
 				<li class="list-group-item" >

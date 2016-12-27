@@ -200,6 +200,8 @@ input:focus, textarea:focus {
 	float: left;
 	display: inline;
 	width: 25%;
+	height: 50px;
+
 }
 
 #id_horas_devueltas {
@@ -685,7 +687,14 @@ padding: 5px 5px 5px 25px;
 }
 .horas{
 	text-align: center;
+}
+.negrita{
 	font-weight: bolder;
+	font-size: 15px;
+	color:#000000;
+	background-color: #FFBA25;
+
+
 }
 .fechas {
 	padding: 5px;
@@ -1011,6 +1020,7 @@ padding: 5px 5px 5px 25px;
 .funcionario a{
 	text-decoration: none !important;
 	color: #000000;
+	display: block;
 }
 .funcionario:hover{
 	background-color: yellow;
@@ -1067,7 +1077,6 @@ padding: 5px 5px 5px 25px;
 
 }
 .listapermisos{
-	display: none;
 	padding: 5px;
 	border : 2px solid black;
 	overflow: hidden;
@@ -1096,3 +1105,48 @@ padding: 5px 5px 5px 25px;
 	color: #000000;
 	padding: 5px;	
 }
+.uploadcal{	
+	height: 150px;
+	width: 50%;
+	background-color: #DFF2BF;
+	color: #4F8A10;
+	border: 1px solid;
+	background-image:url(/static/img/knobs/PNG/KnobValidGreen.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+	margin: auto;
+	-webkit-border-radius: 5px;
+}
+.uploadcal p {
+	color: #4F8A10;
+	margin-top: 3px; 
+	margin-left: 5px;
+	font: 20px Verdana;
+
+}
+header h5{
+	margin-bottom: 20px;
+}
+.permisolst a {
+	height: 40px;
+}
+.permisolst li{
+	height: 40px;
+
+
+}
+.permisolst div{
+	float: left;
+	margin-right: 5px; 
+	}
+
+.nombrefuncionario{
+	width: 170px;
+	font-weight: bold;
+}
+.numeropermiso{
+	width: 50px;
+}
+.fechapermiso{
+	width: 150px;
+}	 

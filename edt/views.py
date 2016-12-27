@@ -4,6 +4,8 @@ from xhtml2pdf import pisa
 from easy_pdf.rendering import render_to_pdf_response
 from easy_pdf.views import PDFTemplateView
 from openpyxl import Workbook
+from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
+from openpyxl.styles.colors import *
 from cal.settings import *
 from io import BytesIO
 from reportlab.pdfgen import canvas
@@ -135,7 +137,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
                 start = datetime.timetuple(evento.start)                 
                 start = time.strftime('%Y-%m-%dT%H:%M:%SZ', start)
                 start = datetime.strptime(start, '%Y-%m-%dT%H:%M:%SZ')
-                #adaptacion de la TZ a partir del 01 de noviembre
+                #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ :                   
                     to_zone = tz.gettz('America/Monterrey')
                 else:  
@@ -201,13 +203,14 @@ def urlcalendario(request):
     ############ #########guardado  de   permiso ############################
 
     if formset.is_valid():
+        
         permiso = formset.save(commit=False)        
         permiso.usuario = usuarioObj
         reemplazante = reemplazante
         permiso.sueldo = sueldo
         permiso.comentario = comentario
         permiso.devuelve_horas = devuelve_horas
-        permiso.documenot_adjunto = documento_adjunto
+        permiso.documenot_adjunto = documento_adjunto        
         motivo = motivo
         permiso.save() # guardo los datos de Permiso en la BD
 
@@ -272,6 +275,8 @@ def urlcalendario(request):
                 i += 1
                 evento_en_permiso.save()
 
+        estado_permiso = Estado_Permiso.objects.get(id=3)
+        permiso.estado = estado_permiso
         permiso.horas_solicitadas = suma
         permiso.horas_solicitadas_funcionario =  sumafuncionario
         permiso.save() # guardo suma aca despues de hacer el calculo   
@@ -325,7 +330,7 @@ def urlcalendario(request):
         ##########################################################################################################
         #guardo en horas para gestion de devolucion de horas
         
-        horas = Horas(horas_solicitadas=suma,permiso=ultimopermiso,usuario=usuarioObj)
+        horas = Horas(horas_solicitadas=suma,permiso=ultimopermiso,usuario=usuarioObj,horas_pendientes_por_aprobar=suma)
         horas.save()
 
         #guardado en bitacora
@@ -379,12 +384,14 @@ def EstadisticaPermisos(request):
     if not estaLogeado(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-
     if usuarioObj.rol.id == 1:
-        permisos = Permiso.objects.all().order_by("id")        
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
-        
 
+        permisos = Permiso.objects.all().order_by("usuario__apellido1")
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
+        thora = "Seleccione Opción";
+         
         if "filtrar" in request.GET:
             if "start" in request.GET and request.GET.get("start") != "":
                 permisos = permisos.filter(fecha_creacion__gte=request.GET.get("start"))
@@ -395,6 +402,30 @@ def EstadisticaPermisos(request):
                 permisos = permisos.filter(fecha_creacion__lte=request.GET.get("end"))
                 end = request.GET.get("end")
 
+
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")
+                permisos = permisos.filter(usuario=request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+            if "thora" in request.GET and request.GET.get("thora") != "0" :
+                thora = request.GET.get("thora")
+                if thora == 'Horas por Descontar':
+                    permisos = permisos.filter(horas__horas_descontar__gt=0)
+                if thora == 'Horas por Devolver':
+                    permisos = permisos.filter(horas__horas_por_devolver__gt=0)
+                if thora == 'Horas Descontadas':
+                    permisos = permisos.filter(horas__horas_descontadas__gt=0)
+                if thora == 'Horas Devueltas':
+                    permisos = permisos.filter(horas__horas_devueltas__gt=0)
+
         elif "limpiar" in request.GET:
                 return redirect("/estadisticapermisos")
             
@@ -402,6 +433,8 @@ def EstadisticaPermisos(request):
                 "usuario": usuarioObj,
                 "permisos" : permisos,
                 "query_string" : request.META["QUERY_STRING"],
+                "usuarios_filtro" : usuarios_filtro,
+                "estamento_filtro" : estamento_filtro,
                }
 
 
@@ -499,9 +532,18 @@ def bithoras(request):
                      "saldodevolucion" : 0,
                      "descontaracumuladas" : 0,
                      "descontadas" : 0,
+                     "saldodescontar" : 0,
+                     "sin_recup_con_sueldo" : 0,
+                     "pendientes_por_aprobar" : 0,
                  }
              
             horas = permiso.horas_set.all()
+            #traspaso de datos a otra columna
+            # for hora in horas :
+            #     hora.horas_por_devolver_acumuladas = hora.horas_por_devolver
+            #     hora.horas_descontar_acumuladas = hora.horas_descontar
+            #     hora.save()
+ 
             if len(horas) == 0:
                  continue
  
@@ -509,12 +551,14 @@ def bithoras(request):
             usuarios[idUsuario]["total_horas"] += hora.horas_solicitadas
             usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
             usuarios[idUsuario]["rechazadas"] += hora.horas_rechazadas
-            usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver
+            usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver_acumuladas
             usuarios[idUsuario]["devueltas"] += hora.horas_devueltas
-            usuarios[idUsuario]["saldodevolucion"] = usuarios[idUsuario]["devolveracumuladas"] - usuarios[idUsuario]["devueltas"]
-            usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar
+            usuarios[idUsuario]["saldodevolucion"] += hora.horas_por_devolver
+            usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar_acumuladas
             usuarios[idUsuario]["descontadas"] += hora.horas_descontadas
-            usuarios[idUsuario]["saldodescontar"] = usuarios[idUsuario]["descontaracumuladas"] - usuarios[idUsuario]["descontadas"]
+            usuarios[idUsuario]["saldodescontar"] += hora.horas_descontar
+            usuarios[idUsuario]["sin_recup_con_sueldo"] += hora.horas_sin_recuperacion_con_goce
+            usuarios[idUsuario]["pendientes_por_aprobar"] += hora.horas_pendientes_por_aprobar
              
         usuariosLista = [value for key,value in usuarios.iteritems()]
  
@@ -569,7 +613,10 @@ class EstadisticaPermisosExcel(TemplateView):
 
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         permisos = Permiso.objects.all().order_by("id")
-        eventos_en_permisos = Eventos_en_Permisos.objects.all()      
+        eventos_en_permisos = Eventos_en_Permisos.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
+        thora = "Seleccione Opción";
          
         if "filtrar" in self.request.GET:
             if "start" in self.request.GET and self.request.GET.get("start") != "":
@@ -581,15 +628,49 @@ class EstadisticaPermisosExcel(TemplateView):
                 permisos = permisos.filter(fecha_creacion__lte=self.request.GET.get("end"))
                 end = self.request.GET.get("end")
 
+        if "persona" in self.request.GET and self.request.GET.get("persona") != "0":
+                persona = self.request.GET.get("persona")
+                permisos = permisos.filter(usuario=self.request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+        if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                estamento = self.request.GET.get("estamento")
+                permisos = permisos.filter(usuario__estamento=self.request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+        if "thora" in self.request.GET and self.request.GET.get("thora") != "0" :
+                thora = self.request.GET.get("thora")
+                if thora == 'Horas por Descontar':
+                    permisos = permisos.filter(horas__horas_descontar__gt=0)
+                if thora == 'Horas por Devolver':
+                    permisos = permisos.filter(horas__horas_por_devolver__gt=0)
+                if thora == 'Horas Descontadas':
+                    permisos = permisos.filter(horas__horas_descontadas__gt=0)
+                if thora == 'Horas Devueltas':
+                    permisos = permisos.filter(horas__horas_devueltas__gt=0)        
+
 
         hoy = datetime.now()
         #Creamos el libro de trabajo
         wb= Workbook()
         #Definimos como nuestra hoja de trabajo, la hoja activa, por defecto la primera del libro
         ws = wb.active
+        ws.title = "Estadistica Permisos"
+        ws.sheet_properties.tabColor = "1072BA"
+        
+        # border = Border(left=Side(border_style='medium'),
+        #                  right=Side(border_style='medium'),
+        #                  top=Side(border_style='medium'),
+        #                  bottom=Side(border_style='medium'))
+        # ws.border = border
         #En la celda B1 ponemos el texto 'ESTADISTICA PERMISOS'
         ws['B1'] = 'ESTADISTICA PERMISOS'
-        ws['B2'] = ''
+        ws['B2'] = hoy
+        #definimos color de letra para los eventos anulados
+        letra_roja = Font(color="FF0101")
+        letra_azul = Font(color="1D31E6")
         #Juntamos las celdas desde la B1 hasta la E1, formando una sola celda
         ws.merge_cells('B1:E1')
         #Creamos los encabezados desde la celda B3 hasta la L3
@@ -602,19 +683,39 @@ class EstadisticaPermisosExcel(TemplateView):
         ws['H3'] = 'Dia del permiso'
         ws['I3'] = 'Motivo'
         ws['J3'] = 'Comentario'
-        ws['K3'] = 'Bloques'
-        ws['L3'] = 'Resolución'
-        ws['M3'] = 'Devuelve horas'
-        ws['N3'] = 'Con o sin goce de sueldo'
-        ws['O3'] = 'Reemplazante'        
-        ws['P3'] = 'Archivo adjunto'
+        ws['K3'] = 'Horas'
+        ws['L3'] = 'Bloques'
+        ws['M3'] = 'Resolución'
+        ws['N3'] = 'Devuelve horas'
+        ws['O3'] = 'Con o sin goce de sueldo'
+        ws['P3'] = 'Reemplazante'        
+        ws['Q3'] = 'Archivo adjunto'
 
 
         cont=4
         for permiso in permisos:
 
+            if permiso.estado:
+                if permiso.estado.id == 6: 
+                    ws.cell(row=cont,column=2).font = letra_roja
+                    ws.cell(row=cont,column=3).font = letra_roja
+                    ws.cell(row=cont,column=4).font = letra_roja
+                    ws.cell(row=cont,column=5).font = letra_roja
+                    ws.cell(row=cont,column=6).font = letra_roja
+                    ws.cell(row=cont,column=7).font = letra_roja
+                    ws.cell(row=cont,column=8).font = letra_roja
+                    ws.cell(row=cont,column=9).font = letra_roja
+                    ws.cell(row=cont,column=10).font = letra_roja
+                    ws.cell(row=cont,column=11).font = letra_roja
+                    ws.cell(row=cont,column=12).font = letra_roja
+                    ws.cell(row=cont,column=13).font = letra_roja
+                    ws.cell(row=cont,column=14).font = letra_roja
+                    ws.cell(row=cont,column=15).font = letra_roja
+                    ws.cell(row=cont,column=16).font = letra_roja
+                    ws.cell(row=cont,column=17).font = letra_roja
+
             ws.cell(row=cont,column=2).value = permiso.id
-            ws.cell(row=cont,column=3).value = permiso.usuario.apellido1+" "+permiso.usuario.apellido1+" "+permiso.usuario.nombre
+            ws.cell(row=cont,column=3).value = permiso.usuario.apellido1+" "+permiso.usuario.apellido2+" "+permiso.usuario.nombre
             ws.cell(row=cont,column=4).value = permiso.usuario.rut+"-"+permiso.usuario.dv
             ws.cell(row=cont,column=5).value = permiso.usuario.cargo.nombre
             ws.cell(row=cont,column=6).value = permiso.fecha_creacion
@@ -622,16 +723,23 @@ class EstadisticaPermisosExcel(TemplateView):
             if permiso.primerEvento():
                 ws.cell(row=cont,column=8).value = permiso.primerEvento().numero_evento.start
             ws.cell(row=cont,column=9).value = permiso.motivo.nombre
-            ws.cell(row=cont,column=10).value = permiso.comentario  
-            ws.cell(row=cont,column=11).value = permiso.horas_solicitadas
+            ws.cell(row=cont,column=10).value = permiso.comentario
+            if permiso.usuario.cargo.id != 19:  
+                ws.cell(row=cont,column=11).value = float(permiso.horas_solicitadas)    
+            if permiso.usuario.cargo.id == 19:  
+                ws.cell(row=cont,column=12).value = float(permiso.horas_solicitadas)            
             if permiso.ultimaResolucion():
-                ws.cell(row=cont,column=12).value = permiso.ultimaResolucion().get_respuesta_display()    
-            ws.cell(row=cont,column=13).value = permiso.get_devuelve_horas_display()
-            ws.cell(row=cont,column=14).value = permiso.get_sueldo_display()
-            ws.cell(row=cont,column=15).value = permiso.reemplazante.apellido1+" "+permiso.reemplazante.nombre
+                ws.cell(row=cont,column=13).value = permiso.ultimaResolucion().get_respuesta_display()
+            else :
+                ws.cell(row=cont,column=13).value = 'Sin Revisar'
+                ws.cell(row=cont,column=13).font = letra_azul    
+            ws.cell(row=cont,column=14).value = permiso.get_devuelve_horas_display()
+            ws.cell(row=cont,column=15).value = permiso.get_sueldo_display()
+            ws.cell(row=cont,column=16).value = permiso.reemplazante.apellido1+" "+permiso.reemplazante.nombre
             if permiso.documento_adjunto.name:
-                ws.cell(row=cont,column=16).value =  "Con documento Adjunto"      
+                ws.cell(row=cont,column=17).value =  "Con documento Adjunto"      
             cont = cont + 1
+
         #Establecemos el nombre del archivo
         nombre_archivo ="estadistica_pemisos.xlsx"
         response = HttpResponse(content_type="application/ms-excel") 
@@ -654,6 +762,9 @@ class EstadisticaPermisosPDF(PDFTemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         permisos = Permiso.objects.all().order_by("id")
         eventos_en_permisos = Eventos_en_Permisos.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
+        thora = "Seleccione Opción";
 
         if "filtrar" in self.request.GET:
             if "start" in self.request.GET and self.request.GET.get("start") != "":
@@ -665,10 +776,35 @@ class EstadisticaPermisosPDF(PDFTemplateView):
                 permisos = permisos.filter(fecha_creacion__lte=self.request.GET.get("end"))
                 end = self.request.GET.get("end")
 
+        if "persona" in self.request.GET and self.request.GET.get("persona") != "0":
+                persona = self.request.GET.get("persona")
+                permisos = permisos.filter(usuario=self.request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+        if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                estamento = self.request.GET.get("estamento")
+                permisos = permisos.filter(usuario__estamento=self.request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+        if "thora" in self.request.GET and self.request.GET.get("thora") != "0" :
+                thora = self.request.GET.get("thora")
+                if thora == 'Horas por Descontar':
+                    permisos = permisos.filter(horas__horas_descontar__gt=0)
+                if thora == 'Horas por Devolver':
+                    permisos = permisos.filter(horas__horas_por_devolver__gt=0)
+                if thora == 'Horas Descontadas':
+                    permisos = permisos.filter(horas__horas_descontadas__gt=0)
+                if thora == 'Horas Devueltas':
+                    permisos = permisos.filter(horas__horas_devueltas__gt=0)
+
 
         context = {
                 "usuario": usuarioObj,
                 "permisos" : permisos,
+                "usuarios_filtro" : usuarios_filtro,
+                "estamento_filtro" : estamento_filtro,
                 "query_string" : self.request.META["QUERY_STRING"],
                }
         context['hoy'] =  datetime.now()       
@@ -764,9 +900,18 @@ class BitHorasPDF(PDFTemplateView):
                      "saldodevolucion" : 0,
                      "descontaracumuladas" : 0,
                      "descontadas" : 0,
+                     "saldodescontar" : 0,
+                     "sin_recup_con_sueldo" : 0,
+                     "pendientes_por_aprobar" : 0,
                  }
              
             horas = permiso.horas_set.all()
+            #traspaso de datos a otra columna
+            # for hora in horas :
+            #     hora.horas_por_devolver_acumuladas = hora.horas_por_devolver
+            #     hora.horas_descontar_acumuladas = hora.horas_descontar
+            #     hora.save()
+ 
             if len(horas) == 0:
                  continue
  
@@ -774,12 +919,14 @@ class BitHorasPDF(PDFTemplateView):
             usuarios[idUsuario]["total_horas"] += hora.horas_solicitadas
             usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
             usuarios[idUsuario]["rechazadas"] += hora.horas_rechazadas
-            usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver
+            usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver_acumuladas
             usuarios[idUsuario]["devueltas"] += hora.horas_devueltas
-            usuarios[idUsuario]["saldodevolucion"] = usuarios[idUsuario]["devolveracumuladas"] - usuarios[idUsuario]["devueltas"]
-            usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar
+            usuarios[idUsuario]["saldodevolucion"] += hora.horas_por_devolver
+            usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar_acumuladas
             usuarios[idUsuario]["descontadas"] += hora.horas_descontadas
-            usuarios[idUsuario]["saldodescontar"] = usuarios[idUsuario]["descontaracumuladas"] - usuarios[idUsuario]["descontadas"]
+            usuarios[idUsuario]["saldodescontar"] += hora.horas_descontar
+            usuarios[idUsuario]["sin_recup_con_sueldo"] += hora.horas_sin_recuperacion_con_goce
+            usuarios[idUsuario]["pendientes_por_aprobar"] += hora.horas_pendientes_por_aprobar
              
         usuariosLista = [value for key,value in usuarios.iteritems()]
  
@@ -879,9 +1026,18 @@ class BitHorasExcel(TemplateView):
                      "saldodevolucion" : 0,
                      "descontaracumuladas" : 0,
                      "descontadas" : 0,
+                     "saldodescontar" : 0,
+                     "sin_recup_con_sueldo" : 0,
+                     "pendientes_por_aprobar" : 0,
                  }
              
             horas = permiso.horas_set.all()
+            #traspaso de datos a otra columna
+            # for hora in horas :
+            #     hora.horas_por_devolver_acumuladas = hora.horas_por_devolver
+            #     hora.horas_descontar_acumuladas = hora.horas_descontar
+            #     hora.save()
+ 
             if len(horas) == 0:
                  continue
  
@@ -889,12 +1045,15 @@ class BitHorasExcel(TemplateView):
             usuarios[idUsuario]["total_horas"] += hora.horas_solicitadas
             usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
             usuarios[idUsuario]["rechazadas"] += hora.horas_rechazadas
-            usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver
+            usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver_acumuladas
             usuarios[idUsuario]["devueltas"] += hora.horas_devueltas
-            usuarios[idUsuario]["saldodevolucion"] = usuarios[idUsuario]["devolveracumuladas"] - usuarios[idUsuario]["devueltas"]
-            usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar
+            usuarios[idUsuario]["saldodevolucion"] += hora.horas_por_devolver
+            usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar_acumuladas
             usuarios[idUsuario]["descontadas"] += hora.horas_descontadas
-            usuarios[idUsuario]["saldodescontar"] = usuarios[idUsuario]["descontaracumuladas"] - usuarios[idUsuario]["descontadas"]
+            usuarios[idUsuario]["saldodescontar"] += hora.horas_descontar
+            usuarios[idUsuario]["sin_recup_con_sueldo"] += hora.horas_sin_recuperacion_con_goce
+            usuarios[idUsuario]["pendientes_por_aprobar"] += hora.horas_pendientes_por_aprobar
+             
              
         usuariosLista = [value for key,value in usuarios.iteritems()]
 
@@ -919,6 +1078,8 @@ class BitHorasExcel(TemplateView):
         ws['J3'] = 'HORAS POR DESCONTAR ACUMULADAS'
         ws['K3'] = 'HORAS DESCONTADAS'
         ws['L3'] = 'SALDO HORAS POR DESCONTAR'
+        ws['M3'] = 'HORAS SIN RECUPERACION CON GOCE DE SUELDO'
+        ws['N3'] = 'HORAS PENDIENTES DE REVISION'
         cont=4
         for usuario in usuariosLista:
 
@@ -933,6 +1094,10 @@ class BitHorasExcel(TemplateView):
             ws.cell(row=cont,column=10).value = usuario["descontaracumuladas"]
             ws.cell(row=cont,column=11).value = usuario["descontadas"]
             ws.cell(row=cont,column=12).value = usuario["saldodescontar"]
+            ws.cell(row=cont,column=13).value = usuario["sin_recup_con_sueldo"]
+            ws.cell(row=cont,column=14).value = usuario["pendientes_por_aprobar"]
+
+
             cont = cont + 1
         #Establecemos el nombre del archivo
         nombre_archivo ="informe_de_horas.xlsx"
@@ -952,6 +1117,7 @@ def permisosusuario(request,pk):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     permisos = Permiso.objects.filter(usuario__id=pk)
     bitacoras = Bitacora.objects.filter(permiso__usuario__id=pk)
+    horas = Horas.objects.filter(permiso__usuario__id=pk)
 
     data = {
 
@@ -959,6 +1125,7 @@ def permisosusuario(request,pk):
         "permisos" : permisos,
         "months" : mkmonth_lst(),   
         "bitacoras" : bitacoras,
+        "horas" : horas,
 
     }
 
@@ -1253,42 +1420,55 @@ def main(request):
 
     permisos = Permiso.objects.filter(usuario=usuarioObj.id)
     bitacoras = Bitacora.objects.all()
+    horass = Horas.objects.filter(usuario=usuarioObj.id)
     formset = PermisoFormSet()
 
     usuarios = {}
     for permiso in permisos:
-        idUsuario = permiso.usuario.id
-        if idUsuario not in usuarios:
-            usuarios[idUsuario] = {
-                 "id" : permiso.usuario.id,
-                 "nombre" : permiso.usuario.nombre,
-                 "apellido1"  :permiso.usuario.apellido1,
-                 "apellido2" : permiso.usuario.apellido2,
-                 "estamento" : permiso.usuario.estamento.nombre,
-                 "total_horas" : 0,
-                 "aprobadas" : 0,
-                 "rechazadas" : 0,
-                 "devolveracumuladas" : 0,
-                 "devueltas" : 0,
-                 "saldodevolucion" : 0,
-                 "descontaracumuladas" : 0,
-                 "descontadas" : 0,
-             }
-         
-        horas = permiso.horas_set.all()
-        if len(horas) == 0:
-             continue
-
-        hora = horas[0]
-        usuarios[idUsuario]["total_horas"] += hora.horas_solicitadas
-        usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
-        usuarios[idUsuario]["rechazadas"] += hora.horas_rechazadas
-        usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver
-        usuarios[idUsuario]["devueltas"] += hora.horas_devueltas
-        usuarios[idUsuario]["saldodevolucion"] = usuarios[idUsuario]["devolveracumuladas"] - usuarios[idUsuario]["devueltas"]
-        usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar
-        usuarios[idUsuario]["descontadas"] += hora.horas_descontadas
-        usuarios[idUsuario]["saldodescontar"] = usuarios[idUsuario]["descontaracumuladas"] - usuarios[idUsuario]["descontadas"]
+            idUsuario = permiso.usuario.id
+            if idUsuario not in usuarios:
+                usuarios[idUsuario] = {
+                     "id" : permiso.usuario.id,
+                     "estado" : permiso.estado,
+                     "nombre" : permiso.usuario.nombre,
+                     "apellido1"  :permiso.usuario.apellido1,
+                     "apellido2" : permiso.usuario.apellido2,
+                     "estamento" : permiso.usuario.estamento.nombre,
+                     "total_horas" : 0,
+                     "aprobadas" : 0,
+                     "rechazadas" : 0,
+                     "devolveracumuladas" : 0,
+                     "devueltas" : 0,
+                     "saldodevolucion" : 0,
+                     "descontaracumuladas" : 0,
+                     "descontadas" : 0,
+                     "saldodescontar" : 0,
+                     "sin_recup_con_sueldo" : 0,
+                     "pendientes_por_aprobar" : 0,
+                 }
+             
+            horas = permiso.horas_set.all()
+            #traspaso de datos a otra columna
+            # for hora in horas :
+            #     hora.horas_por_devolver_acumuladas = hora.horas_por_devolver
+            #     hora.horas_descontar_acumuladas = hora.horas_descontar
+            #     hora.save()
+ 
+            if len(horas) == 0:
+                 continue
+ 
+            hora = horas[0]
+            usuarios[idUsuario]["total_horas"] += hora.horas_solicitadas
+            usuarios[idUsuario]["aprobadas"] += hora.horas_aprobadas
+            usuarios[idUsuario]["rechazadas"] += hora.horas_rechazadas
+            usuarios[idUsuario]["devolveracumuladas"] += hora.horas_por_devolver_acumuladas
+            usuarios[idUsuario]["devueltas"] += hora.horas_devueltas
+            usuarios[idUsuario]["saldodevolucion"] += hora.horas_por_devolver
+            usuarios[idUsuario]["descontaracumuladas"] += hora.horas_descontar_acumuladas
+            usuarios[idUsuario]["descontadas"] += hora.horas_descontadas
+            usuarios[idUsuario]["saldodescontar"] += hora.horas_descontar
+            usuarios[idUsuario]["sin_recup_con_sueldo"] += hora.horas_sin_recuperacion_con_goce
+            usuarios[idUsuario]["pendientes_por_aprobar"] += hora.horas_pendientes_por_aprobar
          
     usuariosLista = [value for key,value in usuarios.iteritems()]
    
@@ -1298,6 +1478,7 @@ def main(request):
             "permisos" : permisos ,
             "bitacoras" : bitacoras,
             "usuarios" : usuariosLista,
+            "horas" : horass,
            }
 
     
@@ -1311,7 +1492,7 @@ def descontar(request):
     revisados = Resolucion.objects.values_list('permiso')        
     anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
     rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
-    sindevolucion= Permiso.objects.filter(devuelve_horas='N')
+    condevolucion= Permiso.objects.filter(devuelve_horas='S')
    
 
     if  usuarioObj.rol.nivel_acceso == 0: 
@@ -1325,6 +1506,7 @@ def descontar(request):
                 horas = horas.exclude(permiso__id__in=anulados)
                 horas = horas.filter(permiso__id__in=revisados)
                 horas = horas.exclude(permiso__id__in=rechazados)
+                horas = horas.exclude(permiso__id__in=condevolucion)
                
                 for user in usuarios:
                     user.usuario_activo = user.id == int(seleccionado)
@@ -1335,7 +1517,8 @@ def descontar(request):
                 permisodesc  = Permiso.objects.get(id=permisoid)
                 if len(permisodesc.horas_set.all()) > 0:
                     horas = Horas.objects.get(permiso=permisoid)
-                    horas.horas_descontadas = horasdescontar
+                    horas.horas_descontadas = float(horasdescontar)
+                    horas.horas_descontar = float(horas.horas_descontar) - float(horasdescontar) 
                     horas.save()
                     data = {
                         "usuario": usuarioObj,
@@ -1393,10 +1576,12 @@ def devuelvehoras(request):
                 horasdevueltas = request.POST.get("horasdevolver")
                 permisodesc  = Permiso.objects.get(id=permisoid)
                 if len(permisodesc.horas_set.all()) > 0:                    
-                    horas = Horas.objects.get(permiso=permisoid)                    
+                    horas = Horas.objects.get(permiso=permisoid)
+
                     horas.horas_por_devolver = float(horas.horas_por_devolver) - float(horasdevueltas)
 
                     horas.horas_devueltas = float(horasdevueltas) + float(horas.horas_devueltas)
+
                     horas.save()
                     data = {
                         "usuario": usuarioObj,
@@ -1547,10 +1732,12 @@ def aprobarRechazar(request):
     if request.POST:        
 
         if request.POST['respuesta'] == 'A' :
+            estado_permiso = Estado_Permiso.objects.get(id=4)
             permiso = Permiso.objects.get(id=request.POST['permiso'])
             permiso.comentario = request.POST.get('comentario')
             permiso.sueldo = request.POST.get('sueldo')
             permiso.devuelve_horas = request.POST.get('devuelve_horas')
+            permiso.estado = estado_permiso
             #permiso.estado = Estado_Permiso.objects.filter(id=4) 
             permiso.save()
             horas = Horas.objects.get(permiso=permiso)            
@@ -1559,15 +1746,18 @@ def aprobarRechazar(request):
             horas.usuario = permiso.usuario
             horas.horas_solicitadas = permiso.horas_solicitadas
             horas.horas_aprobadas = permiso.horas_solicitadas
+            horas.horas_pendientes_por_aprobar = 0
             if permiso.devuelve_horas == 'S':
-                horas.horas_por_devolver = permiso.horas_solicitadas                
+                horas.horas_por_devolver = permiso.horas_solicitadas
+                horas.horas_por_devolver_acumuladas = permiso.horas_solicitadas                
 
             if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'S'):          
                 horas.horas_descontar = permiso.horas_solicitadas
-                horas.horas_por_devolver = 0
+                horas.horas_por_devolver = 0                 
 
             if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'C'):
                 horas.horas_descontar = 0
+                horas.horas_sin_recuperacion_con_goce = permiso.horas_solicitadas
 
 
             horas.save()
@@ -1580,13 +1770,18 @@ def aprobarRechazar(request):
             
 
         if request.POST['respuesta'] == 'R' :
+
             permiso = Permiso.objects.get(id=request.POST['permiso'])
             horas = Horas.objects.get(permiso=permiso)
+            estado_permiso = Estado_Permiso.objects.get(id=5)
+            permiso.estado = estado_permiso
+            permiso.save()
             #horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_rechazadas=permiso.horas_solicitadas)
             horas.permiso = permiso
             horas.usuario = permiso.usuario
             horas.horas_horas_solicitadas = permiso.horas_solicitadas
             horas.horas_rechazadas = permiso.horas_solicitadas
+            horas.horas_pendientes_por_aprobar = 0
             horas.save()
             actividad = Actividad.objects.get(id=3)
             resu = procesa_resolucion(request,actividad,usuarioObj)        
@@ -1702,6 +1897,9 @@ def anula(request):
             #guardo en Anulado para el registro de los permisos anulados
             anulado = Anulado(permiso=permiso,anuladopor=usuarioObj,motivo=motivo)
             anulado.save()
+            #guardo en Resolucion
+            resolucion = Resolucion(respuesta='N',razon=motivo,permiso=permiso,resolutor=usuarioObj)
+            resolucion.save()
 
             #arrayAnular = []
 
@@ -1719,7 +1917,8 @@ def anula(request):
             horas.horas_solicitadas = 0
             horas.horas_descontar = 0
             horas.horas_por_devolver = 0
-            horas.horas_aprobadas = 0 
+            horas.horas_aprobadas = 0
+            horas.horas_pendientes_por_aprobar = 0 
             horas.save()
 
 
