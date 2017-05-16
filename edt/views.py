@@ -75,6 +75,7 @@ import tablib
 
 # Generic View de Bitacora
 class PermisoListView(ListView):
+
     template_name = 'edt/bitacora.html'
     context_object_name = 'bitacora'
     paginate_by = 10
@@ -83,6 +84,18 @@ class PermisoListView(ListView):
         return Bitacora.objects.order_by('-fecha')
 
 #-----------------------------------------------------------------------------------------
+def anulaciones(request):
+    if not estaLogeado(request):
+                return redirect("/login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+
+    if  user.rol.id == 1:
+        return HttpResponse ("Say Hiiiii!")
+    else:
+        return HttpResponse("Say Hooooo!")    
+
+
+
 def login(request):
         if request.session.get('usuario',False):
                 return redirect('/')#puse esa url para probar nomas
@@ -112,15 +125,65 @@ def logout(request):
 
             return redirect("/login")
 
-def wsCalendario(request): # Web service que  genera calendario para cargar en pantalla 
+
+def permiso_jefatura(request):
+
+    if not estaLogeado(request):
+                return redirect("/login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+    formset = PermisoFormSet()            
+
+    if  user.rol.id == 1:
+        usuarios_filtro = Usuario.objects.all()
+
+        if "filtrar" in request.GET:
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")                
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)    
+
+        elif "limpiar" in request.GET:
+                return redirect("/permiso_jefatura")
+
+
+        data = {
+                "form": formset,
+                "usuarios_filtro" : usuarios_filtro,
+                "usuario" : user,
+                "persona" : request.GET.get("persona",None),
+                "query_string" : request.META["QUERY_STRING"]           
+        }
+
+        return render_to_response("edt/permiso_jefatura.html",data,context_instance=RequestContext(request))
+    else:
+     return redirect("/main")         
+
+
+def wsPermiso_Jefatura(request): # Web service que  genera calendario para cargar en pantalla 
         if not estaLogeado(request):
                 return redirect("/login")
-        usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+        user = Usuario.objects.get(id=request.session['usuario'])
+        if  user.rol.id == 1:
+       
+            usuarios_filtro = Usuario.objects.all()
 
-        usuario_id=request.session['usuario']
+        if "filtrar" in request.GET:
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")                
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+
+        usuario_id=Usuario.objects.get(id=persona)
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Nov 01 2016 01:00AM")
+        fecha_cambio_TZ = parser.parse("Mar 01 2017 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("Mar 25 2017 01:00AM")
+        inicio_agno = ("2017-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2017 01:00AM")        
+        fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
+        contador = 0
+
 
         ids = []
         for lista_ids in Eventos_en_Permisos.objects.all():
@@ -129,7 +192,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
          #data = serializers.serialize("json", Calendari.objects.filter(usuario_id=usuario_id))
          #Objeto.objects.all().exclude(id__in=lista) parta excluir los que estan en la lista
         lista = []
-        for evento in Evento.objects.filter(usuario_id=usuario_id):
+        for evento in Evento.objects.filter(usuario_id=usuario_id).filter(start__gte=inicio_agno):
                 evento.flageado = evento.id in ids                   
                 #formateo de timezone a milisegundos
                 from_zone = tz.gettz('Europe/Paris') 
@@ -137,8 +200,10 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
                 start = datetime.timetuple(evento.start)                 
                 start = time.strftime('%Y-%m-%dT%H:%M:%SZ', start)
                 start = datetime.strptime(start, '%Y-%m-%dT%H:%M:%SZ')
+
+
                 #automatizacion de cambio de  TZ a partir del 01 de noviembre
-                if start >= fecha_cambio_TZ :                   
+                if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Monterrey')
                 else:  
                     to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
@@ -151,9 +216,69 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
                 end = end.replace(tzinfo=from_zone)
                 end = end.astimezone(to_zone)
                 end = 1000 * (time.mktime(end.timetuple()))
-                #generacion de lista de eventos en formato json               
+                contador = contador + 1  
+                #generacion de lista de eventos en formato json
+                lista.append({"contador":contador,"fecha_inicio":fecha_inicio,"used": evento.flageado,"id":evento.id, "start":start, "end":end})
+                data = json.dumps(lista)
+            # "title":usuarioObj.nombre+" "+usuarioObj.apellido1 ,
+                    
+        #retorna la info en formato JSON
+        return HttpResponse(data, content_type = "application/json")
+        #return HttpResponse(json.dumps(ids)) ==> verificacion de permisos ya ocupados
 
-                lista.append({"used": evento.flageado,"id":evento.id, "start":start, "end":end, "multi":0 ,"allDay":False, "extension_id":2})
+
+
+
+def wsCalendario(request): # Web service que  genera calendario para cargar en pantalla 
+        if not estaLogeado(request):
+                return redirect("/login")
+        usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+        usuario_id=request.session['usuario']
+        #lista de los ids de los eventos ya ocupados
+        hoy = datetime.now()
+        fecha_cambio_TZ = parser.parse("Mar 01 2017 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("Mar 25 2017 01:00AM")
+        inicio_agno = ("2017-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2017 01:00AM")        
+        fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
+        contador = 0
+
+
+        ids = []
+        for lista_ids in Eventos_en_Permisos.objects.all():
+            ids.append(int(lista_ids.numero_evento.id))
+
+         #data = serializers.serialize("json", Calendari.objects.filter(usuario_id=usuario_id))
+         #Objeto.objects.all().exclude(id__in=lista) parta excluir los que estan en la lista
+        lista = []
+        for evento in Evento.objects.filter(usuario_id=usuario_id).filter(start__gte=inicio_agno):
+                evento.flageado = evento.id in ids                   
+                #formateo de timezone a milisegundos
+                from_zone = tz.gettz('Europe/Paris') 
+
+                start = datetime.timetuple(evento.start)                 
+                start = time.strftime('%Y-%m-%dT%H:%M:%SZ', start)
+                start = datetime.strptime(start, '%Y-%m-%dT%H:%M:%SZ')
+
+
+                #automatizacion de cambio de  TZ a partir del 01 de noviembre
+                if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
+                    to_zone = tz.gettz('America/Monterrey')
+                else:  
+                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
+                start = start.replace(tzinfo=from_zone)
+                start = start.astimezone(to_zone)
+                start = 1000*(time.mktime(start.timetuple()))
+                end = datetime.timetuple(evento.end)
+                end = time.strftime('%Y-%m-%dT%H:%M:%SZ', end)
+                end = datetime.strptime(end, '%Y-%m-%dT%H:%M:%SZ')
+                end = end.replace(tzinfo=from_zone)
+                end = end.astimezone(to_zone)
+                end = 1000 * (time.mktime(end.timetuple()))
+                contador = contador + 1  
+                #generacion de lista de eventos en formato json
+                lista.append({"contador":contador,"fecha_inicio":fecha_inicio,"used": evento.flageado,"id":evento.id, "start":start, "end":end})
                 data = json.dumps(lista)
             # "title":usuarioObj.nombre+" "+usuarioObj.apellido1 ,
                     
@@ -179,7 +304,16 @@ def comprobante(request, pk):
 def urlcalendario(request):
     if not estaLogeado(request):
                 return redirect("/login")
-    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    
+    if request.POST.get('data-persona'):
+
+        datapersona = request.POST.get('data-persona')        
+        usuarioObj = Usuario.objects.get(id=datapersona)
+
+
+    else:
+        usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
     actividad = Actividad.objects.get(id=5)
     usuario_id=request.session['usuario']
 
@@ -229,6 +363,21 @@ def urlcalendario(request):
         for evento in eventos:
             delta = evento.end - evento.start # calculo de la cantidad de horas solicitadas en segundos
             
+            if (usuarioObj.estamento.id == 9 ):  
+                #CALCULO PARA SECUNDARIA
+                suma += float(delta.seconds) / 3300 # calculo para  Informes
+                deltag = float(delta.seconds) / 3300 # calculo para  Informes
+                deltas.append(round(deltag,2))
+                sumafuncionario += float(delta.seconds) / 3300  # calculo para  funcionario
+                deltafuncionario = float(delta.seconds) / 3300  # calculo para  funcionario
+                deltaf.append(round(deltafuncionario,2))  
+                  
+                suma = round(suma,2) # redondeo a 2 decimales
+                evento_en_permiso = Eventos_en_Permisos(numero_evento=evento,numero_permiso=ultimopermiso,deltainforme=deltas[i],deltafuncionario=deltaf[i])
+                i += 1
+                evento_en_permiso.save()
+
+
             if (usuarioObj.estamento.id == 5 or usuarioObj.estamento.id == 4 ):  
                 #CALCULO PARA SECUNDARIA
                 suma += float(delta.seconds) / 3300 # calculo para  Informes
@@ -361,9 +510,7 @@ def urlcalendario(request):
     # return HttpResponse(data, content_type = "application/json")
     #else:
     #    formset = PermisoFormSet()
-    return render_to_response("edt/main.html", {
-        "form": formset,
-    },context_instance=RequestContext(request)) 
+    return render_to_response("edt/main.html",{"form": formset},context_instance=RequestContext(request)) 
 
 
 
@@ -1271,29 +1418,16 @@ def permisolst(request):
         return render_to_response("edt/permisolst.html",data)
 
 
-def anuladoslst(request):
+def anulados(request):
     if not estaLogeado(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
-    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
-    gerencia = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).filter(usuario__jefatura=6)
-    dirgen = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=2).filter(usuario__jefatura=3)
+    #anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
 
-    permisos = Permiso.objects.filter(id__in=anulados)
+    anulados = Anulado.objects.all().order_by('-fecha')
     
 
-    bitacoras = Bitacora.objects.all()
-
-
-    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1)
-    foliocpe = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=cpe))
-    
-    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4)
-    folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
-
-    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5)
-    foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))    
+    bitacoras = Bitacora.objects.all()   
 
     if  usuarioObj.rol.nivel_acceso == 0:
 
@@ -1306,75 +1440,180 @@ def anuladoslst(request):
 
             if "persona" in request.GET and request.GET.get("persona") != "0":
                 persona = request.GET.get("persona")
-                permisos = permisos.filter(usuario=request.GET.get("persona"))
+                anulados = anulados.filter(permiso__usuario=request.GET.get("persona"))
                 for usuario in usuarios_filtro:
                     usuario.usuario_activo = usuario.id == int(persona)
 
             if "estamento" in request.GET and request.GET.get("estamento") != "0":
                 estamento = request.GET.get("estamento")
-                permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
+                anulados = anulados.filter(permiso__usuario__estamento=request.GET.get("estamento"))
                 for estament in estamento_filtro:
                     estament.estamento_activo = estament.id == int(estamento)   
         elif "limpiar" in request.GET:
-            return redirect("/permisolst")       
-        paginator = Paginator(permisos,30)
+            return redirect("/anulados")
+
+        paginator = Paginator(anulados,10)
         
         try: pagina = int(request.GET.get("page",'1'))
         except ValueError: pagina = 1
             
         try:
-            permisos = paginator.page(pagina)
+            anulados = paginator.page(pagina)
         except (InvalidPage, EmptyPage):
-            permisos = paginator.page(paginator.num_pages)
+            anulados = paginator.page(paginator.num_pages)
 
 
         data = {
                  "estamento":estamento,
-                 "foliocpe":foliocpe,
-                 "folioprimaria" :folioprimaria,
-                 "foliosecundaria" :foliosecundaria ,
-                 "permisos": permisos,
                  "usuario" : usuarioObj,
-                 "permisos_list" : permisos.object_list,
                  "months" : mkmonth_lst(),
                  "usuarios_filtro" : usuarios_filtro,
                  "estamento_filtro" : estamento_filtro,
                  "bitacoras" : bitacoras,
+                 "anulados" : anulados,
+                 "query_string" : request.META["QUERY_STRING"]
                  }
 
 
         return render_to_response("edt/anuladoslst.html",data)
         #return HttpResponse(administracion)
 
-    else:
-        #if     usuarioObj.username == request.session['usuario']:
-        if  usuarioObj.rol.nivel_acceso == 1:
+    # else:
+    #     #if     usuarioObj.username == request.session['usuario']:
+    #     if  usuarioObj.rol.nivel_acceso == 1:
         
-            anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
-            permiso = Permiso.objects.filter(id__in=anulados)
+    #         anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    #         permiso = Permiso.objects.filter(id__in=anulados)
             
 
-            paginator = Paginator(permiso,10)       
-            try: pagina = int(request.GET.get("page",'1'))
-            except ValueError: pagina = 1       
-            try:
-                permiso = paginator.page(pagina)
-            except (InvalidPage, EmptyPage):
-                permiso = paginator.page(paginator.num_pages)
+    #         paginator = Paginator(permiso,10)       
+    #         try: pagina = int(request.GET.get("page",'1'))
+    #         except ValueError: pagina = 1       
+    #         try:
+    #             permiso = paginator.page(pagina)
+    #         except (InvalidPage, EmptyPage):
+    #             permiso = paginator.page(paginator.num_pages)
 
 
             
-        data = {
-                 "foliocpe":foliocpe,
-                 "folioprimaria" :folioprimaria,
-                 "foliosecundaria" :foliosecundaria ,
-                 "permisos": permiso,
-                 "usuario" : usuarioObj,
-                 "permisos_list" : permiso.object_list,
-                 "months" : mkmonth_lst(),
-               }
+    #     data = {
+    #              "foliocpe":foliocpe,
+    #              "folioprimaria" :folioprimaria,
+    #              "foliosecundaria" :foliosecundaria ,
+    #              "permisos": permiso,
+    #              "usuario" : usuarioObj,
+    #              "permisos_list" : permiso.object_list,
+    #              "months" : mkmonth_lst(),
+    #            }
             
-        return render_to_response("edt/anuladoslst.html",data)
+    #     return render_to_response("edt/anuladoslst.html",data)
+
+class AnuladosPDF(PDFTemplateView):
+    template_name="edt/anuladosPDF.html"
+
+    def get_context_data(self,**kwargs):
+        context = super(AnuladosPDF,self).get_context_data(
+            pagesize="letter",
+            title="Anulados",
+            **kwargs
+            )
+        usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
+        anulados = Anulado.objects.all().order_by('-fecha')
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
+
+        if "filtrar" in self.request.GET:           
+
+            if "persona" in self.request.GET and self.request.GET.get("persona") != "0":
+                persona = self.request.GET.get("persona")
+                anulados = anulados.filter(permiso__usuario=self.request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                estamento = self.request.GET.get("estamento")
+                anulados = anulados.filter(permiso__usuario__estamento=self.request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+        context = {
+                     "estamento":estamento,
+                     "usuario" : usuarioObj,
+                     "months" : mkmonth_lst(),
+                     "usuarios_filtro" : usuarios_filtro,
+                     "estamento_filtro" : estamento_filtro,                
+                     "anulados" : anulados,
+                     }
+        context['hoy'] =  datetime.now()
+        
+        return context                         
+        
+class AnuladosExcel(TemplateView):
+    """docstring for AnuladosExcel"""
+    def get(self, request, *args, **kwargs):
+
+
+        usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
+        anulados = Anulado.objects.all().order_by('-fecha')
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        estamento_filtro = Estamento.objects.all()
+
+        if "filtrar" in self.request.GET:           
+
+            if "persona" in self.request.GET and self.request.GET.get("persona") != "0":
+                persona = self.request.GET.get("persona")
+                anulados = anulados.filter(permiso__usuario=self.request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                estamento = self.request.GET.get("estamento")
+                anulados = anulados.filter(permiso__usuario__estamento=self.request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+        hoy = datetime.now()
+        #Creamos el libro de trabajo
+        wb= Workbook()
+        #Definimos como nuestra hoja de trabajo, la hoja activa, por defecto la primera del libro
+        ws = wb.active
+        #En la celda B1 ponemos el texto 'INFORME DE HORAS'
+        ws['B1'] = 'INFORME DE PERMISOS ANULADOS'
+        #Juntamos las celdas desde la B1 hasta la E1, formando una sola celda
+        ws.merge_cells('B1:E1')
+        # Encabezados
+
+        ws['B3'] = '#'
+        ws['C3'] = 'Permiso'
+        ws['D3'] = 'Solicitante'
+        ws['E3'] = 'Anulador'
+        ws['F3'] = 'Motivo'
+        ws['G3'] = 'Fecha'
+
+        cont = 4
+        contador = 1
+
+        for anulado in anulados:
+
+            ws.cell(row=cont,column=2).value = contador
+            ws.cell(row=cont,column=3).value = anulado.permiso.id
+            ws.cell(row=cont,column=4).value = anulado.permiso.usuario.apellido1+" "+anulado.permiso.usuario.apellido2+" "+anulado.permiso.usuario.nombre
+            ws.cell(row=cont,column=5).value = anulado.anuladopor.apellido1+" "+anulado.anuladopor.nombre
+            ws.cell(row=cont,column=6).value = anulado.motivo
+            ws.cell(row=cont,column=7).value = anulado.fecha
+
+            cont = cont +1
+            contador = contador + 1
+        nombre_archivo = "informe_anulados.xlsx"
+        response = HttpResponse(content_type="application/ms-excel")
+        contenido = "attachment; filename={0}".format(nombre_archivo)
+        response["Content-Disposition"] = contenido
+        wb.save(response)
+        return response        
+
+
 
 def upload(request, pk):
         if not estaLogeado(request):

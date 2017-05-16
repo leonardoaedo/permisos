@@ -100,7 +100,7 @@ class Usuario(models.Model):
             ordering = ('apellido1',)
 
         def __unicode__(self):              # __unicode__ on Python 2
-            return "%s %s"%(self.apellido1,self.nombre)
+            return u"%s %s"%(self.apellido1,self.nombre)
 devuelve = (
         ("S","SI"),
         ("N","NO")
@@ -191,6 +191,22 @@ class Anulado(models.Model):
     def __unicode__(self):
          return "permiso %s anulador por %s"%(self.permiso.id,self.anuladopor.nombre)
 
+class Devuelto(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    permiso = models.ForeignKey(Permiso)
+    ingresadopor = models.ForeignKey(Usuario)
+    cantidad = models.FloatField(default=0)
+    def __unicode__(self):
+        return u"%d devueltas por %s del permiso %d"%(self.cantidad,self.permiso.usuario.apellido1+" "+permiso.usuario.nombre,self.permiso.id)
+
+class Descontado(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    permiso = models.ForeignKey(Permiso)
+    ingresadopor = models.ForeignKey(Usuario)
+    cantidad = models.FloatField(default=0)
+    def __unicode__(self):
+        return u"%d descontadas por %s del permiso %d"%(self.cantidad,self.permiso.usuario.apellido1+" "+permiso.usuario.nombre,self.permiso.id)
+
 
 class Resolucion (models.Model):
         respuesta = models.CharField(max_length=1,choices=opciones)
@@ -206,7 +222,7 @@ class Document(models.Model):
     filename = models.CharField(max_length=100)
     docfile = models.FileField() 
     def __unicode__(self):
-            return "%s"%(self.docfile)           
+            return u"%s"%(self.docfile)           
 
 class Evento (models.Model):
     usuario = models.ForeignKey(Usuario,related_name="edt_user")
@@ -275,7 +291,7 @@ class Revisor(models.Model):
     tercero = models.ForeignKey(Funcion,related_name="tercero")
 
     def __unicode__(self):
-        return "%s es revisado por %s, %s, %s"%(self.estamento,self.primero,self.segundo,self.tercero)
+        return u"%s es revisado por %s, %s, %s"%(self.estamento,self.primero,self.segundo,self.tercero)
 
 
 

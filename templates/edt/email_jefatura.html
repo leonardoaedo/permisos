@@ -18,10 +18,21 @@
 </head>
 <body>
 
-<div  style="background-color: #FFFFFF;	background-color: #FFFFFF;  border: 2px solid #FFFD00;  background-image: background-position: 320px 10%;background-repeat: no-repeat; margin-top: 10px;margin-bottom: 20px;margin-left: 15px;padding: 10px;width: 420px;-moz-box-shadow: 14px 11px 19px 1px #888888;	-webkit-box-shadow: 14px 11px 19px 1px #888888;	box-shadow: 14px 11px 19px 1px #888888;	border: 1px #888888 solid;	-moz-box-shadow: 14px 11px 19px 1px #888888;	-webkit-box-shadow: 14px 11px 19px 1px #888888;	box-shadow: 14px 11px 19px 1px #888888;	font: 14px Tahoma, Geneva, sans-serif;    -moz-border-radius-topleft: 5px;    -moz-border-radius-topright:5px;    -moz-border-radius-bottomleft:5px;    -moz-border-radius-bottomright:5px;    -webkit-border-top-left-radius:5px;    -webkit-border-top-right-radius:5px;    -webkit-border-bottom-left-radius:5px;    -webkit-border-bottom-right-radius:5px;    border-top-left-radius:5px;    border-top-right-radius:5px;    border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
-	<div style="position:relative;"><img style="margin-left:120px;" src="http://rrhh.cdegaulle.cl/static/img/escudo_lycee2.png" width="186" height="153" /></div>
+<div  style="background-color:#556270; #FFFFFF;	background-color: #FFFFFF;  border: 2px solid #FFFD00; background-position: 320px 10%;background-repeat: no-repeat; margin-top: 10px;margin-bottom: 20px;margin-left: 15px;padding: 10px;-moz-box-shadow: 14px 11px 19px 1px #888888;	-webkit-box-shadow: 14px 11px 19px 1px #888888;	box-shadow: 14px 11px 19px 1px #888888;	border: 1px #888888 solid;	-moz-box-shadow: 14px 11px 19px 1px #888888;	-webkit-box-shadow: 14px 11px 19px 1px #888888;	box-shadow: 14px 11px 19px 1px #888888;	font: 14px Tahoma, Geneva, sans-serif;    -moz-border-radius-topleft: 5px;    -moz-border-radius-topright:5px;    -moz-border-radius-bottomleft:5px;    -moz-border-radius-bottomright:5px;    -webkit-border-top-left-radius:5px;    -webkit-border-top-right-radius:5px;    -webkit-border-bottom-left-radius:5px;    -webkit-border-bottom-right-radius:5px;    border-top-left-radius:5px;    border-top-right-radius:5px;    border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
+
 	<ul style=" margin-bottom: 20px;padding-left: 0;list-style-type: none;">	
-		<li style="background-color: #2c3e50;border-color: #2c3e50;color: #ffffff;z-index: 2;padding: 5px;"  ><h3 style="color:#FFFFFF !important;">Permiso administrativo N° {{numero}} </h3></li>
+		<li style="border-radius: 4px;background-color: #556270;border-color: #2c3e50;color: #ffffff;z-index: 2;padding: 5px;"  ><table border="0" cellspacing="0" cellpadding="0"  align="center" summary="">
+              <tr>
+                <td class="column">
+                  <table border="0" cellspacing="0" cellpadding="0"  >
+                    <tr>
+                      <td style="color: #ffffff; font-size: 24px; padding: 0px 0px 10px 0px; font-weight: bold;"> Permiso administrativo N° {{permiso.id}} </td>
+                    </tr>                    
+                  </table>
+                </td>
+                <td ><img src="http://www.cdegaulle.cl/wp-content/uploads/escu-150.png" style="margin-left: 25px;" /></td>
+              </tr>
+            </table> </li>
 		<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;">Solicitante : {{nombre}} {{apellido}}</li>
 		<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;">Rut : {{rut}}-{{dv}}</li>
 		<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;">Fecha Solicitud : {{fecha}}</li>
@@ -32,20 +43,18 @@
 		
 	</ul>
  <ul style=" margin-bottom: 20px;padding-left: 0;list-style-type: none;">
-	<li style="background-color: #2c3e50;border-color: #2c3e50;color: #ffffff;z-index: 2;padding: 5px;"  ><h3 style="color:#FFFFFF !important;"><h4 style="color:#FFFFFF !important;">Detalle </h4></li>
-	{% for eventoObj in permiso.eventos_en_permisos_set.all %}	
+	<li style="border-radius: 4px;background-color: #556270;border-color: #2c3e50;color: #ffffff;z-index: 2;padding: 5px;"><p style="color: #ffffff; font-size: 16px; padding: 10px 5px 10px 5px; font-weight:normal;">Detalle </p></li>
+	{% for evento in permiso.eventos_en_permisos_set.all %}	
 
 	<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;" >
-	<span style="display: inline-block;  min-width: 10px;  padding: 3px 7px;  font-size: 13px;  font-weight: bold;  color: #ffffff;  line-height: 1;  vertical-align: baseline; white-space: nowrap;  text-align: center;  background-color: #2c3e50;  border-radius: 10px;">{{eventoObj.delta}}</span>
-		{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|date:"G:i"}}</li>
+	{{evento.numero_evento.start|date:"D d M "}}{{"   "}}{{evento.numero_evento.start|date:"G:i"}}{{"-"}} {{evento.numero_evento.end|date:"G:i"}}</li>
 	{% endfor %}
 	<li class="list-group-item" >
-	<span style="display: inline-block;  min-width: 10px;  padding: 3px 7px;  font-size: 13px;  font-weight: bold;  color: #ffffff;  line-height: 1;  vertical-align: baseline; white-space: nowrap;  text-align: center;  background-color: #2c3e50;  border-radius: 10px;">Total{{"  "}}{{permiso.horas_solicitadas}}</span>
+	<span style="display: inline-block;  min-width: 10px;  padding: 3px 7px;  font-size: 13px;  font-weight: bold;  color: #ffffff;  line-height: 1;  vertical-align: baseline; white-space: nowrap;  text-align: center;  background-color: #2c3e50;  border-radius: 10px;">Total{{"  "}}{{horas}}</span>
 	</li>
 </ul>
-<div><a style="display: block;width: 200px;background: #18bc9c; height: 25px;padding: 10px; text-align: center;border-radius: 5px;color: black;font-weight: bold; text-decoration:none;">Revisar permiso</a></div>   	
-</div>
-
+<div><a href="http://cal.cdegaulle.cl/verpermiso/{{permiso.id}}" style="padding: 10px 5px 10px 5px; text-align: center; background-color: #ff6b6b; border-radius: 4px;color: #ffffff; text-decoration: none; display: block; text-transform: uppercase;width: 250px;">Revisar permiso</a></div>
+	</div>
 
 
 </body>

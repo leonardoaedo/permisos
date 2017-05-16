@@ -202,6 +202,9 @@ $(document).ready(function(){
 	events: 'http://cal.cdegaulle.cl/wsCalendari/',	
 
 	eventAfterRender: function(event,element){
+
+    $(element).removeClass('fc-short');
+
 		if(event.used){
 			$(element).css('background','red');
 			$(element).css('font-weight', 'bold');

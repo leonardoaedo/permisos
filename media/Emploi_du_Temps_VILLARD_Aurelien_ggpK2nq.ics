@@ -1,0 +1,4289 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID;LANGUAGE=fr:Copyright Index-Education - Index-Education - EDT2017 2017
+METHOD:PUBLISH
+X-CALSTART:20170227T000000Z
+X-CALEND:20171222T000000Z
+X-WR-CALNAME;LANGUAGE=fr:Emploi du Temps - VILLARD Aurélien - du 01 mars au 18 décembre 2017
+X-WR-CALDESC;LANGUAGE=fr:Emploi du Temps VILLARD Aurélien généré par le logiciel EDT (©Index-Education) le 01 mars 2017 - Lycée Charles de Gaulle - Concepción - Chili - semaines 9 - 51
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-1-20170301T113918Z-Index-Education
+DTSTART:20170302T133500Z
+DTEND:20170302T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-1-20170301T113918Z-Index-Education
+DTSTART:20170301T163000Z
+DTEND:20170301T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-1-20170301T113918Z-Index-Education
+DTSTART:20170303T113000Z
+DTEND:20170303T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-1-20170301T113918Z-Index-Education
+DTSTART:20170303T133500Z
+DTEND:20170303T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-1-20170301T113918Z-Index-Education
+DTSTART:20170301T133500Z
+DTEND:20170301T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-1-20170301T113918Z-Index-Education
+DTSTART:20170301T183500Z
+DTEND:20170301T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-1-20170301T113918Z-Index-Education
+DTSTART:20170302T183500Z
+DTEND:20170302T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-1-20170301T113918Z-Index-Education
+DTSTART:20170302T163000Z
+DTEND:20170302T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-1-20170301T113918Z-Index-Education
+DTSTART:20170301T122500Z
+DTEND:20170301T132000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-2-20170301T113918Z-Index-Education
+DTSTART:20170307T163000Z
+DTEND:20170307T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-2-20170301T113918Z-Index-Education
+DTSTART:20170309T133500Z
+DTEND:20170309T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-2-20170301T113918Z-Index-Education
+DTSTART:20170308T113000Z
+DTEND:20170308T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-2-20170301T113918Z-Index-Education
+DTSTART:20170307T113000Z
+DTEND:20170307T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-2-20170301T113918Z-Index-Education
+DTSTART:20170308T163000Z
+DTEND:20170308T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-2-20170301T113918Z-Index-Education
+DTSTART:20170310T113000Z
+DTEND:20170310T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-2-20170301T113918Z-Index-Education
+DTSTART:20170310T133500Z
+DTEND:20170310T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-2-20170301T113918Z-Index-Education
+DTSTART:20170308T133500Z
+DTEND:20170308T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-2-20170301T113918Z-Index-Education
+DTSTART:20170308T183500Z
+DTEND:20170308T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-2-20170301T113918Z-Index-Education
+DTSTART:20170309T183500Z
+DTEND:20170309T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-2-20170301T113918Z-Index-Education
+DTSTART:20170309T163000Z
+DTEND:20170309T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-2-20170301T113918Z-Index-Education
+DTSTART:20170307T133500Z
+DTEND:20170307T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-3-20170301T113918Z-Index-Education
+DTSTART:20170314T173000Z
+DTEND:20170314T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-3-20170301T113918Z-Index-Education
+DTSTART:20170316T143500Z
+DTEND:20170316T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-3-20170301T113918Z-Index-Education
+DTSTART:20170314T123000Z
+DTEND:20170314T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-3-20170301T113918Z-Index-Education
+DTSTART:20170315T173000Z
+DTEND:20170315T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-3-20170301T113918Z-Index-Education
+DTSTART:20170317T123000Z
+DTEND:20170317T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-3-20170301T113918Z-Index-Education
+DTSTART:20170317T143500Z
+DTEND:20170317T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-3-20170301T113918Z-Index-Education
+DTSTART:20170315T143500Z
+DTEND:20170315T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-3-20170301T113918Z-Index-Education
+DTSTART:20170315T193500Z
+DTEND:20170315T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-3-20170301T113918Z-Index-Education
+DTSTART:20170316T193500Z
+DTEND:20170316T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-3-20170301T113918Z-Index-Education
+DTSTART:20170316T173000Z
+DTEND:20170316T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-3-20170301T113918Z-Index-Education
+DTSTART:20170314T143500Z
+DTEND:20170314T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-3-20170301T113918Z-Index-Education
+DTSTART:20170315T132500Z
+DTEND:20170315T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-4-20170301T113918Z-Index-Education
+DTSTART:20170321T173000Z
+DTEND:20170321T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-4-20170301T113918Z-Index-Education
+DTSTART:20170323T143500Z
+DTEND:20170323T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-4-20170301T113918Z-Index-Education
+DTSTART:20170322T123000Z
+DTEND:20170322T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-4-20170301T113918Z-Index-Education
+DTSTART:20170321T123000Z
+DTEND:20170321T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-4-20170301T113918Z-Index-Education
+DTSTART:20170322T173000Z
+DTEND:20170322T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-4-20170301T113918Z-Index-Education
+DTSTART:20170324T123000Z
+DTEND:20170324T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-4-20170301T113918Z-Index-Education
+DTSTART:20170324T143500Z
+DTEND:20170324T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-4-20170301T113918Z-Index-Education
+DTSTART:20170322T143500Z
+DTEND:20170322T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-4-20170301T113918Z-Index-Education
+DTSTART:20170322T193500Z
+DTEND:20170322T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-4-20170301T113918Z-Index-Education
+DTSTART:20170323T193500Z
+DTEND:20170323T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-4-20170301T113918Z-Index-Education
+DTSTART:20170323T173000Z
+DTEND:20170323T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-4-20170301T113918Z-Index-Education
+DTSTART:20170321T143500Z
+DTEND:20170321T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-5-20170301T113918Z-Index-Education
+DTSTART:20170328T173000Z
+DTEND:20170328T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-5-20170301T113918Z-Index-Education
+DTSTART:20170330T143500Z
+DTEND:20170330T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-5-20170301T113918Z-Index-Education
+DTSTART:20170328T123000Z
+DTEND:20170328T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-5-20170301T113918Z-Index-Education
+DTSTART:20170329T173000Z
+DTEND:20170329T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-5-20170301T113918Z-Index-Education
+DTSTART:20170331T123000Z
+DTEND:20170331T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-5-20170301T113918Z-Index-Education
+DTSTART:20170331T143500Z
+DTEND:20170331T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-5-20170301T113918Z-Index-Education
+DTSTART:20170329T143500Z
+DTEND:20170329T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-5-20170301T113918Z-Index-Education
+DTSTART:20170329T193500Z
+DTEND:20170329T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-5-20170301T113918Z-Index-Education
+DTSTART:20170330T193500Z
+DTEND:20170330T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-5-20170301T113918Z-Index-Education
+DTSTART:20170330T173000Z
+DTEND:20170330T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-5-20170301T113918Z-Index-Education
+DTSTART:20170328T143500Z
+DTEND:20170328T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-5-20170301T113918Z-Index-Education
+DTSTART:20170329T132500Z
+DTEND:20170329T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-6-20170301T113918Z-Index-Education
+DTSTART:20170404T173000Z
+DTEND:20170404T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-6-20170301T113918Z-Index-Education
+DTSTART:20170406T143500Z
+DTEND:20170406T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-6-20170301T113918Z-Index-Education
+DTSTART:20170405T123000Z
+DTEND:20170405T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-6-20170301T113918Z-Index-Education
+DTSTART:20170404T123000Z
+DTEND:20170404T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-6-20170301T113918Z-Index-Education
+DTSTART:20170405T173000Z
+DTEND:20170405T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-6-20170301T113918Z-Index-Education
+DTSTART:20170407T123000Z
+DTEND:20170407T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-6-20170301T113918Z-Index-Education
+DTSTART:20170407T143500Z
+DTEND:20170407T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-6-20170301T113918Z-Index-Education
+DTSTART:20170405T143500Z
+DTEND:20170405T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-6-20170301T113918Z-Index-Education
+DTSTART:20170405T193500Z
+DTEND:20170405T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-6-20170301T113918Z-Index-Education
+DTSTART:20170406T193500Z
+DTEND:20170406T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-6-20170301T113918Z-Index-Education
+DTSTART:20170406T173000Z
+DTEND:20170406T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-6-20170301T113918Z-Index-Education
+DTSTART:20170404T143500Z
+DTEND:20170404T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-7-20170301T113918Z-Index-Education
+DTSTART:20170411T173000Z
+DTEND:20170411T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-7-20170301T113918Z-Index-Education
+DTSTART:20170413T143500Z
+DTEND:20170413T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-7-20170301T113918Z-Index-Education
+DTSTART:20170411T123000Z
+DTEND:20170411T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-7-20170301T113918Z-Index-Education
+DTSTART:20170412T173000Z
+DTEND:20170412T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-7-20170301T113918Z-Index-Education
+DTSTART:20170412T143500Z
+DTEND:20170412T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-7-20170301T113918Z-Index-Education
+DTSTART:20170412T193500Z
+DTEND:20170412T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-7-20170301T113918Z-Index-Education
+DTSTART:20170413T193500Z
+DTEND:20170413T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-7-20170301T113918Z-Index-Education
+DTSTART:20170413T173000Z
+DTEND:20170413T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-7-20170301T113918Z-Index-Education
+DTSTART:20170411T143500Z
+DTEND:20170411T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-7-20170301T113918Z-Index-Education
+DTSTART:20170412T132500Z
+DTEND:20170412T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-8-20170301T113918Z-Index-Education
+DTSTART:20170418T173000Z
+DTEND:20170418T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-8-20170301T113918Z-Index-Education
+DTSTART:20170420T143500Z
+DTEND:20170420T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-8-20170301T113918Z-Index-Education
+DTSTART:20170419T123000Z
+DTEND:20170419T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-8-20170301T113918Z-Index-Education
+DTSTART:20170418T123000Z
+DTEND:20170418T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-8-20170301T113918Z-Index-Education
+DTSTART:20170419T173000Z
+DTEND:20170419T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-8-20170301T113918Z-Index-Education
+DTSTART:20170421T123000Z
+DTEND:20170421T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-8-20170301T113918Z-Index-Education
+DTSTART:20170421T143500Z
+DTEND:20170421T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-8-20170301T113918Z-Index-Education
+DTSTART:20170419T143500Z
+DTEND:20170419T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-8-20170301T113918Z-Index-Education
+DTSTART:20170419T193500Z
+DTEND:20170419T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-8-20170301T113918Z-Index-Education
+DTSTART:20170420T193500Z
+DTEND:20170420T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-8-20170301T113918Z-Index-Education
+DTSTART:20170420T173000Z
+DTEND:20170420T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-8-20170301T113918Z-Index-Education
+DTSTART:20170418T143500Z
+DTEND:20170418T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-9-20170301T113918Z-Index-Education
+DTSTART:20170425T173000Z
+DTEND:20170425T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-9-20170301T113918Z-Index-Education
+DTSTART:20170427T143500Z
+DTEND:20170427T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-9-20170301T113918Z-Index-Education
+DTSTART:20170425T123000Z
+DTEND:20170425T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-9-20170301T113918Z-Index-Education
+DTSTART:20170426T173000Z
+DTEND:20170426T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-9-20170301T113918Z-Index-Education
+DTSTART:20170428T123000Z
+DTEND:20170428T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-9-20170301T113918Z-Index-Education
+DTSTART:20170428T143500Z
+DTEND:20170428T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-9-20170301T113918Z-Index-Education
+DTSTART:20170426T143500Z
+DTEND:20170426T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-9-20170301T113918Z-Index-Education
+DTSTART:20170426T193500Z
+DTEND:20170426T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-9-20170301T113918Z-Index-Education
+DTSTART:20170427T193500Z
+DTEND:20170427T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-9-20170301T113918Z-Index-Education
+DTSTART:20170427T173000Z
+DTEND:20170427T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-9-20170301T113918Z-Index-Education
+DTSTART:20170425T143500Z
+DTEND:20170425T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-9-20170301T113918Z-Index-Education
+DTSTART:20170426T132500Z
+DTEND:20170426T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-12-20170301T113918Z-Index-Education
+DTSTART:20170516T173000Z
+DTEND:20170516T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-12-20170301T113918Z-Index-Education
+DTSTART:20170518T143500Z
+DTEND:20170518T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-12-20170301T113918Z-Index-Education
+DTSTART:20170517T123000Z
+DTEND:20170517T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-12-20170301T113918Z-Index-Education
+DTSTART:20170516T123000Z
+DTEND:20170516T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-12-20170301T113918Z-Index-Education
+DTSTART:20170517T173000Z
+DTEND:20170517T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-12-20170301T113918Z-Index-Education
+DTSTART:20170519T123000Z
+DTEND:20170519T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-12-20170301T113918Z-Index-Education
+DTSTART:20170519T143500Z
+DTEND:20170519T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-12-20170301T113918Z-Index-Education
+DTSTART:20170517T143500Z
+DTEND:20170517T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-12-20170301T113918Z-Index-Education
+DTSTART:20170517T193500Z
+DTEND:20170517T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-12-20170301T113918Z-Index-Education
+DTSTART:20170518T193500Z
+DTEND:20170518T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-12-20170301T113918Z-Index-Education
+DTSTART:20170518T173000Z
+DTEND:20170518T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-12-20170301T113918Z-Index-Education
+DTSTART:20170516T143500Z
+DTEND:20170516T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-13-20170301T113918Z-Index-Education
+DTSTART:20170523T173000Z
+DTEND:20170523T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-13-20170301T113918Z-Index-Education
+DTSTART:20170525T143500Z
+DTEND:20170525T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-13-20170301T113918Z-Index-Education
+DTSTART:20170523T123000Z
+DTEND:20170523T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-13-20170301T113918Z-Index-Education
+DTSTART:20170524T173000Z
+DTEND:20170524T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-13-20170301T113918Z-Index-Education
+DTSTART:20170526T123000Z
+DTEND:20170526T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-13-20170301T113918Z-Index-Education
+DTSTART:20170526T143500Z
+DTEND:20170526T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-13-20170301T113918Z-Index-Education
+DTSTART:20170524T143500Z
+DTEND:20170524T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-13-20170301T113918Z-Index-Education
+DTSTART:20170524T193500Z
+DTEND:20170524T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-13-20170301T113918Z-Index-Education
+DTSTART:20170525T193500Z
+DTEND:20170525T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-13-20170301T113918Z-Index-Education
+DTSTART:20170525T173000Z
+DTEND:20170525T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-13-20170301T113918Z-Index-Education
+DTSTART:20170523T143500Z
+DTEND:20170523T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-13-20170301T113918Z-Index-Education
+DTSTART:20170524T132500Z
+DTEND:20170524T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-14-20170301T113918Z-Index-Education
+DTSTART:20170530T173000Z
+DTEND:20170530T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-14-20170301T113918Z-Index-Education
+DTSTART:20170601T143500Z
+DTEND:20170601T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-14-20170301T113918Z-Index-Education
+DTSTART:20170531T123000Z
+DTEND:20170531T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-14-20170301T113918Z-Index-Education
+DTSTART:20170530T123000Z
+DTEND:20170530T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-14-20170301T113918Z-Index-Education
+DTSTART:20170531T173000Z
+DTEND:20170531T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-14-20170301T113918Z-Index-Education
+DTSTART:20170602T123000Z
+DTEND:20170602T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-14-20170301T113918Z-Index-Education
+DTSTART:20170602T143500Z
+DTEND:20170602T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-14-20170301T113918Z-Index-Education
+DTSTART:20170531T143500Z
+DTEND:20170531T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-14-20170301T113918Z-Index-Education
+DTSTART:20170531T193500Z
+DTEND:20170531T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-14-20170301T113918Z-Index-Education
+DTSTART:20170601T193500Z
+DTEND:20170601T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-14-20170301T113918Z-Index-Education
+DTSTART:20170601T173000Z
+DTEND:20170601T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-14-20170301T113918Z-Index-Education
+DTSTART:20170530T143500Z
+DTEND:20170530T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-15-20170301T113918Z-Index-Education
+DTSTART:20170606T173000Z
+DTEND:20170606T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-15-20170301T113918Z-Index-Education
+DTSTART:20170608T143500Z
+DTEND:20170608T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-15-20170301T113918Z-Index-Education
+DTSTART:20170606T123000Z
+DTEND:20170606T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-15-20170301T113918Z-Index-Education
+DTSTART:20170607T173000Z
+DTEND:20170607T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-15-20170301T113918Z-Index-Education
+DTSTART:20170609T123000Z
+DTEND:20170609T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-15-20170301T113918Z-Index-Education
+DTSTART:20170609T143500Z
+DTEND:20170609T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-15-20170301T113918Z-Index-Education
+DTSTART:20170607T143500Z
+DTEND:20170607T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-15-20170301T113918Z-Index-Education
+DTSTART:20170607T193500Z
+DTEND:20170607T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-15-20170301T113918Z-Index-Education
+DTSTART:20170608T193500Z
+DTEND:20170608T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-15-20170301T113918Z-Index-Education
+DTSTART:20170608T173000Z
+DTEND:20170608T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-15-20170301T113918Z-Index-Education
+DTSTART:20170606T143500Z
+DTEND:20170606T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-15-20170301T113918Z-Index-Education
+DTSTART:20170607T132500Z
+DTEND:20170607T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-16-20170301T113918Z-Index-Education
+DTSTART:20170613T173000Z
+DTEND:20170613T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-16-20170301T113918Z-Index-Education
+DTSTART:20170615T143500Z
+DTEND:20170615T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-16-20170301T113918Z-Index-Education
+DTSTART:20170614T123000Z
+DTEND:20170614T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-16-20170301T113918Z-Index-Education
+DTSTART:20170613T123000Z
+DTEND:20170613T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-16-20170301T113918Z-Index-Education
+DTSTART:20170614T173000Z
+DTEND:20170614T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-16-20170301T113918Z-Index-Education
+DTSTART:20170616T123000Z
+DTEND:20170616T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-16-20170301T113918Z-Index-Education
+DTSTART:20170616T143500Z
+DTEND:20170616T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-16-20170301T113918Z-Index-Education
+DTSTART:20170614T143500Z
+DTEND:20170614T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-16-20170301T113918Z-Index-Education
+DTSTART:20170614T193500Z
+DTEND:20170614T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-16-20170301T113918Z-Index-Education
+DTSTART:20170615T193500Z
+DTEND:20170615T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-16-20170301T113918Z-Index-Education
+DTSTART:20170615T173000Z
+DTEND:20170615T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-16-20170301T113918Z-Index-Education
+DTSTART:20170613T143500Z
+DTEND:20170613T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-17-20170301T113918Z-Index-Education
+DTSTART:20170620T173000Z
+DTEND:20170620T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-17-20170301T113918Z-Index-Education
+DTSTART:20170622T143500Z
+DTEND:20170622T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-17-20170301T113918Z-Index-Education
+DTSTART:20170620T123000Z
+DTEND:20170620T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-17-20170301T113918Z-Index-Education
+DTSTART:20170621T173000Z
+DTEND:20170621T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-17-20170301T113918Z-Index-Education
+DTSTART:20170623T123000Z
+DTEND:20170623T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-17-20170301T113918Z-Index-Education
+DTSTART:20170623T143500Z
+DTEND:20170623T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-17-20170301T113918Z-Index-Education
+DTSTART:20170621T143500Z
+DTEND:20170621T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-17-20170301T113918Z-Index-Education
+DTSTART:20170621T193500Z
+DTEND:20170621T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-17-20170301T113918Z-Index-Education
+DTSTART:20170622T193500Z
+DTEND:20170622T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-17-20170301T113918Z-Index-Education
+DTSTART:20170622T173000Z
+DTEND:20170622T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-17-20170301T113918Z-Index-Education
+DTSTART:20170620T143500Z
+DTEND:20170620T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-17-20170301T113918Z-Index-Education
+DTSTART:20170621T132500Z
+DTEND:20170621T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-18-20170301T113918Z-Index-Education
+DTSTART:20170627T173000Z
+DTEND:20170627T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-18-20170301T113918Z-Index-Education
+DTSTART:20170629T143500Z
+DTEND:20170629T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-18-20170301T113918Z-Index-Education
+DTSTART:20170628T123000Z
+DTEND:20170628T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-18-20170301T113918Z-Index-Education
+DTSTART:20170627T123000Z
+DTEND:20170627T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-18-20170301T113918Z-Index-Education
+DTSTART:20170628T173000Z
+DTEND:20170628T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-18-20170301T113918Z-Index-Education
+DTSTART:20170630T123000Z
+DTEND:20170630T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-18-20170301T113918Z-Index-Education
+DTSTART:20170630T143500Z
+DTEND:20170630T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-18-20170301T113918Z-Index-Education
+DTSTART:20170628T143500Z
+DTEND:20170628T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-18-20170301T113918Z-Index-Education
+DTSTART:20170628T193500Z
+DTEND:20170628T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-18-20170301T113918Z-Index-Education
+DTSTART:20170629T193500Z
+DTEND:20170629T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-18-20170301T113918Z-Index-Education
+DTSTART:20170629T173000Z
+DTEND:20170629T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-18-20170301T113918Z-Index-Education
+DTSTART:20170627T143500Z
+DTEND:20170627T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-19-20170301T113918Z-Index-Education
+DTSTART:20170704T173000Z
+DTEND:20170704T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-19-20170301T113918Z-Index-Education
+DTSTART:20170706T143500Z
+DTEND:20170706T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-19-20170301T113918Z-Index-Education
+DTSTART:20170704T123000Z
+DTEND:20170704T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-19-20170301T113918Z-Index-Education
+DTSTART:20170705T173000Z
+DTEND:20170705T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-19-20170301T113918Z-Index-Education
+DTSTART:20170707T123000Z
+DTEND:20170707T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-19-20170301T113918Z-Index-Education
+DTSTART:20170707T143500Z
+DTEND:20170707T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-19-20170301T113918Z-Index-Education
+DTSTART:20170705T143500Z
+DTEND:20170705T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-19-20170301T113918Z-Index-Education
+DTSTART:20170705T193500Z
+DTEND:20170705T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-19-20170301T113918Z-Index-Education
+DTSTART:20170706T193500Z
+DTEND:20170706T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-19-20170301T113918Z-Index-Education
+DTSTART:20170706T173000Z
+DTEND:20170706T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-19-20170301T113918Z-Index-Education
+DTSTART:20170704T143500Z
+DTEND:20170704T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-19-20170301T113918Z-Index-Education
+DTSTART:20170705T132500Z
+DTEND:20170705T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-20-20170301T113918Z-Index-Education
+DTSTART:20170711T173000Z
+DTEND:20170711T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-20-20170301T113918Z-Index-Education
+DTSTART:20170713T143500Z
+DTEND:20170713T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-20-20170301T113918Z-Index-Education
+DTSTART:20170712T123000Z
+DTEND:20170712T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-20-20170301T113918Z-Index-Education
+DTSTART:20170711T123000Z
+DTEND:20170711T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-20-20170301T113918Z-Index-Education
+DTSTART:20170712T173000Z
+DTEND:20170712T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-20-20170301T113918Z-Index-Education
+DTSTART:20170714T123000Z
+DTEND:20170714T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-20-20170301T113918Z-Index-Education
+DTSTART:20170714T143500Z
+DTEND:20170714T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-20-20170301T113918Z-Index-Education
+DTSTART:20170712T143500Z
+DTEND:20170712T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-20-20170301T113918Z-Index-Education
+DTSTART:20170712T193500Z
+DTEND:20170712T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-20-20170301T113918Z-Index-Education
+DTSTART:20170713T193500Z
+DTEND:20170713T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-20-20170301T113918Z-Index-Education
+DTSTART:20170713T173000Z
+DTEND:20170713T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-20-20170301T113918Z-Index-Education
+DTSTART:20170711T143500Z
+DTEND:20170711T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-23-20170301T113918Z-Index-Education
+DTSTART:20170801T173000Z
+DTEND:20170801T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-23-20170301T113918Z-Index-Education
+DTSTART:20170803T143500Z
+DTEND:20170803T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-23-20170301T113918Z-Index-Education
+DTSTART:20170801T123000Z
+DTEND:20170801T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-23-20170301T113918Z-Index-Education
+DTSTART:20170802T173000Z
+DTEND:20170802T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-23-20170301T113918Z-Index-Education
+DTSTART:20170804T123000Z
+DTEND:20170804T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-23-20170301T113918Z-Index-Education
+DTSTART:20170804T143500Z
+DTEND:20170804T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-23-20170301T113918Z-Index-Education
+DTSTART:20170802T143500Z
+DTEND:20170802T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-23-20170301T113918Z-Index-Education
+DTSTART:20170802T193500Z
+DTEND:20170802T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-23-20170301T113918Z-Index-Education
+DTSTART:20170803T193500Z
+DTEND:20170803T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-23-20170301T113918Z-Index-Education
+DTSTART:20170803T173000Z
+DTEND:20170803T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-23-20170301T113918Z-Index-Education
+DTSTART:20170801T143500Z
+DTEND:20170801T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-23-20170301T113918Z-Index-Education
+DTSTART:20170802T132500Z
+DTEND:20170802T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-24-20170301T113918Z-Index-Education
+DTSTART:20170808T173000Z
+DTEND:20170808T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-24-20170301T113918Z-Index-Education
+DTSTART:20170810T143500Z
+DTEND:20170810T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-24-20170301T113918Z-Index-Education
+DTSTART:20170809T123000Z
+DTEND:20170809T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-24-20170301T113918Z-Index-Education
+DTSTART:20170808T123000Z
+DTEND:20170808T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-24-20170301T113918Z-Index-Education
+DTSTART:20170809T173000Z
+DTEND:20170809T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-24-20170301T113918Z-Index-Education
+DTSTART:20170811T123000Z
+DTEND:20170811T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-24-20170301T113918Z-Index-Education
+DTSTART:20170811T143500Z
+DTEND:20170811T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-24-20170301T113918Z-Index-Education
+DTSTART:20170809T143500Z
+DTEND:20170809T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-24-20170301T113918Z-Index-Education
+DTSTART:20170809T193500Z
+DTEND:20170809T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-24-20170301T113918Z-Index-Education
+DTSTART:20170810T193500Z
+DTEND:20170810T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-24-20170301T113918Z-Index-Education
+DTSTART:20170810T173000Z
+DTEND:20170810T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-24-20170301T113918Z-Index-Education
+DTSTART:20170808T143500Z
+DTEND:20170808T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-25-20170301T113918Z-Index-Education
+DTSTART:20170817T143500Z
+DTEND:20170817T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-25-20170301T113918Z-Index-Education
+DTSTART:20170816T173000Z
+DTEND:20170816T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-25-20170301T113918Z-Index-Education
+DTSTART:20170818T123000Z
+DTEND:20170818T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-25-20170301T113918Z-Index-Education
+DTSTART:20170818T143500Z
+DTEND:20170818T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-25-20170301T113918Z-Index-Education
+DTSTART:20170816T143500Z
+DTEND:20170816T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-25-20170301T113918Z-Index-Education
+DTSTART:20170816T193500Z
+DTEND:20170816T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-25-20170301T113918Z-Index-Education
+DTSTART:20170817T193500Z
+DTEND:20170817T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-25-20170301T113918Z-Index-Education
+DTSTART:20170817T173000Z
+DTEND:20170817T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-25-20170301T113918Z-Index-Education
+DTSTART:20170816T132500Z
+DTEND:20170816T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-26-20170301T113918Z-Index-Education
+DTSTART:20170822T173000Z
+DTEND:20170822T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-26-20170301T113918Z-Index-Education
+DTSTART:20170824T143500Z
+DTEND:20170824T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-26-20170301T113918Z-Index-Education
+DTSTART:20170823T123000Z
+DTEND:20170823T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-26-20170301T113918Z-Index-Education
+DTSTART:20170822T123000Z
+DTEND:20170822T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-26-20170301T113918Z-Index-Education
+DTSTART:20170823T173000Z
+DTEND:20170823T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-26-20170301T113918Z-Index-Education
+DTSTART:20170825T123000Z
+DTEND:20170825T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-26-20170301T113918Z-Index-Education
+DTSTART:20170825T143500Z
+DTEND:20170825T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-26-20170301T113918Z-Index-Education
+DTSTART:20170823T143500Z
+DTEND:20170823T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-26-20170301T113918Z-Index-Education
+DTSTART:20170823T193500Z
+DTEND:20170823T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-26-20170301T113918Z-Index-Education
+DTSTART:20170824T193500Z
+DTEND:20170824T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-26-20170301T113918Z-Index-Education
+DTSTART:20170824T173000Z
+DTEND:20170824T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-26-20170301T113918Z-Index-Education
+DTSTART:20170822T143500Z
+DTEND:20170822T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-27-20170301T113918Z-Index-Education
+DTSTART:20170829T173000Z
+DTEND:20170829T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-27-20170301T113918Z-Index-Education
+DTSTART:20170831T143500Z
+DTEND:20170831T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-27-20170301T113918Z-Index-Education
+DTSTART:20170829T123000Z
+DTEND:20170829T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-27-20170301T113918Z-Index-Education
+DTSTART:20170830T173000Z
+DTEND:20170830T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-27-20170301T113918Z-Index-Education
+DTSTART:20170901T123000Z
+DTEND:20170901T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-27-20170301T113918Z-Index-Education
+DTSTART:20170901T143500Z
+DTEND:20170901T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-27-20170301T113918Z-Index-Education
+DTSTART:20170830T143500Z
+DTEND:20170830T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-27-20170301T113918Z-Index-Education
+DTSTART:20170830T193500Z
+DTEND:20170830T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-27-20170301T113918Z-Index-Education
+DTSTART:20170831T193500Z
+DTEND:20170831T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-27-20170301T113918Z-Index-Education
+DTSTART:20170831T173000Z
+DTEND:20170831T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-27-20170301T113918Z-Index-Education
+DTSTART:20170829T143500Z
+DTEND:20170829T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-27-20170301T113918Z-Index-Education
+DTSTART:20170830T132500Z
+DTEND:20170830T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-28-20170301T113918Z-Index-Education
+DTSTART:20170905T173000Z
+DTEND:20170905T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-28-20170301T113918Z-Index-Education
+DTSTART:20170907T143500Z
+DTEND:20170907T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-28-20170301T113918Z-Index-Education
+DTSTART:20170906T123000Z
+DTEND:20170906T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-28-20170301T113918Z-Index-Education
+DTSTART:20170905T123000Z
+DTEND:20170905T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-28-20170301T113918Z-Index-Education
+DTSTART:20170906T173000Z
+DTEND:20170906T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-28-20170301T113918Z-Index-Education
+DTSTART:20170908T123000Z
+DTEND:20170908T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-28-20170301T113918Z-Index-Education
+DTSTART:20170908T143500Z
+DTEND:20170908T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-28-20170301T113918Z-Index-Education
+DTSTART:20170906T143500Z
+DTEND:20170906T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-28-20170301T113918Z-Index-Education
+DTSTART:20170906T193500Z
+DTEND:20170906T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-28-20170301T113918Z-Index-Education
+DTSTART:20170907T193500Z
+DTEND:20170907T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-28-20170301T113918Z-Index-Education
+DTSTART:20170907T173000Z
+DTEND:20170907T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-28-20170301T113918Z-Index-Education
+DTSTART:20170905T143500Z
+DTEND:20170905T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-29-20170301T113918Z-Index-Education
+DTSTART:20170912T173000Z
+DTEND:20170912T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-29-20170301T113918Z-Index-Education
+DTSTART:20170914T143500Z
+DTEND:20170914T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-29-20170301T113918Z-Index-Education
+DTSTART:20170912T123000Z
+DTEND:20170912T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-29-20170301T113918Z-Index-Education
+DTSTART:20170913T173000Z
+DTEND:20170913T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-29-20170301T113918Z-Index-Education
+DTSTART:20170915T123000Z
+DTEND:20170915T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-29-20170301T113918Z-Index-Education
+DTSTART:20170915T143500Z
+DTEND:20170915T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-29-20170301T113918Z-Index-Education
+DTSTART:20170913T143500Z
+DTEND:20170913T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-29-20170301T113918Z-Index-Education
+DTSTART:20170913T193500Z
+DTEND:20170913T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-29-20170301T113918Z-Index-Education
+DTSTART:20170914T193500Z
+DTEND:20170914T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-29-20170301T113918Z-Index-Education
+DTSTART:20170914T173000Z
+DTEND:20170914T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-29-20170301T113918Z-Index-Education
+DTSTART:20170912T143500Z
+DTEND:20170912T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-29-20170301T113918Z-Index-Education
+DTSTART:20170913T132500Z
+DTEND:20170913T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-31-20170301T113918Z-Index-Education
+DTSTART:20170926T173000Z
+DTEND:20170926T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-31-20170301T113918Z-Index-Education
+DTSTART:20170928T143500Z
+DTEND:20170928T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-31-20170301T113918Z-Index-Education
+DTSTART:20170927T123000Z
+DTEND:20170927T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-31-20170301T113918Z-Index-Education
+DTSTART:20170926T123000Z
+DTEND:20170926T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-31-20170301T113918Z-Index-Education
+DTSTART:20170927T173000Z
+DTEND:20170927T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-31-20170301T113918Z-Index-Education
+DTSTART:20170929T123000Z
+DTEND:20170929T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-31-20170301T113918Z-Index-Education
+DTSTART:20170929T143500Z
+DTEND:20170929T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-31-20170301T113918Z-Index-Education
+DTSTART:20170927T143500Z
+DTEND:20170927T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-31-20170301T113918Z-Index-Education
+DTSTART:20170927T193500Z
+DTEND:20170927T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-31-20170301T113918Z-Index-Education
+DTSTART:20170928T193500Z
+DTEND:20170928T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-31-20170301T113918Z-Index-Education
+DTSTART:20170928T173000Z
+DTEND:20170928T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-31-20170301T113918Z-Index-Education
+DTSTART:20170926T143500Z
+DTEND:20170926T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-32-20170301T113918Z-Index-Education
+DTSTART:20171003T173000Z
+DTEND:20171003T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-32-20170301T113918Z-Index-Education
+DTSTART:20171005T143500Z
+DTEND:20171005T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-32-20170301T113918Z-Index-Education
+DTSTART:20171003T123000Z
+DTEND:20171003T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-32-20170301T113918Z-Index-Education
+DTSTART:20171004T173000Z
+DTEND:20171004T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-32-20170301T113918Z-Index-Education
+DTSTART:20171006T123000Z
+DTEND:20171006T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-32-20170301T113918Z-Index-Education
+DTSTART:20171006T143500Z
+DTEND:20171006T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-32-20170301T113918Z-Index-Education
+DTSTART:20171004T143500Z
+DTEND:20171004T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-32-20170301T113918Z-Index-Education
+DTSTART:20171004T193500Z
+DTEND:20171004T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-32-20170301T113918Z-Index-Education
+DTSTART:20171005T193500Z
+DTEND:20171005T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-32-20170301T113918Z-Index-Education
+DTSTART:20171005T173000Z
+DTEND:20171005T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-32-20170301T113918Z-Index-Education
+DTSTART:20171003T143500Z
+DTEND:20171003T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-32-20170301T113918Z-Index-Education
+DTSTART:20171004T132500Z
+DTEND:20171004T142000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-33-20170301T113918Z-Index-Education
+DTSTART:20171010T173000Z
+DTEND:20171010T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-33-20170301T113918Z-Index-Education
+DTSTART:20171012T143500Z
+DTEND:20171012T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-33-20170301T113918Z-Index-Education
+DTSTART:20171011T123000Z
+DTEND:20171011T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-33-20170301T113918Z-Index-Education
+DTSTART:20171010T123000Z
+DTEND:20171010T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-33-20170301T113918Z-Index-Education
+DTSTART:20171011T173000Z
+DTEND:20171011T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-33-20170301T113918Z-Index-Education
+DTSTART:20171013T123000Z
+DTEND:20171013T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-33-20170301T113918Z-Index-Education
+DTSTART:20171013T143500Z
+DTEND:20171013T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-33-20170301T113918Z-Index-Education
+DTSTART:20171011T143500Z
+DTEND:20171011T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-33-20170301T113918Z-Index-Education
+DTSTART:20171011T193500Z
+DTEND:20171011T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-33-20170301T113918Z-Index-Education
+DTSTART:20171012T193500Z
+DTEND:20171012T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-33-20170301T113918Z-Index-Education
+DTSTART:20171012T173000Z
+DTEND:20171012T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-33-20170301T113918Z-Index-Education
+DTSTART:20171010T143500Z
+DTEND:20171010T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-34-20170301T113918Z-Index-Education
+DTSTART:20171017T163000Z
+DTEND:20171017T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-34-20170301T113918Z-Index-Education
+DTSTART:20171019T133500Z
+DTEND:20171019T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-34-20170301T113918Z-Index-Education
+DTSTART:20171017T113000Z
+DTEND:20171017T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-34-20170301T113918Z-Index-Education
+DTSTART:20171018T163000Z
+DTEND:20171018T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-34-20170301T113918Z-Index-Education
+DTSTART:20171020T113000Z
+DTEND:20171020T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-34-20170301T113918Z-Index-Education
+DTSTART:20171020T133500Z
+DTEND:20171020T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-34-20170301T113918Z-Index-Education
+DTSTART:20171018T133500Z
+DTEND:20171018T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-34-20170301T113918Z-Index-Education
+DTSTART:20171018T183500Z
+DTEND:20171018T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-34-20170301T113918Z-Index-Education
+DTSTART:20171019T183500Z
+DTEND:20171019T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-34-20170301T113918Z-Index-Education
+DTSTART:20171019T163000Z
+DTEND:20171019T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-34-20170301T113918Z-Index-Education
+DTSTART:20171017T133500Z
+DTEND:20171017T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-34-20170301T113918Z-Index-Education
+DTSTART:20171018T122500Z
+DTEND:20171018T132000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-35-20170301T113918Z-Index-Education
+DTSTART:20171024T163000Z
+DTEND:20171024T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-35-20170301T113918Z-Index-Education
+DTSTART:20171026T133500Z
+DTEND:20171026T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-35-20170301T113918Z-Index-Education
+DTSTART:20171025T113000Z
+DTEND:20171025T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-35-20170301T113918Z-Index-Education
+DTSTART:20171024T113000Z
+DTEND:20171024T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-35-20170301T113918Z-Index-Education
+DTSTART:20171025T163000Z
+DTEND:20171025T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-35-20170301T113918Z-Index-Education
+DTSTART:20171025T133500Z
+DTEND:20171025T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-35-20170301T113918Z-Index-Education
+DTSTART:20171025T183500Z
+DTEND:20171025T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-35-20170301T113918Z-Index-Education
+DTSTART:20171026T183500Z
+DTEND:20171026T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-35-20170301T113918Z-Index-Education
+DTSTART:20171026T163000Z
+DTEND:20171026T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-35-20170301T113918Z-Index-Education
+DTSTART:20171024T133500Z
+DTEND:20171024T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-37-20170301T113918Z-Index-Education
+DTSTART:20171107T163000Z
+DTEND:20171107T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-37-20170301T113918Z-Index-Education
+DTSTART:20171109T133500Z
+DTEND:20171109T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-37-20170301T113918Z-Index-Education
+DTSTART:20171107T113000Z
+DTEND:20171107T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-37-20170301T113918Z-Index-Education
+DTSTART:20171108T163000Z
+DTEND:20171108T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-37-20170301T113918Z-Index-Education
+DTSTART:20171110T113000Z
+DTEND:20171110T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-37-20170301T113918Z-Index-Education
+DTSTART:20171110T133500Z
+DTEND:20171110T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-37-20170301T113918Z-Index-Education
+DTSTART:20171108T133500Z
+DTEND:20171108T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-37-20170301T113918Z-Index-Education
+DTSTART:20171108T183500Z
+DTEND:20171108T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-37-20170301T113918Z-Index-Education
+DTSTART:20171109T183500Z
+DTEND:20171109T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-37-20170301T113918Z-Index-Education
+DTSTART:20171109T163000Z
+DTEND:20171109T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-37-20170301T113918Z-Index-Education
+DTSTART:20171107T133500Z
+DTEND:20171107T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-37-20170301T113918Z-Index-Education
+DTSTART:20171108T122500Z
+DTEND:20171108T132000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-38-20170301T113918Z-Index-Education
+DTSTART:20171114T163000Z
+DTEND:20171114T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-38-20170301T113918Z-Index-Education
+DTSTART:20171116T133500Z
+DTEND:20171116T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-38-20170301T113918Z-Index-Education
+DTSTART:20171115T113000Z
+DTEND:20171115T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-38-20170301T113918Z-Index-Education
+DTSTART:20171114T113000Z
+DTEND:20171114T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-38-20170301T113918Z-Index-Education
+DTSTART:20171115T163000Z
+DTEND:20171115T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-38-20170301T113918Z-Index-Education
+DTSTART:20171117T113000Z
+DTEND:20171117T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-38-20170301T113918Z-Index-Education
+DTSTART:20171117T133500Z
+DTEND:20171117T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-38-20170301T113918Z-Index-Education
+DTSTART:20171115T133500Z
+DTEND:20171115T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-38-20170301T113918Z-Index-Education
+DTSTART:20171115T183500Z
+DTEND:20171115T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-38-20170301T113918Z-Index-Education
+DTSTART:20171116T183500Z
+DTEND:20171116T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-38-20170301T113918Z-Index-Education
+DTSTART:20171116T163000Z
+DTEND:20171116T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-38-20170301T113918Z-Index-Education
+DTSTART:20171114T133500Z
+DTEND:20171114T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-39-20170301T113918Z-Index-Education
+DTSTART:20171121T163000Z
+DTEND:20171121T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-39-20170301T113918Z-Index-Education
+DTSTART:20171123T133500Z
+DTEND:20171123T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-39-20170301T113918Z-Index-Education
+DTSTART:20171121T113000Z
+DTEND:20171121T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-39-20170301T113918Z-Index-Education
+DTSTART:20171122T163000Z
+DTEND:20171122T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-84-39-20170301T113918Z-Index-Education
+DTSTART:20171124T113000Z
+DTEND:20171124T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-39-20170301T113918Z-Index-Education
+DTSTART:20171124T133500Z
+DTEND:20171124T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-39-20170301T113918Z-Index-Education
+DTSTART:20171122T133500Z
+DTEND:20171122T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-39-20170301T113918Z-Index-Education
+DTSTART:20171122T183500Z
+DTEND:20171122T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-39-20170301T113918Z-Index-Education
+DTSTART:20171123T183500Z
+DTEND:20171123T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-39-20170301T113918Z-Index-Education
+DTSTART:20171123T163000Z
+DTEND:20171123T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-39-20170301T113918Z-Index-Education
+DTSTART:20171121T133500Z
+DTEND:20171121T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-39-20170301T113918Z-Index-Education
+DTSTART:20171122T122500Z
+DTEND:20171122T132000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-40-20170301T113918Z-Index-Education
+DTSTART:20171128T163000Z
+DTEND:20171128T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-40-20170301T113918Z-Index-Education
+DTSTART:20171130T133500Z
+DTEND:20171130T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-40-20170301T113918Z-Index-Education
+DTSTART:20171129T113000Z
+DTEND:20171129T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-40-20170301T113918Z-Index-Education
+DTSTART:20171128T113000Z
+DTEND:20171128T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-40-20170301T113918Z-Index-Education
+DTSTART:20171129T163000Z
+DTEND:20171129T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-40-20170301T113918Z-Index-Education
+DTSTART:20171201T113000Z
+DTEND:20171201T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-40-20170301T113918Z-Index-Education
+DTSTART:20171201T133500Z
+DTEND:20171201T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-40-20170301T113918Z-Index-Education
+DTSTART:20171129T133500Z
+DTEND:20171129T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-40-20170301T113918Z-Index-Education
+DTSTART:20171129T183500Z
+DTEND:20171129T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-40-20170301T113918Z-Index-Education
+DTSTART:20171130T183500Z
+DTEND:20171130T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-40-20170301T113918Z-Index-Education
+DTSTART:20171130T163000Z
+DTEND:20171130T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-40-20170301T113918Z-Index-Education
+DTSTART:20171128T133500Z
+DTEND:20171128T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-41-20170301T113918Z-Index-Education
+DTSTART:20171205T163000Z
+DTEND:20171205T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-41-20170301T113918Z-Index-Education
+DTSTART:20171207T133500Z
+DTEND:20171207T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-41-20170301T113918Z-Index-Education
+DTSTART:20171205T113000Z
+DTEND:20171205T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-41-20170301T113918Z-Index-Education
+DTSTART:20171206T163000Z
+DTEND:20171206T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-41-20170301T113918Z-Index-Education
+DTSTART:20171206T133500Z
+DTEND:20171206T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-41-20170301T113918Z-Index-Education
+DTSTART:20171206T183500Z
+DTEND:20171206T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-41-20170301T113918Z-Index-Education
+DTSTART:20171207T183500Z
+DTEND:20171207T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-41-20170301T113918Z-Index-Education
+DTSTART:20171207T163000Z
+DTEND:20171207T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-41-20170301T113918Z-Index-Education
+DTSTART:20171205T133500Z
+DTEND:20171205T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1484-41-20170301T113918Z-Index-Education
+DTSTART:20171206T122500Z
+DTEND:20171206T132000Z
+SUMMARY;LANGUAGE=fr:Vie de la Classe - 6ème D
+LOCATION;LANGUAGE=fr:S 221
+DESCRIPTION;LANGUAGE=fr:Matière : Vie de la Classe \n Professeur : VILLARD \n Classe : 6ème D \n Salle : S 221 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-76-42-20170301T113918Z-Index-Education
+DTSTART:20171212T163000Z
+DTEND:20171212T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-79-42-20170301T113918Z-Index-Education
+DTSTART:20171214T133500Z
+DTEND:20171214T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-80-42-20170301T113918Z-Index-Education
+DTSTART:20171213T113000Z
+DTEND:20171213T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème B
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème B \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-81-42-20170301T113918Z-Index-Education
+DTSTART:20171212T113000Z
+DTEND:20171212T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-82-42-20170301T113918Z-Index-Education
+DTSTART:20171213T163000Z
+DTEND:20171213T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-83-42-20170301T113918Z-Index-Education
+DTSTART:20171215T113000Z
+DTEND:20171215T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 3ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 3ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-148-42-20170301T113918Z-Index-Education
+DTSTART:20171215T133500Z
+DTEND:20171215T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-149-42-20170301T113918Z-Index-Education
+DTSTART:20171213T133500Z
+DTEND:20171213T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 2nde B
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 2nde B \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-260-42-20170301T113918Z-Index-Education
+DTSTART:20171213T183500Z
+DTEND:20171213T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 1ère S
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 1ère S \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-585-42-20170301T113918Z-Index-Education
+DTSTART:20171214T183500Z
+DTEND:20171214T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G1] - <T ES/L G1>\, <TS G1>
+LOCATION;LANGUAGE=fr:Gymnase P. de C.
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Groupe : [TEPS G1] \n Parties de classe : <T ES/L G1>\, <TS G1> \n Salle : Gymnase P. de C. \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1477-42-20170301T113918Z-Index-Education
+DTSTART:20171214T163000Z
+DTEND:20171214T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113918Z
+UID:Cours-1478-42-20170301T113918Z-Index-Education
+DTSTART:20171212T133500Z
+DTEND:20171212T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème D
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : VILLARD \n Classe : 6ème D \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-1-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20170414
+DTEND;VALUE=DATE:20170417
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-2-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20170501
+DTEND;VALUE=DATE:20170515
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-3-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20170521
+DTEND;VALUE=DATE:20170522
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-4-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20170626
+DTEND;VALUE=DATE:20170627
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-5-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20170715
+DTEND;VALUE=DATE:20170801
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-6-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20170814
+DTEND;VALUE=DATE:20170816
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-7-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20170918
+DTEND;VALUE=DATE:20170925
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-8-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20171009
+DTEND;VALUE=DATE:20171010
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-9-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20171027
+DTEND;VALUE=DATE:20171106
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113918Z
+UID:Férié-10-20170301T113918Z-Index-Education
+DTSTART;VALUE=DATE:20171208
+DTEND;VALUE=DATE:20171209
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+END:VCALENDAR

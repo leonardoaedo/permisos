@@ -1,0 +1,191 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+{% if usuario.rol.nivel_acceso == 0 %}
+  <div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+      <fieldset>
+        <ul>
+          <li>
+            <label class="label label-primary" > Funcionario</label>
+            <select name="persona" id="persona" >
+              <option value="0">Seleccione Funcionario</option>
+              {% for persona in usuarios_filtro %}  
+              <option  value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}  <!--{{persona.usuario_activo}}--> </option>
+              {% endfor %}
+            </select>
+          </li>
+          <li class="botfiltro">
+            <input class=" btn btn-success" type="submit" value="Cargar Horario" id="filtrar" name="filtrar" />
+            <input class=" btn btn-danger" type="submit" value="Limpiar" id="limpiar" name="limpiar" />
+          </li>
+        </ul>
+      </fieldset>
+  </form>
+ </div> 
+ {% endif %}
+    
+ 
+<form id="main" name="main" class="form-horizontal" action="/urlcalendario/" method="post" enctype="multipart/form-data">
+  <div  class="permiso" >
+    <div id="frmpermiso"> 
+    {{form.tipo.errors}}
+    <p><label for="tipo" >Tipo de Permiso<br/> a solicitar</label>{{form.tipo}}</p>
+    </div>
+    <div id="frmpermiso">
+    {{form.devuelve_horas.errors}}
+    <p class="devuelve_horas"><label for="fecha_devuelve_horas">Me comprometo a recuperar <br/> la(s) hora(s) </label>{{form.devuelve_horas}}</p>
+    </div>
+    <div id="frmpermiso">
+    {{form.sueldo.errors}}
+    <p class="sueldo"><label for="sueldo">Solicitud con o sin <br/>goce de sueldo</label>{{form.sueldo}}</p>
+    </div>    
+  </div>
+
+  <div class="permiso">
+    <div id="frmpermiso">
+    {{form.motivo.errors}}
+    <p><label for="motivo" >Motivo</label>{{form.motivo}}</p>
+    </div>  
+    <div id="frmpermiso">
+    {{form.comentario.errors}}
+    <p><label for="comentario">Comentario:</label>{{form.comentario}}</p>
+    </div>  
+    <div id="frmpermiso">
+    <p class="reemplazante"><label for="reemplazante">Propuesta de Reemplazante</label>{{form.reemplazante}}</p>
+    </div>  
+    <div id="frmpermiso">
+    <p class="documento_adjunto"><label for="documento_adjunto">Documento adjunto</label>{{form.documento_adjunto}}</p> 
+    </div>    
+
+  </div>    
+  <div id='calendar'></div>
+    <input type="hidden" id="calendario-data" name="data-calendario">
+    <input type="hidden" id="persona-data" name="data-persona">
+
+  <input class="btn btn-success btn-lg" type="submit" value="Solicitar" id="botonCalendario"  />
+  </form>
+<script>
+//por ahora aca, a futuro un poco mas ordenado
+var personadata = document.getElementById("persona").value;
+console.log (personadata);
+var seleccionados = [];
+var query_string = "{{query_string}}";
+console.log (query_string);
+$(document).ready(function(){
+  $( "input[type=file]" ).last().addClass( "custom-file-input" );
+  $('#calendar').fullCalendar({
+       // put your options and callbacks here   
+       selectable:true,
+       selectHelper:true,
+       unselectAuto:false,
+       // minTime:"00:00:00",
+       // maxTime : '00:00:00',
+       height: "auto",
+       lang: 'es',
+       timezone:'America/Santiago',
+       defaultView: 'agendaWeek',
+       schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+       header:
+         {
+         left:   'title',
+         center: '',
+         right:  'month agendaWeek agendaDay  prev,next'
+         },
+       weekends: true,
+       businessHours:true, 
+       businessHours:
+         {
+       start: '08:00', // a start time (10am in this example)
+         end: '22:30', // an end time (6pm in this example)
+         dow: [ 1, 2, 3, 4 , 5, 6]  
+         },
+  events: 'http://cal.cdegaulle.cl/wsPermiso_Jefatura/?persona={{persona}}&filtrar={{filtrar}}', 
+
+  eventAfterRender: function(event,element){
+
+    $(element).removeClass('fc-short');
+
+    if(event.used){
+      $(element).css('background','red');
+      $(element).css('font-weight', 'bold');
+      $(element).css('border-color','black');
+      $(element).css('border','3');
+      } 
+  },
+   
+       eventClick: function(event){
+          var hoy = new Date();
+      var dd = hoy.getDate();
+      var mm = hoy.getMonth()+1; //hoy es 0!
+      var yyyy = hoy.getFullYear();
+      var ms = hoy.getTime();
+      if(dd<10) {dd='0'+dd} 
+      if(mm<10) {mm='0'+mm} 
+      hoy = mm+'/'+dd+'/'+yyyy;
+      var dosdias = 172800; 
+      var fecha_actual = new Date(ms);
+      var fecha_actualMsec = fecha_actual.getMilliseconds();
+
+      var fecha_evento = new Date(event.start);
+      var fecha_eventoMsec = fecha_evento.getMilliseconds();
+      var diferencia = ((fecha_evento - fecha_actual )/1000); // calculada en milisegundos
+      
+      // console.log(fecha_actual);
+      // console.log (fecha_evento);
+      // console.log("Diferencia" , diferencia);
+      
+      // Comprueba si el permiso se pide con 48 horas de anticipacion
+    // if(diferencia < dosdias && fecha_actual < fecha_evento ){
+    //  alert("El permiso dede ser solicitado con la menos 48 horas de anticipacion")
+      
+    // }else{       
+      //revisa si no esta en la lista
+     if(seleccionados.indexOf(event.id) == -1 && (event.used == false))  {
+      seleccionados.push(event.id);
+      $(this).css('background', '#00FF05');
+      $(this).css('font-weight', 'bold');
+      $(this).css('color', 'black');
+
+    }else if (event.used == false){ // si ya esta lo quitamos y reseteamos el color
+                  
+      seleccionados.splice(seleccionados.indexOf(event.id),1);
+      $(this).css('background', '#3a87ad');
+      $(this).css('color', '#ffffff');
+      $(this).css('font-weight', 'bold');
+      
+
+      }
+        //console.log(event.start);
+        var ordenado = seleccionados.sort();//ordeno el arreglo para su correcto guadado
+        console.log(seleccionados);
+      // }  //fin comprobacion de 48 horas  
+                }, // end fullcalendar                      
+    
+    })//end function 
+})// end ready
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#mostrarocultar").click(function(){
+        $("#listapermisos").toggle();
+    });
+
+  $("#main").submit(function(e){
+    if(seleccionados.length == 0){
+      alert("Debe seleccionar al menos un bloque de su horario");
+      e.preventDefault();
+    }
+
+    
+    $("#calendario-data").val(JSON.stringify(seleccionados));
+    $("#persona-data").val(personadata);
+
+    //
+    //e.preventDefault();
+  });
+});
+</script>   
+{% endblock  %}

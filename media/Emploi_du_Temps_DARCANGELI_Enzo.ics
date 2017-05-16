@@ -1,0 +1,415 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID;LANGUAGE=fr:Copyright Index-Education - Index-Education - EDT2017 2017
+METHOD:PUBLISH
+X-CALSTART:20170227T000000Z
+X-CALEND:20171222T000000Z
+X-WR-CALNAME;LANGUAGE=fr:Emploi du Temps - D'ARCANGELI Enzo - du 01 mars au 18 décembre 2017
+X-WR-CALDESC;LANGUAGE=fr:Emploi du Temps D'ARCANGELI Enzo généré par le logiciel EDT (©Index-Education) le 13 avr. 2017 - Lycée Charles de Gaulle - semaines 9 - 51
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4828-1-20170413T131525Z-Index-Education
+DTSTART:20170301T183500Z
+DTEND:20170301T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - [2AP-GR6] - <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Groupe : [2AP-GR6] \n Parties de classe : <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4828-2-20170413T131525Z-Index-Education
+DTSTART:20170308T183500Z
+DTEND:20170308T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - [2AP-GR6] - <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Groupe : [2AP-GR6] \n Parties de classe : <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4828-3-20170413T131525Z-Index-Education
+DTSTART:20170315T183500Z
+DTEND:20170315T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - [2AP-GR6] - <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Groupe : [2AP-GR6] \n Parties de classe : <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+LAST-MODIFIED:20170413T090941Z
+UID:Cours-5947-4-20170413T131525Z-Index-Education
+DTSTART:20170322T183500Z
+DTEND:20170322T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - [2AP-GR6] - <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Groupe : [2AP-GR6] \n Parties de classe : <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+LAST-MODIFIED:20170413T090941Z
+UID:Cours-5947-5-20170413T131525Z-Index-Education
+DTSTART:20170329T183500Z
+DTEND:20170329T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - [2AP-GR6] - <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Groupe : [2AP-GR6] \n Parties de classe : <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+LAST-MODIFIED:20170413T090941Z
+UID:Cours-5947-6-20170413T131525Z-Index-Education
+DTSTART:20170405T183500Z
+DTEND:20170405T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - [2AP-GR6] - <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Groupe : [2AP-GR6] \n Parties de classe : <2nde B> <AP> 2ndeB-AP6\, <2nde A> <AP> 2ndeA-AP6\, <2nde C> <AP> 2ndeC-AP6 \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-7-20170413T131525Z-Index-Education
+DTSTART:20170412T183500Z
+DTEND:20170412T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-9-20170413T131525Z-Index-Education
+DTSTART:20170426T183500Z
+DTEND:20170426T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-12-20170413T131525Z-Index-Education
+DTSTART:20170517T183500Z
+DTEND:20170517T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-13-20170413T131525Z-Index-Education
+DTSTART:20170524T183500Z
+DTEND:20170524T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-14-20170413T131525Z-Index-Education
+DTSTART:20170531T183500Z
+DTEND:20170531T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-15-20170413T131525Z-Index-Education
+DTSTART:20170607T183500Z
+DTEND:20170607T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-16-20170413T131525Z-Index-Education
+DTSTART:20170614T183500Z
+DTEND:20170614T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-17-20170413T131525Z-Index-Education
+DTSTART:20170621T183500Z
+DTEND:20170621T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-18-20170413T131525Z-Index-Education
+DTSTART:20170628T183500Z
+DTEND:20170628T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-19-20170413T131525Z-Index-Education
+DTSTART:20170705T183500Z
+DTEND:20170705T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-20-20170413T131525Z-Index-Education
+DTSTART:20170712T183500Z
+DTEND:20170712T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-23-20170413T131525Z-Index-Education
+DTSTART:20170802T183500Z
+DTEND:20170802T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-24-20170413T131525Z-Index-Education
+DTSTART:20170809T183500Z
+DTEND:20170809T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-25-20170413T131525Z-Index-Education
+DTSTART:20170816T183500Z
+DTEND:20170816T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-26-20170413T131525Z-Index-Education
+DTSTART:20170823T183500Z
+DTEND:20170823T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-27-20170413T131525Z-Index-Education
+DTSTART:20170830T183500Z
+DTEND:20170830T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-28-20170413T131525Z-Index-Education
+DTSTART:20170906T183500Z
+DTEND:20170906T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-29-20170413T131525Z-Index-Education
+DTSTART:20170913T183500Z
+DTEND:20170913T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-31-20170413T131525Z-Index-Education
+DTSTART:20170927T183500Z
+DTEND:20170927T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-32-20170413T131525Z-Index-Education
+DTSTART:20171004T183500Z
+DTEND:20171004T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-33-20170413T131525Z-Index-Education
+DTSTART:20171011T183500Z
+DTEND:20171011T202500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-34-20170413T131525Z-Index-Education
+DTSTART:20171018T173500Z
+DTEND:20171018T192500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-35-20170413T131525Z-Index-Education
+DTSTART:20171025T173500Z
+DTEND:20171025T192500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-37-20170413T131525Z-Index-Education
+DTSTART:20171108T173500Z
+DTEND:20171108T192500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-38-20170413T131525Z-Index-Education
+DTSTART:20171115T173500Z
+DTEND:20171115T192500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-39-20170413T131525Z-Index-Education
+DTSTART:20171122T173500Z
+DTEND:20171122T192500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-40-20170413T131525Z-Index-Education
+DTSTART:20171129T173500Z
+DTEND:20171129T192500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-41-20170413T131525Z-Index-Education
+DTSTART:20171206T173500Z
+DTEND:20171206T192500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170413T131525Z
+UID:Cours-4166-42-20170413T131525Z-Index-Education
+DTSTART:20171213T173500Z
+DTEND:20171213T192500Z
+SUMMARY;LANGUAGE=fr:AP Accompagnement Personnalisé - 2nde B\, 2nde A\, 2nde C - 1 - 11
+DESCRIPTION;LANGUAGE=fr:Matière : AP Accompagnement Personnalisé \n Professeur : M. D'ARCANGELI Enzo \n Parties de classe : 2nde B\, 2nde A\, 2nde C \n Ponderation : 1 \n Eleves : 11 \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-1-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20170414
+DTEND;VALUE=DATE:20170417
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-12-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20170419
+DTEND;VALUE=DATE:20170420
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-2-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20170501
+DTEND;VALUE=DATE:20170515
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-3-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20170521
+DTEND;VALUE=DATE:20170522
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-4-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20170626
+DTEND;VALUE=DATE:20170627
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-5-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20170715
+DTEND;VALUE=DATE:20170801
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-6-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20170814
+DTEND;VALUE=DATE:20170816
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-7-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20170918
+DTEND;VALUE=DATE:20170925
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-8-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20171009
+DTEND;VALUE=DATE:20171010
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-9-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20171027
+DTEND;VALUE=DATE:20171106
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170413T131525Z
+UID:Férié-10-20170413T131525Z-Index-Education
+DTSTART;VALUE=DATE:20171208
+DTEND;VALUE=DATE:20171209
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,1629 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID;LANGUAGE=fr:Copyright Index-Education - Index-Education - EDT2017 2017
+METHOD:PUBLISH
+X-CALSTART:20170227T000000Z
+X-CALEND:20171222T000000Z
+X-WR-CALNAME;LANGUAGE=fr:Emploi du Temps - FERNANDEZ Vania - du 01 mars au 18 décembre 2017
+X-WR-CALDESC;LANGUAGE=fr:Emploi du Temps FERNANDEZ Vania généré par le logiciel EDT (©Index-Education) le 01 mars 2017 - Lycée Charles de Gaulle - Concepción - Chili - semaines 9 - 51
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-1-20170301T113917Z-Index-Education
+DTSTART:20170301T113000Z
+DTEND:20170301T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-1-20170301T113917Z-Index-Education
+DTSTART:20170302T183500Z
+DTEND:20170302T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-2-20170301T113917Z-Index-Education
+DTSTART:20170306T133500Z
+DTEND:20170306T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-2-20170301T113917Z-Index-Education
+DTSTART:20170308T113000Z
+DTEND:20170308T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-2-20170301T113917Z-Index-Education
+DTSTART:20170306T113000Z
+DTEND:20170306T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-2-20170301T113917Z-Index-Education
+DTSTART:20170308T163000Z
+DTEND:20170308T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-2-20170301T113917Z-Index-Education
+DTSTART:20170309T183500Z
+DTEND:20170309T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-3-20170301T113917Z-Index-Education
+DTSTART:20170313T143500Z
+DTEND:20170313T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-3-20170301T113917Z-Index-Education
+DTSTART:20170315T123000Z
+DTEND:20170315T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-3-20170301T113917Z-Index-Education
+DTSTART:20170313T123000Z
+DTEND:20170313T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-3-20170301T113917Z-Index-Education
+DTSTART:20170316T193500Z
+DTEND:20170316T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-4-20170301T113917Z-Index-Education
+DTSTART:20170320T143500Z
+DTEND:20170320T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-4-20170301T113917Z-Index-Education
+DTSTART:20170322T123000Z
+DTEND:20170322T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-4-20170301T113917Z-Index-Education
+DTSTART:20170320T123000Z
+DTEND:20170320T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-4-20170301T113917Z-Index-Education
+DTSTART:20170322T173000Z
+DTEND:20170322T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-4-20170301T113917Z-Index-Education
+DTSTART:20170323T193500Z
+DTEND:20170323T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-5-20170301T113917Z-Index-Education
+DTSTART:20170327T143500Z
+DTEND:20170327T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-5-20170301T113917Z-Index-Education
+DTSTART:20170329T123000Z
+DTEND:20170329T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-5-20170301T113917Z-Index-Education
+DTSTART:20170327T123000Z
+DTEND:20170327T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-5-20170301T113917Z-Index-Education
+DTSTART:20170330T193500Z
+DTEND:20170330T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-6-20170301T113917Z-Index-Education
+DTSTART:20170403T143500Z
+DTEND:20170403T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-6-20170301T113917Z-Index-Education
+DTSTART:20170405T123000Z
+DTEND:20170405T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-6-20170301T113917Z-Index-Education
+DTSTART:20170403T123000Z
+DTEND:20170403T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-6-20170301T113917Z-Index-Education
+DTSTART:20170405T173000Z
+DTEND:20170405T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-6-20170301T113917Z-Index-Education
+DTSTART:20170406T193500Z
+DTEND:20170406T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-7-20170301T113917Z-Index-Education
+DTSTART:20170410T143500Z
+DTEND:20170410T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-7-20170301T113917Z-Index-Education
+DTSTART:20170412T123000Z
+DTEND:20170412T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-7-20170301T113917Z-Index-Education
+DTSTART:20170410T123000Z
+DTEND:20170410T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-7-20170301T113917Z-Index-Education
+DTSTART:20170413T193500Z
+DTEND:20170413T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-8-20170301T113917Z-Index-Education
+DTSTART:20170417T143500Z
+DTEND:20170417T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-8-20170301T113917Z-Index-Education
+DTSTART:20170419T123000Z
+DTEND:20170419T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-8-20170301T113917Z-Index-Education
+DTSTART:20170417T123000Z
+DTEND:20170417T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-8-20170301T113917Z-Index-Education
+DTSTART:20170419T173000Z
+DTEND:20170419T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-8-20170301T113917Z-Index-Education
+DTSTART:20170420T193500Z
+DTEND:20170420T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-9-20170301T113917Z-Index-Education
+DTSTART:20170424T143500Z
+DTEND:20170424T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-9-20170301T113917Z-Index-Education
+DTSTART:20170426T123000Z
+DTEND:20170426T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-9-20170301T113917Z-Index-Education
+DTSTART:20170424T123000Z
+DTEND:20170424T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-9-20170301T113917Z-Index-Education
+DTSTART:20170427T193500Z
+DTEND:20170427T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-12-20170301T113917Z-Index-Education
+DTSTART:20170515T143500Z
+DTEND:20170515T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-12-20170301T113917Z-Index-Education
+DTSTART:20170517T123000Z
+DTEND:20170517T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-12-20170301T113917Z-Index-Education
+DTSTART:20170515T123000Z
+DTEND:20170515T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-12-20170301T113917Z-Index-Education
+DTSTART:20170517T173000Z
+DTEND:20170517T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-12-20170301T113917Z-Index-Education
+DTSTART:20170518T193500Z
+DTEND:20170518T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-13-20170301T113917Z-Index-Education
+DTSTART:20170522T143500Z
+DTEND:20170522T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-13-20170301T113917Z-Index-Education
+DTSTART:20170524T123000Z
+DTEND:20170524T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-13-20170301T113917Z-Index-Education
+DTSTART:20170522T123000Z
+DTEND:20170522T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-13-20170301T113917Z-Index-Education
+DTSTART:20170525T193500Z
+DTEND:20170525T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-14-20170301T113917Z-Index-Education
+DTSTART:20170529T143500Z
+DTEND:20170529T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-14-20170301T113917Z-Index-Education
+DTSTART:20170531T123000Z
+DTEND:20170531T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-14-20170301T113917Z-Index-Education
+DTSTART:20170529T123000Z
+DTEND:20170529T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-14-20170301T113917Z-Index-Education
+DTSTART:20170531T173000Z
+DTEND:20170531T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-14-20170301T113917Z-Index-Education
+DTSTART:20170601T193500Z
+DTEND:20170601T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-15-20170301T113917Z-Index-Education
+DTSTART:20170605T143500Z
+DTEND:20170605T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-15-20170301T113917Z-Index-Education
+DTSTART:20170607T123000Z
+DTEND:20170607T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-15-20170301T113917Z-Index-Education
+DTSTART:20170605T123000Z
+DTEND:20170605T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-15-20170301T113917Z-Index-Education
+DTSTART:20170608T193500Z
+DTEND:20170608T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-16-20170301T113917Z-Index-Education
+DTSTART:20170612T143500Z
+DTEND:20170612T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-16-20170301T113917Z-Index-Education
+DTSTART:20170614T123000Z
+DTEND:20170614T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-16-20170301T113917Z-Index-Education
+DTSTART:20170612T123000Z
+DTEND:20170612T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-16-20170301T113917Z-Index-Education
+DTSTART:20170614T173000Z
+DTEND:20170614T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-16-20170301T113917Z-Index-Education
+DTSTART:20170615T193500Z
+DTEND:20170615T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-17-20170301T113917Z-Index-Education
+DTSTART:20170619T143500Z
+DTEND:20170619T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-17-20170301T113917Z-Index-Education
+DTSTART:20170621T123000Z
+DTEND:20170621T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-17-20170301T113917Z-Index-Education
+DTSTART:20170619T123000Z
+DTEND:20170619T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-17-20170301T113917Z-Index-Education
+DTSTART:20170622T193500Z
+DTEND:20170622T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-18-20170301T113917Z-Index-Education
+DTSTART:20170628T123000Z
+DTEND:20170628T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-18-20170301T113917Z-Index-Education
+DTSTART:20170628T173000Z
+DTEND:20170628T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-18-20170301T113917Z-Index-Education
+DTSTART:20170629T193500Z
+DTEND:20170629T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-19-20170301T113917Z-Index-Education
+DTSTART:20170703T143500Z
+DTEND:20170703T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-19-20170301T113917Z-Index-Education
+DTSTART:20170705T123000Z
+DTEND:20170705T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-19-20170301T113917Z-Index-Education
+DTSTART:20170703T123000Z
+DTEND:20170703T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-19-20170301T113917Z-Index-Education
+DTSTART:20170706T193500Z
+DTEND:20170706T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-20-20170301T113917Z-Index-Education
+DTSTART:20170710T143500Z
+DTEND:20170710T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-20-20170301T113917Z-Index-Education
+DTSTART:20170712T123000Z
+DTEND:20170712T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-20-20170301T113917Z-Index-Education
+DTSTART:20170710T123000Z
+DTEND:20170710T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-20-20170301T113917Z-Index-Education
+DTSTART:20170712T173000Z
+DTEND:20170712T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-20-20170301T113917Z-Index-Education
+DTSTART:20170713T193500Z
+DTEND:20170713T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-23-20170301T113917Z-Index-Education
+DTSTART:20170802T123000Z
+DTEND:20170802T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-23-20170301T113917Z-Index-Education
+DTSTART:20170803T193500Z
+DTEND:20170803T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-24-20170301T113917Z-Index-Education
+DTSTART:20170807T143500Z
+DTEND:20170807T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-24-20170301T113917Z-Index-Education
+DTSTART:20170809T123000Z
+DTEND:20170809T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-24-20170301T113917Z-Index-Education
+DTSTART:20170807T123000Z
+DTEND:20170807T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-24-20170301T113917Z-Index-Education
+DTSTART:20170809T173000Z
+DTEND:20170809T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-24-20170301T113917Z-Index-Education
+DTSTART:20170810T193500Z
+DTEND:20170810T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-25-20170301T113917Z-Index-Education
+DTSTART:20170816T123000Z
+DTEND:20170816T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-25-20170301T113917Z-Index-Education
+DTSTART:20170817T193500Z
+DTEND:20170817T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-26-20170301T113917Z-Index-Education
+DTSTART:20170821T143500Z
+DTEND:20170821T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-26-20170301T113917Z-Index-Education
+DTSTART:20170823T123000Z
+DTEND:20170823T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-26-20170301T113917Z-Index-Education
+DTSTART:20170821T123000Z
+DTEND:20170821T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-26-20170301T113917Z-Index-Education
+DTSTART:20170823T173000Z
+DTEND:20170823T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-26-20170301T113917Z-Index-Education
+DTSTART:20170824T193500Z
+DTEND:20170824T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-27-20170301T113917Z-Index-Education
+DTSTART:20170828T143500Z
+DTEND:20170828T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-27-20170301T113917Z-Index-Education
+DTSTART:20170830T123000Z
+DTEND:20170830T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-27-20170301T113917Z-Index-Education
+DTSTART:20170828T123000Z
+DTEND:20170828T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-27-20170301T113917Z-Index-Education
+DTSTART:20170831T193500Z
+DTEND:20170831T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-28-20170301T113917Z-Index-Education
+DTSTART:20170904T143500Z
+DTEND:20170904T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-28-20170301T113917Z-Index-Education
+DTSTART:20170906T123000Z
+DTEND:20170906T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-28-20170301T113917Z-Index-Education
+DTSTART:20170904T123000Z
+DTEND:20170904T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-28-20170301T113917Z-Index-Education
+DTSTART:20170906T173000Z
+DTEND:20170906T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-28-20170301T113917Z-Index-Education
+DTSTART:20170907T193500Z
+DTEND:20170907T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-29-20170301T113917Z-Index-Education
+DTSTART:20170911T143500Z
+DTEND:20170911T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-29-20170301T113917Z-Index-Education
+DTSTART:20170913T123000Z
+DTEND:20170913T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-29-20170301T113917Z-Index-Education
+DTSTART:20170911T123000Z
+DTEND:20170911T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-29-20170301T113917Z-Index-Education
+DTSTART:20170914T193500Z
+DTEND:20170914T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-31-20170301T113917Z-Index-Education
+DTSTART:20170925T143500Z
+DTEND:20170925T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-31-20170301T113917Z-Index-Education
+DTSTART:20170927T123000Z
+DTEND:20170927T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-31-20170301T113917Z-Index-Education
+DTSTART:20170925T123000Z
+DTEND:20170925T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-31-20170301T113917Z-Index-Education
+DTSTART:20170927T173000Z
+DTEND:20170927T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-31-20170301T113917Z-Index-Education
+DTSTART:20170928T193500Z
+DTEND:20170928T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-32-20170301T113917Z-Index-Education
+DTSTART:20171002T143500Z
+DTEND:20171002T162500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-32-20170301T113917Z-Index-Education
+DTSTART:20171004T123000Z
+DTEND:20171004T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-32-20170301T113917Z-Index-Education
+DTSTART:20171002T123000Z
+DTEND:20171002T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-32-20170301T113917Z-Index-Education
+DTSTART:20171005T193500Z
+DTEND:20171005T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-33-20170301T113917Z-Index-Education
+DTSTART:20171011T123000Z
+DTEND:20171011T142000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-33-20170301T113917Z-Index-Education
+DTSTART:20171011T173000Z
+DTEND:20171011T192000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-33-20170301T113917Z-Index-Education
+DTSTART:20171012T193500Z
+DTEND:20171012T212500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-34-20170301T113917Z-Index-Education
+DTSTART:20171016T133500Z
+DTEND:20171016T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-34-20170301T113917Z-Index-Education
+DTSTART:20171018T113000Z
+DTEND:20171018T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-34-20170301T113917Z-Index-Education
+DTSTART:20171016T113000Z
+DTEND:20171016T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-34-20170301T113917Z-Index-Education
+DTSTART:20171019T183500Z
+DTEND:20171019T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-35-20170301T113917Z-Index-Education
+DTSTART:20171023T133500Z
+DTEND:20171023T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-35-20170301T113917Z-Index-Education
+DTSTART:20171025T113000Z
+DTEND:20171025T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-35-20170301T113917Z-Index-Education
+DTSTART:20171023T113000Z
+DTEND:20171023T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-35-20170301T113917Z-Index-Education
+DTSTART:20171025T163000Z
+DTEND:20171025T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-35-20170301T113917Z-Index-Education
+DTSTART:20171026T183500Z
+DTEND:20171026T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-37-20170301T113917Z-Index-Education
+DTSTART:20171106T133500Z
+DTEND:20171106T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-37-20170301T113917Z-Index-Education
+DTSTART:20171108T113000Z
+DTEND:20171108T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-37-20170301T113917Z-Index-Education
+DTSTART:20171106T113000Z
+DTEND:20171106T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-37-20170301T113917Z-Index-Education
+DTSTART:20171109T183500Z
+DTEND:20171109T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-38-20170301T113917Z-Index-Education
+DTSTART:20171113T133500Z
+DTEND:20171113T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-38-20170301T113917Z-Index-Education
+DTSTART:20171115T113000Z
+DTEND:20171115T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-38-20170301T113917Z-Index-Education
+DTSTART:20171113T113000Z
+DTEND:20171113T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-38-20170301T113917Z-Index-Education
+DTSTART:20171115T163000Z
+DTEND:20171115T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-38-20170301T113917Z-Index-Education
+DTSTART:20171116T183500Z
+DTEND:20171116T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-39-20170301T113917Z-Index-Education
+DTSTART:20171120T133500Z
+DTEND:20171120T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-39-20170301T113917Z-Index-Education
+DTSTART:20171122T113000Z
+DTEND:20171122T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-39-20170301T113917Z-Index-Education
+DTSTART:20171120T113000Z
+DTEND:20171120T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-39-20170301T113917Z-Index-Education
+DTSTART:20171123T183500Z
+DTEND:20171123T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-40-20170301T113917Z-Index-Education
+DTSTART:20171127T133500Z
+DTEND:20171127T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-40-20170301T113917Z-Index-Education
+DTSTART:20171129T113000Z
+DTEND:20171129T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-40-20170301T113917Z-Index-Education
+DTSTART:20171127T113000Z
+DTEND:20171127T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-40-20170301T113917Z-Index-Education
+DTSTART:20171129T163000Z
+DTEND:20171129T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-40-20170301T113917Z-Index-Education
+DTSTART:20171130T183500Z
+DTEND:20171130T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-41-20170301T113917Z-Index-Education
+DTSTART:20171204T133500Z
+DTEND:20171204T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-41-20170301T113917Z-Index-Education
+DTSTART:20171206T113000Z
+DTEND:20171206T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-41-20170301T113917Z-Index-Education
+DTSTART:20171204T113000Z
+DTEND:20171204T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-41-20170301T113917Z-Index-Education
+DTSTART:20171207T183500Z
+DTEND:20171207T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-42-20170301T113917Z-Index-Education
+DTSTART:20171211T133500Z
+DTEND:20171211T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-88-42-20170301T113917Z-Index-Education
+DTSTART:20171213T113000Z
+DTEND:20171213T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-42-20170301T113917Z-Index-Education
+DTSTART:20171211T113000Z
+DTEND:20171211T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-244-42-20170301T113917Z-Index-Education
+DTSTART:20171213T163000Z
+DTEND:20171213T182000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-584-42-20170301T113917Z-Index-Education
+DTSTART:20171214T183500Z
+DTEND:20171214T202500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - [TEPS G2] - <T ES/L G2>\, <TS G2>
+LOCATION;LANGUAGE=fr:Gymnase 2-A
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Groupe : [TEPS G2] \n Parties de classe : <T ES/L G2>\, <TS G2> \n Salle : Gymnase 2-A \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-77-43-20170301T113917Z-Index-Education
+DTSTART:20171218T133500Z
+DTEND:20171218T152500Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 6ème A
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 6ème A \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20170301T113917Z
+UID:Cours-243-43-20170301T113917Z-Index-Education
+DTSTART:20171218T113000Z
+DTEND:20171218T132000Z
+SUMMARY;LANGUAGE=fr:Education Physique et Sportive - 5ème C
+LOCATION;LANGUAGE=fr:Gymnase 2-B
+DESCRIPTION;LANGUAGE=fr:Matière : Education Physique et Sportive \n Professeur : FERNANDEZ \n Classe : 5ème C \n Salle : Gymnase 2-B \n 
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-1-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20170414
+DTEND;VALUE=DATE:20170417
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-2-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20170501
+DTEND;VALUE=DATE:20170515
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-3-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20170521
+DTEND;VALUE=DATE:20170522
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-4-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20170626
+DTEND;VALUE=DATE:20170627
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-5-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20170715
+DTEND;VALUE=DATE:20170801
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-6-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20170814
+DTEND;VALUE=DATE:20170816
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-7-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20170918
+DTEND;VALUE=DATE:20170925
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-8-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20171009
+DTEND;VALUE=DATE:20171010
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-9-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20171027
+DTEND;VALUE=DATE:20171106
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:EdT
+DTSTAMP:20170301T113917Z
+UID:Férié-10-20170301T113917Z-Index-Education
+DTSTART;VALUE=DATE:20171208
+DTEND;VALUE=DATE:20171209
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+END:VCALENDAR
