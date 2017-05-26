@@ -12,7 +12,9 @@
                var permisoid = $('input:radio[name=permisoid]:checked').val();
                var horas_solicitadas = $('input:radio[name=permisoid]:checked').data("valor"); 
                var horas_descontar = $('input[name=horasdescontar]').val();
-               var horas_solicitadas = horas_solicitadas.replace(",",".");//cambio la , por . para evitar problemas al comparar               
+               var horas_solicitadas = horas_solicitadas.replace(",",".");//cambio la , por . para evitar problemas al comparar
+                console.log (horas_descontar);
+                console.log(horas_solicitadas);              
                if ((horas_descontar >= horas_solicitadas)){                  
                   if((horas_descontar == horas_solicitadas)){
                       return true;
