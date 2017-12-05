@@ -1,0 +1,101 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+{% if usuario.rol.nivel_acceso == 0 %}
+<div class='form-group'>
+    <div class="row">                 
+        <div class="col-lg-8">    
+                                                                 
+        </div>  
+        <div class="col-lg-1">                            
+            <a href="/devueltosEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+                <img src="/static/img/xls.png" width="35" height="35">
+            </a>                          
+        </div>
+        
+        <div class="col-lg-1">                            
+            <a href="/devueltosPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+                <img src="/static/img/pdf.png" width="35" height="35">
+            </a>                          
+        </div>                                                    
+    </div>
+</div>
+
+
+<div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+  <fieldset>
+  <ul>
+    <li>
+      <label class="label label-primary" > Funcionario</label>
+      <select name="persona" >
+        <option value="0">Seleccione Funcionario</option>
+        {% for persona in usuarios_filtro %}  
+        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}  <!--{{persona.usuario_activo}}--> </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <label class="label label-primary" >Estamento</label>
+      <select name="estamento">
+        <option value="0">Seleccione Estamento</option>
+        {% for estament in estamento_filtro %}
+        <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
+        {% endfor %}
+      </select>
+    </li> 
+    <li class="botfiltro">
+      <input class=" btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
+      <input class=" btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
+
+    </li>
+  </ul>
+  </fieldset> 
+  </form>
+</div> 
+ {% endif %}
+
+<div><h1>Horas Devueltas</h1></div>
+<table class="table table-hover  table-bordered">
+  <thead class="thead-inverse">
+      <tr>
+        <th>#</th>
+        <th>Numero de Permiso</th>
+        <th>Solicitante</th>
+        <th>Cantidad Devuelta</th>
+        <th>Ingresado por</th>
+        <th>Fecha de Ingreso Devolución</th>
+      </tr>
+    </thead>
+  
+   {% for devuelto in devueltos %}
+  <tr>
+     <td>{{forloop.counter}}</td>
+     <td><a class="list-group-item btn btn-info" href="{% url 'edt.views.verpermiso2' devuelto.permiso.pk %}">{{devuelto.permiso.id}}</a></td>
+     <td >{{devuelto.permiso.usuario}}</td>
+     <td class="font-weight-bold text-center">{{devuelto.cantidad}}</td>
+     <td>{{devuelto.ingresadopor}}</td>
+     <td>{{devuelto.fecha|date:"d F Y"}}</td>
+  </tr>
+   {% empty %}
+    <tr>
+      <td colspan="5">En este momento no hay ningun elemento para mostrar</td>
+    </tr>
+   
+
+   {% endfor %}
+    
+</table>
+   <nav>
+      {% if devueltos.has_previous %}
+        <a href="?page={{ devueltos.previous_page_number }}">Página anterior</a>
+      {% endif %}
+      <p class="paginador">Página {{ devueltos.number }} de {{ devueltosdevueltos.paginator.num_pages }}</p>
+      {% if devueltos.has_next %}
+      <a href="?page={{ devueltos.next_page_number }}">Página siguiente</a>
+      {% endif %} 
+    </nav>
+        
+{% endblock  %}

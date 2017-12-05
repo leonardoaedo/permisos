@@ -1,0 +1,103 @@
+{% load staticfiles %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+<head>
+	<title>{{title}}</title>
+	<link rel="icon" href="/static/img/favicon.png" type="image/x-icon"/>
+	<style>
+	h4{
+		font-size: 30px;
+		padding: 0;
+	  }
+    
+    @page {
+        size: letter;
+        margin: 2cm;
+
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+      						}
+        
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        					}
+   		 
+       }
+
+       
+   
+</style>
+
+</head>
+
+{% block contenido %}
+
+<div id="page-header">
+        <div class="header">
+            <div class="logo">
+              <img src="/static/img/escudo_lycee2.png" width="200" height="161" />
+              <p class="header-link">
+                <a class="header-link" href="http://www.cdegaulle.cl/">www.cdegaulle.cl</a>                
+            </p>
+
+            </div> 
+                        
+        </div>
+</div>
+
+
+<h2 align="center">Detalle Permiso {{permiso.id}}</h2>
+<h2 align="center">{{hoy|date:"d F Y"}}</h2>
+<div id="header_content"></div>
+<div>
+  <ul >
+    <li><h2>TIPO : {{permiso.tipo}} </h2> </li>
+    <li>
+        <h2>Estado : 
+            {% if resolucion.get_respuesta_display == 'Aprobado' %} 
+              <span id="verde">{{resolucion.get_respuesta_display}}</span>
+            {% elif resolucion.get_respuesta_display == 'Rechazado' %}
+                <span id="rojo" >{{resolucion.get_respuesta_display}}</span>
+            {% else %}
+                <span id="azul" >En espera se revisión</span>           
+            {% endif %}
+        </h2>
+    </li>
+  {% if resolucion.get_respuesta_display == 'Rechazado' %}
+    <li class="list-group-item">Motivo : {{resolucion.razon}}</li>
+  {% endif%}
+
+    <li>Solicitante : {{permiso.usuario.nombre}},{{permiso.usuario.apellido1}}</li>
+    <li>Rut : {{permiso.usuario.rut}}-{{permiso.usuario.dv}}</li>
+    <li>Fecha Solicitud : {{permiso.fecha_creacion}}</li>
+    <li>Motivo : {{permiso.motivo}}</li>
+    <li>Comentario : {{permiso_formset.comentario}}</li>
+    <li>Cantidad de horas/bloques solcitados : {{permiso.horas_solicitadas}}</li>
+    <li>Devuelve Horas : {{permiso.get_devuelve_horas_display }}</li>
+    <li>Con o sin goce de sueldo : {{permiso.get_sueldo_display}}</li>
+    <li>Reemplazante : {{permiso.reemplazante}}</li>
+    <li>Archivo Adjunto : {% if permiso.documento_adjunto.name %} <a target="_blank" href="/media/{{permiso.documento_adjunto}}">Ver Documento</a> {% else %} Sin documento adjunto{% endif %} </li>
+
+  </ul>
+</div>
+<div>
+  <ul>
+    <li><h2>Detalle </h2></li>
+      {% for eventoObj in permiso.eventos_en_permisos_set.all %}
+        <li>
+          <span>{{eventoObj.delta}}</span>
+          {{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|timezone:"America/Sao_Paulo"|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|timezone:"America/Sao_Paulo"|date:"G:i"}}</li>
+      {% endfor %}
+    <li>
+      <span >{% if permiso.usuario.jefatura.id == 1 or permiso.usuario.jefatura.id == 6 or permiso.usuario.jefatura.id == 7 %}Total{{"  "}}{{permiso.horas_solicitadas}} {% else %}
+                 Total{{"  "}}{{permiso.horas_solicitadas}}{{"  Bloques Solicitados"}} 
+                {% endif %}</span>
+    </li>
+  </ul>
+</div>
+
+<div id="footer_content"> Página <pdf:pagenumber> de <pdf:pagecount>
+  <hr> </div>
+{% endblock %}

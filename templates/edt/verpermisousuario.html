@@ -2,6 +2,8 @@
 {% load staticfiles %}
 
 {% block contenido %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
 <div id="resolucion" class="msg-comprobante" {% if resolucion.get_respuesta_display == 'Aprobado' %} class="msg-exito"{% elif resolucion.get_respuesta_display == 'Rechazado' %} class="msg-error" {% else%}class="msg-solicitud" {% endif%}>
 <ul class="list-group">
 	<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;">Permiso administrativo N° {{permiso.id}} </h4></li>
@@ -28,11 +30,11 @@
 
 	<li class="list-group-item" >
 		<ul class="detpermiso">
-			<li class="detpermisofecha" >{{eventoObj.numero_evento.start|date:"d F Y "}}</li>
-			<li class="detpermisoinicio" >{{eventoObj.numero_evento.start|date:"P"}}</li>
+			<li class="detpermisofecha" >{{eventoObj.numero_evento.start|date:"D d M "}}</li>
+			<li class="detpermisoinicio" >{{eventoObj.numero_evento.start|timezone:"America/Sao_Paulo"|date:"G:i"}}</li>
 			<input type="hidden" value="{{eventoObj.numero_evento}}">
 			<li>-</li>
-			<li class="detpermisofin" >{{eventoObj.numero_evento.end|date:"P"}}</li>
+			<li class="detpermisofin" >{{eventoObj.numero_evento.end|timezone:"America/Sao_Paulo"|date:"G:i"}}</li>
 		</ul>	
 	
 	</li>

@@ -29,11 +29,11 @@
 		<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
 		<link rel="stylesheet" href="/static/css/datepicker.css"> 
 		<link rel="stylesheet" href="/static/css/bootstrap.css">
-		<link rel="stylesheet" href="/static/css/style.css">
+		<link rel="stylesheet" href="/static/css/style.css?version=1.2">
 		<link rel="stylesheet" href="/static/css/freelancer.css">
 		<link rel="stylesheet" href="/static/css/jquery.qtip.css">
 		<link rel="stylesheet" href="/static/css/hover-min.css" media="all">
-
+		<link rel="stylesheet" href="/static/css/print.css" media="print">
 		
 		<title>SCA - Lycée Charles de Gaulle</title>
 		</head>
@@ -72,7 +72,13 @@
 								  <li class="hvr-underline-from-center page-scroll"><a href="/anularlst/">Anular permisos</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/devolver">Devolución de Horas</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/descontar">Descuento de Horas</a></li>
+								  <li class="dropdown-header">resumenes</li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/conpermiso">Quien está con Permiso</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/anulados">Permisos Anulados</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/descontados">Horas descontadas</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/devueltos">Horas devueltas</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/permisos">Todos los Permisos</a></li>
+
 								  {% endif %}	
 								</ul>
 				      </li>
@@ -96,7 +102,7 @@
 					    	<li>Usuario Activo</li>
 					    	<li>
 					    		{% block usuario %}
-					    		{{ usuario.nombre }}{{" "}}{{usuario.apellido1}} 
+					    		{{ usuario.nombre }} {{usuario.apellido1}}
 					    		{% endblock %}
 					    	</li>
 					    </ul>

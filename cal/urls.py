@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls import *
-from edt.views import PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF,AnuladosPDF,AnuladosExcel
+from edt.views import ImprimePermisoPDF,PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF,AnuladosPDF,AnuladosExcel,DescontadosExcel,DescontadosPDF,DevueltosExcel,DevueltosPDF,ConPermisoPDF,ConPermisoExcel
 urlpatterns = [
 
     # Examples:
@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^wsPermiso_Jefatura/', "edt.views.wsPermiso_Jefatura"),
     url(r'^main/', "edt.views.main"),
     url(r'^permiso/','edt.views.ingresapermiso' ),
+    url(r'^permisos/','edt.views.permisos' ),
     url(r'^permisolst/','edt.views.permisolst' ),
     url(r'^resolucion/','edt.views.aprobarRechazar' ),
     url(r"^respuesta/(?P<pk>\d+)/$","edt.views.mostrar_respuesta" ),
@@ -42,15 +43,27 @@ urlpatterns = [
     url(r'^anulaciones/', "edt.views.anulaciones"),
     url(r'^bfuncionario/',"edt.views.bitfuncionario"),       
     url(r'^permisosusuario/(?P<pk>\d+)/$',"edt.views.permisosusuario"),
+    url(r'^imprimepermiso/',ImprimePermisoPDF.as_view()),
     url(r'^bhorasEXCEL/$',BitHorasExcel.as_view(), name="BitHorasExcel"),
     url(r'^bhorasPDF/',BitHorasPDF.as_view()),    
     url(r'^bhoras/',"edt.views.bithoras"),
     url(r'^anuladosEXCEL/$',AnuladosExcel.as_view(), name="AnuladosExcel"),
     url(r'^anuladosPDF/',AnuladosPDF.as_view()),
     url(r'^anulados/','edt.views.anulados' ),
+    url(r'^descontadosEXCEL/$',DescontadosExcel.as_view(), name="DescontadosExcel"),
+    url(r'^descontadosPDF/',DescontadosPDF.as_view()),
+    url(r'^descontados/','edt.views.descontados' ),
+    url(r'^devueltosEXCEL/$',DevueltosExcel.as_view(), name="DevueltosExcel"),
+    url(r'^devueltosPDF/',DevueltosPDF.as_view()),
+    url(r'^devueltos/','edt.views.devueltos' ),
     url(r'^estadisticapermisosPDF/',EstadisticaPermisosPDF.as_view()),
     url(r'^estadisticapermisosEXCEL/$',EstadisticaPermisosExcel.as_view(), name="EstadisticaPermisosExcel"),
     url(r'^estadisticapermisos/',"edt.views.EstadisticaPermisos"),
+    url(r'^gpermisos/','edt.views.GraficoPermisos' ),
+    url(r'^conpermiso/','edt.views.ConPermiso' ),
+    url(r'^conpermisoPDF/',ConPermisoPDF.as_view()),
+    url(r'^conpermisoEXCEL/$',ConPermisoExcel.as_view(), name="ConPermisoExcel"),
+
 
 
 

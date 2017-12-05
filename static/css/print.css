@@ -4,14 +4,19 @@
 nav {
 	display: none;
 }
+header  {
+        display: none;
+}
 
-footer p{
+footer{
         display: none;
 }
-header a {
-        display: none;
+.list-group{
+	display: none;
 }
-header p {
-	margin: auto;
+
+ #resolucion {
+ 	display: none;
+ } 
 
 

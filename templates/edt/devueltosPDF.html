@@ -1,0 +1,85 @@
+{% load staticfiles %}
+<head>
+	<title>{{title}}</title>
+	<link rel="icon" href="/static/img/favicon.png" type="image/x-icon"/>
+	<style>
+	h4{
+		font-size: 30px;
+		padding: 0;
+	  }
+    
+    @page {
+        size: letter landscape;
+        margin: 2cm;
+
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+      						}
+        
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        					}
+   		 }
+     
+  .DEVtable{width:25%;overflow: hidden;float: left;border-collapse:collapse;}
+	.DEVtable caption {font-size: 18px;text-align: center;color: black;font-weight: bold;}
+	.DEVtable td{padding: 5px;margin: auto;text-align: center;border:  1px solid;}
+
+   
+</style>
+
+</head>
+
+{% block contenido %}
+
+<div id="page-header">
+        <div class="header">
+            <div class="logo"><img src="/static/img/escudo_lycee2.png" width="150" height="100" /></div> 
+            <p class="header-link">
+                <a class="header-link" href="http://www.cdegaulle.cl/">www.cdegaulle.cl</a>                
+            </p>            
+        </div>
+</div>
+
+<div id="footer_content">(c) - página <pdf:pagenumber> of <pdf:pagecount> </div>
+<h4 align="center">Horas Devueltas</h4>
+<h4 align="center">{{hoy|date:"d F Y"}}</h4>
+<div id="header_content"></div>
+
+
+           
+<table border="1" class="DEVtable">
+  <thead>
+      <tr>
+        <th>#</th>
+        <th>Numero de Permiso</th>
+        <th>Solicitante</th>
+        <th>Cantidad</th>
+        <th>Ingresado por</th>
+        <th>fecha</th>
+      </tr>
+    </thead>
+  
+   {% for devuelto in devueltos %}
+  <tr>
+     <td>{{forloop.counter}}</td>
+     <td>{{devuelto.permiso.id}}</td>
+     <td >{{devuelto.permiso.usuario}}</td>
+     <td>{{devuelto.cantidad}}</td>
+     <td>{{devuelto.ingresadopor}}</td>
+     <td>{{devuelto.fecha|date:"d F Y"}}</td>
+  </tr>
+   {% empty %}
+    <tr>
+      <td colspan="5">En este momento no hay ningun elemento para mostrar</td>
+    </tr>
+   
+
+   {% endfor %}
+    
+</table>
+
+</div>
+{% endblock %}

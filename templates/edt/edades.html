@@ -21,12 +21,12 @@
         var edades = {{edades|safe}};
         var data = new google.visualization.DataTable();
          data.addColumn('string', 'edad');
-         data.addColumn('number', 'cantidad');
+         data.addColumn('number', 'Cantidad de Funcionarios');
 	       data.addRows(edades)        
         // Set chart options
-        var options = {'title':'Distribusión de funcionarios por edad',
+        var options = {'title':'Distribución de funcionarios por edad',
                        'is3D':false,
-                       legend: 'none',
+                       
                        'width':1024,
                        'height':768,
                        'pieHole': 0.6,

@@ -14,7 +14,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Solicitud</title>
-
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
 </head>
 <body>
 
@@ -47,7 +48,7 @@
 	{% for evento in permiso.eventos_en_permisos_set.all %}	
 
 	<li style="position: relative;  display: block;  padding: 10px 15px;  margin-bottom: -1px;  background-color: #ffffff;  border: 1px solid #ecf0f1;" >
-	{{evento.numero_evento.start|date:"D d M "}}{{"   "}}{{evento.numero_evento.start|date:"G:i"}}{{"-"}} {{evento.numero_evento.end|date:"G:i"}}</li>
+	{{evento.numero_evento.start|date:"D d M "}}{{"   "}}{{evento.numero_evento.start|timezone:"America/Sao_Paulo"|date:"G:i"}}{{"-"}} {{evento.numero_evento.end|timezone:"America/Sao_Paulo"|date:"G:i"}}<!--para el cambio de hora borrar o modificar el timezone --> </li>
 	{% endfor %}
 	<li class="list-group-item" >
 	<span style="display: inline-block;  min-width: 10px;  padding: 3px 7px;  font-size: 13px;  font-weight: bold;  color: #ffffff;  line-height: 1;  vertical-align: baseline; white-space: nowrap;  text-align: center;  background-color: #2c3e50;  border-radius: 10px;">Total{{"  "}}{{horas}}</span>

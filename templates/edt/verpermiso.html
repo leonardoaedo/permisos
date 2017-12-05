@@ -2,17 +2,20 @@
 {% load staticfiles %}
 
 {% block contenido %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
 <div id="resolucion" class="msg-comprobante">
 <ul class="list-group">
 {{form.errors}}
 <form method="post" action="/resolucion/">
 {% csrf_token %}	
-<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;">{{permiso.tipo}} N° {{permiso.id}} </h4></li>
+<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;width: 380px !important;">TIPO : {{permiso.tipo}} N° {{permiso.id}} </h4> <a href="/imprimepermiso?permiso={{permiso.id}}" target="_blank
+	" ><img class="imprimepermiso" src="/static/img/printer.ico"  height="24" width="24"></a></li>
 	<li class="list-group-item">Solicitante : {{permiso.usuario.nombre}},{{permiso.usuario.apellido1}}</li>
 	<li class="list-group-item">Rut : {{permiso.usuario.rut}}-{{permiso.usuario.dv}}</li>
 	<li class="list-group-item">Fecha Solicitud : {{permiso.fecha_creacion}}</li>
 	<li class="list-group-item">Motivo : {{permiso.motivo}}</li>
-	<li class="list-group-item">Comentario : {{permiso_formset.comentario}}</li>
+	<li class="list-group-item frmcomentario">Comentario : {{permiso_formset.comentario}}</li>
 	<li class="list-group-item">Cantidad de horas/bloques solcitados : {{permiso.horas_solicitadas}}</li>
 	<li class="list-group-item">Devuelve Horas : {{permiso_formset.devuelve_horas }}</li>
 	<li class="list-group-item">Con o sin goce de sueldo : {{permiso_formset.sueldo}}</li>
@@ -25,7 +28,7 @@
 
 	<li class="list-group-item" >
 	<span class="badge">{{eventoObj.delta}}</span>
-		{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|date:"G:i"}}</li>
+		{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|timezone:"America/Sao_Paulo"|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|timezone:"America/Sao_Paulo"|date:"G:i"}}</li><!--para el cambio de hora borrar o modificar el timezone -->
 	{% endfor %}
 	<li class="list-group-item" >
 	<span class="badge">{% if permiso.usuario.jefatura.id == 1 or permiso.usuario.jefatura.id == 6 or permiso.usuario.jefatura.id == 7 %}Total{{"  "}}{{permiso.horas_solicitadas}} {% else %}

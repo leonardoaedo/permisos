@@ -142,12 +142,12 @@ class Permiso (models.Model):
         def ultimoEvento(self):
             if len(self.eventos_en_permisos_set.all()) < 1:
                 return None
-            return self.eventos_en_permisos_set.all().order_by('-id')[0]
+            return self.eventos_en_permisos_set.all().order_by('-numero_evento__end')[0]
 
         def primerEvento(self):
             if len(self.eventos_en_permisos_set.all()) < 1:
                 return None
-            return self.eventos_en_permisos_set.all().order_by('id')[0]
+            return self.eventos_en_permisos_set.all().order_by('numero_evento__start')[0]
         def horas(self):
             if len(self.horas_set.all()) < 1 :
                 return None
@@ -265,6 +265,13 @@ class Bitacora(models.Model):
     def __unicode__(self):
         return "%s  %s"%(self.usuario,self.actividad)
 
+class Sindicato(models.Model):
+    cargo = models.CharField(max_length=128)
+    usuario = models.ForeignKey(Usuario)
+    def __unicode__(self):
+        return u"%s  %s"%(self.usuario,self.cargo)
+
+
 class Horas(models.Model):
     permiso = models.ForeignKey(Permiso,null=True)
     fecha = models.DateTimeField(auto_now_add=True,null=True)
@@ -295,6 +302,7 @@ class Revisor(models.Model):
 
 
 
+
 #######################################################################################################
 
 class Entry(models.Model):
@@ -321,7 +329,3 @@ class Entry(models.Model):
 
     class Meta:
         verbose_name_plural = "entries"
-
-
-
-

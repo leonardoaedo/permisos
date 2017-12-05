@@ -1,0 +1,140 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+{% if usuario.rol.nivel_acceso == 0 %}
+{% if permiso.estado.id == 6 %} <span class="badgeanulado">N</span> {% elif permiso.estado.id == 4  %} <span class="badgeaprobado">A</span> {% elif permiso.estado.id == 3 %} <span class="badgesinrevisar">S</span> {% elif permiso.estado.id == 5  %} <span class="badgerechazado">R</span> {% endif %}
+
+<div class='form-group'>
+    <div class="row">                 
+        <div class="col-lg-6">    
+                                                                 
+        </div>
+        <div class="col-lg-1">
+          <table>
+            <tr>
+              <td><span class="badgesinrevisar">S</span></td>
+              
+            </tr>
+            <tr><td>Sin Revisar</td></tr>
+
+          </table>                            
+        </div>
+
+        <div class="col-lg-1">
+          <table>
+            <tr>
+              <td><span class="badgeaprobado">A</span></td>              
+            </tr>
+            <tr><td>Aprobado</td></tr>
+          </table>       
+        </div>
+
+        <div class="col-lg-1">
+          <table>
+            <tr>
+              <td><span class="badgerechazado">R</span></td>              
+            </tr>
+            <tr><td>Rechazado</td></tr>
+          </table>             
+        </div>
+       
+        <div class="col-lg-1">
+          <table>
+            <tr>
+              <td><span class="badgeanulado">N</span></td>              
+            </tr>
+            <tr><td>Anulado</td></tr>
+          </table>                  
+        </div>                                                    
+    </div>
+</div>  
+
+
+<div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+  <fieldset>
+  <ul>
+    <li>
+      <label class="label label-primary" > Funcionario</label>
+      <select name="persona" >
+        <option value="0">Seleccione Funcionario</option>
+        {% for persona in usuarios_filtro %}  
+        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}  <!--{{persona.usuario_activo}}--> </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <label class="label label-primary" >Estamento</label>
+      <select name="estamento">
+        <option value="0">Seleccione Estamento</option>
+        {% for estament in estamento_filtro %}
+        <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
+        {% endfor %}
+      </select>
+    </li> 
+    <li class="botfiltro">
+      <input class=" btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
+      <input class=" btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
+
+    </li>
+  </ul>
+  </fieldset> 
+  </form>
+</div> 
+ {% endif %}
+<div class="pxp" ><h4> <!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </h4>
+	
+	<ul class="list-group permisolst">
+	{% for permiso in permisos_list %}
+
+	<li>
+
+    <a class="list-group-item " href="{% url 'edt.views.verpermiso' permiso.pk %}">
+      <div class="numeropermiso">
+          N° {{permiso.id}} 
+      </div>  
+      <div class="nombrefuncionario">
+          {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }}
+      </div>
+      <div class="fechapermiso">
+          {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}
+      </div>  
+      <div >
+          {{permiso.tipo}}
+      </div>
+        <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span>
+
+        {% if permiso.estado.id == 6 %} 
+          <span class="badgeanulado">N</span> 
+        {% elif permiso.estado.id == 4  %} 
+          <span class="badgeaprobado"> A </span> 
+        {% elif permiso.estado.id == 3 %} 
+          <span class="badgesinrevisar">S</span> 
+        {% elif permiso.estado.id == 5  %} 
+          <span class="badgerechazado">R</span> 
+        {% endif %}
+
+       
+           
+    </a>		
+	</li>
+
+	{% empty %}
+    <li class="list-group-item">En este momento no hay ningun elemento para mostrar</li>
+
+	{% endfor %}
+	</ul>
+ 
+		    <nav>
+			{% if permisos.has_previous %}
+				<a href="?page={{ permisos.previous_page_number }}">Página anterior</a>
+			{% endif %}
+			<p class="paginador">Página {{ permisos.number }} de {{ permisos.paginator.num_pages }}</p>
+			{% if permisos.has_next %}
+			<a href="?page={{ permisos.next_page_number }}">Página siguiente</a>
+			{% endif %} 
+	        </nav>
+</div>	        
+{% endblock  %}

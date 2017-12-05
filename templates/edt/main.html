@@ -4,6 +4,17 @@
 
 {% block contenido %}
 
+<!--  {% for sindicato in en_sindicato %}
+
+{{sindicato}}
+{{fech}}
+
+{% endfor %}  -->
+
+
+
+
+
 <a href="#" id="mostrarocultar" name="mostrarocultar" value="mostrarocultar" class="mostrarocultar btn btn-info btn-sm">Click para Mostrar/Ocultar Resumen</a>
 
 <div id="listapermisos" class="listapermisos"> 
@@ -82,6 +93,10 @@
     {% endif %}
 
 {% endif %}
+
+
+
+
 <table class=" table-bordered table-hover bgeneral TFtable" >
             <thead>
                 <tr>  
@@ -158,21 +173,25 @@
 		<p class="reemplazante"><label for="reemplazante">Propuesta de Reemplazante</label>{{form.reemplazante}}</p>
 		</div>	
 		<div id="frmpermiso">
-		<p class="documento_adjunto"><label for="documento_adjunto">Documento adjunto</label>{{form.documento_adjunto}}</p>	
+		<p class="documento_adjunto"><label for="documento_adjunto" title="El nombre del archivo adjunto no debe contener tildes ni ñ">Documento adjunto</label>{{form.documento_adjunto}}</p>	
 		</div>		
 
 	</div>
 	<div class="alert alert-warning">IMPORTANTE : La anulación de un permiso solo se efectua a través de su jefatura directa, quien debera solicitarla a RRHH.</div>	
 	<div id='calendar'></div>
 		<input type="hidden" id="calendario-data" name="data-calendario">
+    <input type="hidden" id="usuario-data" name="data-usuario">
 
 	<input class="btn btn-success btn-lg" type="submit" value="Solicitar" id="botonCalendario"/>
 	</form>
 <script>
 //por ahora aca, a futuro un poco mas ordenado
+var usuario = {{usuario.id}}
 var seleccionados = [];
+console.log (usuario);
 $(document).ready(function(){
 	$( "input[type=file]" ).last().addClass( "custom-file-input" );
+  $('label[title]').qtip();
 	$('#calendar').fullCalendar({
        // put your options and callbacks here   
        selectable:true,
@@ -249,7 +268,7 @@ $(document).ready(function(){
 		}else if (event.used == false){ // si ya esta lo quitamos y reseteamos el color
 									
 			seleccionados.splice(seleccionados.indexOf(event.id),1);
-			$(this).css('background', '#3a87ad');
+			$(this).css('background', '#3498DB');
 			$(this).css('color', '#ffffff');
 			$(this).css('font-weight', 'bold');
 			
@@ -278,11 +297,11 @@ $(document).ready(function(){
   });  
     
   $('#main').submit(function(e){
-	   if( $('#id_devuelve_horas').val() == "N" && $('#id_sueldo').val() == "C" ){
+	   if( $('#id_devuelve_horas').val() == "N" && $('#id_sueldo').val() == "C" && $('#id_tipo').val() != 3  ){
         alert("Permiso SIN DEVOLUCIÓN de horas debe ser SIN GOCE de sueldo");
               e.preventDefault(e);
-            }
-     $("#calendario-data").val(JSON.stringify(seleccionados));       
+    }   
+     $("#calendario-data").val(JSON.stringify(seleccionados));
   });          
 
 
