@@ -1,0 +1,22 @@
+{% extends "edt/base.html" %}
+{% load staticfiles %}
+<!-- ... -->
+{% block contenido %}
+<table >
+    <tr>
+        <td>Correlativo</td>
+        <td>Funcinario</td>
+        <td>Cant Eventos</td>
+
+    </tr>
+{% for evento in eventos %}
+    <tr>
+      <td>{{ forloop.counter}}</td>
+      <td>{{evento.nombre}} {{evento.apellido1}} </td>
+      <td>{{evento.cant_eventos}} </td>
+    <tr>   
+
+
+{% endfor %}
+</table>
+{% endblock  %}

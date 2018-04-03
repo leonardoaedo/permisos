@@ -63,6 +63,7 @@ urlpatterns = [
     url(r'^conpermiso/','edt.views.ConPermiso' ),
     url(r'^conpermisoPDF/',ConPermisoPDF.as_view()),
     url(r'^conpermisoEXCEL/$',ConPermisoExcel.as_view(), name="ConPermisoExcel"),
+    url(r'^funcevento/','edt.views.funcionarioEvento' ),
 
 
 

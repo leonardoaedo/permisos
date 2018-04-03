@@ -71,8 +71,12 @@ class Estado_Permiso(models.Model):
         def __unicode__(self):              # __unicode__ on Python 2
                 return self.estado 
 
+class Estado(models.Model):
+    nombre = models.CharField(max_length=32)
 
-# Create your models here.
+    def __unicode__(self):              # __unicode__ on Python 2
+            return u"%s"%(self.nombre)
+
 class Usuario(models.Model):
         rut = models.CharField(max_length=32)
         dv = models.CharField(max_length=1)
@@ -95,12 +99,18 @@ class Usuario(models.Model):
         nacionalidad = models.ForeignKey(Nacionalidad)
         contrato = models.ForeignKey(Contrato)        
         foto = models.FileField(null=True,blank=True)
+        estado = models.ForeignKey(Estado,null=True,blank=True)
+     
 
         class Meta:
             ordering = ('apellido1',)
 
         def __unicode__(self):              # __unicode__ on Python 2
             return u"%s %s"%(self.apellido1,self.nombre)
+
+
+
+
 devuelve = (
         ("S","SI"),
         ("N","NO")
@@ -112,6 +122,8 @@ goce = (
 
 )
 
+
+
 class Permiso (models.Model):
         usuario = models.ForeignKey(Usuario,null=True,blank=True)
         fecha_creacion = models.DateTimeField(auto_now_add=True,null=True,blank=True)
@@ -120,7 +132,7 @@ class Permiso (models.Model):
         devuelve_horas = models.CharField(max_length=1,choices=devuelve)
         motivo = models.ForeignKey(Motivo,related_name="motivo")
         sueldo = models.CharField(max_length=1,choices=goce)
-        reemplazante = models.ForeignKey(Usuario,related_name="reemplazante",null=True,blank=True,default=162)
+        reemplazante = models.ForeignKey(Usuario,related_name="reemplazante",default=162)
         tipo = models.ForeignKey(Tipo_Permiso,related_name="tipo_permiso")
         comentario = models.CharField(max_length=500)
         documento_adjunto = models.FileField(null=True,blank=True)
