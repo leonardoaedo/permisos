@@ -347,6 +347,7 @@ class Licencia(models.Model):
     especialidad = models.ForeignKey(EspecialidadMedica)
     inicio = models.DateField()
     fin = models.DateField()
+    fecha = models.DateTimeField(auto_now_add=True,null=True) 
 
     def __unicode__(self):
         return  u"%s tomara licencia  %s, %d - %d "%(self.usuario,self.tipo,self.reposo,self.inicio)

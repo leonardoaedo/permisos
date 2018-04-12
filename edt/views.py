@@ -2896,8 +2896,9 @@ def licencia(request):
                 licencia.fin = request.POST.get("fin")
                 licencia.fin = datetime.strptime(licencia.fin, '%Y-%m-%d')
                 licencia.save()
+                
                 flag = 'pasa'
-                return HttpResponse(licencia.inicio)
+                return HttpResponse("Datos guardados exitosamente")
                 #return redirect('/guardalicencia/%d'%(licencia.id))
             else:
                 flag = 'formset no es valido'
