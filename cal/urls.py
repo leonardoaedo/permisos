@@ -29,6 +29,8 @@ urlpatterns = [
     url(r'^genero/','edt.views.wsGenero' ),
     url(r'^jefaturas/','edt.views.wsJefaturas' ),
     url(r'^permiso_jefatura/','edt.views.permiso_jefatura' ),
+    url(r'^licencia/','edt.views.licencia' ),
+   # url(r'^guardalicencia/(?P<pk>\d+?)/$',"edt.views.guardalicencia" ),
     url(r'^edades/','edt.views.wsEdades' ),
     url(r'^bitacora/', PermisoListView.as_view()),
     # url(r'^modpermiso/', PermisoUpdateView.as_view()),

@@ -133,10 +133,10 @@ def funcionarioEvento(request):
 
 
     if  user.rol.id == 1:
-        eventos = Usuario.objects.annotate(cant_eventos=Count('edt_user')).order_by("cant_eventos")
+        eventos = Usuario.objects.annotate(cant_eventos=Count('edt_user')).order_by("cant_eventos").filter(estado=1)
 
    
-    return render_to_response("edt/funcevento.html",{"eventos":eventos},context_instance=RequestContext(request))    
+    return render_to_response("edt/funcevento.html",{"eventos":eventos,"usuario": user},context_instance=RequestContext(request))    
 
 
 
@@ -149,7 +149,7 @@ def permiso_jefatura(request):
     formset = PermisoFormSet()            
 
     if  user.rol.id == 1:
-        usuarios_filtro = Usuario.objects.all()
+        usuarios_filtro = Usuario.objects.all().filter(estado=1)
 
         if "filtrar" in request.GET:
             if "persona" in request.GET and request.GET.get("persona") != "0":
@@ -180,7 +180,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         user = Usuario.objects.get(id=request.session['usuario'])
         if  user.rol.id == 1:
        
-            usuarios_filtro = Usuario.objects.all()
+            usuarios_filtro = Usuario.objects.all().filter(estado=1)
 
         if "filtrar" in request.GET:
             if "persona" in request.GET and request.GET.get("persona") != "0":
@@ -550,7 +550,7 @@ def EstadisticaPermisos(request):
 
         permisos = Permiso.objects.all().order_by("usuario__apellido1")
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
         thora = "Seleccione Opción";
          
@@ -631,7 +631,7 @@ def bithoras(request):
 
         permisos = Permiso.objects.all().order_by("usuario__apellido1")
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
         thora = "Seleccione Opción";
          
@@ -776,7 +776,7 @@ class EstadisticaPermisosExcel(TemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         permisos = Permiso.objects.all().order_by("id")
         eventos_en_permisos = Eventos_en_Permisos.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
         thora = "Seleccione Opción";
          
@@ -924,7 +924,7 @@ class EstadisticaPermisosPDF(PDFTemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         permisos = Permiso.objects.all().order_by("id")
         eventos_en_permisos = Eventos_en_Permisos.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
         thora = "Seleccione Opción";
 
@@ -1005,7 +1005,7 @@ class BitHorasPDF(PDFTemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         permisos = Permiso.objects.all().order_by("usuario__apellido1")
         estamento = Estamento.objects.all() 
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
         thora = "Seleccione Opción";
         
@@ -1131,7 +1131,7 @@ class BitHorasExcel(TemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         permisos = Permiso.objects.all().order_by("usuario__apellido1")
         estamento = Estamento.objects.all() 
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
         thora = "Seleccione Opción";
         
@@ -1346,18 +1346,18 @@ def permisolst(request):
     revisores = Revisor.objects.all()
 
 
-    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1)
+    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1).filter(estado=1)
     foliocpe = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=cpe))    
-    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4)
+    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4).filter(estado=1)
     folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
-    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5)
+    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5).filter(estado=1)
     foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))    
 
     if  usuarioObj.rol.nivel_acceso == 0:
 
         
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in request.GET:           
@@ -1445,7 +1445,7 @@ def permisos(request):
 
         
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in request.GET:           
@@ -1540,7 +1540,7 @@ def anulados(request):
 
         
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in request.GET:           
@@ -1624,7 +1624,7 @@ def ConPermiso(request):
 
         
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in request.GET:           
@@ -1699,7 +1699,7 @@ class ConPermisoPDF(PDFTemplateView):
 
             
             estamento = Estamento.objects.all()
-            usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+            usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
             estamento_filtro = Estamento.objects.all()
 
             if "filtrar" in self.request.GET:           
@@ -1755,7 +1755,7 @@ class ConPermisoExcel(TemplateView):
 
             
             estamento = Estamento.objects.all()
-            usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+            usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
             estamento_filtro = Estamento.objects.all()
 
             if "filtrar" in self.request.GET:           
@@ -1852,7 +1852,7 @@ class AnuladosPDF(PDFTemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         anulados = Anulado.objects.all().order_by('-fecha')
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in self.request.GET:           
@@ -1889,7 +1889,7 @@ class AnuladosExcel(TemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         anulados = Anulado.objects.all().order_by('-fecha')
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in self.request.GET:           
@@ -1957,7 +1957,7 @@ def descontados(request):
 
         
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in request.GET:           
@@ -2013,7 +2013,7 @@ class DescontadosPDF(PDFTemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         descontados = Descontado.objects.all().order_by('-fecha')
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in self.request.GET:           
@@ -2050,7 +2050,7 @@ class DescontadosExcel(TemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         descontados = Descontado.objects.all().order_by('-fecha')
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in self.request.GET:           
@@ -2117,7 +2117,7 @@ def devueltos(request):
 
         
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in request.GET:           
@@ -2173,7 +2173,7 @@ class DevueltosPDF(PDFTemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         devueltos = Devuelto.objects.all().order_by('-fecha')
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in self.request.GET:           
@@ -2210,7 +2210,7 @@ class DevueltosExcel(TemplateView):
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         devueltos = Devuelto.objects.all().order_by('-fecha')
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in self.request.GET:           
@@ -2297,7 +2297,7 @@ def upload(request, pk):
                 SUMMARY = component.get('SUMMARY')
                 LOCATION = component.get('LOCATION')
                 DESCRIPTION = component.get('DESCRIPTION')
-               # print user," ",nombre_funcionario," ",apellido_funcionario," ",DTSTART ," ",DTEND
+                print user," ",nombre_funcionario," ",apellido_funcionario," ",DTSTART ," ",DTEND
 
                 c = Evento(usuario_id=user,start=DTSTART,end=DTEND)               
                 c.save()  
@@ -2401,7 +2401,7 @@ def descontar(request):
    
 
     if  usuarioObj.rol.nivel_acceso == 0: 
-        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
 
         if request.method == 'POST':
             if "usuario" in request.POST and request.POST.get("usuario") != "":
@@ -2463,7 +2463,7 @@ def devuelvehoras(request):
    
 
     if  usuarioObj.rol.nivel_acceso == 0: 
-        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
 
         if request.method == 'POST':
             if "usuario" in request.POST and request.POST.get("usuario") != "":
@@ -2712,20 +2712,20 @@ def anularlst(request):
 
     permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=5).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
 
-    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1)
+    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1).filter(estado=1)
     foliocpe = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=cpe))
     
-    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4)
+    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4).filter(estado=1)
     folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
 
-    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5)
+    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5).filter(estado=1)
     foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))
 
     if  usuarioObj.rol.nivel_acceso == 0:
 
         
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
         if "filtrar" in request.GET:           
@@ -2861,7 +2861,7 @@ def horas(request):
     if  usuarioObj.rol.nivel_acceso == 0:
 
         #Calculo de Horas Solicitadas, Devueltas por Usuario
-        horas =  Usuario.objects.annotate(horas_sol=Sum("horas__horas_solicitadas")).annotate(horas_dev=Sum("horas__horas_devueltas")).annotate(total=F('horas_sol') - F('horas_dev')).annotate(h=Count('horas')).exclude(h=0).order_by("apellido1")
+        horas =  Usuario.objects.annotate(horas_sol=Sum("horas__horas_solicitadas")).annotate(horas_dev=Sum("horas__horas_devueltas")).annotate(total=F('horas_sol') - F('horas_dev')).annotate(h=Count('horas')).exclude(h=0).order_by("apellido1").filter(estado=1)
 
         paginator = Paginator(horas,10)       
         try: pagina = int(request.GET.get("page",'1'))
@@ -2875,6 +2875,51 @@ def horas(request):
     else:
         return redirect("/main")
 
+
+
+def licencia(request):
+
+    if not estaLogeado(request):
+                return redirect("/login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+    flag = ''
+
+    if  user.rol.id == 1:
+        usuarios_filtro = Usuario.objects.all().filter(estado=1)
+
+        if request.method == 'POST':
+            formset = LicenciaFormset(request.POST, request.FILES)            
+            if formset.is_valid():                
+                licencia = formset.save(commit=False)
+                licencia.inicio = request.POST.get("inicio")
+                licencia.inicio = datetime.strptime(licencia.inicio, '%Y-%m-%d')
+                licencia.fin = request.POST.get("fin")
+                licencia.fin = datetime.strptime(licencia.fin, '%Y-%m-%d')
+                licencia.save()
+                flag = 'pasa'
+                return HttpResponse(licencia.inicio)
+                #return redirect('/guardalicencia/%d'%(licencia.id))
+            else:
+                flag = 'formset no es valido'
+                return HttpResponse(flag)        
+
+
+        else:
+            formset = LicenciaFormset()
+            
+        data = {
+                "usuario" : user,
+                "form" : formset,
+                "usuarios_filtro" : usuarios_filtro,
+                "flag" : flag,
+        }
+
+        return render_to_response("edt/licencia.html",data,context_instance=RequestContext(request))
+    else:
+        return redirect("/main")
+
+
+
 def wsGenero(request):
     if not estaLogeado(request): 
         return redirect("/login")
@@ -2883,16 +2928,16 @@ def wsGenero(request):
     # 3 formas de generar arrays====================================    
     sexos = []
     listausr = []    
-    femenino = len(Usuario.objects.filter(sexo=2))
-    masculino = len(Usuario.objects.filter(sexo=1))
+    femenino = len(Usuario.objects.filter(sexo=2).filter(estado=1))
+    masculino = len(Usuario.objects.filter(sexo=1).filter(estado=1))
         
     sexos = [['Varones',masculino],['Damas',femenino]]
 
-    for usuario in Usuario.objects.all():       
+    for usuario in Usuario.objects.all().filter(estado=1):       
         listausr.append([usuario.nombre,usuario.apellido1])
 
    #generacion de array desde una queryset
-    data = Usuario.objects.values("jefatura__nombre").annotate(cantidad=Count("jefatura__id"))
+    data = Usuario.objects.values("jefatura__nombre").annotate(cantidad=Count("jefatura__id")).filter(estado=1)
     
     jefaturas = [ [ x["jefatura__nombre"] , x["cantidad"] ] for x in data]    
         
@@ -2906,13 +2951,13 @@ def wsJefaturas(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])        
    
     jefaturas = []
-    CPE = len(Usuario.objects.filter(jefatura=1))
-    PrimSecu = len(Usuario.objects.filter(jefatura=2))
-    Dirgen = len(Usuario.objects.filter(jefatura=3))
-    Primaria = len(Usuario.objects.filter(jefatura=4))
-    Secundaria = len(Usuario.objects.filter(jefatura=5))
-    Gerencia = len(Usuario.objects.filter(jefatura=6))
-    Mantencion = len(Usuario.objects.filter(jefatura=7))
+    CPE = len(Usuario.objects.filter(jefatura=1).filter(estado=1))
+    PrimSecu = len(Usuario.objects.filter(jefatura=2).filter(estado=1))
+    Dirgen = len(Usuario.objects.filter(jefatura=3).filter(estado=1))
+    Primaria = len(Usuario.objects.filter(jefatura=4).filter(estado=1))
+    Secundaria = len(Usuario.objects.filter(jefatura=5).filter(estado=1))
+    Gerencia = len(Usuario.objects.filter(jefatura=6).filter(estado=1))
+    Mantencion = len(Usuario.objects.filter(jefatura=7).filter(estado=1))
  
     jefaturas = [['CPE',CPE],['D. Primaria/D. Secundaria',PrimSecu ],['Dir. General', Dirgen],['Primaria',Primaria],['Secundaria',Secundaria],['Gerencia',Gerencia],['Mantencion',Mantencion]]
     # #generacion de array desde una queryset
@@ -2930,7 +2975,7 @@ def wsEdades(request):
    
     hoy = datetime.now()
     
-    data = Usuario.objects.values("fecha_nac") #seleccion de fechas de nacimiento  
+    data = Usuario.objects.values("fecha_nac").filter(estado=1) #seleccion de fechas de nacimiento  
     edad = [  hoy.year - x["fecha_nac"].year  for x in data] #calculo de edad de funcionario
 
     edades = [ [""+str(y)+"",edad.count(y)] for y in set(edad)] #generacion de array [edad,cantidad]

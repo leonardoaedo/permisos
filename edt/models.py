@@ -312,8 +312,44 @@ class Revisor(models.Model):
     def __unicode__(self):
         return u"%s es revisado por %s, %s, %s"%(self.estamento,self.primero,self.segundo,self.tercero)
 
+reposo = (
+        ("M","Mañana"),
+        ("T","Tarde"),
+        ("N","Noche"),
+        ("TT","Total")
+
+)
+
+class TipoLicencia(models.Model):
+    nombre = models.TextField(max_length=150)
+
+    def __unicode__(self):              # __unicode__ on Python 2
+            return self.nombre
+
+class TipoReposo(models.Model):
+    nombre = models.CharField(max_length=50)
+    tipo = models.CharField(max_length=2,choices=reposo)
+
+    def __unicode__(self):
+        return self.nombre
+class EspecialidadMedica(models.Model):
+    nombre = models.CharField(max_length=150)
+
+    def __unicode__(self):
+        return self.nombre
 
 
+class Licencia(models.Model):
+    funcionario = models.ForeignKey(Usuario)
+    tipo = models.ForeignKey(TipoLicencia,null=True)
+    reposo = models.ForeignKey(TipoReposo,null=True)
+    medico = models.CharField(max_length=250)
+    especialidad = models.ForeignKey(EspecialidadMedica)
+    inicio = models.DateField()
+    fin = models.DateField()
+
+    def __unicode__(self):
+        return  u"%s tomara licencia  %s, %d - %d "%(self.usuario,self.tipo,self.reposo,self.inicio)
 
 #######################################################################################################
 

@@ -2,6 +2,13 @@
 from django.forms import ModelForm
 from django import forms
 from edt.models import *
+from django import forms
+
+class LicenciaFormset(forms.ModelForm):
+  class Meta:
+    model = Licencia
+    exclude = ["inicio","fin"]
+
 
 class PermisoFormSet(forms.ModelForm):
     class Meta:

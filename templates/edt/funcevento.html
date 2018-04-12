@@ -2,20 +2,22 @@
 {% load staticfiles %}
 <!-- ... -->
 {% block contenido %}
-<table >
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-        <td>Correlativo</td>
-        <td>Funcinario</td>
-        <td>Cant Eventos</td>
-
+        <th>Correlativo</th>
+        <th>Funcinario</th>
+        <th>Cant Eventos</th>
     </tr>
+  </thead>  
 {% for evento in eventos %}
+    <tbody>
     <tr>
-      <td>{{ forloop.counter}}</td>
+      <td scope="row">{{ forloop.counter}}</td>
       <td>{{evento.nombre}} {{evento.apellido1}} </td>
       <td>{{evento.cant_eventos}} </td>
-    <tr>   
-
+    </tr>
+  </tbody>
 
 {% endfor %}
 </table>

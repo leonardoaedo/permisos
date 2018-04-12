@@ -1,0 +1,101 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+{{flag}}
+
+{% if usuario.rol.nivel_acceso == 0 %}
+
+{% endif%}
+<form method="post">{% csrf_token %}
+<div class="filtros">
+	<ul>
+		<li>{{form.funcionario.errors}}
+			<label class="label label-primary" >Funcionario </label>
+			{{form.funcionario}}
+		</li>
+		<li>{{form.tipo.errors}}
+			<label class="label label-primary" >Tipo de Licencia</label>
+			{{form.tipo}}
+		</li>
+		<li>{{form.reposo.errors}}
+			<label class="label label-primary" >Características del Reposo</label>
+			{{form.reposo}}
+		</li>
+		<li>{{form.medico.errors}}
+			<label class="label label-primary" >Identificación del Profesional</label>
+			{{form.medico}}
+		</li>
+		<li>{{form.especialidad.errors}}
+			<label class="label label-primary" >Especialidad </label>
+			{{form.especialidad}}
+		</li>
+		<li>{{form.inicio.errors}}
+		 	<label class="label label-primary" >Inicio y fin de Licencia </label>
+			<input id="compact_mode1" type="text" name="inicio"/>
+		 	<input id="compact_mode2" type="text" name="fin"/>
+		</li>
+	
+
+		<li class="botfiltro">
+	     
+	      <input class=" btn btn-danger" type="submit" value="Guardar" id="guardar" name="Guardar" />
+
+	    </li>
+
+    </ul>
+</div>
+</form>
+<script>
+
+// jQuery('#periodpickerstart').periodpicker({
+//  end: '#periodpickerend', 
+//  lang :'es',
+//  resizeButton: false, // deny resize picker
+//  fullsizeButton: false,
+//  fullsizeOnDblClick: false,
+//  clearButtonInButton: true,
+//  timepicker: true, // use timepicker
+//  timepickerOptions: {
+//     hours: true,
+//     minutes: true,
+//     seconds: false,
+//     ampm: true
+//   },
+//  formatDateTime: 'YYYY-MM-DD HH:mm:ss',
+//  cells: [1, 3],
+
+// });
+
+
+
+jQuery('#compact_mode1').periodpicker({
+	cells: [1, 1],
+    withoutBottomPanel: true,
+    lang: 'es',
+    yearsLine: false,
+    title: false,
+    closeButton: false,
+    formatDate: 'YYYY-MM-DD',
+    fullsizeButton: false
+});
+
+jQuery('#compact_mode2').periodpicker({
+	cells: [1, 1],
+    withoutBottomPanel: true,
+    lang: 'es',
+    yearsLine: false,
+    title: false,
+    closeButton: false,
+    formatDate: 'YYYY-MM-DD',
+    fullsizeButton: false
+});
+
+
+
+</script>
+
+{% endblock  %}

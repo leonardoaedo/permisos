@@ -34,3 +34,10 @@ admin.site.register(Anulado)
 admin.site.register(Revisor)
 admin.site.register(Estado_Permiso)
 admin.site.register(Sindicato)
+admin.site.register(Estado)
+admin.site.register(Licencia)
+admin.site.register(TipoLicencia)
+admin.site.register(TipoReposo)
+
+
+
