@@ -1,0 +1,50 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+{% if usuario.rol.nivel_acceso == 0 %}
+<div align="center"><h3>-</h3></div>
+<div align="center"><h4>*</h4></div>
+
+<div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+  <fieldset>
+  <ul>
+    <li>
+      <label class="label label-info" > Funcionario</label>
+      <select name="funcionario" >
+        <option value="0">Seleccione Funcionario</option>
+        {% for funcionario in usuarios_filtro %}  
+        <option value="{{funcionario.id}}" {% if funcionario.usuario_activo %}selected{% endif %}> {{funcionario}}   </option>
+        {% endfor %}
+      </select>
+
+    </li>
+    <li>
+      <label class="label label-info" > Reemplazante</label>
+      <select name="reemplazante" >
+        <option value="0">Seleccione Reemplazante</option>
+        {% for reemplazante in reemplazantes %}  
+        <option value="{{reemplazante.id}}" {% if reemplazante.usuario_activo %}selected{% endif %}> {{reemplazante}}   </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+        <label class="label label-info" > Horas a Reemplazar</label> 
+        <input type="number" name="horas" min="1" step="any" required name="Horas a reemplazar" placeholder="Horas a Reemplazar">
+    </li> 
+    
+    <li class="botfiltro">
+      <input class=" btn btn-success" type="submit" value="Guardar" id="filtrar" name="guardar" />
+      <input class=" btn btn-danger" type="submit" value="Limpiar" id="limpiar" name="limpiar" />
+
+    </li>
+
+  </ul>
+  </fieldset> 
+  </form>
+</div> 
+ {% endif %}       
+{% endblock  %}

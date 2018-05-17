@@ -69,8 +69,12 @@
   </form>
 <script>
 //por ahora aca, a futuro un poco mas ordenado
-var personadata = document.getElementById("persona").value;
+var personadata = document.getElementById("persona").value; // capturo el id del funcionario al filtrar
 console.log (personadata);
+document.getElementById("persona-data").value = personadata;//asigno el id del funcionario al hidden input de id "persona-data" 
+var data = document.getElementById("persona-data").value
+console.log(data)
+
 var seleccionados = [];
 var query_string = "{{query_string}}";
 console.log (query_string);

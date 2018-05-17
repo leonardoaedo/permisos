@@ -193,7 +193,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
         fecha_cambio_TZ = parser.parse("Mar 25 2018 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("May 25 2018 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("May 10 2018 01:00AM")
         inicio_agno = ("2018-02-15 00:00:00")
         fecha_inicio = parser.parse("Feb 15 2018 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
@@ -253,7 +253,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
         fecha_cambio_TZ = parser.parse("Mar 25 2018 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("May 25 2018 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("May 10 2018 01:00AM")
         inicio_agno = ("2018-02-15 00:00:00")
         fecha_inicio = parser.parse("Feb 15 2018 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
@@ -523,10 +523,15 @@ def urlcalendario(request):
         #return HttpResponse(sumafuncionario)
     # data = json.dumps({"suma" : suma,"ultimo" : ultimopermiso,"largo":len(eventos),"usuario":usuario_id,"reemplazante" : reemplazante,"devuelve_horas":devuelve_horas})
     # return HttpResponse(data, content_type = "application/json")
-    #else:
+    else:
     #    formset = PermisoFormSet()
-    return render_to_response("edt/main.html",{"form": formset},context_instance=RequestContext(request)) 
+        data = {
+            "form": formset,
+            "usuario": usuarioObj,
+            #"fech" : fech,
+           }
 
+        return render_to_response("edt/main.html",data,context_instance=RequestContext(request))
 
 
 def bitgeneral(request):
@@ -1617,7 +1622,8 @@ def ConPermiso(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
     rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
-
+    end = " "
+    start = " "
     permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=5).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
 
     if  usuarioObj.rol.nivel_acceso == 0:
@@ -1632,17 +1638,15 @@ def ConPermiso(request):
             if "start" in request.GET and request.GET.get("start") != "":
                 permisos = permisos.filter(eventos_en_permisos__numero_evento__start__gte=request.GET.get("start"))
                 start = request.GET.get("start")
+                start = parser.parse(start)
+                
 
 
             if "end" in request.GET and request.GET.get("end") != "":
                 permisos = permisos.filter(eventos_en_permisos__numero_evento__end__lte=request.GET.get("end"))
                 end = request.GET.get("end")
-
-            # if "persona" in request.GET and request.GET.get("persona") != "0":
-            #     persona = request.GET.get("persona")
-            #     permisos = permisos.filter(usuario=request.GET.get("persona"))
-            #     for usuario in usuarios_filtro:
-            #         usuario.usuario_activo = usuario.id == int(persona)
+                end = parser.parse(end)
+              
 
             if "estamento" in request.GET and request.GET.get("estamento") != "0":
                 estamento = request.GET.get("estamento")
@@ -1667,6 +1671,8 @@ def ConPermiso(request):
                  "estamento":estamento,                 
                  "permisos": permisos,
                  "usuario" : usuarioObj,
+                 "end" : end,
+                 "start": start, 
                  "permisos_list" : permisos.object_list,
                  "months" : mkmonth_lst(),
                  "usuarios_filtro" : usuarios_filtro,
@@ -1686,17 +1692,18 @@ class ConPermisoPDF(PDFTemplateView):
     def get_context_data(self,**kwargs):
         context  =super(ConPermisoPDF,self).get_context_data(
             pagesize="letter",
-            title="Anulados",
+            title="Funcionarios con permiso",
             **kwargs
             )
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
         anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
         rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+        end = " "
+        start = " "
 
         permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=5).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
 
         if  usuarioObj.rol.nivel_acceso == 0:
-
             
             estamento = Estamento.objects.all()
             usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
@@ -1708,21 +1715,15 @@ class ConPermisoPDF(PDFTemplateView):
                     permisos = permisos.filter(eventos_en_permisos__numero_evento__start__gte=self.request.GET.get("start"))
                     start = self.request.GET.get("start")
                     start = parser.parse(start)
-                    context['inicio'] = start
+                    
 
 
                 if "end" in self.request.GET and self.request.GET.get("end") != "":
                     permisos = permisos.filter(eventos_en_permisos__numero_evento__end__lte=self.request.GET.get("end"))
                     end = self.request.GET.get("end")
                     end = parser.parse(end)
-                    context['fin'] = end
+                   
 
-
-                # if "persona" in request.GET and request.GET.get("persona") != "0":
-                #     persona = request.GET.get("persona")
-                #     permisos = permisos.filter(usuario=request.GET.get("persona"))
-                #     for usuario in usuarios_filtro:
-                #         usuario.usuario_activo = usuario.id == int(persona)
 
                 if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
                     estamento = self.request.GET.get("estamento")
@@ -1731,6 +1732,8 @@ class ConPermisoPDF(PDFTemplateView):
                         estament.estamento_activo = estament.id == int(estamento)
 
             context = {
+                     "start":start,
+                     "end":end,
                      "estamento":estamento,                 
                      "permisos": permisos,
                      "usuario" : usuarioObj,
@@ -2242,7 +2245,7 @@ class DevueltosExcel(TemplateView):
         ws['C3'] = 'Permiso'
         ws['D3'] = 'Solicitante'
         ws['E3'] = 'Cantidad devuelta'
-        ws['F3'] = 'Devuelto Por'
+        ws['F3'] = 'Ingresado Por'
         ws['G3'] = 'Fecha'
 
         cont = 4
@@ -2297,7 +2300,7 @@ def upload(request, pk):
                 SUMMARY = component.get('SUMMARY')
                 LOCATION = component.get('LOCATION')
                 DESCRIPTION = component.get('DESCRIPTION')
-                print user," ",nombre_funcionario," ",apellido_funcionario," ",DTSTART ," ",DTEND
+                #print user," ",nombre_funcionario," ",apellido_funcionario," ",DTSTART ," ",DTEND
 
                 c = Evento(usuario_id=user,start=DTSTART,end=DTEND)               
                 c.save()  
@@ -2876,9 +2879,44 @@ def horas(request):
         return redirect("/main")
 
 
+def reemplazolicencia(request):
+    if not estaLogeado(request):
+                return redirect("/login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+    hoy = datetime.now()
+    agno = hoy.year
+    licencias = Licencia.objects.all().values('funcionario')
+    
+    if  user.rol.id == 1:
+        usuarios_filtro = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)
+        reemplazantes_filtro = Usuario.objects.all().filter(estado=1)
+
+
+        if "filtrar" in request.GET:
+            if "funcionario" in request.GET and request.GET.get("funcionario") != "0":
+                funcionario = request.GET.get("funcionario")                
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(funcionario)
+                lic = Licencia.objects.all().filter(funcionario_id=funcionario)
+
+            if "reemplazante" in request.GET and request.GET.get("reemplazante") != "0":
+                reemplazante = request.GET.get("reemplazante")                
+                for reemplazant in reemplazantes_filtro:
+                    reemplazant.usuario_activo = reemplazant.id == int(reemplazante)
+                            
+
+        data = {
+            "usuarios_filtro" : usuarios_filtro,
+            "perro" : "perro",
+            "usuario":user,
+            "reemplazantes" : reemplazantes_filtro,
+
+        }
+
+    return render_to_response("edt/reemplazolicencia.html",data,context_instance=RequestContext(request))
+
 
 def licencia(request):
-
     if not estaLogeado(request):
                 return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
@@ -2889,17 +2927,112 @@ def licencia(request):
 
         if request.method == 'POST':
             formset = LicenciaFormset(request.POST, request.FILES)            
-            if formset.is_valid():                
+            if formset.is_valid():
+
                 licencia = formset.save(commit=False)
                 licencia.inicio = request.POST.get("inicio")
-                licencia.inicio = datetime.strptime(licencia.inicio, '%Y-%m-%d')
+                licencia.inicio = datetime.strptime(licencia.inicio, "%Y-%m-%d %H:%M:%S")
                 licencia.fin = request.POST.get("fin")
-                licencia.fin = datetime.strptime(licencia.fin, '%Y-%m-%d')
+                licencia.fin = datetime.strptime(licencia.fin, "%Y-%m-%d %H:%M:%S")
+                cantidad_dias = (licencia.fin - licencia.inicio) + timedelta(seconds=1)# se agrega un segundo para completar el ultimo dia de la licencia
+                licencia.cantidad_dias = cantidad_dias.days
                 licencia.save()
+
+                licencias = Licencia.objects.all().order_by('-id')[0] #obtencion la última licencia ingresada
+
+                eventos = Evento.objects.filter(usuario=licencia.funcionario).filter(start__gte=licencia.inicio).filter(end__lte=licencia.fin)
+                suma = 0
+                sumafuncionario = 0
+                i = 0
+                deltas = []
+                deltaf = [] 
+
+                for evento in eventos :
+                    delta = evento.end - evento.start # calculo de la cantidad de horas solicitadas en segundos
+            
+                    if (licencias.funcionario.estamento.id == 9 ):  
+                    #CALCULO PARA SECUNDARIA
+                        suma += float(delta.seconds) / 3300 # calculo para  Informes
+                        deltag = float(delta.seconds) / 3300 # calculo para  Informes
+                        deltas.append(round(deltag,2))
+                        sumafuncionario += float(delta.seconds) / 3300  # calculo para  funcionario
+                        deltafuncionario = float(delta.seconds) / 3300  # calculo para  funcionario
+                        deltaf.append(round(deltafuncionario,2))  
+                      
+                        suma = round(suma,2) # redondeo a 2 decimales
+                    
+
+
+                    if (licencias.funcionario.estamento.id == 5 or licencias.funcionario.estamento.id == 4 ):  
+                        #CALCULO PARA SECUNDARIA
+                        suma += float(delta.seconds) / 3300 # calculo para  Informes
+                        deltag = float(delta.seconds) / 3300 # calculo para  Informes
+                        deltas.append(round(deltag,2))
+                        sumafuncionario += float(delta.seconds) / 3300  # calculo para  funcionario
+                        deltafuncionario = float(delta.seconds) / 3300  # calculo para  funcionario
+                        deltaf.append(round(deltafuncionario,2))  
+                          
+                        suma = round(suma,2) # redondeo a 2 decimales
+                        
+                        
+
+                    if (licencias.funcionario.estamento.id == 2 or licencias.funcionario.estamento.id == 3):
+                        #CALCULO DE HORAS PARA PRIMARIA
+                        suma += float(delta.seconds) / 2700
+                        deltag = float(delta.seconds) / 2700
+                        deltas.append(round(deltag,2))
+                        suma = round(suma,2) # redondeo a 2 decimales
+                        sumafuncionario += float(delta.seconds) / 2700   # calculo para  funcionario
+                        deltafuncionario = float(delta.seconds) / 2700  # calculo para  funcionario
+                        deltaf.append(round(deltafuncionario,2))
+                        
+
+                    if (licencias.funcionario.estamento.id == 1 or licencias.funcionario.estamento.id == 6 or licencias.funcionario.estamento.id == 7 or licencias.funcionario.estamento.id == 8):
+                        #CALCULO DE HORAS PARA ADMINISTRACION,ASEM
+                        suma += float(delta.seconds) / 3600  
+                        deltag = float(delta.seconds) / 3600
+                        deltas.append(round(deltag,2))
+                        suma = round(suma,2) # redondeo a 2 decimales
+                        sumafuncionario = suma
+
+
+                licencia.horas = suma
+                licencia.save()
+
+                #============================================= envio de emails cuando se ingresa una licencia================
+                #=============================================definicion de destinatarios
+                proviseur = 'jmblondelle@cdegaulle.cl'
+                dirgen = 'dirgen@cdegaulle.cl'
+                secondaire = 'secondaire@cdegaulle.cl'
+                director_primaria = 'dwuillaume@cdegaulle.cl'
+                director_secundaria = 'ibarra@cdegaulle.cl'
+                primaire = 'primaire@cdegaulle.cl'
+                cpe = 'asanchez@cdegaulle.cl'
+                mantencion = 'lcancino@cdegaulle.cl'
+                gerente = 'mdiaz@cdegaulle.cl'
+                intendance = 'intendance@cdegaulle.cl'
+                admin = 'scpa@cdegaulle.cl'
+                RRHH = 'ifuentes@cdegaulle.cl'
+
+                template = loader.get_template('edt/email_licencia.html')
+                context = RequestContext(request, {'nombre' : licencias.funcionario.nombre,
+                                           'apellido' : licencias.funcionario.apellido1,
+                                           'rut': licencias.funcionario.rut,
+                                           'dv':licencias.funcionario.dv,
+                                           'cantidad_dias':licencias.cantidad_dias,
+                                           'inicio': licencias.inicio,
+                                           'fin' : licencias.fin,
+                                           'fecha' : licencias.fecha,
+                                           'id' : licencias.id,
+                                           })
+                html = template.render(context)
+                msg = EmailMultiAlternatives('Ingreso de licencia médica', html, 'scpa@cdegaulle.cl', [proviseur],cc=[RRHH, intendance, mantencion, dirgen, secondaire, director_primaria, director_secundaria, gerente, primaire, cpe],bcc=[admin])
+                msg.content_subtype = "html"  # Main content is now text/html
+                msg.send()
                 
-                flag = 'pasa'
-                return HttpResponse("Datos guardados exitosamente")
-                #return redirect('/guardalicencia/%d'%(licencia.id))
+                flag = 'formset valido'
+                #return HttpResponse(suma)
+                return redirect('/comprobantelicencia/%d/'%(licencia.id))
             else:
                 flag = 'formset no es valido'
                 return HttpResponse(flag)        
@@ -2918,6 +3051,219 @@ def licencia(request):
         return render_to_response("edt/licencia.html",data,context_instance=RequestContext(request))
     else:
         return redirect("/main")
+
+def comprobantelicencia(request,pk):
+    if not estaLogeado(request):
+                return redirect("/login")
+    
+    user = Usuario.objects.get(id=request.session['usuario'])
+    licencia = Licencia.objects.get(id=pk)
+
+    data = {
+            "licencia": licencia,
+            "usuario" : user,
+    }
+
+    return render_to_response("edt/comprobantelicencia.html",data,context_instance=RequestContext(request))
+
+
+def ConLicencia(request):
+    if not estaLogeado(request):
+        return redirect("login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+
+    licencias = Licencia.objects.all()
+    inicio = " "
+    fin = " "
+    
+    if  user.rol.nivel_acceso == 0:
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().filter(estado=1)
+        estamento_filtro = Estamento.objects.all()
+
+        if "filtrar" in request.GET:           
+
+            if "start" in request.GET and request.GET.get("start") != "":
+                licencias = licencias.filter(inicio__gte=request.GET.get("start"))
+                inicio = request.GET.get("start")
+                inicio = parser.parse(inicio)  
+
+
+            if "end" in request.GET and request.GET.get("end") != "":
+                licencias = licencias.filter(fin__lte=request.GET.get("end"))
+                fin = request.GET.get("end")
+                fin = parser.parse(fin)  
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                licencias = licencias.filter(funcionario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+        elif "limpiar" in request.GET:
+            return redirect("/ConLicencia")
+
+        paginator = Paginator(licencias,30)
+        
+        try: pagina = int(request.GET.get("page",'1'))
+        except ValueError: pagina = 1
+            
+        try:
+            licencias = paginator.page(pagina)
+        except (InvalidPage, EmptyPage):
+            licencias = paginator.page(paginator.num_pages)
+
+
+        data = {
+                 "estamento":estamento,                 
+                 "licencias": licencias,
+                 "usuario" : user,
+                 "inicio" : inicio,
+                 "fin" : fin,
+                 "licencias_list" : licencias.object_list,
+                 "months" : mkmonth_lst(),
+                 "usuarios_filtro" : usuarios_filtro,
+                 "estamento_filtro" : estamento_filtro,
+                 "query_string" : request.META["QUERY_STRING"]
+                 }
+
+
+        return render_to_response("edt/conlicencialst.html",data)
+        #return HttpResponse("hola")
+    else:
+        return redirect("/main")
+
+class ConLicenciaPDF(PDFTemplateView):
+    template_name="edt/conlicenciaPDF.html"
+
+    def get_context_data(self,**kwargs):
+        context  =super(ConLicenciaPDF,self).get_context_data(
+            pagesize="letter",
+            title="Funcionarios con Licencia",
+            **kwargs
+            )
+
+        user = Usuario.objects.get(id=self.request.session['usuario'])
+        inicio = " "
+        fin = " "
+        
+        licencias = Licencia.objects.all()
+    
+        if  user.rol.nivel_acceso == 0:
+            estamento = Estamento.objects.all()
+            usuarios_filtro = Usuario.objects.all().filter(estado=1)
+            estamento_filtro = Estamento.objects.all()       
+
+            if "filtrar" in self.request.GET:
+
+                if "start" in self.request.GET and self.request.GET.get("start") != "":
+                    licencias = licencias.filter(inicio__gte=self.request.GET.get("start"))
+                    inicio = self.request.GET.get("start")
+                    inicio = parser.parse(inicio)                    
+                    
+
+                if "end" in self.request.GET and self.request.GET.get("end") != "":
+                    licencias = licencias.filter(fin__lte=self.request.GET.get("end"))
+                    fin = self.request.GET.get("end")
+                    fin = parser.parse(fin)
+                    
+
+                if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                    estamento = self.request.GET.get("estamento")
+                    licencias = licencias.filter(funcionario__estamento=self.request.GET.get("estamento"))
+                    for estament in estamento_filtro:
+                        estament.estamento_activo = estament.id == int(estamento)
+
+
+        context = {
+                     "estamento":estamento,                 
+                     "licencias": licencias,
+                     "usuario" : user,
+                     "inicio" : inicio,
+                     "fin" : fin,
+                     "months" : mkmonth_lst(),
+                     "usuarios_filtro" : usuarios_filtro,
+                     "estamento_filtro" : estamento_filtro,
+                     "query_string" : self.request.META["QUERY_STRING"],
+                     }
+        context['hoy'] =  datetime.now()
+
+        return context
+
+class ConLicenciaExcel(TemplateView):
+    def get(self,request,*args,**kwargs):
+
+        user = Usuario.objects.get(id=self.request.session['usuario'])
+        inicio = " "
+        fin = " "        
+        licencias = Licencia.objects.all()
+
+        if  user.rol.nivel_acceso == 0:
+            estamento = Estamento.objects.all()
+            usuarios_filtro = Usuario.objects.all().filter(estado=1)
+            estamento_filtro = Estamento.objects.all()       
+
+            if "filtrar" in self.request.GET:
+
+                if "start" in self.request.GET and self.request.GET.get("start") != "":
+                    licencias = licencias.filter(inicio__gte=self.request.GET.get("start"))
+                    inicio = self.request.GET.get("start")
+                    inicio = parser.parse(inicio)                    
+                    
+
+                if "end" in self.request.GET and self.request.GET.get("end") != "":
+                    licencias = licencias.filter(fin__lte=self.request.GET.get("end"))
+                    fin = self.request.GET.get("end")
+                    fin = parser.parse(fin)
+                    
+
+                if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                    estamento = self.request.GET.get("estamento")
+                    licencias = licencias.filter(funcionario__estamento=self.request.GET.get("estamento"))
+                    for estament in estamento_filtro:
+                        estament.estamento_activo = estament.id == int(estamento)
+
+            hoy = datetime.now()
+            #Creamos el libro de trabajo
+            wb= Workbook()
+            #Definimos como nuestra hoja de trabajo, la hoja activa, por defecto la primera del libro
+            ws = wb.active
+            ws['B1'] = 'FUNCIONARIOS CON LICENCIA'
+            #Juntamos las celdas desde la B1 hasta la E1, formando una sola celda
+            ws.merge_cells('B1:E1')
+
+            # Encabezados
+
+            ws['B3'] = '#'
+            ws['C3'] = 'Funcionario'
+            ws['D3'] = 'Fecha de ingreso'
+            ws['E3'] = 'Duracion'
+            ws['F3'] = 'Inicio'
+            ws['G3'] = 'Fin'
+
+            cont = 4
+            contador = 1
+
+            for licencia in licencias:
+                ws.cell(row=cont,column=2).value = contador
+                ws.cell(row=cont,column=3).value = licencia.funcionario.apellido1+" "+licencia.funcionario.apellido1+" "+licencia.funcionario.nombre
+                ws.cell(row=cont,column=4).value = licencia.fecha
+                ws.cell(row=cont,column=4).number_format = 'dd-mm-yyyy' #formato de salida para fecha en celda
+                ws.cell(row=cont,column=5).value = licencia.cantidad_dias
+                ws.cell(row=cont,column=6).value = licencia.inicio
+                ws.cell(row=cont,column=6).number_format = 'dd-mm-yyyy'
+                ws.cell(row=cont,column=7).value = licencia.fin
+                ws.cell(row=cont,column=7).number_format = 'dd-mm-yyyy'
+
+                cont = cont +1
+                contador = contador + 1
+
+            nombre_archivo = "funcionarios_con_licencia.xlsx"
+            response = HttpResponse(content_type="application/ms-excel")
+            contenido = "attachment; filename={0}".format(nombre_archivo)
+            response["Content-Disposition"] = contenido
+            wb.save(response)
+            return response
 
 
 
@@ -2951,7 +3297,7 @@ def wsJefaturas(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])        
    
-    jefaturas = []
+    jefaturas = []  
     CPE = len(Usuario.objects.filter(jefatura=1).filter(estado=1))
     PrimSecu = len(Usuario.objects.filter(jefatura=2).filter(estado=1))
     Dirgen = len(Usuario.objects.filter(jefatura=3).filter(estado=1))

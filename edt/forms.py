@@ -7,7 +7,7 @@ from django import forms
 class LicenciaFormset(forms.ModelForm):
   class Meta:
     model = Licencia
-    exclude = ["inicio","fin"]
+    exclude = ["inicio","fin","cantidad_dias","horas"]
 
 
 class PermisoFormSet(forms.ModelForm):

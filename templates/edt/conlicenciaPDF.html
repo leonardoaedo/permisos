@@ -46,40 +46,34 @@
 </div>
 
 <div id="footer_content">(c) - página <pdf:pagenumber> of <pdf:pagecount> </div>
-<h4 align="center">Funcionarios con permiso</h4>
-<h4 align="center">Periodo {{start|date:"d F"}} - {{end|date:"d F "}} de {{end|date:"Y"}}</h4>
-<div id="header_content"></div>
-
-
-           
+<h4 align="center">Funcionarios con Licencia</h4>
+<h4 align="center">Periodo {{inicio|date:"d F"}} - {{fin|date:"d F"}} de {{fin|date:"Y"}}</h4>
+<div id="header_content"></div>     
 <table border="1" class="DEVtable">
   <thead>
       <tr>
+        {{estamento.estamento_activo}}
         <th>#</th>
-        <th>Numero de Permiso</th>
-        <th>Solicitante</th>
-        <th>Fecha de Solicitud</th>
-        <th>Motivo</th>
+        <th>Funcionario</th>
+        <th>Fecha de ingreso</th>
+        <th>Duración</th>
         <th>Inicio</th>
         <th>Fin</th>
-        <th>Cantidad</th>
       </tr>
     </thead>
   
-   {% for permiso in permisos %}
+   {% for licencia in licencias %}
   <tr>
      <td>{{forloop.counter}}</td>
-     <td><a class="list-group-item btn btn-info" href="{% url 'edt.views.verpermiso2' permiso.pk %}">{{permiso.id}}</a></td>
-     <td >{{permiso.usuario}}</td>
-     <td >{{permiso.fecha_creacion}}</td>
-     <td >{{permiso.motivo}}</td>
-     <td ><b>{{permiso.primerEvento.numero_evento.start|timezone:"America/Noronha"|date:"D d M G:i"}}</b></td>
-     <td ><b>{{permiso.ultimoEvento.numero_evento.end|timezone:"America/Noronha"|date:"D d M G:i"}}</b></td>
-     <td >{{permiso.horas_solicitadas}}</td>
+     <td >{{licencia.funcionario}}</td>
+     <td >{{licencia.fecha|date:"l j F"}}</td>
+     <td >{{licencia.cantidad_dias}} Días</td>
+     <td ><b>{{licencia.inicio|date:"l j F"}}</b></td>
+     <td ><b>{{licencia.fin|date:"l j F"}}</b></td>    
   </tr>
    {% empty %}
     <tr>
-      <td colspan="5">En este momento no hay ningun elemento para mostrar</td>
+      <td colspan="7">En este momento no hay ningun elemento para mostrar</td>
     </tr>
    
 

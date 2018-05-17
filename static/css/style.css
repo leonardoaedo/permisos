@@ -506,6 +506,15 @@ padding: 5px 5px 5px 25px;
 	background-position: 320px 10%;
 	background-repeat: no-repeat;
 }
+
+.msg-licencia {
+	color : #000;
+	background-color: #FFFFFF;
+	border: 2px solid #0023ff;
+	background-image: url(/static/img/bluefolder.png);
+	background-position: 320px 10%;
+	background-repeat: no-repeat;
+}
 .msg-solicitud {
 	background-color: #B3DBFB;
 	border: 2px solid #0D8DF5;

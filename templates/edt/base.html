@@ -55,17 +55,21 @@
 				      {% if  usuario.rol.nivel_acceso == 0 %}
 				      <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
 				      {% endif %}
-				      <li class="hvr-underline-from-center page-scroll"><a href="/main/">Solicitar</a></li>
+				      <li class="hvr-underline-from-center page-scroll"><a href="/main/">Solicitar</a></li>			      
+
 				      <li class="dropdown">
 							<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" class="hvr-underline-from-center">Utilidades<span class="caret"></span></a>
 								<ul role="menu" class="dropdown-menu">
 								  <li class="hvr-underline-from-center page-scroll"><a href="/permisolst/">Permisos Pendientes</a></li>
-								  <li class="hvr-underline-from-center page-scroll"><a href="/permiso_jefatura/">Permiso Jefatura</a></li>	
-								  							  
-								  <!-- <li class="hvr-underline-from-center page-scroll"><a href="/bitacora">Bitacora</a></li> -->
-								  {% if  usuario.rol.nivel_acceso == 0 %}  						 
+								  {% if  usuario.rol.nivel_acceso == 0 %}
+								  <li class="hvr-underline-from-center page-scroll"><a href="/permiso_jefatura/">Permiso Jefatura</a></li>
 								  <li class="divider"></li>
 								  <li class="dropdown-header">Administración</li>
+
+								  {% if  usuario.cargo.id == 9 %}
+				     				<li class="hvr-underline-from-center page-scroll"><a href="/licencia/">Ingresar Licencia</a></li>
+				      			  {% endif %}
+				      			  
 								  <li class="hvr-underline-from-center page-scroll"><a href="/bhoras">Informe Horas</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/estadisticapermisos">Estadistica Permisos</a></li>	 
 								  <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
@@ -73,7 +77,9 @@
 								  <li class="hvr-underline-from-center page-scroll"><a href="/devolver">Devolución de Horas</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/descontar">Descuento de Horas</a></li>
 								  <li class="dropdown-header">resumenes</li>
-								  <li class="hvr-underline-from-center page-scroll"><a href="/conpermiso">Quien está con Permiso</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/conpermiso">Funcionarios con Permiso</a></li>
+								  <li class="hvr-underline-from-center page-scroll"><a href="/ConLicencia">Funcionarios con Licencia</a></li>
+
 								  <li class="hvr-underline-from-center page-scroll"><a href="/anulados">Permisos Anulados</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/descontados">Horas descontadas</a></li>
 								  <li class="hvr-underline-from-center page-scroll"><a href="/devueltos">Horas devueltas</a></li>

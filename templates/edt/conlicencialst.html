@@ -2,7 +2,8 @@
 {% load staticfiles %}
 
 {% block contenido %}
-
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
 {% if usuario.rol.nivel_acceso == 0 %}
 <div class='form-group'>
     <div class="row">                 
@@ -10,33 +11,35 @@
                                                                  
         </div>  
         <div class="col-lg-1">                            
-            <a href="/devueltosEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+            <a href="/conlicenciaEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
                 <img src="/static/img/xls.png" width="35" height="35">
             </a>                          
         </div>
         
         <div class="col-lg-1">                            
-            <a href="/devueltosPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+            <a href="/conlicenciaPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
                 <img src="/static/img/pdf.png" width="35" height="35">
             </a>                          
         </div>                                                    
     </div>
 </div>
 
+<div align="center"><h3>Funcionarios con licencia</h3></div>
+<div align="center"><h4>Periodo comprendido entre {{inicio|date:"d "}} y  {{fin|date:"d"}} de {{inicio|date:"F Y"}}</h4></div>
 
 <div class="filtros">
   <form id="horas" class="form-horizontal" method="get">
   <fieldset>
   <ul>
-    <li>
+    <!-- <li>
       <label class="label label-primary" > Funcionario</label>
       <select name="persona" >
         <option value="0">Seleccione Funcionario</option>
         {% for persona in usuarios_filtro %}  
-        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}  <!--{{persona.usuario_activo}}--> </option>
+        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}   </option>
         {% endfor %}
       </select>
-    </li>
+    </li> -->
     <li>
       <label class="label label-primary" >Estamento</label>
       <select name="estamento">
@@ -45,39 +48,47 @@
         <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
         {% endfor %}
       </select>
-    </li> 
+    </li>
+    <li>
+      <label class="label label-primary" >Rango de fechas</label>
+      <input id="periodpickerstart" type="text" name="start" value="{{start}}"/>
+      <input id="periodpickerend" type="text" name="end" value="{{end}}"/>      
+    </li>
     <li class="botfiltro">
       <input class=" btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
       <input class=" btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
 
     </li>
+
   </ul>
   </fieldset> 
   </form>
 </div> 
  {% endif %}
 
-<div><h1>Horas Devueltas</h1></div>
 <table class="table table-hover  table-bordered">
   <thead class="thead-inverse">
       <tr>
         <th>#</th>
-        <th>Numero de Permiso</th>
-        <th>Solicitante</th>
-        <th>Cantidad Devuelta</th>
-        <th>Ingresado por</th>
-        <th>Fecha de Ingreso Devolución</th>
+        <th>Funcionario</th>
+        <th>Fecha de ingreso</th>
+        <th>Duración</th>
+        <th>Inicio</th>
+        <th>Fin</th>
       </tr>
     </thead>
   
-   {% for devuelto in devueltos %}
+   {% for licencia in licencias %}
   <tr>
      <td>{{forloop.counter}}</td>
-     <td><a class="list-group-item btn btn-info" href="{% url 'edt.views.verpermiso2' devuelto.permiso.pk %}">{{devuelto.permiso.id}}</a></td>
-     <td >{{devuelto.permiso.usuario}}</td>
-     <td class="font-weight-bold text-center">{{devuelto.cantidad}}</td>
-     <td>{{devuelto.ingresadopor}}</td>
-     <td>{{devuelto.fecha|date:"d F Y"}}</td>
+     <td >{{licencia.funcionario}}</td>
+     <td >{{licencia.fecha|date:"l j F"}}</td>
+     <td ><b>{{licencia.cantidad_dias}} Días</b></td>
+     <td ><b>{{licencia.inicio|date:"l j F"}}</b></td>
+     <td ><b>{{licencia.fin|date:"l j F"}}</b></td>
+     
+
+     
   </tr>
    {% empty %}
     <tr>
@@ -89,13 +100,34 @@
     
 </table>
    <nav>
-      {% if devueltos.has_previous %}
-        <a href="?page={{ devueltos.previous_page_number }}">Página anterior</a>
+      {% if licencias.has_previous %}
+        <a href="?page={{ licencias.previous_page_number }}">Página anterior</a>
       {% endif %}
-      <p class="paginador">Página {{ devueltos.number }} de {{ devueltos.paginator.num_pages }}</p>
-      {% if devueltos.has_next %}
-      <a href="?page={{ devueltos.next_page_number }}">Página siguiente</a>
+      <p class="paginador">Página {{ licencias.number }} de {{ licencias.paginator.num_pages }}</p>
+      {% if licencias.has_next %}
+      <a href="?page={{ licencias.next_page_number }}">Página siguiente</a>
       {% endif %} 
     </nav>
-        
+
+<script>
+
+jQuery('#periodpickerstart').periodpicker({
+ end: '#periodpickerend', 
+ lang :'es',
+ resizeButton: false, // deny resize picker
+ fullsizeButton: false,
+ fullsizeOnDblClick: false,
+ clearButtonInButton: true,
+ timepicker: true, // use timepicker
+ timepickerOptions: {
+    hours: true,
+    minutes: true,
+    seconds: false,
+    ampm: true
+  },
+ formatDateTime: 'YYYY-MM-DD HH:mm:ss',
+ cells: [1, 3],
+
+});
+</script>        
 {% endblock  %}

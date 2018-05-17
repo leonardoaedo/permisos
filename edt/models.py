@@ -317,7 +317,6 @@ reposo = (
         ("T","Tarde"),
         ("N","Noche"),
         ("TT","Total")
-
 )
 
 class TipoLicencia(models.Model):
@@ -332,6 +331,7 @@ class TipoReposo(models.Model):
 
     def __unicode__(self):
         return self.nombre
+
 class EspecialidadMedica(models.Model):
     nombre = models.CharField(max_length=150)
 
@@ -343,14 +343,31 @@ class Licencia(models.Model):
     funcionario = models.ForeignKey(Usuario)
     tipo = models.ForeignKey(TipoLicencia,null=True)
     reposo = models.ForeignKey(TipoReposo,null=True)
-    medico = models.CharField(max_length=250)
     especialidad = models.ForeignKey(EspecialidadMedica)
-    inicio = models.DateField()
-    fin = models.DateField()
-    fecha = models.DateTimeField(auto_now_add=True,null=True) 
+    medico = models.CharField(max_length=250)    
+    inicio = models.DateTimeField()
+    fin = models.DateTimeField()
+    cantidad_dias = models.CharField(max_length=10)  
+    fecha = models.DateTimeField(auto_now_add=True,null=True)
+    horas = models.FloatField(default=0)
 
     def __unicode__(self):
         return  u"%s tomara licencia  %s, %d - %d "%(self.usuario,self.tipo,self.reposo,self.inicio)
+
+
+
+pagar = (
+        ("SI","Se Paga"),
+        ("NO","No Se Paga")
+    )
+
+class ReemplazoLicencia(models.Model):
+    licencia = models.ForeignKey(Licencia)
+    reemplazante = models.ForeignKey(Usuario)
+    horas = models.FloatField(default=1)
+    pago = models.CharField(max_length=2,choices=pagar)
+
+            
 
 #######################################################################################################
 

@@ -162,7 +162,7 @@
 
 	<div class="permiso">
 		<div id="frmpermiso">
-		{{form.motivo.errors}}
+      {{form.motivo.errors}}
 		<p><label for="motivo" >Motivo</label>{{form.motivo}}</p>
 		</div>	
 		<div id="frmpermiso">
@@ -185,7 +185,6 @@
 	<input class="btn btn-success btn-lg" type="submit" value="Solicitar" id="botonCalendario"/>
 	</form>
 <script>
-//por ahora aca, a futuro un poco mas ordenado
 var usuario = {{usuario.id}}
 var seleccionados = [];
 console.log (usuario);
@@ -294,7 +293,15 @@ $(document).ready(function(){
 			alert("Debe seleccionar al menos un bloque de su horario");
 			e.preventDefault();
 		}
-  });  
+  });
+
+$('#main').ready(function(e){
+  if($('#{{form.comentario.id_for_label}}').val() == ' ') {
+    alert("Debe seleccionar al menos un bloque de su horario");
+      e.preventDefault();
+  }
+});
+ 
     
   $('#main').submit(function(e){
 	   if( $('#id_devuelve_horas').val() == "N" && $('#id_sueldo').val() == "C" && $('#id_tipo').val() != 3  ){

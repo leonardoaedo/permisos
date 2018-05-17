@@ -1,0 +1,32 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+{% if usuario.rol.nivel_acceso == 0 %}
+<div id="permisousuario" class="msg-licencia">
+<ul class="list-group">
+	<li class="list-group-item"><h4>Comprobante de ingreso de licencia N° {{licencia.id}} </h4></li>
+	<li class="list-group-item">Funcionario : {{licencia.funcionario.apellido1}} {{licencia.funcionario.nombre}}</li>
+	<li class="list-group-item">Rut : {{licencia.funcionario.rut}}-{{licencia.funcionario.dv}}</li>
+	<li class="list-group-item" ><b>Duración  : {{licencia.cantidad_dias}} días</b></li>
+	<li class="list-group-item">Fecha de ingreso : {{licencia.fecha}}</li>
+	<li class="list-group-item">Inicio : {{licencia.inicio}}</li>
+	<li class="list-group-item">Fin : {{licencia.fin}}</li>
+</ul>
+	
+<ul>
+	<li>
+		<a href="/licencia"  class="btn btn-danger" role="button">Ingresar Nueva Licencia</a>
+	</li>
+</ul>	
+
+</div>
+
+
+{% endif%}
+
+
+{% endblock  %}

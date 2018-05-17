@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- If you delete this meta tag, Half Life 3 will never be released. -->
+<meta name="viewport" content="width=device-width" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ingreso de licencia médica</title>
+
+</head>
+<body>
+
+<div  style="width: 600px; background-color:#556270; #FFFFFF;	background-color: #FFFFFF;  border: 2px solid #FFFD00; background-position: 320px 10%;background-repeat: no-repeat; margin-top: 10px;margin-bottom: 20px;margin-left: 15px;padding: 10px;-moz-box-shadow: 14px 11px 19px 1px #888888;	-webkit-box-shadow: 14px 11px 19px 1px #888888;	box-shadow: 14px 11px 19px 1px #888888;	border: 1px #888888 solid;	-moz-box-shadow: 14px 11px 19px 1px #888888;	-webkit-box-shadow: 14px 11px 19px 1px #888888;	box-shadow: 14px 11px 19px 1px #888888;	font: 14px Tahoma, Geneva, sans-serif;    -moz-border-radius-topleft: 5px;    -moz-border-radius-topright:5px;    -moz-border-radius-bottomleft:5px;    -moz-border-radius-bottomright:5px;    -webkit-border-top-left-radius:5px;    -webkit-border-top-right-radius:5px;    -webkit-border-bottom-left-radius:5px;    -webkit-border-bottom-right-radius:5px;    border-top-left-radius:5px;    border-top-right-radius:5px;    border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
+
+	<ul style=" margin-bottom: 20px;padding-left: 0;list-style-type: none;font-family:Helvetica,Arial,sans-serif;">
+		<li colspan="3" style="background-color: #0174DF;border-color: #2c3e50;color: #ffffff;z-index: 2;padding: 15px;"></li>
+		
+	  <li style="background-color: #045FB4;border-color: #2c3e50;color: #ffffff;z-index: 2;padding: 5px;"  ><table border="0" cellspacing="0" cellpadding="0"  align="center" summary="">
+              <tr>
+                <td class="column">
+                  <table border="0" cellspacing="0" cellpadding="0"  >
+                    <tr>
+                      <td style="color: #ffffff; font-size: 24px; padding: 0px 0px 10px 0px; font-weight: bold;font-family:Helvetica,Arial,sans-serif;"> Ingreso de Licencia Médica N° {{id}} </td>
+                    </tr>                    
+                  </table>
+                </td>
+                <td ><img src="http://www.cdegaulle.cl/wp-content/uploads/escu-150.png" width="82" height="95" style="margin-left: 25px;" alt="Logo lycee" /></td>
+              </tr>
+            </table> </li>
+		<li style="position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; font-size: 16px; /* [disabled]font-weight: bold; */">Funcionario : {{nombre}} {{apellido}}</li>
+		<li style="position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; font-size: 16px; /* [disabled]font-weight: bold; */">Rut : {{rut}}-{{dv}}</li>
+		<li style="position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; font-size: 16px; /* [disabled]font-weight: bold; */">Fecha de ingreso : {{fecha|date:"l j F"}}</li>
+		<li style="position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #ffffff; border: 1px solid #ecf0f1; position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #DBDBDB; border: 1px solid #ecf0f1; font-size: 16px; /* [disabled]font-weight: bold; */">Duración  : {{cantidad_dias}} Días</li>		
+		<li style="position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #DBDBDB; border: 1px solid #ecf0f1;" >
+		<span style="display: inline-block; min-width: 10px; padding: 3px 7px; font-size: 13px; /* [disabled]font-weight: bold; */ color: #000; line-height: 1; vertical-align: baseline; white-space: nowrap; text-align: center; /* [disabled]background-color: #FFF; */ border-radius: 10px; font-size: 16px; /* [disabled]font-weight: bold; */">Inicio : {{inicio|date:"l j F"}}</span>
+		</li>
+		<li style="position: relative; display: block; padding: 10px 15px; margin-bottom: -1px; background-color: #DBDBDB; border: 1px solid #ecf0f1;" >
+		<span style="display: inline-block; min-width: 10px; padding: 3px 7px; font-size: 13px; /* [disabled]font-weight: bold; */ color: #000; line-height: 1; vertical-align: baseline; white-space: nowrap; text-align: center; /* [disabled]background-color: #FFF; */ border-radius: 10px; font-size: 16px; /* [disabled]font-weight: bold; */">Fin : {{fin|date:"l j F "}}</span>
+		</li>		
+	</ul>
+	
+
+</div>
+	<div style="color:#999999;font-size:14px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:15px;padding-top:15px;padding-bottom:15px">Este correo ha sido generado de forma automática, por favor no responder.</div>
+	<div style="font-family:Roboto-Regular,Helvetica,Arial,sans-serif; font-size:10px; color:#666666; line-height:18px; padding-bottom:10px"> © 2018 Lycée Charles de Gaulle, Colo Colo 51, Concepción, Chile.
+	
+	</div>
+</body>
+</html>

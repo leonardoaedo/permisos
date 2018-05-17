@@ -25,14 +25,14 @@
 			<label class="label label-primary" >Características del Reposo</label>
 			{{form.reposo}}
 		</li>
-		<li>{{form.medico.errors}}
-			<label class="label label-primary" >Identificación del Profesional</label>
-			{{form.medico}}
-		</li>
 		<li>{{form.especialidad.errors}}
 			<label class="label label-primary" >Especialidad </label>
 			{{form.especialidad}}
 		</li>
+		<li>{{form.medico.errors}}
+			<label class="label label-primary" >Identificación del Profesional</label>
+			{{form.medico}}
+		</li>		
 		<li>{{form.inicio.errors}}
 		 	<label class="label label-primary" >Inicio y fin de Licencia </label>
 			<input id="compact_mode1" type="text" name="inicio"/>
@@ -79,7 +79,7 @@ jQuery('#compact_mode1').periodpicker({
     yearsLine: false,
     title: false,
     closeButton: false,
-    formatDate: 'YYYY-MM-DD',
+    formatDate: 'YYYY-MM-DD 00:00:00',
     fullsizeButton: false
 });
 
@@ -90,7 +90,7 @@ jQuery('#compact_mode2').periodpicker({
     yearsLine: false,
     title: false,
     closeButton: false,
-    formatDate: 'YYYY-MM-DD',
+    formatDate: 'YYYY-MM-DD 23:59:59',
     fullsizeButton: false
 });
 

@@ -2,9 +2,14 @@
 {% load staticfiles %}
 
 {% block contenido %}
+
+
 {% load tz %}
 {% get_current_timezone as TIME_ZONE %}
+
+
 {% if usuario.rol.nivel_acceso == 0 %}
+
 <div class='form-group'>
     <div class="row">                 
         <div class="col-lg-8">    
@@ -24,7 +29,8 @@
     </div>
 </div>
 
-
+<div align="center"><h3>Funcionarios con permiso</h3></div>
+<div align="center"><h4>Periodo comprendido entre {{start|date:"d "}} y  {{end|date:"d"}} de {{start|date:"F Y"}}</h4></div>
 <div class="filtros">
   <form id="horas" class="form-horizontal" method="get">
   <fieldset>
@@ -85,8 +91,8 @@
      <td >{{permiso.usuario}}</td>
      <td >{{permiso.fecha_creacion}}</td>
      <td >{{permiso.motivo}}</td>
-     <td ><b>{{permiso.primerEvento.numero_evento.start|timezone:"America/Sao_Paulo"|date:"D d M G:i"}}</b></td>
-     <td ><b>{{permiso.ultimoEvento.numero_evento.end|timezone:"America/Sao_Paulo"|date:"D d M G:i"}}</b></td>
+     <td ><b>{{permiso.primerEvento.numero_evento.start|timezone:"America/Noronha"|date:"D d M G:i"}}</b></td>
+     <td ><b>{{permiso.ultimoEvento.numero_evento.end|timezone:"America/Noronha"|date:"D d M G:i"}}</b></td>
      <td >{{permiso.horas_solicitadas}}</td>
 
      
