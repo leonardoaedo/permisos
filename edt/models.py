@@ -350,9 +350,11 @@ class Licencia(models.Model):
     cantidad_dias = models.CharField(max_length=10)  
     fecha = models.DateTimeField(auto_now_add=True,null=True)
     horas = models.FloatField(default=0)
+    ingresadopor = models.ForeignKey(Usuario, related_name="ingresado_por")
+
 
     def __unicode__(self):
-        return  u"%s tomara licencia  %s, %d - %d "%(self.usuario,self.tipo,self.reposo,self.inicio)
+        return  u"%s tomara licencia  %s, %s,%s - %s "%(self.funcionario,self.tipo,self.reposo,self.inicio,self.fin)
 
 
 
@@ -364,10 +366,16 @@ pagar = (
 class ReemplazoLicencia(models.Model):
     licencia = models.ForeignKey(Licencia)
     reemplazante = models.ForeignKey(Usuario)
-    horas = models.FloatField(default=1)
+    horasreemplazo = models.FloatField(default=1)
+    horaspagar = models.FloatField(default=0)
     pago = models.CharField(max_length=2,choices=pagar)
+    fecha = models.DateField(default="2018-01-01")
+    ingresadopor = models.ForeignKey(Usuario, related_name="usuario_sesion")
+    
 
-            
+    def __unicode__(self):
+        return u"%s reemplaza a %s , %s horas"%(self.reemplazante,self.licencia.funcionario,self.horasreemplazo)
+
 
 #######################################################################################################
 

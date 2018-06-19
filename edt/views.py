@@ -146,7 +146,8 @@ def permiso_jefatura(request):
     if not estaLogeado(request):
                 return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
-    formset = PermisoFormSet()            
+    formset = PermisoFormSet()
+    formset.fields["reemplazante"].queryset = Usuario.objects.filter(estado=1)            
 
     if  user.rol.id == 1:
         usuarios_filtro = Usuario.objects.all().filter(estado=1)
@@ -2319,7 +2320,9 @@ def main(request):
     bitacoras = Bitacora.objects.all()
     horass = Horas.objects.filter(usuario=usuarioObj.id).filter(permiso__fecha_creacion__year=this_year)
     formset = PermisoFormSet()
-    
+
+    formset.fields["reemplazante"].queryset = Usuario.objects.filter(estado=1)
+
     en_sindicato = [sindi.usuario.pk for sindi in Sindicato.objects.all()]
 
     #pares = [ numero for numero in range(1,10) if numero % 2 == 0]
@@ -2890,35 +2893,102 @@ def reemplazolicencia(request):
     if  user.rol.id == 1:
         usuarios_filtro = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)
         reemplazantes_filtro = Usuario.objects.all().filter(estado=1)
+        paga = " "
+        horasreemplazo = 0
+        horaspagar = 0
+        fecha = 0
+        lic = " "
+        licen = " "
+        funcionario = ""
+        licencias_filtro = ""
 
+        if "guardar" in request.GET:
 
-        if "filtrar" in request.GET:
             if "funcionario" in request.GET and request.GET.get("funcionario") != "0":
-                funcionario = request.GET.get("funcionario")                
+                funcionario = request.GET.get("funcionario")
+                licencias_filtro = Licencia.objects.all().filter(funcionario_id=funcionario) 
+
                 for usuario in usuarios_filtro:
                     usuario.usuario_activo = usuario.id == int(funcionario)
-                lic = Licencia.objects.all().filter(funcionario_id=funcionario)
 
-            if "reemplazante" in request.GET and request.GET.get("reemplazante") != "0":
-                reemplazante = request.GET.get("reemplazante")                
-                for reemplazant in reemplazantes_filtro:
-                    reemplazant.usuario_activo = reemplazant.id == int(reemplazante)
-                            
 
+                if "reemplazante" in request.GET and request.GET.get("reemplazante") != "0":
+                    reemplazante = request.GET.get("reemplazante")
+                    reemplazantee = Usuario.objects.filter(id=reemplazante)
+                    for r in reemplazantee:
+                        reemplaza = r
+                                    
+                    for reemplazant in reemplazantes_filtro:
+                        reemplazant.reemplazante_activo = reemplazant.id == int(reemplazante)
+
+                if "licencia" in request.GET and request.GET.get("licencia") !="0":
+                    licencia = request.GET.get("licencia")
+                    
+                    for licen in licencias_filtro:
+                        licen.licencia_activa = licen.id == int(licencia)
+
+                    #licenci = Licencia.objects.all().filter(id=licencia)
+ 
+                # if "paga" in request.GET and request.GET.get("paga") !="0":
+                #     paga = request.GET.get("paga")
+                    
+
+                if "horasreemplazo" in request.GET and request.GET.get("horasreemplazo") !=0:
+                    horasreemplazo = request.GET.get("horasreemplazo")
+
+                if "horaspagar" in request.GET and request.GET.get("horaspagar") >= 0:
+                    horaspagar = request.GET.get("horaspagar")    
+                    
+                
+                if "fecha" in request.GET and request.GET.get("fecha") !=" ":
+                    fecha = request.GET.get("fecha")
+                        
+
+                if  "reemplazante" in request.GET and request.GET.get("reemplazante") != "0" and "licencia" in request.GET and request.GET.get("licencia") != "0" and "horasreemplazo" in request.GET and request.GET.get("horasreemplazo") !=0 and "horaspagar" in request.GET and request.GET.get("horaspagar") !=0 and "fecha" in request.GET and request.GET.get("fecha") !=" ":
+
+                    reemplazolicencia = ReemplazoLicencia(licencia=licen,reemplazante=reemplaza,horasreemplazo=horasreemplazo, horaspagar=horaspagar,pago=paga,fecha=fecha, ingresadopor=user)
+                    reemplazolicencia.save()
+
+                    return redirect("/ingresoreemplazo/%d"%(reemplazolicencia.id))
+
+        elif "limpiar" in request.GET:
+            return redirect("/reemplazolicencia")
+            
         data = {
+            "funcionario": funcionario,
             "usuarios_filtro" : usuarios_filtro,
             "perro" : "perro",
             "usuario":user,
-            "reemplazantes" : reemplazantes_filtro,
+            "licencias_filtro" : licencias_filtro,
+            #"licenci" : licenci,
+            "paga" : paga,
+            "horasreemplazo" : horasreemplazo,
+            "horaspagar" : horaspagar,
+            "fecha" : fecha,
+            "reemplazantes_filtro" : reemplazantes_filtro,
 
         }
 
     return render_to_response("edt/reemplazolicencia.html",data,context_instance=RequestContext(request))
 
+def ingresoreemplazo(request,pk):
+    if not estaLogeado(request):
+                return redirect("/login")
+    
+    user = Usuario.objects.get(id=request.session['usuario'])
+    reemplazo = ReemplazoLicencia.objects.get(id=pk)
+
+    data = {
+            "reemplazo": reemplazo,
+            "usuario" : user,
+    }
+
+    return render_to_response("edt/comprobantereemplazo.html",data,context_instance=RequestContext(request))
+
 
 def licencia(request):
     if not estaLogeado(request):
-                return redirect("/login")
+        return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
     flag = ''
 
@@ -2926,18 +2996,22 @@ def licencia(request):
         usuarios_filtro = Usuario.objects.all().filter(estado=1)
 
         if request.method == 'POST':
-            formset = LicenciaFormset(request.POST, request.FILES)            
+            formset = LicenciaFormset(request.POST, request.FILES)
+            #licenciafuncionario = Licencia.objects.filter(funcionario=request.POST.get("funcionario"))#se obtiene licencias de funcionario selecionado para validar
+
             if formset.is_valid():
+                #if request.POST.get("inicio") == 
 
                 licencia = formset.save(commit=False)
                 licencia.inicio = request.POST.get("inicio")
                 licencia.inicio = datetime.strptime(licencia.inicio, "%Y-%m-%d %H:%M:%S")
                 licencia.fin = request.POST.get("fin")
                 licencia.fin = datetime.strptime(licencia.fin, "%Y-%m-%d %H:%M:%S")
-                cantidad_dias = (licencia.fin - licencia.inicio) + timedelta(seconds=1)# se agrega un segundo para completar el ultimo dia de la licencia
-                licencia.cantidad_dias = cantidad_dias.days
+                cantidad_dias = (licencia.fin - licencia.inicio) + timedelta(seconds=1)# se agrega un segundo para completar el ultimo dia de la licencia.
+                licencia.ingresadopor = user
+                licencia.cantidad_dias = cantidad_dias.days 
                 licencia.save()
-
+                
                 licencias = Licencia.objects.all().order_by('-id')[0] #obtencion la última licencia ingresada
 
                 eventos = Evento.objects.filter(usuario=licencia.funcionario).filter(start__gte=licencia.inicio).filter(end__lte=licencia.fin)
@@ -3066,10 +3140,47 @@ def comprobantelicencia(request,pk):
 
     return render_to_response("edt/comprobantelicencia.html",data,context_instance=RequestContext(request))
 
+def borralicencia(request,pk):
+    if not estaLogeado(request):
+        return redirect("/login")
+    
+    user = Usuario.objects.get(id=request.session['usuario'])
+    reemplazos = 0
+
+
+    licencias = Licencia.objects.all().filter(id=pk)
+
+    if ReemplazoLicencia.objects.all().filter(licencia__in=licencias) > 0:
+        for licencia in licencias:
+
+            reemplazos = ReemplazoLicencia.objects.all().filter(licencia__in=licencias)
+
+
+    data = {
+        "reemplazos" : reemplazos,
+        "licencias" : licencias,
+        "usuario" : user,
+    }
+
+    return render_to_response("edt/borrarlicencia.html",data,context_instance=RequestContext(request))
+
+def borrarlicencia(request,pk):
+    if not estaLogeado(request):
+        return redirect("/login")
+    
+    user = Usuario.objects.get(id=request.session['usuario'])
+
+
+    borrar = Licencia.objects.filter(id=pk)
+    borrar.delete()
+
+    return redirect("/ConLicencia")
+
+
 
 def ConLicencia(request):
     if not estaLogeado(request):
-        return redirect("login")
+        return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
 
     licencias = Licencia.objects.all()

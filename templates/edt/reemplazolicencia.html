@@ -5,16 +5,16 @@
 {% load tz %}
 {% get_current_timezone as TIME_ZONE %}
 {% if usuario.rol.nivel_acceso == 0 %}
-<div align="center"><h3>-</h3></div>
-<div align="center"><h4>*</h4></div>
-
+<div align="center"><h3>Ingreso</h3></div>
+<div align="center"><h4>de reemplazos</h4></div>
+<!-- {{funcionario}}-{{horasreemplazo}}-{{horaspagar}}-{{fecha}}-{{reemplazante}} -->
 <div class="filtros">
-  <form id="horas" class="form-horizontal" method="get">
+  <form  class="form-horizontal" method="get" " id="reempl">
   <fieldset>
   <ul>
     <li>
       <label class="label label-info" > Funcionario</label>
-      <select name="funcionario" >
+      <select name="funcionario" id="funcionario">
         <option value="0">Seleccione Funcionario</option>
         {% for funcionario in usuarios_filtro %}  
         <option value="{{funcionario.id}}" {% if funcionario.usuario_activo %}selected{% endif %}> {{funcionario}}   </option>
@@ -22,22 +22,48 @@
       </select>
 
     </li>
+
+    {% if funcionario %}
+
+    <li>
+      <label class="label label-info" > Licencia</label>
+      <select name="licencia" id="licencia">
+        <option value="0">Seleccione licencia</option>
+        {% for licencia in licencias_filtro %} 
+        <option value="{{licencia.id}}" {% if licencia.licencia_activa %}selected{% endif %}> Desde el {{licencia.inicio|date:"d-m-Y"}} hasta el  {{licencia.fin|date:"d-m-Y"}}</option>
+        {% endfor %}
+      </select>
+    </li>
+
+
+
     <li>
       <label class="label label-info" > Reemplazante</label>
-      <select name="reemplazante" >
+      <select name="reemplazante" id="reemplazante">
         <option value="0">Seleccione Reemplazante</option>
-        {% for reemplazante in reemplazantes %}  
-        <option value="{{reemplazante.id}}" {% if reemplazante.usuario_activo %}selected{% endif %}> {{reemplazante}}   </option>
+        {% for reemplazante in reemplazantes_filtro %}  
+        <option value="{{reemplazante.id}}" {% if reemplazante.reemplazante_activo %}selected{% endif %}> {{reemplazante}}   </option>
         {% endfor %}
       </select>
     </li>
     <li>
         <label class="label label-info" > Horas a Reemplazar</label> 
-        <input type="number" name="horas" min="1" step="any" required name="Horas a reemplazar" placeholder="Horas a Reemplazar">
-    </li> 
+        <input  type="number" id="horasreemplazo"  name="horasreemplazo" min="0"  {% if horasreemplazo %} value="{{horasreemplazo}}"{% endif %} >
+    </li>
+
+    <li>
+        <label class="label label-info" > Horas a Pagar</label> 
+        <input  type="number" id="horaspagar"  name="horaspagar" min="0" {% if horaspagar %} value="{{horaspagar}}"{% endif %} >
+    </li>
+    <li>
+      <label class="label label-info" >Fecha de Reemplazo</label>
+      <input type="text" name="fecha" id="fecha" {% if fecha %} value="{{fecha}}" {% endif %}>
+    </li>
+
+{% endif %}     
     
     <li class="botfiltro">
-      <input class=" btn btn-success" type="submit" value="Guardar" id="filtrar" name="guardar" />
+      <input class=" btn btn-success" type="submit" value="Guardar" id="guardar" name="guardar" onclick="return validarFormulario()" />
       <input class=" btn btn-danger" type="submit" value="Limpiar" id="limpiar" name="limpiar" />
 
     </li>
@@ -47,4 +73,77 @@
   </form>
 </div> 
  {% endif %}       
+<script>
+
+  function validarFormulario(){
+
+    var funcionario = document.getElementById('funcionario').selectedIndex;
+    console.log(funcionario); 
+    if(funcionario == null || funcionario == 0){
+      alert('ATENCIÓN!! : Debe seleccionar un funcionario');
+      return false;
+    }
+
+    var licencia = document.getElementById('licencia').selectedIndex;
+    console.log(licencia); 
+    if(licencia == null || licencia == 0){
+      alert('ATENCIÓN!! : Debe seleccionar una Licencia');
+      return false;
+    }
+
+    var reemplazante = document.getElementById('reemplazante').selectedIndex;
+    console.log(reemplazante); 
+    if(reemplazante == null || reemplazante == 0){
+      alert('ATENCIÓN!! : Debe seleccionar un reemplazante');
+      return false;
+    }
+
+    var horasreemplazo = document.getElementById('horasreemplazo').value;
+    console.log(horasreemplazo);
+    if(horasreemplazo == null || horasreemplazo.length == 0 || isNaN(horasreemplazo)){
+      alert('ATENCIÓN!! : Debe ingresar cantidad de horas del reemplazo ');
+      return false;
+    }
+
+    var horaspagar = document.getElementById('horaspagar').value;
+    console.log(horaspagar);
+    if(horaspagar == null || horaspagar.length == 0 || isNaN(horaspagar)){
+      alert('ATENCIÓN!! : Debe ingresar cantidad de horas que serán pagadas ');
+      return false;
+    }
+
+    if (horaspagar > horasreemplazo){
+      alert('ATENCIÓN!! : Las horas a pago deben ser menor o igual a las horas del reemplazo');
+      return false;
+
+    }
+    var fecha = document.getElementById('fecha').value;
+    console.log(fecha); 
+    if(fecha == null || fecha == 0){
+      alert('ATENCIÓN!! : Debe seleccionar un fecha');
+      return false;
+    }
+
+
+  }
+
+
+</script>
+
+
+<script>  
+jQuery('#fecha').periodpicker({
+    cells: [1, 1],
+    withoutBottomPanel: true,
+    yearsLine: false,
+    title: false,
+    closeButton: false,
+    fullsizeButton: false,
+    formatDate: 'YYYY-MM-DD',
+    lang: 'es',
+});
+</script>
+
+
+
 {% endblock  %}

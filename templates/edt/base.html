@@ -6,7 +6,6 @@
 		<!-- jquery UI -->
   		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	   <!--     <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
 		<!-- JS ###################################################################################-->
 		<script src="/static/js/bootstrap.js" /> </script>
 		 <script src="/static/js/jquery.timepicker.min.js" /> </script> 
@@ -21,6 +20,7 @@
 		<script src='/static/fullcalendar/lang/es.js'></script>
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js'></script>
 		<script src='/static/js/jquery.stickyheader.js'></script>
+		<script src="/static/js/jquery.chained.js"></script>
 
 		<!-- CSS ################################################################################# -->
 		<link rel='stylesheet' href='/static/fullcalendar/fullcalendar.css' />
@@ -66,7 +66,7 @@
 								  <li class="divider"></li>
 								  <li class="dropdown-header">Administración</li>
 
-								  {% if  usuario.cargo.id == 9 %}
+								  {% if  usuario.funcion.id == 36 or usuario.funcion.id == 26 or usuario.funcion.id == 31 %}
 				     				<li class="hvr-underline-from-center page-scroll"><a href="/licencia/">Ingresar Licencia</a></li>
 				      			  {% endif %}
 				      			  

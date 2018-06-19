@@ -39,7 +39,4 @@ admin.site.register(Licencia)
 admin.site.register(TipoLicencia)
 admin.site.register(TipoReposo)
 admin.site.register(EspecialidadMedica)
-
-
-
-
+#admin.site.register(ReemplazoLicencia)

@@ -75,6 +75,8 @@
         <th>Duración</th>
         <th>Inicio</th>
         <th>Fin</th>
+        
+        <th>Acción</th>
       </tr>
     </thead>
   
@@ -86,6 +88,7 @@
      <td ><b>{{licencia.cantidad_dias}} Días</b></td>
      <td ><b>{{licencia.inicio|date:"l j F"}}</b></td>
      <td ><b>{{licencia.fin|date:"l j F"}}</b></td>
+     <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger">Borrar Licencia</a></td>
      
 
      

@@ -1,0 +1,31 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+{% if usuario.rol.nivel_acceso == 0 %}
+<div id="permisousuario" class="msg-licencia">
+<ul class="list-group">
+	<li class="list-group-item"><h4>Comprobante de reemplazo</h4></li>
+	<li class="list-group-item">Funcionario : {{reemplazo.licencia.funcionario.apellido1}} {{reemplazo.licencia.funcionario.nombre}}</li>
+	<li class="list-group-item">Reemplazante {{reemplazo.reemplazante.apellido1}} {{reemplazo.reemplazante.nombre}}</li>
+	<li class="list-group-item" >Horas a reemplazar  : {{reemplazo.horasreemplazo}} Horas</li>
+	<li class="list-group-item"><b>Horas a Pagar : {{reemplazo.horaspagar}} Horas</b></li>
+	<li class="list-group-item">Fecha : {{reemplazo.fecha}}</li>
+</ul>
+	
+<ul>
+	<li>
+		<a href="/reemplazolicencia"  class="btn btn-danger" role="button">Ingresar Nuevo Reemplazo</a>
+	</li>
+</ul>	
+
+</div>
+
+
+{% endif%}
+
+
+{% endblock  %}

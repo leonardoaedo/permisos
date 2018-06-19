@@ -1,0 +1,35 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+{% if reemplazos %}
+  <style>
+    a { margin-right: 15px;}
+</style>
+
+  <div>
+    <div class="alert alert-danger" role="alert"> ATENCIÓN : Licencia tiene un reemplazo asociado, no puede ser eliminada.</div>
+    <div align="center" ><a href="/ConLicencia"  class="btn btn-info" role="button">Volver</a></div>
+  </div>
+{% elif licencias %}
+
+    {% for licencia in licencias %}  
+    <div class="alert alert-warning" role="alert"> ATENCIÓN : Está apunto de eliminar la licencia N° {{licencia.id}} perteneciente a <b>{{licencia.funcionario}}</b>, tenga presente que esta accion no se puede deshacer!! </div>
+    
+    <table id="botones" align="center">
+      <tr>
+        <td><a href="/ConLicencia"  class="btn btn-info" role="button">Cancelar</a></td>
+        <td><a href="/borrarlicencia/{{licencia.id}}"  class="btn btn-danger" role="button">Eliminar Licencia N° {{licencia.id}}</a></td>
+      </tr>
+    </table>
+
+
+    {% endfor %}
+
+
+{% endif%}
+
+
+
+
+{% endblock  %}

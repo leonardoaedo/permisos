@@ -10,7 +10,7 @@
 {% if usuario.rol.nivel_acceso == 0 %}
 
 {% endif%}
-<form method="post">{% csrf_token %}
+<form method="get">{% csrf_token %}
 <div class="filtros">
 	<ul>
 		<li>{{form.funcionario.errors}}
@@ -49,9 +49,29 @@
     </ul>
 </div>
 </form>
-
-
 <script>
+
+// jQuery('#periodpickerstart').periodpicker({
+//  end: '#periodpickerend', 
+//  lang :'es',
+//  resizeButton: false, // deny resize picker
+//  fullsizeButton: false,
+//  fullsizeOnDblClick: false,
+//  clearButtonInButton: true,
+//  timepicker: true, // use timepicker
+//  timepickerOptions: {
+//     hours: true,
+//     minutes: true,
+//     seconds: false,
+//     ampm: true
+//   },
+//  formatDateTime: 'YYYY-MM-DD HH:mm:ss',
+//  cells: [1, 3],
+
+// });
+
+
+
 jQuery('#compact_mode1').periodpicker({
 	cells: [1, 1],
     withoutBottomPanel: true,
