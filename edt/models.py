@@ -347,7 +347,7 @@ class Licencia(models.Model):
     medico = models.CharField(max_length=250)    
     inicio = models.DateTimeField()
     fin = models.DateTimeField()
-    cantidad_dias = models.CharField(max_length=10)  
+    cantidad_dias = models.IntegerField(default=0)  
     fecha = models.DateTimeField(auto_now_add=True,null=True)
     horas = models.FloatField(default=0)
     ingresadopor = models.ForeignKey(Usuario, related_name="ingresado_por")
@@ -358,23 +358,45 @@ class Licencia(models.Model):
 
 
 
-pagar = (
-        ("SI","Se Paga"),
-        ("NO","No Se Paga")
-    )
+
 
 class ReemplazoLicencia(models.Model):
     licencia = models.ForeignKey(Licencia)
     reemplazante = models.ForeignKey(Usuario)
     horasreemplazo = models.FloatField(default=1)
     horaspagar = models.FloatField(default=0)
-    pago = models.CharField(max_length=2,choices=pagar)
     fecha = models.DateField(default="2018-01-01")
     ingresadopor = models.ForeignKey(Usuario, related_name="usuario_sesion")
+    fecha_ingreso = models.DateField(auto_now_add=True,null=True)
     
 
     def __unicode__(self):
         return u"%s reemplaza a %s , %s horas"%(self.reemplazante,self.licencia.funcionario,self.horasreemplazo)
+
+
+# class SalidaEducativa(models.Model):
+#     funcionario = models.ForeignKey(Usuario)
+#     inicio = models.DateTimeField()
+#     fin = models.DateTimeField()
+#     fecha = models.DateTimeField(auto_now_add=True,null=True)
+#     horas = models.FloatField(default=0)
+#     ingresadopor = models.ForeignKey(Usuario, related_name="ingresado_por")
+
+#     def __unicode__(self):
+#         return  u"%s en Salida Educativa  %s - %s "%(self.funcionario,self.inicio,self.fin)
+
+
+# class ReemplazoSalida(models.Model):
+#     salida = models.ForeignKey(SalidaEducativa)
+#     reemplazante = models.ForeignKey(Usuario)
+#     horasreemplazo = models.FloatField(default=1)
+#     horaspagar = models.FloatField(default=0)
+#     fecha = models.DateField(default="2018-01-01")
+#     ingresadopor = models.ForeignKey(Usuario, related_name="usuario_sesion")
+    
+
+#     def __unicode__(self):
+#         return u"%s reemplaza a %s , %s horas"%(self.reemplazante,self.salida.funcionario,self.horasreemplazo)
 
 
 #######################################################################################################

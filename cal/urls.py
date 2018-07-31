@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls import *
-from edt.views import ImprimePermisoPDF,PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF,AnuladosPDF,AnuladosExcel,DescontadosExcel,DescontadosPDF,DevueltosExcel,DevueltosPDF,ConPermisoPDF,ConPermisoExcel,ConLicenciaPDF,ConLicenciaExcel
+from edt.views import ReemplazosExcel,ReemplazosPDF,ImprimePermisoPDF,PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF,AnuladosPDF,AnuladosExcel,DescontadosExcel,DescontadosPDF,DevueltosExcel,DevueltosPDF,ConPermisoPDF,ConPermisoExcel,ConLicenciaPDF,ConLicenciaExcel
 urlpatterns = [
 
     # Examples:
@@ -32,8 +32,8 @@ urlpatterns = [
     url(r'^genero/','edt.views.wsGenero' ),
     url(r'^jefaturas/','edt.views.wsJefaturas' ),
     url(r'^permiso_jefatura/','edt.views.permiso_jefatura' ),
-    url(r'^licencia/','edt.views.licencia' ),
-    url(r'^ConLicencia/','edt.views.ConLicencia' ),
+    url(r'^licencia/$','edt.views.licencia' ),
+    url(r'^ConLicencia/$','edt.views.ConLicencia' ),
     url(r'^comprobantelicencia/(?P<pk>\d+?)/$',"edt.views.comprobantelicencia" ),
     url(r'^conlicenciaPDF/',ConLicenciaPDF.as_view()),
     url(r'^conlicenciaEXCEL/$',ConLicenciaExcel.as_view(), name="ConLicenciaExcel"),
@@ -51,6 +51,9 @@ urlpatterns = [
     url(r'^anulaciones/', "edt.views.anulaciones"),
     url(r'^bfuncionario/',"edt.views.bitfuncionario"),
     url(r'^reemplazolicencia/',"edt.views.reemplazolicencia"),
+    url(r'^reemplazos/$',"edt.views.reemplazoslst"),
+    url(r'^reemplazosPDF/',ReemplazosPDF.as_view()),
+    url(r'^reemplazosEXCEL/$',ReemplazosExcel.as_view(), name="ReemplazosExcel"),
     url(r'^permisosusuario/(?P<pk>\d+)/$',"edt.views.permisosusuario"),
     url(r'^imprimepermiso/',ImprimePermisoPDF.as_view()),
     url(r'^bhorasEXCEL/$',BitHorasExcel.as_view(), name="BitHorasExcel"),
@@ -73,6 +76,7 @@ urlpatterns = [
     url(r'^conpermisoPDF/',ConPermisoPDF.as_view()),
     url(r'^conpermisoEXCEL/$',ConPermisoExcel.as_view(), name="ConPermisoExcel"),
     url(r'^funcevento/','edt.views.funcionarioEvento' ),
+    url(r'^licencia/validar/$', "edt.views.validalicencia", name='validalicencia'),
 
 
 

@@ -2888,7 +2888,7 @@ def reemplazolicencia(request):
     user = Usuario.objects.get(id=request.session['usuario'])
     hoy = datetime.now()
     agno = hoy.year
-    licencias = Licencia.objects.all().values('funcionario')
+    licencias = Licencia.objects.all().values('funcionario').order_by("inicio")
     
     if  user.rol.id == 1:
         usuarios_filtro = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)
@@ -2901,8 +2901,11 @@ def reemplazolicencia(request):
         licen = " "
         funcionario = ""
         licencias_filtro = ""
+        flag = 0
 
-        if "guardar" in request.GET:
+        if "funcionario" and not "limpiar"  in request.GET:
+
+            flag = 1
 
             if "funcionario" in request.GET and request.GET.get("funcionario") != "0":
                 funcionario = request.GET.get("funcionario")
@@ -2946,7 +2949,7 @@ def reemplazolicencia(request):
 
                 if  "reemplazante" in request.GET and request.GET.get("reemplazante") != "0" and "licencia" in request.GET and request.GET.get("licencia") != "0" and "horasreemplazo" in request.GET and request.GET.get("horasreemplazo") !=0 and "horaspagar" in request.GET and request.GET.get("horaspagar") !=0 and "fecha" in request.GET and request.GET.get("fecha") !=" ":
 
-                    reemplazolicencia = ReemplazoLicencia(licencia=licen,reemplazante=reemplaza,horasreemplazo=horasreemplazo, horaspagar=horaspagar,pago=paga,fecha=fecha, ingresadopor=user)
+                    reemplazolicencia = ReemplazoLicencia(licencia=licen,reemplazante=reemplaza,horasreemplazo=horasreemplazo, horaspagar=horaspagar,fecha=fecha, ingresadopor=user)
                     reemplazolicencia.save()
 
                     return redirect("/ingresoreemplazo/%d"%(reemplazolicencia.id))
@@ -2966,6 +2969,7 @@ def reemplazolicencia(request):
             "horaspagar" : horaspagar,
             "fecha" : fecha,
             "reemplazantes_filtro" : reemplazantes_filtro,
+            "flag" : flag,
 
         }
 
@@ -2986,6 +2990,26 @@ def ingresoreemplazo(request,pk):
     return render_to_response("edt/comprobantereemplazo.html",data,context_instance=RequestContext(request))
 
 
+def validalicencia(request):
+    
+    inicio = request.GET.get("inicio")
+    fin = request.GET.get("fin")
+    funcionario = request.GET.get("funcionario")
+
+    registrado = Licencia.objects.filter(
+        funcionario__id=funcionario,
+        inicio__lte=fin,
+        fin__gte=inicio
+    ).exists()
+
+    variable_ajax = {
+        "registrado" : registrado
+    }
+
+    return HttpResponse(json.dumps(variable_ajax),content_type='application/json')            
+            
+
+
 def licencia(request):
     if not estaLogeado(request):
         return redirect("/login")
@@ -3004,12 +3028,11 @@ def licencia(request):
 
                 licencia = formset.save(commit=False)
                 licencia.inicio = request.POST.get("inicio")
-                licencia.inicio = datetime.strptime(licencia.inicio, "%Y-%m-%d %H:%M:%S")
+                licencia.inicio = datetime.strptime(licencia.inicio + " 00:00:00"  , "%Y-%m-%d %H:%M:%S")
                 licencia.fin = request.POST.get("fin")
-                licencia.fin = datetime.strptime(licencia.fin, "%Y-%m-%d %H:%M:%S")
-                cantidad_dias = (licencia.fin - licencia.inicio) + timedelta(seconds=1)# se agrega un segundo para completar el ultimo dia de la licencia.
+                licencia.fin = datetime.strptime(licencia.fin  + " 00:00:00" , "%Y-%m-%d %H:%M:%S")
                 licencia.ingresadopor = user
-                licencia.cantidad_dias = cantidad_dias.days 
+                licencia.cantidad_dias = request.POST.get("cantidad_dias")
                 licencia.save()
                 
                 licencias = Licencia.objects.all().order_by('-id')[0] #obtencion la última licencia ingresada
@@ -3114,7 +3137,7 @@ def licencia(request):
 
         else:
             formset = LicenciaFormset()
-            
+            formset.fields["funcionario"].queryset = Usuario.objects.filter(estado=1)
         data = {
                 "usuario" : user,
                 "form" : formset,
@@ -3177,13 +3200,210 @@ def borrarlicencia(request,pk):
     return redirect("/ConLicencia")
 
 
+def reemplazoslst(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+
+    reemplazos = ReemplazoLicencia.objects.all().order_by('-fecha')
+    inicio = " "
+    fin = " "
+    
+    if  user.rol.nivel_acceso == 0:
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().filter(estado=1)
+        estamento_filtro = Estamento.objects.all()
+
+        if "filtrar" in request.GET:           
+
+            if "start" in request.GET and request.GET.get("start") != "":
+                reemplazos = reemplazos.filter(inicio__gte=request.GET.get("start"))
+                inicio = request.GET.get("start")
+                inicio = parser.parse(inicio)  
+
+
+            if "end" in request.GET and request.GET.get("end") != "":
+                reemplazos = reemplazos.filter(fin__lte=request.GET.get("end"))
+                fin = request.GET.get("end")
+                fin = parser.parse(fin)  
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                reemplazos = reemplazos.filter(funcionario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+        elif "limpiar" in request.GET:
+            return redirect("/ConLicencia")
+
+        paginator = Paginator(reemplazos,60)
+        
+        try: pagina = int(request.GET.get("page",'1'))
+        except ValueError: pagina = 1
+            
+        try:
+            reemplazos = paginator.page(pagina)
+        except (InvalidPage, EmptyPage):
+            reemplazos = paginator.page(paginator.num_pages)
+
+
+        data = {
+                 "estamento":estamento,                 
+                 "reemplazos": reemplazos,
+                 "usuario" : user,
+                 "inicio" : inicio,
+                 "fin" : fin,
+                 "reemplazos_list" : reemplazos.object_list,
+                 "months" : mkmonth_lst(),
+                 "usuarios_filtro" : usuarios_filtro,
+                 "estamento_filtro" : estamento_filtro,
+                 "query_string" : request.META["QUERY_STRING"]
+                 }
+
+
+        return render_to_response("edt/reemplazolst.html",data)
+        #return HttpResponse("hola")
+    else:
+        return redirect("/main")
+
+class ReemplazosPDF(PDFTemplateView):
+    template_name="edt/reemplazosPDF.html"
+
+    def get_context_data(self,**kwargs):
+        context  =super(ReemplazosPDF,self).get_context_data(
+            pagesize="letter",
+            title="Listado de Reemplazos",
+            **kwargs
+            )
+
+        user = Usuario.objects.get(id=self.request.session['usuario'])
+        inicio = " "
+        fin = " "
+        
+        Reemplazos = ReemplazoLicencia.objects.all()
+    
+        if  user.rol.nivel_acceso == 0:
+            estamento = Estamento.objects.all()
+            usuarios_filtro = Usuario.objects.all().filter(estado=1)
+            estamento_filtro = Estamento.objects.all()       
+
+            if "filtrar" in self.request.GET:
+
+                if "start" in self.request.GET and self.request.GET.get("start") != "":
+                    Reemplazos = Reemplazos.filter(inicio__gte=self.request.GET.get("start"))
+                    inicio = self.request.GET.get("start")
+                    inicio = parser.parse(inicio)                    
+                    
+
+                if "end" in self.request.GET and self.request.GET.get("end") != "":
+                    Reemplazos = Reemplazos.filter(fin__lte=self.request.GET.get("end"))
+                    fin = self.request.GET.get("end")
+                    fin = parser.parse(fin)
+                    
+
+                if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                    estamento = self.request.GET.get("estamento")
+                    Reemplazos = Reemplazos.filter(licencia__funcionario__estamento=self.request.GET.get("estamento"))
+                    for estament in estamento_filtro:
+                        estament.estamento_activo = estament.id == int(estamento)
+
+
+        context = {
+                     "estamento":estamento,                 
+                     "Reemplazos": Reemplazos,
+                     "usuario" : user,
+                     "inicio" : inicio,
+                     "fin" : fin,
+                     "months" : mkmonth_lst(),
+                     "usuarios_filtro" : usuarios_filtro,
+                     "estamento_filtro" : estamento_filtro,
+                     "query_string" : self.request.META["QUERY_STRING"],
+                     }
+        context['hoy'] =  datetime.now()
+
+        return context
+
+class ReemplazosExcel(TemplateView):
+    def get(self,request,*args,**kwargs):
+
+        user = Usuario.objects.get(id=self.request.session['usuario'])
+        inicio = " "
+        fin = " "        
+        reemplazos = ReemplazoLicencia.objects.all()
+
+        if  user.rol.nivel_acceso == 0:
+            estamento = Estamento.objects.all()
+            usuarios_filtro = Usuario.objects.all().filter(estado=1)
+            estamento_filtro = Estamento.objects.all()       
+
+            if "filtrar" in self.request.GET:
+
+                if "start" in self.request.GET and self.request.GET.get("start") != "":
+                    reemplazos = reemplazos.filter(inicio__gte=self.request.GET.get("start"))
+                    inicio = self.request.GET.get("start")
+                    inicio = parser.parse(inicio)                    
+                    
+
+                if "end" in self.request.GET and self.request.GET.get("end") != "":
+                    reemplazos = reemplazos.filter(fin__lte=self.request.GET.get("end"))
+                    fin = self.request.GET.get("end")
+                    fin = parser.parse(fin)
+                    
+
+                if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                    estamento = self.request.GET.get("estamento")
+                    reemplazos = reemplazos.filter(licencia__funcionario__estamento=self.request.GET.get("estamento"))
+                    for estament in estamento_filtro:
+                        estament.estamento_activo = estament.id == int(estamento)
+
+            hoy = datetime.now()
+            #Creamos el libro de trabajo
+            wb= Workbook()
+            #Definimos como nuestra hoja de trabajo, la hoja activa, por defecto la primera del libro
+            ws = wb.active
+            ws['B1'] = 'Reemplazos'
+            #Juntamos las celdas desde la B1 hasta la E1, formando una sola celda
+            ws.merge_cells('B1:E1')
+
+            # Encabezados
+
+            ws['B3'] = '#'
+            ws['C3'] = 'Funcionario'
+            ws['D3'] = 'Reemplazante'
+            ws['E3'] = 'Horas de reemplazo'
+            ws['F3'] = 'Horas a pagar'
+            ws['G3'] = 'Fecha'
+            ws['H3'] = 'Ingresado por'
+
+
+            cont = 4
+            contador = 1
+
+            for reemplazo in reemplazos:
+                ws.cell(row=cont,column=2).value = contador
+                ws.cell(row=cont,column=3).value = reemplazo.licencia.funcionario.apellido1+" "+reemplazo.licencia.funcionario.apellido1+" "+reemplazo.licencia.funcionario.nombre
+                ws.cell(row=cont,column=4).value = reemplazo.reemplazante.apellido1+" "+reemplazo.reemplazante.apellido2+" "+reemplazo.reemplazante.nombre
+                ws.cell(row=cont,column=5).value = reemplazo.horasreemplazo
+                ws.cell(row=cont,column=6).value = reemplazo.horaspagar
+                ws.cell(row=cont,column=7).value = reemplazo.fecha
+                ws.cell(row=cont,column=8).value = reemplazo.ingresadopor.apellido1+" "+reemplazo.ingresadopor.nombre
+
+                cont = cont +1
+                contador = contador + 1
+
+            nombre_archivo = "reemplazos.xlsx"
+            response = HttpResponse(content_type="application/ms-excel")
+            contenido = "attachment; filename={0}".format(nombre_archivo)
+            response["Content-Disposition"] = contenido
+            wb.save(response)
+            return response
 
 def ConLicencia(request):
     if not estaLogeado(request):
         return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
 
-    licencias = Licencia.objects.all()
+    licencias = Licencia.objects.all().order_by('-inicio')
     inicio = " "
     fin = " "
     
@@ -3214,7 +3434,7 @@ def ConLicencia(request):
         elif "limpiar" in request.GET:
             return redirect("/ConLicencia")
 
-        paginator = Paginator(licencias,30)
+        paginator = Paginator(licencias,60)
         
         try: pagina = int(request.GET.get("page",'1'))
         except ValueError: pagina = 1
@@ -3347,10 +3567,15 @@ class ConLicenciaExcel(TemplateView):
 
             ws['B3'] = '#'
             ws['C3'] = 'Funcionario'
-            ws['D3'] = 'Fecha de ingreso'
-            ws['E3'] = 'Duracion'
-            ws['F3'] = 'Inicio'
-            ws['G3'] = 'Fin'
+            ws['D3'] = 'Cargo'
+            ws['E3'] = 'Tipo licencia'
+            ws['F3'] = 'características del reposo'
+            ws['G3'] = 'Médico'
+            ws['H3'] = 'Especialidad'
+            ws['I3'] = 'Fecha de ingreso'            
+            ws['J3'] = 'Inicio'
+            ws['K3'] = 'Fin'
+            ws['L3'] = 'Duracion'
 
             cont = 4
             contador = 1
@@ -3358,13 +3583,18 @@ class ConLicenciaExcel(TemplateView):
             for licencia in licencias:
                 ws.cell(row=cont,column=2).value = contador
                 ws.cell(row=cont,column=3).value = licencia.funcionario.apellido1+" "+licencia.funcionario.apellido1+" "+licencia.funcionario.nombre
-                ws.cell(row=cont,column=4).value = licencia.fecha
-                ws.cell(row=cont,column=4).number_format = 'dd-mm-yyyy' #formato de salida para fecha en celda
-                ws.cell(row=cont,column=5).value = licencia.cantidad_dias
-                ws.cell(row=cont,column=6).value = licencia.inicio
-                ws.cell(row=cont,column=6).number_format = 'dd-mm-yyyy'
-                ws.cell(row=cont,column=7).value = licencia.fin
-                ws.cell(row=cont,column=7).number_format = 'dd-mm-yyyy'
+                ws.cell(row=cont,column=4).value = licencia.funcionario.cargo.nombre
+                ws.cell(row=cont,column=5).value = licencia.tipo.nombre
+                ws.cell(row=cont,column=6).value = licencia.reposo.nombre
+                ws.cell(row=cont,column=7).value = licencia.medico
+                ws.cell(row=cont,column=8).value =licencia.especialidad.nombre
+                ws.cell(row=cont,column=9).value = licencia.fecha
+                ws.cell(row=cont,column=9).number_format = 'dd-mm-yyyy' #formato de salida para fecha en celda
+                ws.cell(row=cont,column=10).value = licencia.inicio
+                ws.cell(row=cont,column=10).number_format = 'dd-mm-yyyy'
+                ws.cell(row=cont,column=11).value = licencia.fin
+                ws.cell(row=cont,column=11).number_format = 'dd-mm-yyyy'
+                ws.cell(row=cont,column=12).value = licencia.cantidad_dias
 
                 cont = cont +1
                 contador = contador + 1
@@ -3375,6 +3605,8 @@ class ConLicenciaExcel(TemplateView):
             response["Content-Disposition"] = contenido
             wb.save(response)
             return response
+
+
 
 
 

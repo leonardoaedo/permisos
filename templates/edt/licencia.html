@@ -5,38 +5,44 @@
 <link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/component.css" />
-{{flag}}
+
+
 
 {% if usuario.rol.nivel_acceso == 0 %}
 
 {% endif%}
-<form method="post">{% csrf_token %}
+<form method="post" id="el_form">{% csrf_token %}
 <div class="filtros">
 	<ul>
 		<li>{{form.funcionario.errors}}
-			<label class="label label-primary" >Funcionario </label>
+			<label class="label label-info" >Funcionario </label>
 			{{form.funcionario}}
 		</li>
 		<li>{{form.tipo.errors}}
-			<label class="label label-primary" >Tipo de Licencia</label>
+			<label class="label label-info" >Tipo de Licencia</label>
 			{{form.tipo}}
 		</li>
 		<li>{{form.reposo.errors}}
-			<label class="label label-primary" >Características del Reposo</label>
+			<label class="label label-info" >Características del Reposo</label>
 			{{form.reposo}}
 		</li>
 		<li>{{form.especialidad.errors}}
-			<label class="label label-primary" >Especialidad </label>
+			<label class="label label-info" >Especialidad </label>
 			{{form.especialidad}}
 		</li>
 		<li>{{form.medico.errors}}
-			<label class="label label-primary" >Identificación del Profesional</label>
+			<label class="label label-info" >Identificación del Profesional</label>
 			{{form.medico}}
-		</li>		
+		</li>
+		<li>{{form.cantidad_dias.errors}}
+			<label class="label label-info" >Dias de Licencia</label>
+			{{form.cantidad_dias}}
+		</li>
+
 		<li>{{form.inicio.errors}}
-		 	<label class="label label-primary" >Inicio y fin de Licencia </label>
-			<input id="compact_mode1" type="text" name="inicio"/>
-		 	<input id="compact_mode2" type="text" name="fin"/>
+		 	<label class="label label-info" >Duración</label>
+			<input id="inicio" type="date" placeholder="Fecha de inicio "  name="inicio"/>
+		 	<input id="fin" type="date" placeholder="Fecha de termino " name="fin" readonly />
 		</li>
 	
 
@@ -51,8 +57,88 @@
 </form>
 
 
-<script>
-jQuery('#compact_mode1').periodpicker({
+<script type="text/javascript">
+var registrado = false;
+var mensaje = 'El funcionario ya registra una licencia en esa fecha';
+
+$(document).ready(function(){
+	$("#id_funcionario").change(revisarDisponibilidad);
+	$("#inicio").change(revisarDisponibilidad);
+	$("#inicio").change(fechaTermino);
+
+	$("#el_form").submit(revisarForm)
+});
+
+function revisarForm(e){
+	if(registrado){
+		e.preventDefault()
+		alert(mensaje);
+	}
+}
+
+function revisarDisponibilidad(){
+	console.log("revisando disponibilidad");
+	console.log(registrado);
+	var id_funcionario = $("#id_funcionario").val(),
+		inicio = $("#inicio").val(),
+		fin = $("#fin").val();
+
+	if(id_funcionario != "" 
+		&& inicio != ""
+		&& fin != ""){
+		consultarDisponibilidad(id_funcionario, inicio, fin)
+	}
+}
+
+function consultarDisponibilidad(funcionario, inicio, fin){
+	$.get("/licencia/validar",{
+		funcionario: funcionario,
+		inicio: inicio,
+		fin: fin
+	}, function(respuesta){
+		registrado = respuesta.registrado;
+
+		if(respuesta.registrado){
+			alert(mensaje);
+		}
+	})
+}
+
+function fechaTermino(){
+	var iniciolic = $("#inicio").val();
+	var diaslic = $("#id_cantidad_dias").val();
+
+	console.log(iniciolic);
+	console.log(diaslic);
+
+	if (iniciolic != "" && diaslic != " "){
+		 sumaFecha(iniciolic,diaslic)
+	}
+}
+
+function sumaFecha(iniciolic,diaslic)
+{
+	 
+	 var parts = iniciolic.split('-');
+	 var Fecha = new Date(parts[0], parts[1] - 1, parts[2]);
+	 var sFecha = fecha || (Fecha.getDate() + "-" + (Fecha.getMonth() +1) + "-" + Fecha.getFullYear());
+	 var sep = sFecha.indexOf('-') != -1 ? '-' : '-';
+	 var aFecha = sFecha.split(sep);
+	 var fecha = aFecha[2]+'-'+aFecha[1]+'-'+aFecha[0];
+	 fecha= new Date(fecha);
+	 fecha.setDate(fecha.getDate()+parseInt(diaslic));
+	 var anno=fecha.getFullYear();
+	 var mes= fecha.getMonth()+1;
+	 var dia= fecha.getDate()-1;
+	 mes = (mes < 10) ? ("0" + mes) : mes;
+	 dia = (dia < 10) ? ("0" + dia) : dia;
+	 var fechaFinal = anno+sep+mes+sep+dia;
+	 console.log(fechaFinal);
+	 document.getElementById("fin").value = fechaFinal;
+	 return (fechaFinal);
+ }
+
+/*$('#compact_mode1').periodpicker({
 	cells: [1, 1],
     withoutBottomPanel: true,
     lang: 'es',
@@ -63,7 +149,7 @@ jQuery('#compact_mode1').periodpicker({
     fullsizeButton: false
 });
 
-jQuery('#compact_mode2').periodpicker({
+$('#compact_mode2').periodpicker({
 	cells: [1, 1],
     withoutBottomPanel: true,
     lang: 'es',
@@ -72,7 +158,7 @@ jQuery('#compact_mode2').periodpicker({
     closeButton: false,
     formatDate: 'YYYY-MM-DD 23:59:59',
     fullsizeButton: false
-});
+});*/
 
 
 

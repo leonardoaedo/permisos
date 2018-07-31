@@ -6,26 +6,27 @@
 {% get_current_timezone as TIME_ZONE %}
 
 {% if usuario.rol.nivel_acceso == 0 %}
+
 <div class='form-group'>
     <div class="row">                 
         <div class="col-lg-8">    
                                                                  
         </div>  
         <div class="col-lg-1">                            
-            <a href="/conlicenciaEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+            <a href="/reemplazosEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
                 <img src="/static/img/xls.png" width="35" height="35">
             </a>                          
         </div>
         
         <div class="col-lg-1">                            
-            <a href="/conlicenciaPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+            <a href="/reemplazosPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
                 <img src="/static/img/pdf.png" width="35" height="35">
             </a>                          
         </div>                                                    
     </div>
 </div>
 
-<div align="center"><h3>Funcionarios con licencia</h3></div>
+<div align="center"><h3>Reemplazos de Licencias</h3></div>
 <div align="center"><h4>Periodo comprendido entre {{inicio|date:"d "}} y  {{fin|date:"d"}} de {{inicio|date:"F Y"}}</h4></div>
 
 <div class="filtros">
@@ -42,7 +43,7 @@
       </select>
     </li> -->
     <li>
-      <label class="label label-primary" >Estamento</label>
+      <label class="label label-info" >Estamento</label>
       <select name="estamento">
         <option value="0">Seleccione Estamento</option>
         {% for estament in estamento_filtro %}
@@ -51,7 +52,7 @@
       </select>
     </li>
     <li>
-      <label class="label label-primary" >Rango de fechas</label>
+      <label class="label label-info" >Rango de fechas</label>
       <input id="periodpickerstart" type="text" name="start" value="{{start}}"/>
       <input id="periodpickerend" type="text" name="end" value="{{end}}"/>      
     </li>
@@ -71,26 +72,28 @@
   <thead class="thead-inverse">
       <tr>
         <th>#</th>
-        <th>Funcionario</th>      
-        <th>Fecha de ingreso</th>
-        <th>Duración</th>
-        <th>Inicio</th>
-        <th>Fin</th>        
-        <th>Acción</th>
-        <th>ID Licencia</th>
+        <th>Licencia ID</th>
+        <th>Funcionario</th>
+        <th>Reemplazante</th>
+        <th>Horas de reemplazo</th>
+        <th>Horas a pagar</th>
+        <th>Fecha</th>
+        <th>Ingresado por</th>
       </tr>
     </thead>
   
-   {% for licencia in licencias %}
+   {% for reemplazo in reemplazos %}
   <tr>
      <td>{{forloop.counter}}</td>
-     <td >{{licencia.funcionario}}</td>
-     <td >{{licencia.fecha|date:"D j M Y"}}</td>
-     <td ><b>{{licencia.cantidad_dias}} Días</b></td>
-     <td ><b>{{licencia.inicio|date:"D j M Y"}}</b></td>
-     <td ><b>{{licencia.fin|date:"D j M Y"}}</b></td>
-     <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger">Borrar Licencia</a></td>
-     <td class="btn-success" align="center"><h4>{{licencia.id}}</h4></td>
+     <td class="btn-success" align="center"><h4>{{reemplazo.licencia.id}}</h4></td>
+     <td >{{reemplazo.licencia.funcionario}}</td>
+     <td >{{reemplazo.reemplazante}}</td>
+     <td ><b>{{reemplazo.horasreemplazo}}</b></td>
+     <td ><b>{{reemplazo.horaspagar}}</b></td>
+     <td ><b>{{reemplazo.fecha}}</b></td>
+     <td>{{reemplazo.ingresadopor}}</td>
+
+     
      
 
      

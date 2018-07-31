@@ -14,12 +14,12 @@
 {% elif licencias %}
 
     {% for licencia in licencias %}  
-    <div class="alert alert-warning" role="alert"> ATENCIÓN : Está apunto de eliminar la licencia N° {{licencia.id}} perteneciente a <b>{{licencia.funcionario}}</b>, tenga presente que esta accion no se puede deshacer!! </div>
+    <div class="alert alert-warning" role="alert"> ATENCIÓN : Está apunto de eliminar la licencia ID {{licencia.id}} perteneciente a <b>{{licencia.funcionario}}</b>, tenga presente que esta accion no se puede deshacer!! </div>
     
     <table id="botones" align="center">
       <tr>
         <td><a href="/ConLicencia"  class="btn btn-info" role="button">Cancelar</a></td>
-        <td><a href="/borrarlicencia/{{licencia.id}}"  class="btn btn-danger" role="button">Eliminar Licencia N° {{licencia.id}}</a></td>
+        <td><a href="/borrarlicencia/{{licencia.id}}"  class="btn btn-danger" role="button">Eliminar Licencia </a></td>
       </tr>
     </table>
 

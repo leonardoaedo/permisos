@@ -46,7 +46,7 @@
 </div>
 
 <div id="footer_content">(c) - página <pdf:pagenumber> of <pdf:pagecount> </div>
-<h4 align="center">Funcionarios con Licencia</h4>
+<h4 align="center">Listado de Reemplazos</h4>
 <h4 align="center">Periodo {{inicio|date:"d F"}} - {{fin|date:"d F"}} de {{fin|date:"Y"}}</h4>
 <div id="header_content"></div>     
 <table border="1" class="DEVtable">
@@ -54,22 +54,26 @@
       <tr>
         {{estamento.estamento_activo}}
         <th>#</th>
+    <!--     <th>Licencia ID</th> -->
         <th>Funcionario</th>
-        <th>Fecha de ingreso</th>
-        <th>Duración</th>
-        <th>Inicio</th>
-        <th>Fin</th>
+        <th>Reemplazante</th>
+        <th>Horas de reemplazo</th>
+        <th>Horas a pagar</th>
+        <th>Fecha</th>
+        <th>Ingresado por</th>     
       </tr>
     </thead>
   
-   {% for licencia in licencias %}
+   {% for reemplazo in Reemplazos %}
   <tr>
      <td>{{forloop.counter}}</td>
-     <td >{{licencia.funcionario}}</td>
-     <td >{{licencia.fecha|date:"D j M Y"}}</td>
-     <td >{{licencia.cantidad_dias}} Días</td>
-     <td ><b>{{licencia.inicio|date:"D j M Y"}}</b></td>
-     <td ><b>{{licencia.fin|date:"D j M Y"}}</b></td>    
+<!--      <td class="btn-success" align="center"><h4>{{reemplazo.id}}</h4></td> -->
+     <td >{{reemplazo.licencia.funcionario}}</td>
+     <td >{{reemplazo.reemplazante}}</td>
+     <td ><b>{{reemplazo.horasreemplazo}}</b></td>
+     <td ><b>{{reemplazo.horaspagar}}</b></td>
+     <td ><b>{{reemplazo.fecha}}</b></td>
+     <td>{{reemplazo.ingresadopor}}</td>
   </tr>
    {% empty %}
     <tr>

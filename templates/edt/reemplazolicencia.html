@@ -9,12 +9,17 @@
 <div align="center"><h4>de reemplazos</h4></div>
 <!-- {{funcionario}}-{{horasreemplazo}}-{{horaspagar}}-{{fecha}}-{{reemplazante}} -->
 <div class="filtros">
-  <form  class="form-horizontal" method="get" " id="reempl">
+  
+</div>
+ {% endif %}
+
+<div id="app" class="filtros">
+    <form  class="form-horizontal" method="get" id="reempl" @submit.prevent="onSubmit">
   <fieldset>
   <ul>
     <li>
       <label class="label label-info" > Funcionario</label>
-      <select name="funcionario" id="funcionario">
+      <select name="funcionario" id="funcionario" v-model="remplazo.funcionario">
         <option value="0">Seleccione Funcionario</option>
         {% for funcionario in usuarios_filtro %}  
         <option value="{{funcionario.id}}" {% if funcionario.usuario_activo %}selected{% endif %}> {{funcionario}}   </option>
@@ -27,7 +32,7 @@
 
     <li>
       <label class="label label-info" > Licencia</label>
-      <select name="licencia" id="licencia">
+      <select name="licencia" id="licencia" v-model="remplazo.licencia">
         <option value="0">Seleccione licencia</option>
         {% for licencia in licencias_filtro %} 
         <option value="{{licencia.id}}" {% if licencia.licencia_activa %}selected{% endif %}> Desde el {{licencia.inicio|date:"d-m-Y"}} hasta el  {{licencia.fin|date:"d-m-Y"}}</option>
@@ -39,7 +44,7 @@
 
     <li>
       <label class="label label-info" > Reemplazante</label>
-      <select name="reemplazante" id="reemplazante">
+      <select name="reemplazante" id="reemplazante" v-model="remplazo.remplazante">
         <option value="0">Seleccione Reemplazante</option>
         {% for reemplazante in reemplazantes_filtro %}  
         <option value="{{reemplazante.id}}" {% if reemplazante.reemplazante_activo %}selected{% endif %}> {{reemplazante}}   </option>
@@ -47,32 +52,86 @@
       </select>
     </li>
     <li>
-        <label class="label label-info" > Horas a Reemplazar</label> 
-        <input  type="number" id="horasreemplazo"  name="horasreemplazo" min="0"  {% if horasreemplazo %} value="{{horasreemplazo}}"{% endif %} >
+        <label class="label label-info" > Horas de Reemplazo</label> 
+        <input  v-model="remplazo.horasreemplazo"  type="number" id="horasreemplazo"  name="horasreemplazo" min="0"  {% if horasreemplazo %} value="{{horasreemplazo}}"{% endif %} >
     </li>
 
     <li>
         <label class="label label-info" > Horas a Pagar</label> 
-        <input  type="number" id="horaspagar"  name="horaspagar" min="0" {% if horaspagar %} value="{{horaspagar}}"{% endif %} >
+        <input  v-model="remplazo.horaspagar" type="number" id="horaspagar"  name="horaspagar" min="0" {% if horaspagar %} value="{{horaspagar}}"{% endif %} >
     </li>
     <li>
       <label class="label label-info" >Fecha de Reemplazo</label>
-      <input type="text" name="fecha" id="fecha" {% if fecha %} value="{{fecha}}" {% endif %}>
+      <input  v-model="remplazo.fecha" type="date" placeholder="Seleccione" name="fecha" id="fecha" {% if fecha %} value="{{fecha}}" {% endif %}>
     </li>
 
 {% endif %}     
     
-    <li class="botfiltro">
-      <input class=" btn btn-success" type="submit" value="Guardar" id="guardar" name="guardar" onclick="return validarFormulario()" />
+    <!--li class="botfiltro">
+      <input class=" btn btn-success" type="submit" {% if flag == 1 %} value="Guardar" {% else %} value="Seleccionar" {% endif %}  id="guardar" name="guardar" onclick="return validarFormulario()" />
+      {% if flag == 1 %}
+      <input class=" btn btn-warning" type="submit"  @click="agregar()" value="Agregar"  value="Agregar"   id="Agregar" name="Agregar" onclick="return validarFormulario()" />
+      {% endif %}
       <input class=" btn btn-danger" type="submit" value="Limpiar" id="limpiar" name="limpiar" />
 
-    </li>
+    </li-->
 
   </ul>
   </fieldset> 
   </form>
-</div> 
- {% endif %}       
+
+  <input type="submit" name="seleccionar" value="seleccionar"> 
+  <button @click="agregar()">Agregar</button>
+  <button @click="guardar()">Guardar</button>
+
+  <table>
+    <tr>
+      <th>Funcionario</th>
+      <th>Licencia</th>
+      <th>Remplazo</th>
+    </tr>
+    <tr v-for="remp in agregados">
+      <td>[[remp.funcionario]]</td>
+      <td>[[remp.licencia]]</td>
+      <td>[[remp.remplazante]]</td>
+    </tr>
+  </table>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+  var app = new Vue({
+    delimiters: ['[[', ']]'],
+    el: '#app',
+    data: {
+      remplazo:{
+        funcionario: null,
+        licencia: null,
+        remplazante: null,
+        horasreemplazo: null,
+        horaspagar:null,
+        fecha:null
+      },
+      agregados: []
+    },
+    methods: {
+      agregar: function(){
+        this.agregados.push( Object.assign({},this.remplazo));
+      },
+      guardar: function(){
+        console.log(this.agregados);
+        jQuery.post("/api/guardar-remplazos",{agregados: this.agregados},function(){},"json");
+      },
+      onSubmit:function(){
+
+
+
+      }
+    }
+  })
+  </script> 
+
 <script>
 
   function validarFormulario(){
@@ -131,7 +190,7 @@
 </script>
 
 
-<script>  
+<!-- <script>  
 jQuery('#fecha').periodpicker({
     cells: [1, 1],
     withoutBottomPanel: true,
@@ -142,7 +201,7 @@ jQuery('#fecha').periodpicker({
     formatDate: 'YYYY-MM-DD',
     lang: 'es',
 });
-</script>
+</script> -->
 
 
 
