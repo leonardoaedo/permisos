@@ -58,16 +58,101 @@
 
 
 <script type="text/javascript">
+var es_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+    if(es_chrome){
+		console.log("El navegador que se está utilizando es Chrome");
+    }
+var es_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    if(es_firefox){
+    	console.log("El navegador que se está utilizando es Firefox");
+    }    
+
+
 var registrado = false;
 var mensaje = 'El funcionario ya registra una licencia en esa fecha';
 
 $(document).ready(function(){
+	$("#guardar").bind("click", function(e){
+      
+      if (validaFormulario() == false){
+      		e.preventDefault();
+     	 }
+
+  	});
+
 	$("#id_funcionario").change(revisarDisponibilidad);
 	$("#inicio").change(revisarDisponibilidad);
 	$("#inicio").change(fechaTermino);
 
 	$("#el_form").submit(revisarForm)
+	$('#id_cantidad_dias').attr('min',1);
+
+	$funcionario = $("#id_funcionario");
+	$tipo = $("#id_tipo");
+	$reposo = $("#id_reposo");
+	$especialidad = $("#id_especialidad");
+	$medico = $("#id_medico");
+	$diaslicencia = $("#id_cantidad_dias");
+	$fecha = $('#inicio');
+
+
 });
+
+function validaFormulario(){
+	
+	var funcionario = $funcionario.val();
+    console.log('Funcionario'+' '+funcionario); 
+    if(funcionario == null || funcionario == 0){
+      alert('ATENCIÓN!! : Debe seleccionar un funcionario');
+      return false;
+    }
+
+    var tipo = $tipo.val();
+    console.log('tipo' + ' '+ tipo);
+    if(tipo == null || tipo == ''){
+    	alert('ATENCIÓN!! : Debe seleccionar un Tipo de licencia');
+    	return false;
+    }
+
+    var reposo = $reposo.val();
+    console.log('reposo' +' '+ reposo);
+    if (reposo == null || reposo == ''){
+    	alert('ATENCIÓN!! : Debe seleccionar un Tipo de reposo');
+    	return false;
+    }
+
+    var especialidad = $especialidad.val();
+    console.log('especialidad' +' '+ especialidad);
+    if (especialidad == null || especialidad == ''){
+    	alert('ATENCIÓN!! : Debe seleccionar especialidad');
+    	return false;
+    }
+
+    var medico = $medico.val();
+    console.log('medico'+' '+medico);
+    if (medico==null || medico==''){
+    	alert('ATENCIÓN!! : Debe ingresar el nombre del medico tratante');
+    	return false;
+
+    }	
+
+
+    var diaslicencia = $diaslicencia.val();
+    console.log('Dias Licencia'+' '+ diaslicencia);
+    if (diaslicencia == null || diaslicencia < 1){
+    	alert('ATENCIÓN!! : La cantidad de dias de licencia debe ser mayor a 0');
+    	return false;
+    }
+
+    var fecha = $fecha.val();
+    console.log('fecha : '+' '+ fecha);
+    if (fecha == null || fecha=='' ){
+    	alert("ATENCIÓN!! : Ingrese la fecha de inicio de licencia");
+    	return false;
+    }
+
+}
+
 
 function revisarForm(e){
 	if(registrado){
@@ -129,7 +214,15 @@ function sumaFecha(iniciolic,diaslic)
 	 fecha.setDate(fecha.getDate()+parseInt(diaslic));
 	 var anno=fecha.getFullYear();
 	 var mes= fecha.getMonth()+1;
-	 var dia= fecha.getDate()-1;
+	 
+	 if (es_chrome){
+	 	var dia= fecha.getDate()-1;
+	 }
+
+	 if(es_firefox){
+	 	var dia= fecha.getDate();
+	 }
+	 
 	 mes = (mes < 10) ? ("0" + mes) : mes;
 	 dia = (dia < 10) ? ("0" + dia) : dia;
 	 var fechaFinal = anno+sep+mes+sep+dia;

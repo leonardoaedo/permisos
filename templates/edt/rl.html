@@ -1,0 +1,281 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<div class="filtros">
+<form method="POST" id="reempl">
+{% csrf_token %}
+<fieldset>
+  <ul>
+    <li>
+      <label class="label label-info" > Funcionario</label>  
+      <select id="funcionario" name="funcionario">
+        <option value="">Seleccione un Funcionario</option>
+        {% for funcionario in funcionarios %}
+          <option value="{{funcionario.id}}">{{funcionario}}</option>
+        {% endfor %}
+      </select>
+    </li>  
+
+    <li>
+      <label class="label label-info" > Licencia</label>
+      <select id="licencia" name="licencia">
+      </select>
+    </li>
+    <li>
+      <label class="label label-info" > Reemplazante</label>
+      <select name="reemplazante" id="reemplazante">
+        <option value="0">Seleccione Reemplazante</option>
+        {% for reemplazante in reemplazantes_filtro %}  
+        <option value="{{reemplazante.id}}" {% if reemplazante.reemplazante_activo %}selected{% endif %}> {{reemplazante}}   </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+        <label class="label label-info" > Horas de Reemplazo</label> 
+        <input    type="number" id="horasreemplazo"  name="horasreemplazo" min="0"  {% if horasreemplazo %} value="{{horasreemplazo}}"{% endif %} >
+    </li>
+
+    <li>
+        <label class="label label-info" > Horas a Pagar</label> 
+        <input   type="number" id="horaspagar"  name="horaspagar" min="0" {% if horaspagar %} value="{{horaspagar}}"{% endif %} >
+    </li>
+    <li>
+      <label class="label label-info" >Fecha de Reemplazo</label>
+      <input   type="date" placeholder="Seleccione" name="fecha" id="fecha" {% if fecha %} value="{{fecha}}" {% endif %}>
+    </li>
+  </ul>
+  <button id="agregar" class="btn btn-success ">Agregar</button>
+  <button id="guardar" class="btn btn-danger ">Guardar</button>
+  <!-- <ul id="seleccionados">
+    
+  </ul> -->
+<table  class="tablerl">   
+    <tr>
+      <td>Funcionario</td>
+      <td>Licencia</td>
+      <td>Reemplazante</td>
+      <td>Horas de reemplazo</td>
+      <td>Horas a pagar</td>
+      <td>Fecha</td>
+      <td>Borrar</td>
+    </tr>
+  </table>
+  <table id="seleccionados" class="table-striped tablerl">   
+
+  </table>
+  <input type="hidden" id="seleccionados-data" name="data-seleccionados">
+</form>
+
+</div>
+<script type="text/javascript">
+    var seleccionados = [],
+      indice = 0,
+      $seleccionados = null;
+  
+    $('#seleccionados').addClass( "list-group" );
+
+
+    function eliminarFila(indice){
+
+        seleccionados.splice(indice,1);
+        actualizarFila();
+        return false;
+    }//fin eliminar fila
+
+
+
+    function actualizarFila(){
+      $seleccionados.empty();
+      console.log(seleccionados);
+      // $.each(seleccionados, function(){
+      //   var $li = $("<li/>");
+      //   $li.attr("id","item");        
+      //   $li.text(this.nombre +"-"+this.licencia +"-->  " + this.reemplazante + "-->" + this.horasreemplazo + "-->" + this.horaspagar + "--->"+ this.fecha);
+      //   $seleccionados.append($li);
+      //   $('#seleccionados > li').addClass("list-group-item ");
+      //   console.log(seleccionados);        
+      // });
+      $.each(seleccionados,function(indice,item){
+
+        var $tr = "<tr>"+
+                  "<td>"+item.nombre+"</td>"+
+                  "<td>"+item.licencia+"</td>"+
+                  "<td>"+item.reemplazante+"</td>"+
+                  "<td>"+item.horasreemplazo+"</td>"+
+                  "<td>"+item.horaspagar+"</td>"+
+                  "<td>"+item.fecha+"</td>" +
+                  "<td><a href='#' onclick='return eliminarFila(" + indice + ")'>Borrar</a></td>" +
+             +"</tr>";
+       //$('#seleccionados').addClass("table-striped tablerl");
+        $seleccionados.append($tr);
+
+        // $("#reempl")[0].reset();
+
+      });
+      
+     }//fin actualizar fila
+  
+  $(document).bind("ready",function(){
+    var $licencia = $("#licencia"),
+        $funcionario = $("#funcionario"),
+        $reemplazante = $("#reemplazante"),
+        $horasreemplazo = $("#horasreemplazo"),
+        $horaspagar = $("#horaspagar"),
+        $fecha = $("#fecha");
+
+
+    $seleccionados = $("#seleccionados");
+
+
+    function validaFormulario(){
+
+    var funcionario = $funcionario.val();
+    console.log('Funcionario'+' '+funcionario); 
+    if(funcionario == null || funcionario == 0){
+      alert('ATENCIÓN!! : Debe seleccionar un funcionario');
+      return false;
+    }
+
+    var licencia = $licencia.val();
+    console.log('licencia'+' '+ licencia); 
+    if(licencia == null || licencia == 0){
+      alert('ATENCIÓN!! : Debe seleccionar una Licencia');
+      return false;
+    }
+
+    var reemplazante = $reemplazante.val();
+    console.log('reemplazante'+' '+reemplazante); 
+    if(reemplazante == null || reemplazante == 0){
+      alert('ATENCIÓN!! : Debe seleccionar un reemplazante');
+      return false;
+    }
+
+    var horasreemplazo = $horasreemplazo.val();
+    console.log('horas_reemplazo'+' '+horasreemplazo);
+    if(horasreemplazo == null || horasreemplazo.length == 0 || isNaN(horasreemplazo)){
+      alert('ATENCIÓN!! : Debe ingresar cantidad de horas del reemplazo ');
+      return false;
+    }
+
+    var horaspagar = $horaspagar.val();
+    console.log('horas_pagar'+' '+horaspagar);
+    if(horaspagar == null || horaspagar.length == 0 || isNaN(horaspagar)){
+      alert('ATENCIÓN!! : Debe ingresar cantidad de horas que serán pagadas ');
+      return false;
+    }
+
+    if (horaspagar > horasreemplazo){
+      alert('ATENCIÓN!! : Las horas a pago deben ser menor o igual a las horas del reemplazo');
+      return false;
+
+    }
+    var fecha = $fecha.val();
+    var fechainvertida = fecha.split('-');
+        fechainvertida.reverse();
+    console.log('fecha'+' '+fechainvertida.join('-')); 
+    if(fecha == null || fecha == 0){
+      alert('ATENCIÓN!! : Debe seleccionar un fecha');
+      return false;
+    }
+
+    }//fin validaFormulario
+    
+    $("#agregar").bind("click", function(e){
+      e.preventDefault();     
+      
+
+      if (validaFormulario() !== false){
+           var seleccion = $funcionario.val(),
+           nombre = $funcionario.find("option:selected").text(),
+           licencia = $licencia.find("option:selected").text(),
+           idlicencia = $licencia.val();
+           reemplazante = $reemplazante.find("option:selected").text(),
+           idreemplazante = $reemplazante.val(),
+           horasreemplazo = $horasreemplazo.val(),
+           horaspagar = $horaspagar.val(),
+           fecha = $fecha.val();
+
+
+          seleccionados.push({
+              "indice" : indice,
+              "id": seleccion,
+              "nombre": nombre,
+              "licencia": licencia,
+              "idlicencia" : idlicencia,
+              "reemplazante" : reemplazante,
+              "horasreemplazo" :horasreemplazo,
+              "horaspagar" : horaspagar,
+              "fecha" : fecha,
+              "idreemplazante" : idreemplazante,
+            });
+          indice = indice + 1;
+
+      actualizarFila();
+      // var sel =JSON.stringify(seleccionados);
+      // console.log(sel);
+   
+
+      } else{
+        alert('FORMULARIO INVALIDO');
+          return false;
+      }
+
+      });
+
+
+    $("#guardar").bind("click", function(e){
+      
+      if( validaFormulario() == false){ 
+          e.preventDefault();
+      }
+
+      if (seleccionados.length < 1) {
+          e.preventDefault();
+          alert("ATENCIÓN!! : debe agregar reemplazo a la lista.");
+
+      }
+
+        $("#seleccionados-data").val(JSON.stringify(seleccionados));
+        
+        
+
+    });
+
+    $funcionario.bind("change", function(){
+      var seleccion = $(this).val();
+      if(seleccion == "")return;
+
+
+      $.get("/LicenciaAPI/?funcionario=" + seleccion, function(resp){
+        $licencia.empty();
+
+        $.each(resp,function(){
+
+          var inicior = this.inicio.split('-');
+              inicior.reverse();
+          var inicioreversado =  inicior.join('-');
+          var finr = this.fin.split('-');
+              finr.reverse();
+          var finreversado =  finr.join('-');
+
+
+          var label = "desde"+" "+ inicioreversado + " hasta " + finreversado;
+          var $option = $("<option/>");
+          $option.text(label);
+          $option.val(this.id);
+
+          
+
+          $licencia.append($option);
+        });
+
+      })
+    });
+
+
+
+  });
+</script>
+
+{% endblock  %}

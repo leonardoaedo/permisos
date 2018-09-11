@@ -71,7 +71,164 @@ import json
 import urllib
 import time
 import tablib
+# from edt.serializers import *
 
+def ReemplazoAPI(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+    lista = []
+
+    if request.GET.get('licencia'):
+        licencia = request.GET.get('licencia')
+
+    reemplazos = ReemplazoLicencia.objects.all().order_by('-fecha').filter(licencia=licencia)
+
+    for reemplazo in reemplazos:
+
+        fecha = reemplazo.fecha.strftime('%Y-%m-%d')
+
+        lista.append({ "licencia" : reemplazo.licencia.id,"reemplazante" : reemplazo.reemplazante.nombre,"horasreemplazo" : reemplazo.horasreemplazo,"horaspagar": reemplazo.horaspagar,"fecha" : fecha})
+        data = json.dumps(lista)
+
+    return HttpResponse(data,content_type='application/json')
+
+def UsuarioAPI(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+
+    lista = []
+
+    licencias = Licencia.objects.all().values('funcionario').order_by("-inicio")
+
+    funcionarios = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)
+
+
+
+    for funcionario in funcionarios :
+        lista.append({"id":funcionario.id,"Nombre": funcionario.nombre,"Apellido1":funcionario.apellido1,"Apellido2":funcionario.apellido2})
+
+        data = json.dumps(lista)
+
+    return HttpResponse(data,content_type='application/json')
+
+def LicenciaAPI(request):
+    if not estaLogeado(request):
+                return redirect("/login")
+    user = Usuario.objects.get(id=request.session['usuario'])
+    reemplazos = ReemplazoLicencia.objects.all().values('licencia')
+
+
+    if request.GET.get('funcionario'):
+        funcionario = request.GET.get('funcionario')
+
+        lista  =[]
+        licencias = Licencia.objects.all().filter(funcionario=funcionario)
+
+        for licencia in licencias:
+
+            inicio = licencia.inicio
+            fin = licencia.fin
+            inicio = inicio.strftime('%Y-%m-%d')
+            fin = fin.strftime('%Y-%m-%d')
+            funcionario = licencia.funcionario.id
+
+
+            lista.append({"id":licencia.id,"inicio":inicio,"fin":fin,"funcionario" : funcionario})
+
+            data = json.dumps(lista)
+
+    return HttpResponse(data,content_type='application/json')
+
+
+def rl(request):
+    if not estaLogeado(request):
+                return redirect("/login")
+    hoy = datetime.now()
+    user = Usuario.objects.get(id=request.session['usuario'])
+    licencias = Licencia.objects.all().values('funcionario').order_by("-inicio")
+    usuarios_filtro = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)    
+    reemplazantes_filtro = Usuario.objects.all().filter(estado=1)
+    data = {}
+    
+    if request.POST:
+
+        seleccionados = json.loads(request.POST['data-seleccionados'])
+
+        funcionario = request.POST.get("funcionario")
+        licencias_filtro = Licencia.objects.all().filter(funcionario_id=funcionario)
+        for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(funcionario)
+
+        if "licencia" in request.POST and request.POST.get("licencia") !="0":
+            licencia = request.POST.get("licencia")                    
+            for licen in licencias_filtro:
+                licen.licencia_activa = licen.id == int(licencia)
+
+        # if "horasreemplazo" in request.POST and request.POST.get("horasreemplazo") !=0:
+        #             horasreemplazo = request.POST.get("horasreemplazo")
+
+        # if "horaspagar" in request.POST and request.POST.get("horaspagar") >= 0:
+        #             horaspagar = request.POST.get("horaspagar")    
+                    
+                
+        # if "fecha" in request.POST and request.POST.get("fecha") !=" ":
+        #             fecha = request.POST.get("fecha")
+
+        for x in seleccionados:
+            idreemplazante = x["idreemplazante"]
+            idlicencia = x["idlicencia"]
+            horaspagar = x["horaspagar"]
+            horasreemplazo = x["horasreemplazo"]
+            fecha = x["fecha"]
+            idreemplazante = Usuario.objects.get(id=idreemplazante)
+            idlicencia = Licencia.objects.get(id=idlicencia)
+            reemplazolicencia = ReemplazoLicencia(horaspagar=horaspagar,fecha=fecha,licencia=idlicencia,reemplazante=idreemplazante,ingresadopor=user,horasreemplazo=horasreemplazo,fecha_ingreso=hoy)
+            reemplazolicencia.save()
+
+
+
+        return render_to_response("edt/guardareemplazo.html",data,context_instance=RequestContext(request))
+
+        
+
+
+        data = {
+                "query_string" : request.META["QUERY_STRING"],
+                "llego " : "llego un POST",
+                "funcionario" : funcionario,
+                "usuarios_filtro" :  usuarios_filtro,
+                "licencias_filtro" : licencias_filtro,
+                "usuario":user,
+        }
+
+        #return HttpResponse(json.dumps(seleccionados), content_type='application/json')
+
+    if not estaLogeado(request):
+        return redirect("/login")
+
+    user = Usuario.objects.get(id=request.session['usuario'])
+    licencias = Licencia.objects.all().values('funcionario').order_by("-inicio")
+    funcionarios = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)
+    reemplazantes_filtro = Usuario.objects.all().filter(estado=1)
+    data["funcionarios"] = funcionarios
+    data["reemplazantes_filtro"] = reemplazantes_filtro
+    data["usuario"] = user 
+
+
+    return render_to_response("edt/rl.html",data,context_instance=RequestContext(request))
+
+def InformeReemplazos(request):
+    user = Usuario.objects.get(id=request.session['usuario'])
+    licencias = Licencia.objects.all().values('funcionario').order_by("-inicio")
+    funcionarios = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)
+    data = {
+        "funcionarios" : funcionarios,
+        "usuario" : user,
+    }
+
+    return render_to_response("edt/InformeReemplazos.html",data,context_instance=RequestContext(request))
 
 # Generic View de Bitacora
 class PermisoListView(ListView):
@@ -222,7 +379,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Santo_Domingo')
                 else:  
-                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
+                    to_zone = tz.gettz('America/Santiago') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -279,7 +436,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Santo_Domingo')
                 else:  
-                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
+                    to_zone = tz.gettz('America/Santiago') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -2888,7 +3045,7 @@ def reemplazolicencia(request):
     user = Usuario.objects.get(id=request.session['usuario'])
     hoy = datetime.now()
     agno = hoy.year
-    licencias = Licencia.objects.all().values('funcionario').order_by("inicio")
+    licencias = Licencia.objects.all().values('funcionario').order_by("-inicio")
     
     if  user.rol.id == 1:
         usuarios_filtro = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)

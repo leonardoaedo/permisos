@@ -893,9 +893,9 @@ padding: 5px 5px 5px 25px;
 	padding: 0;
 	margin-left: 0;
 	margin-top: 15px;
-	background-color:#CBF9BD;
-	border-top: 2px solid green;
-	border-bottom: 2px solid green;
+	background-color:#D6F2E6;
+	border-top: 1px solid green;
+	border-bottom: 1px solid green;
 	-moz-border-radius: 7px;
 	-moz-box-shadow: 0 0 3px #999999;
 	position:relative;	
@@ -1299,3 +1299,14 @@ input[type="date"]:focus:before,
 input[type="date"]:valid:before {
     content: "";
   }
+
+.tablerl{
+	width: 75% !important;
+	border: 1px solid black;
+	margin-top: 10px;
+}
+.tablerl td{
+	width: 150px;
+	border: 1px solid black;
+	text-align: center;
+}

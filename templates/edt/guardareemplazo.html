@@ -1,0 +1,23 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+<div class="exito">
+	<p>Reemplazo guardado exitosamente...</p>
+
+	<hr>
+
+	<p>Espere un momento, sera redireccionado automaticamente..</p>
+</div>
+<script type="text/javascript">
+   $(document).ready(function () {
+    // Handler for .ready() called.
+    window.setTimeout(function () {
+        location.href = "edt/rl";
+    }, 2500);
+});
+</script>
+
+
+{% endblock  %}

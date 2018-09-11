@@ -1,0 +1,119 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<div class="filtros">
+<form method="POST" id="reempl">
+{% csrf_token %}
+<fieldset>
+  <ul>
+    <li>
+      <label class="label label-info" > Funcionario</label>  
+      <select id="funcionario" name="funcionario">
+        <option value="">Seleccione un Funcionario</option>
+        {% for funcionario in funcionarios %}
+          <option value="{{funcionario.id}}">{{funcionario}}</option>
+        {% endfor %}
+      </select>
+    </li>  
+
+    <li>
+      <label class="label label-info" > Licencia</label>
+      <select id="licencia" name="licencia">
+      </select>
+    </li>
+  </ul>
+
+  <table  class="tablerl">   
+    <tr>
+      <td>Licencia</td>
+      <td>Reemplazante</td>
+      <td>Horas de reemplazo</td>
+      <td>Horas a pagar</td>
+      <td>Fecha</td>
+    </tr>
+  </table>
+  <table id="reemplazo">
+
+  </table>
+
+
+
+</fieldset>
+</form>
+</div>
+<script type="text/javascript">
+ $(document).bind("ready",function(){
+      var $licencia = $("#licencia"),
+          $funcionario = $("#funcionario");
+          $reemplazo = $("#reemplazo");
+
+      $('#reemplazo').addClass( "table-striped tablerl" );    
+
+      $funcionario.bind("change", function(){
+            $reemplazo.empty();
+            var seleccion = $(this).val();
+            if(seleccion == "")return;
+
+
+            $.get("/LicenciaAPI/?funcionario=" + seleccion, function(resp){
+              $licencia.empty();
+
+              var $default = $("<option/>");
+              var defaultlabel = "Seleccione una licencia";
+              $default.text(defaultlabel);
+              $licencia.append($default);
+
+              $.each(resp,function(){
+                var inicior = this.inicio.split('-');
+                    inicior.reverse();
+                var inicioreversado =  inicior.join('-');
+                var finr = this.fin.split('-');
+                    finr.reverse();
+                var finreversado =  finr.join('-');
+                var label = "desde"+" "+ inicioreversado + " hasta " + finreversado;
+                var $option = $("<option/>");                
+                $option.text(label);
+                $option.val(this.id);
+                $licencia.append($option);
+
+              });
+
+
+
+            })
+          });
+
+
+      $licencia.bind("change",function(){
+        var seleccion = $(this).val();
+        console.log(seleccion);
+        if (seleccion=="")return;        
+        $reemplazo.empty();
+
+        $.get("/ReemplazoAPI/?licencia=" + seleccion ,function(resp){
+          console.log(resp);
+          $.each(resp,function(){
+
+            var $tr = "<tr>"+
+                  "<td>"+this.licencia+"</td>"+
+                  "<td>"+this.reemplazante+"</td>"+
+                  "<td>"+this.horasreemplazo+"</td>"+
+                  "<td>"+this.horaspagar+"</td>"+
+                  "<td>"+this.fecha+"</td>" +
+                  
+             +"</tr>";
+       //$('#seleccionados').addClass("table-striped tablerl");
+        $reemplazo.append($tr);
+
+
+          });
+
+        })
+
+      });
+
+ }); 
+</script>    
+
+{% endblock  %}

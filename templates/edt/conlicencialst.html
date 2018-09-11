@@ -76,8 +76,8 @@
         <th>Duración</th>
         <th>Inicio</th>
         <th>Fin</th>        
-        <th>Acción</th>
-        <th>ID Licencia</th>
+        <!-- <th>Acción</th> -->
+       <!--  <th>ID Licencia</th> -->
       </tr>
     </thead>
   
@@ -89,8 +89,8 @@
      <td ><b>{{licencia.cantidad_dias}} Días</b></td>
      <td ><b>{{licencia.inicio|date:"D j M Y"}}</b></td>
      <td ><b>{{licencia.fin|date:"D j M Y"}}</b></td>
-     <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger">Borrar Licencia</a></td>
-     <td class="btn-success" align="center"><h4>{{licencia.id}}</h4></td>
+     <!-- <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger">Borrar Licencia</a></td> -->
+    <!--  <td class="btn-success" align="center"><h4>{{licencia.id}}</h4></td> -->
      
 
      
@@ -106,11 +106,11 @@
 </table>
    <nav>
       {% if licencias.has_previous %}
-        <a href="?page={{ licencias.previous_page_number }}">Página anterior</a>
+        <a href="?page={{ licencias.previous_page_number }}" class="button">Página anterior</a>
       {% endif %}
       <p class="paginador">Página {{ licencias.number }} de {{ licencias.paginator.num_pages }}</p>
       {% if licencias.has_next %}
-      <a href="?page={{ licencias.next_page_number }}">Página siguiente</a>
+      <a href="?page={{ licencias.next_page_number }}" class="button">Página siguiente</a>
       {% endif %} 
     </nav>
 

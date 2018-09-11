@@ -28,9 +28,9 @@
 				</li>
 				{% for evento in permiso.eventos_en_permisos_ordenados %}	
 
-				<li class="list-group-item" >
+				<li class="list-group-item">
 					<span class="badge">{{evento.delta}}</span>
-					{{evento.numero_evento.start|date:"D d M "}}{{"   "}}{{evento.numero_evento.start|date:"G:i"}}{{"-"}} {{evento.numero_evento.end|date:"G:i"}}
+					{{evento.numero_evento.start|date:"D d M "}}{{"   "}}{{evento.numero_evento.start|timezone:"America/Noronha"|date:"G:i"}}{{"-"}} {{evento.numero_evento.end|timezone:"America/Noronha"|date:"G:i"}}
 				</li>
 				{% endfor %}
 				<li class="list-group-item" >

@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'edt',
     'easy_pdf',
+    #'rest_framework',
    # 'schedule',
 )
 

@@ -72,12 +72,13 @@
   <thead class="thead-inverse">
       <tr>
         <th>#</th>
-        <th>Licencia ID</th>
         <th>Funcionario</th>
+        <th>Periodo Licencia</th>
+        <th>Fecha Reemplazo</th>
+        <th>Periodo Ausente</th>        
         <th>Reemplazante</th>
         <th>Horas de reemplazo</th>
-        <th>Horas a pagar</th>
-        <th>Fecha</th>
+        <th>Horas a pagar</th>        
         <th>Ingresado por</th>
       </tr>
     </thead>
@@ -85,12 +86,14 @@
    {% for reemplazo in reemplazos %}
   <tr>
      <td>{{forloop.counter}}</td>
-     <td class="btn-success" align="center"><h4>{{reemplazo.licencia.id}}</h4></td>
      <td >{{reemplazo.licencia.funcionario}}</td>
+     <td>{{reemplazo.licencia.inicio|date:"M d Y"}}  - {{reemplazo.licencia.fin|date:"M d, Y"}} </td>
+     <!-- <td class="btn-success" align="center"><h4>{{reemplazo.licencia.id}}</h4></td> -->
+     <td ><b>{{reemplazo.fecha}}</b></td>
+     <td><b>{{reemplazo.licencia.cantidad_dias}}</b></td>     
      <td >{{reemplazo.reemplazante}}</td>
      <td ><b>{{reemplazo.horasreemplazo}}</b></td>
      <td ><b>{{reemplazo.horaspagar}}</b></td>
-     <td ><b>{{reemplazo.fecha}}</b></td>
      <td>{{reemplazo.ingresadopor}}</td>
 
      

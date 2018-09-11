@@ -39,7 +39,7 @@ urlpatterns = [
     url(r'^conlicenciaEXCEL/$',ConLicenciaExcel.as_view(), name="ConLicenciaExcel"),
     url(r'^edades/','edt.views.wsEdades' ),
     url(r'^bitacora/', PermisoListView.as_view()),
-    # url(r'^modpermiso/', PermisoUpdateView.as_view()),
+    #url(r'^modpermiso/', PermisoUpdateView.as_view()),
     url(r'^anularlst/','edt.views.anularlst' ),
     url(r"^anulapermiso/(?P<pk>\d+)/$","edt.views.anulapermiso"),
     url(r'^anula/','edt.views.anula'),
@@ -51,6 +51,8 @@ urlpatterns = [
     url(r'^anulaciones/', "edt.views.anulaciones"),
     url(r'^bfuncionario/',"edt.views.bitfuncionario"),
     url(r'^reemplazolicencia/',"edt.views.reemplazolicencia"),
+    url(r'^rl/',"edt.views.rl"),
+    url(r'^InformeReemplazos/',"edt.views.InformeReemplazos"),
     url(r'^reemplazos/$',"edt.views.reemplazoslst"),
     url(r'^reemplazosPDF/',ReemplazosPDF.as_view()),
     url(r'^reemplazosEXCEL/$',ReemplazosExcel.as_view(), name="ReemplazosExcel"),
@@ -77,6 +79,12 @@ urlpatterns = [
     url(r'^conpermisoEXCEL/$',ConPermisoExcel.as_view(), name="ConPermisoExcel"),
     url(r'^funcevento/','edt.views.funcionarioEvento' ),
     url(r'^licencia/validar/$', "edt.views.validalicencia", name='validalicencia'),
+    url(r'^UsuarioAPI/$',"edt.views.UsuarioAPI"),
+    url(r'^LicenciaAPI/$',"edt.views.LicenciaAPI"),
+    url(r'^ReemplazoAPI/$',"edt.views.ReemplazoAPI"),
+
+
+
 
 
 
