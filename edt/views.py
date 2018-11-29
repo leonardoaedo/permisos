@@ -379,7 +379,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Santo_Domingo')
                 else:  
-                    to_zone = tz.gettz('America/Santiago') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
+                    to_zone = tz.gettz('America/Rio_Branco') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -436,7 +436,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Santo_Domingo')
                 else:  
-                    to_zone = tz.gettz('America/Santiago') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
+                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -3172,9 +3172,10 @@ def licencia(request):
         return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
     flag = ''
+    inactivos = Usuario.objects.all().filter(estado=2)
 
     if  user.rol.id == 1:
-        usuarios_filtro = Usuario.objects.all().filter(estado=1)
+        usuarios_filtro = Usuario.objects.all().exclude(id__in=inactivos)
 
         if request.method == 'POST':
             formset = LicenciaFormset(request.POST, request.FILES)
@@ -3294,7 +3295,7 @@ def licencia(request):
 
         else:
             formset = LicenciaFormset()
-            formset.fields["funcionario"].queryset = Usuario.objects.filter(estado=1)
+            formset.fields["funcionario"].queryset = Usuario.objects.exclude(id__in=inactivos)
         data = {
                 "usuario" : user,
                 "form" : formset,
@@ -3571,6 +3572,13 @@ def ConLicencia(request):
 
         if "filtrar" in request.GET:           
 
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+                licencias = Licencia.objects.all().filter(funcionario=persona).order_by('-inicio')
+
+
             if "start" in request.GET and request.GET.get("start") != "":
                 licencias = licencias.filter(inicio__gte=request.GET.get("start"))
                 inicio = request.GET.get("start")
@@ -3644,6 +3652,12 @@ class ConLicenciaPDF(PDFTemplateView):
 
             if "filtrar" in self.request.GET:
 
+                if "persona" in self.request.GET and self.request.GET.get("persona") != "0":
+                    persona = self.request.GET.get("persona")
+                    for usuario in usuarios_filtro:
+                        usuario.usuario_activo = usuario.id == int(persona)
+                    licencias = Licencia.objects.all().filter(funcionario=persona).order_by('-inicio')
+
                 if "start" in self.request.GET and self.request.GET.get("start") != "":
                     licencias = licencias.filter(inicio__gte=self.request.GET.get("start"))
                     inicio = self.request.GET.get("start")
@@ -3692,6 +3706,12 @@ class ConLicenciaExcel(TemplateView):
             estamento_filtro = Estamento.objects.all()       
 
             if "filtrar" in self.request.GET:
+
+                if "persona" in self.request.GET and self.request.GET.get("persona") != "0":
+                    persona = self.request.GET.get("persona")
+                    for usuario in usuarios_filtro:
+                        usuario.usuario_activo = usuario.id == int(persona)
+                    licencias = Licencia.objects.all().filter(funcionario=persona).order_by('-inicio')
 
                 if "start" in self.request.GET and self.request.GET.get("start") != "":
                     licencias = licencias.filter(inicio__gte=self.request.GET.get("start"))

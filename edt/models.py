@@ -105,11 +105,9 @@ class Usuario(models.Model):
         class Meta:
             ordering = ('apellido1',)
 
-        def __unicode__(self):              # __unicode__ on Python 2
+        def __unicode__(self):
+                      # __unicode__ on Python 2
             return u"%s %s"%(self.apellido1,self.nombre)
-
-
-
 
 devuelve = (
         ("S","SI"),

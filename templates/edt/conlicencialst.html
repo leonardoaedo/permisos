@@ -32,7 +32,7 @@
   <form id="horas" class="form-horizontal" method="get">
   <fieldset>
   <ul>
-    <!-- <li>
+    <li>
       <label class="label label-primary" > Funcionario</label>
       <select name="persona" >
         <option value="0">Seleccione Funcionario</option>
@@ -40,7 +40,7 @@
         <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}   </option>
         {% endfor %}
       </select>
-    </li> -->
+    </li>
     <li>
       <label class="label label-primary" >Estamento</label>
       <select name="estamento">
