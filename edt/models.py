@@ -63,9 +63,9 @@ class Motivo (models.Model):
             return self.nombre
 
 class Tipo_Permiso (models.Model):
-        nombre = models.CharField(max_length=32)
+        nombre = models.CharField(max_length=256)
         def __unicode__(self):              # __unicode__ on Python 2
-            return self.nombre            
+            return self.nombre             
 class Estado_Permiso(models.Model):
         estado = models.CharField(max_length=32)
         def __unicode__(self):              # __unicode__ on Python 2
@@ -371,17 +371,27 @@ class ReemplazoLicencia(models.Model):
     def __unicode__(self):
         return u"%s reemplaza a %s , %s horas"%(self.reemplazante,self.licencia.funcionario,self.horasreemplazo)
 
+class Formacion(models.Model):
+    nombre = models.CharField(max_length=150)
+    inicio = models.DateTimeField(null=True)
+    fin =  models.DateTimeField(null=True)
+    ubicacion = models.CharField(max_length=150)
+    agno = models.CharField(max_length=4)
 
-# class SalidaEducativa(models.Model):
-#     funcionario = models.ForeignKey(Usuario)
-#     inicio = models.DateTimeField()
-#     fin = models.DateTimeField()
-#     fecha = models.DateTimeField(auto_now_add=True,null=True)
-#     horas = models.FloatField(default=0)
-#     ingresadopor = models.ForeignKey(Usuario, related_name="ingresado_por")
+    def __unicode__(self):
+        return u"%s"%(self.nombre)
 
-#     def __unicode__(self):
-#         return  u"%s en Salida Educativa  %s - %s "%(self.funcionario,self.inicio,self.fin)
+ 
+
+class SalidaPedagogica(models.Model):
+    nombre = models.CharField(max_length=150)
+    inicio = models.DateTimeField()
+    fin = models.DateTimeField()
+    ubicacion = models.CharField(max_length=150)
+    agno = models.CharField(max_length=4)
+
+    def __unicode__(self):
+        return u"%s"%(self.nombre)
 
 
 # class ReemplazoSalida(models.Model):

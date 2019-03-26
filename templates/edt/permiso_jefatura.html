@@ -171,11 +171,36 @@ $(document).ready(function(){
     })//end function 
 })// end ready
 </script>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $("#mostrarocultar").click(function(){
         $("#listapermisos").toggle();
     });
+
+  $("#id_tipo").change(function(e){
+    if($("#id_tipo").val() >= 4 ){
+      $("#id_devuelve_horas").prop( "readonly", true );
+      $("#id_devuelve_horas").empty().append('<option selected value="N">Desactivado</option>');
+      $("#id_sueldo").prop( "readonly", true );
+      $("#id_sueldo").empty().append('<option selected value="C">Desactivado</option>');
+
+    }else{
+      $("#id_devuelve_horas").empty()
+      $("#id_sueldo").empty()
+      $("#id_devuelve_horas").prop( "readonly", false );
+      $("#id_devuelve_horas").append('<option value="" selected="selected">---------</option>');
+      $("#id_devuelve_horas").append('<option value="S">SI</option>');
+      $("#id_devuelve_horas").append('<option value="N">NO</option>');
+      $("#id_devuelve_horas option[value='D']").remove();
+      $("#id_sueldo").prop( "readonly", false );
+      $("#id_sueldo").append('<option value="" selected="selected">---------</option>');
+      $("#id_sueldo").append('<option value="C">Con goce de suedo</option>');
+      $("#id_sueldo").append('<option value="S">Sin goce de suedo</option>');
+      $("#id_sueldo option[value='D']").remove();
+      }
+
+      });
 
   $("#main").submit(function(e){
     if(seleccionados.length == 0){

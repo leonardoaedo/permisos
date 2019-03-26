@@ -39,3 +39,15 @@ class DocumentFormSet(forms.ModelForm):
         class Meta:
            model = Document
            exclude = [""]
+
+class FormacionForm(forms.ModelForm):
+        class Meta :
+            model = Formacion
+            exclude =[""]
+
+class SalidaPedagogicaForm (forms.ModelForm):
+    class Meta:
+        model = SalidaPedagogica
+        exclude = [""]
+
+

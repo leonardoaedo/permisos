@@ -1,0 +1,65 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+<style type="text/css">
+	form{
+		border: 1px solid #ced4da;
+		border-radius: 5px;
+		margin-left: 5px;
+		padding: 10px;
+		width: 500px;
+		font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+
+ 	input[type="text"] {
+	 	 width: 300px;
+	  	 display: inline;
+	  	 margin-bottom: 10px;
+	  	 padding: 0;
+		 border: 1px solid #ced4da;
+		 transition: box-shadow 0.3s, border 0.3s;
+		 border-radius: 3px;
+  	}
+  	label {
+  		font-weight: bold;
+  		color: #000; 
+  		display: inline-block; 
+  		width: 150px;
+  		padding: 5px;
+  		 }
+
+  	.boton {
+  		margin-top: 5px;
+  	}
+
+ </style>
+<form  method="post" enctype="multipart/form-data" >{% csrf_token %}
+
+	<div >
+		<label for="nombre">Nombre</label>
+		<input type="text" name="nombre" id="nombre" required>
+	</div>
+	<div>
+		<label for="nombre">Locación</label>
+		<input type="text" name="ubicacion" id="ubicacion" required>		
+	</div>
+	<div>
+		<label for="nombre">Inicio - Fin</label>	
+		<input id="inicio" type="date" placeholder="Fecha de inicio "  name="inicio" required />
+		<input id="fin" type="date" placeholder="Fecha de termino " name="fin" required />
+	</div>
+
+	<div>
+		<label for="nombre"></label>
+		<input type="submit" name="guardar" value="Guardar" class="boton btn btn-success">
+
+	</div>
+</form>
+
+
+
+{% endblock  %}
+
+
+

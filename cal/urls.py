@@ -46,6 +46,7 @@ urlpatterns = [
     url(r"^anulado/(?P<pk>\d+)/$","edt.views.mostrar_anulado" ),    
     url(r'^horas/', "edt.views.horas"),
     url(r"^devolver/","edt.views.devuelvehoras"),
+    url(r"^formacion/","edt.views.formacion"),
     url(r"^descontar/","edt.views.descontar"),
     url(r'^bgeneral/', "edt.views.bitgeneral"),
     url(r'^anulaciones/', "edt.views.anulaciones"),

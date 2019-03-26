@@ -73,6 +73,8 @@ import time
 import tablib
 # from edt.serializers import *
 
+
+
 def ReemplazoAPI(request):
     if not estaLogeado(request):
         return redirect("/login")
@@ -288,7 +290,6 @@ def funcionarioEvento(request):
         return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
 
-
     if  user.rol.id == 1:
         eventos = Usuario.objects.annotate(cant_eventos=Count('edt_user')).order_by("cant_eventos").filter(estado=1)
 
@@ -350,10 +351,10 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         usuario_id=Usuario.objects.get(id=persona)
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Mar 25 2018 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("May 10 2018 01:00AM")
-        inicio_agno = ("2018-02-15 00:00:00")
-        fecha_inicio = parser.parse("Feb 15 2018 01:00AM")        
+        fecha_cambio_TZ = parser.parse("Mar 25 2019 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("May 10 2019 01:00AM")
+        inicio_agno = ("2019-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2019 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
         contador = 0
 
@@ -377,9 +378,9 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
 
                 #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Santo_Domingo')
+                    to_zone = tz.gettz('America/Regina')
                 else:  
-                    to_zone = tz.gettz('America/Rio_Branco') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
+                    to_zone = tz.gettz('America/Rio_Branco') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -410,10 +411,10 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         usuario_id=request.session['usuario']
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Mar 25 2018 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("May 10 2018 01:00AM")
-        inicio_agno = ("2018-02-15 00:00:00")
-        fecha_inicio = parser.parse("Feb 15 2018 01:00AM")        
+        fecha_cambio_TZ = parser.parse("Mar 25 2019 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("May 10 2019 01:00AM")
+        inicio_agno = ("2019-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2019 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
         contador = 0
         ids = []
@@ -434,9 +435,9 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
 
                #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Santo_Domingo')
+                    to_zone = tz.gettz('America/Regina')
                 else:  
-                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03
+                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -2486,7 +2487,7 @@ def main(request):
     #lista = [ {"nombre" : obj.nombre, "apellido" : obj.apelldio} for obj in queryset]   
 
     if usuarioObj.id not in en_sindicato:
-        formset.fields["tipo"].queryset = Tipo_Permiso.objects.filter(id__in=[1,2])
+        formset.fields["tipo"].queryset = Tipo_Permiso.objects.exclude(id__in=[3])
 
     usuarios = {}
     for permiso in permisos:
@@ -2552,6 +2553,43 @@ def main(request):
     
     return render_to_response("edt/main.html", data)
    # return render_to_response("edt/main.html", {"user" : usuarioObj},context_instance=RequestContext(request))
+
+def formacion(request):
+    if not estaLogeado(request):
+            return redirect("/login")
+    hoy = datetime.now()
+    agno = hoy.year
+    usuario = Usuario.objects.get(id=request.session['usuario'])
+    data = {
+        "usuario": usuario,
+    }
+    if request.method == 'POST':
+        nombre = request.POST.get("nombre")
+        inicio = request.POST.get("inicio")
+        fin = request.POST.get("fin")
+        ubicacion = request.POST.get("ubicacion")
+
+
+        data = {
+            "usuario": usuario,
+            "nombre" : nombre,
+            "inicio" : inicio,
+            "fin" :  fin,
+            "ubicacion" : ubicacion,
+            "agno" :  agno,
+        }
+
+        #formacion = Formacion(nombre=nombre,inicio=inicio,fin=fin,ubicacion=ubicacion,agno=agno)
+        #formacion.save()
+
+        return HttpResponse(agno)
+        #return render_to_response("edt/formacion.html",data,context_instance=RequestContext(request))
+    else:
+        return render_to_response("edt/formacion.html",data,context_instance=RequestContext(request))    
+
+
+
+
 
 def descontar(request):
     if not estaLogeado(request):
