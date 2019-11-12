@@ -1,3 +1,4 @@
+
 body{margin:0px;
 	 padding:0px;
 	 background:rgb(255,255,255);
@@ -6,6 +7,17 @@ footer a {
 	color: #000000;
 
 }
+
+@font-face {
+  font-family: Lato-Regular;
+  src: url('/static/fonts/Lato-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Lato-Bold;
+  src: url('/static/fonts/Lato-Bold.ttf'); 
+}
+
 #contenedor{
 				width:100%;				
 				background:rgb(250,250,250);
@@ -502,7 +514,7 @@ padding: 5px 5px 5px 25px;
 .msg-comprobante {
 	background-color: #FFFFFF;
 	border: 2px solid #FFFD00;
-	background-image: url(/static/img/bluefolder.png);
+	/*background-image: url(/static/img/bluefolder.png);*/
 	background-position: 320px 10%;
 	background-repeat: no-repeat;
 }
@@ -1364,4 +1376,57 @@ input[type="date"]:valid:before {
 }
 .FormacionId:hover{
 	border-right: 1px solid #fff;
+}
+.modlabel{
+	margin-top: 20px;
+}
+.tablainforme{
+	width: 90% !important;
+
+
+}
+table.tablainforme {
+  font-family: Lato-Bold,Verdana, Geneva, sans-serif;
+  border: 1px solid #FFFFFF;
+  width: 350px;
+  height: 200px;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.tablainforme td, table.tablainforme th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 2px;
+  font-family: Lato-Bold;
+}
+table.tablainforme tbody td {
+  font-size: 13px;
+  font-family: Lato-Regular;
+}
+table.tablainforme tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.tablainforme thead {
+  background: #0B6FA4;
+  border-bottom: 5px solid #FFFFFF;
+}
+table.tablainforme thead th {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #FFFFFF;
+}
+table.tablainforme thead th:first-child {
+  border-left: none;
+}
+
+table.tablainforme tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #D0E4F5;
+  border-top: 3px solid #444444;
+}
+table.tablainforme tfoot td {
+  font-size: 14px;
 }

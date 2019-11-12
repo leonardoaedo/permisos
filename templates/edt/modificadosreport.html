@@ -3,9 +3,26 @@
 
 {% block contenido %}
 
-
-        {% for modificado in modificados %}
-            {{modificado.permiso.usuario}} - {{modificado.usuario}}-{{modificado.comentario}}
-        {% endfor %}
-            
+<dir>
+  <div >
+    <table class="tablainforme">
+      <thead>
+        <th>N° permiso</th>
+        <th>Funcionario</th>
+        <th>Motivo</th>
+        <th>Quien lo efectua</th>
+        <th>Quien Autoriza</th>
+      </thead>
+      {% for modificado in modificados %}
+      <tr>
+        <td>{{modificado.permiso.id}}</td>
+        <td>{{modificado.permiso.usuario}}</td>
+        <td>{{modificado.comentario}}</td>
+        <td>{{modificado.usuario}}</td>
+        <td>{{modificado.autorizador}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</dir>
 {% endblock  %}

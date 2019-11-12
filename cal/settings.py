@@ -71,8 +71,8 @@ EMAIL_USE_TLS = True
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cal',
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'cal',
     'HOST': 'localhost',
     'USER': 'root',
     'PASSWORD': 'kores2014'
@@ -85,7 +85,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'es-CL'
 
-TIME_ZONE = 'America/Santiago'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 

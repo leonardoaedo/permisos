@@ -7,15 +7,17 @@ from django.template.loader import render_to_string
 from django.db.models import Count, Min, Sum, Avg , F
 
 def procesa_modificacion(request,id,usuarioObj): # procesa modificacion, guarda en Bitacora y enviar email
-	actividad = id	
+	actividad = id
 	resu = Resolucion()
 	resu.respuesta = request.POST['respuesta']
 	resu.resolutor = Usuario.objects.get(id=request.session['usuario'])
 	resu.razon = request.POST['comentario']
 	resu.permiso = Permiso.objects.get(id=request.POST['permiso'])
+	aut = request.POST['autorizador']
+	autorizador = Usuario.objects.get(id=aut)
 	permiso = Permiso.objects.get(id=request.POST['permiso'])
 	resu.save()
-	bitacora = Bitacora(actividad=actividad,usuario=usuarioObj,permiso=resu.permiso,comentario=resu.razon)
+	bitacora = Bitacora(autorizador=autorizador,actividad=actividad,usuario=usuarioObj,permiso=resu.permiso,comentario=resu.razon)
 	bitacora.save()
 	resolucion = Resolucion.objects.annotate(contar=Count('permiso')).filter(permiso=resu.permiso)
 
@@ -31,6 +33,7 @@ def procesa_modificacion(request,id,usuarioObj): # procesa modificacion, guarda 
 										   'apellido' : resu.permiso.usuario.apellido1,
 										   'horas':resu.permiso.horas_solicitadas,
 										   'permiso':permiso,
+										   'autorizador' : autorizador,
 										   'respuesta' : resu.get_respuesta_display,
 	    								   'resolucion' : resolucion[contador-1]})
 		html = template.render(context)
@@ -47,9 +50,12 @@ def procesa_modificacion(request,id,usuarioObj): # procesa modificacion, guarda 
 	    								   'apellido' : resu.permiso.usuario.apellido1,
 	    								   'rut': resu.permiso.usuario.rut,
 	    								   'dv':resu.permiso.usuario.dv,
+	    								   'comentario' : resu.razon,
+	    								   'autorizador' : autorizador,
 	    								   'nom_reemplazante':resu.permiso.reemplazante.nombre,
 	    								   'ap_reemplazante':resu.permiso.reemplazante.apellido1,
 	    								   'fecha': resu.permiso.fecha_creacion,
+	    								   'respuesta' : resu.get_respuesta_display,
 	    								   'resolucion' : resolucion[contador-1]})
 		html = template.render(context)
 		msg = EmailMessage('Modificacion de permiso', html, 'scpa@cdegaulle.cl', [resu.permiso.usuario.jefatura.correo3])

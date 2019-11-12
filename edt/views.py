@@ -1705,15 +1705,17 @@ def modpermisolst(request):
 def modpermiso(request, pk):
      if not estaLogeado(request):
             return redirect("/login")
+    
+     permiso = Permiso.objects.get(id=pk)
+     permiso_formset = PermisoFormSet(instance=permiso)
+     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+     idpermiso = Permiso.objects.get(pk=int(pk))
+     autorizador = Usuario.objects.filter(estado=3)
+
+     if len(permiso.resolucion_set.all()) > 0:
+        resolucion = permiso.resolucion_set.all()[0]
      else:
-         permiso = Permiso.objects.get(id=pk)
-         permiso_formset = PermisoFormSet(instance=permiso)
-         usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-         idpermiso = Permiso.objects.get(pk=int(pk))         
-         if len(permiso.resolucion_set.all()) > 0:
-            resolucion = permiso.resolucion_set.all()[0]
-         else:
-            resolucion = "Sin revisar"
+        resolucion = "Sin revisar"
             
 
      if  usuarioObj.rol.id == 1:
@@ -1722,7 +1724,7 @@ def modpermiso(request, pk):
         else:
             revisiones = ""            
         #return HttpResponse(resolucion)
-        return render_to_response("edt/modpermiso.html",{ "revisiones" : revisiones,"permiso_formset" : permiso_formset,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+        return render_to_response("edt/modpermiso.html",{ "autorizador" : autorizador,"revisiones" : revisiones,"permiso_formset" : permiso_formset,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
 
      if  usuarioObj.rol.id == 2:
         return render_to_response("edt/verpermisousuario.html",{ "resolucion" : resolucion,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
@@ -1832,7 +1834,6 @@ def permisos(request):
     # }
 
     # return render_to_response("edt/permisos.html",data,context_instance=RequestContext(request))
-
 
 def anulados(request):
     if not estaLogeado(request):

@@ -274,7 +274,7 @@ class Bitacora(models.Model):
     actividad = models.ForeignKey(Actividad)
     fecha = models.DateTimeField(auto_now_add=True,null=True)
     comentario = models.CharField(max_length=300, blank=True, null=True)
-    autorizado_por = models.ForeignKey(Usuario, related_name=autorizador, null=True)
+    autorizador= models.ForeignKey(Usuario, related_name="autorizador", null=True)
     def __unicode__(self):
         return "%s  %s"%(self.usuario,self.actividad)
 
