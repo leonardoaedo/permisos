@@ -351,8 +351,8 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         usuario_id=Usuario.objects.get(id=persona)
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Mar 25 2019 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("May 10 2019 01:00AM")
+        fecha_cambio_TZ = parser.parse("Apr 06 2019 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("Apr 14 2019 01:00AM")
         inicio_agno = ("2019-02-15 00:00:00")
         fecha_inicio = parser.parse("Feb 15 2019 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
@@ -380,7 +380,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Regina')
                 else:  
-                    to_zone = tz.gettz('America/Rio_Branco') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santo_Domingo') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -411,8 +411,8 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         usuario_id=request.session['usuario']
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Mar 25 2019 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("May 10 2019 01:00AM")
+        fecha_cambio_TZ = parser.parse("Apr 06 2019 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("Apr 14 2019 01:00AM")
         inicio_agno = ("2019-02-15 00:00:00")
         fecha_inicio = parser.parse("Feb 15 2019 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
@@ -423,7 +423,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
          #data = serializers.serialize("json", Calendari.objects.filter(usuario_id=usuario_id))
          #Objeto.objects.all().exclude(id__in=lista) parta excluir los que estan en la lista
         lista = []
-        for evento in Evento.objects.filter(usuario_id=usuario_id).filter(start__gte=inicio_agno):
+        for evento in Evento.objects.filter(usuario_id=usuario_id).filter(start__gte=inicio_agno).iterator():
                 evento.flageado = evento.id in ids                   
                 #formateo de timezone a milisegundos
                 from_zone = tz.gettz('Europe/Paris') 
@@ -435,9 +435,9 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
 
                #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Regina')
+                    to_zone = tz.gettz('America/Regina')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santo_Domingo') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -569,12 +569,12 @@ def urlcalendario(request):
 
             if (usuarioObj.estamento.id == 2 or usuarioObj.estamento.id == 3):
                 #CALCULO DE HORAS PARA PRIMARIA
-                suma += float(delta.seconds) / 2700
-                deltag = float(delta.seconds) / 2700
+                suma += float(delta.seconds) / 3600
+                deltag = float(delta.seconds) / 3600
                 deltas.append(round(deltag,2))
                 suma = round(suma,2) # redondeo a 2 decimales
-                sumafuncionario += float(delta.seconds) / 2700   # calculo para  funcionario
-                deltafuncionario = float(delta.seconds) / 2700  # calculo para  funcionario
+                sumafuncionario += float(delta.seconds) / 3600   # calculo para  funcionario
+                deltafuncionario = float(delta.seconds) / 3600  # calculo para  funcionario
                 deltaf.append(round(deltafuncionario,2))
                 evento_en_permiso = Eventos_en_Permisos(numero_evento=evento,numero_permiso=ultimopermiso,deltainforme=deltas[i],deltafuncionario=deltaf[i])
                 i += 1
@@ -712,7 +712,7 @@ def EstadisticaPermisos(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     if usuarioObj.rol.id == 1:
 
-        permisos = Permiso.objects.all().order_by("usuario__apellido1")
+        permisos = Permiso.objects.all().order_by("usuario__apellido1").filter(usuario__estado=1)
         estamento = Estamento.objects.all()
         usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
@@ -793,7 +793,7 @@ def bithoras(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     if usuarioObj.rol.id == 1:
 
-        permisos = Permiso.objects.all().order_by("usuario__apellido1")
+        permisos = Permiso.objects.all().order_by("usuario__apellido1").filter(usuario__estado=1)
         estamento = Estamento.objects.all()
         usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
@@ -938,7 +938,7 @@ class EstadisticaPermisosExcel(TemplateView):
     def get(self, request, *args, **kwargs):
 
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
-        permisos = Permiso.objects.all().order_by("id")
+        permisos = Permiso.objects.all().order_by("id").filter(usuario__estado=1)
         eventos_en_permisos = Eventos_en_Permisos.objects.all()
         usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
@@ -1086,7 +1086,7 @@ class EstadisticaPermisosPDF(PDFTemplateView):
             )
 
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
-        permisos = Permiso.objects.all().order_by("id")
+        permisos = Permiso.objects.all().order_by("id").filter(usuario__estado=1)
         eventos_en_permisos = Eventos_en_Permisos.objects.all()
         usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
@@ -1167,7 +1167,7 @@ class BitHorasPDF(PDFTemplateView):
             )
 
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
-        permisos = Permiso.objects.all().order_by("usuario__apellido1")
+        permisos = Permiso.objects.all().order_by("usuario__apellido1").filter(usuario__estado=1)
         estamento = Estamento.objects.all() 
         usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
@@ -1293,7 +1293,7 @@ class BitHorasExcel(TemplateView):
     def get(self, request, *args, **kwargs):
 
         usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
-        permisos = Permiso.objects.all().order_by("usuario__apellido1")
+        permisos = Permiso.objects.all().order_by("usuario__apellido1").filter(usuario__estado=1)
         estamento = Estamento.objects.all() 
         usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
@@ -1490,6 +1490,7 @@ def index(request):
             
                 
             formset = DocumentFormSet()
+            
             return render_to_response("edt/index.html", {"form": formset,"usuario": usuarioObj},context_instance=RequestContext(request))
         else:
                 return redirect("/main") 
@@ -1596,6 +1597,150 @@ def permisolst(request):
                }
             
         return render_to_response("edt/permisolst.html",data)
+
+
+def modpermisolst(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+    gerencia = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=1).filter(usuario__estamento=1)
+    dirgen = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=2).filter(usuario__jefatura=3)
+
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=2).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    #.exclude(id__in=dirgen).exclude(id__in=gerencia)
+
+    bitacoras = Bitacora.objects.all()
+    revisores = Revisor.objects.all()
+
+
+    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1).filter(estado=1)
+    foliocpe = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=cpe))    
+    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4).filter(estado=1)
+    folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
+    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5).filter(estado=1)
+    foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))    
+
+    if  usuarioObj.rol.nivel_acceso == 0:
+
+        
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        estamento_filtro = Estamento.objects.all()
+
+        if "filtrar" in request.GET:           
+
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")
+                permisos = permisos.filter(usuario=request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)   
+        elif "limpiar" in request.GET:
+            return redirect("/modpermisolst")       
+        
+        paginator = Paginator(permisos,30)
+        
+        try: pagina = int(request.GET.get("page",'1'))
+        except ValueError: pagina = 1
+            
+        try:
+            permisos = paginator.page(pagina)
+        except (InvalidPage, EmptyPage):
+            permisos = paginator.page(paginator.num_pages)
+
+
+        data = {
+                 "estamento":estamento,
+                 "foliocpe":foliocpe,
+                 "folioprimaria" :folioprimaria,
+                 "foliosecundaria" :foliosecundaria ,
+                 "permisos": permisos,
+                 "usuario" : usuarioObj,
+                 "permisos_list" : permisos.object_list,
+                 "months" : mkmonth_lst(),
+                 "usuarios_filtro" : usuarios_filtro,
+                 "estamento_filtro" : estamento_filtro,
+                 "bitacoras" : bitacoras,
+                 "revisores" : revisores,
+                 }
+
+
+        return render_to_response("edt/modpermisolst.html",data)
+        #return HttpResponse(administracion)
+
+    else:
+        #if     usuarioObj.username == request.session['usuario']:
+        if  usuarioObj.rol.nivel_acceso == 1:
+            ids = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+            permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(usuario=usuarioObj.id).exclude(id__in=ids).order_by("-fecha_creacion")
+            
+
+            paginator = Paginator(permiso,10)       
+            try: pagina = int(request.GET.get("page",'1'))
+            except ValueError: pagina = 1       
+            try:
+                permiso = paginator.page(pagina)
+            except (InvalidPage, EmptyPage):
+                permiso = paginator.page(paginator.num_pages)
+
+        data = {
+                 "foliocpe":foliocpe,
+                 "folioprimaria" :folioprimaria,
+                 "foliosecundaria" :foliosecundaria ,
+                 "permisos": permiso,
+                 "usuario" : usuarioObj,
+                 "permisos_list" : permiso.object_list,
+                 "months" : mkmonth_lst(),
+               }
+            
+        return render_to_response("edt/modpermisolst.html",data)
+
+def modpermiso(request, pk):
+     if not estaLogeado(request):
+            return redirect("/login")
+     else:
+         permiso = Permiso.objects.get(id=pk)
+         permiso_formset = PermisoFormSet(instance=permiso)
+         usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+         idpermiso = Permiso.objects.get(pk=int(pk))         
+         if len(permiso.resolucion_set.all()) > 0:
+            resolucion = permiso.resolucion_set.all()[0]
+         else:
+            resolucion = "Sin revisar"
+            
+
+     if  usuarioObj.rol.id == 1:
+        if len(permiso.resolucion_set.all()) > 2:
+            revisiones = Resolucion.objects.filter(permiso=permiso)
+        else:
+            revisiones = ""            
+        #return HttpResponse(resolucion)
+        return render_to_response("edt/modpermiso.html",{ "revisiones" : revisiones,"permiso_formset" : permiso_formset,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+
+     if  usuarioObj.rol.id == 2:
+        return render_to_response("edt/verpermisousuario.html",{ "resolucion" : resolucion,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+
+def modpermisoreport(request):
+    if not estaLogeado(request):
+            return redirect("/login")
+    usuario = Usuario.objects.get(id=request.session['usuario'])
+    
+
+    if  usuario.rol.nivel_acceso == 0:
+        modificados = Bitacora.objects.filter(actividad=8)
+        data = {
+            "modificados":modificados,
+            "usuario" : usuario,
+            }
+    return render_to_response("edt/modificadosreport.html",data,context_instance=RequestContext(request))
+
 
 def permisos(request):
     if not estaLogeado(request):
@@ -2479,6 +2624,13 @@ def main(request):
     horass = Horas.objects.filter(usuario=usuarioObj.id).filter(permiso__fecha_creacion__year=this_year)
     formset = PermisoFormSet()
 
+    diferencia_fechas = date.today() - usuarioObj.fecha_nac
+    diferencia_fechas = diferencia_fechas.days
+    edad = diferencia_fechas / 365.2425
+    edad = int(edad)
+
+    sexo = usuarioObj.sexo.id
+
     formset.fields["reemplazante"].queryset = Usuario.objects.filter(estado=1)
 
     en_sindicato = [sindi.usuario.pk for sindi in Sindicato.objects.all()]
@@ -2539,6 +2691,8 @@ def main(request):
     usuariosLista = [value for key,value in usuarios.iteritems()]
    
     data = {
+            "sexo" : sexo,
+            "edad" : edad,
             "form": formset,
             "usuario": usuarioObj,
             "permisos" : permisos ,
@@ -2559,33 +2713,238 @@ def formacion(request):
             return redirect("/login")
     hoy = datetime.now()
     agno = hoy.year
+    flag = 0
     usuario = Usuario.objects.get(id=request.session['usuario'])
     data = {
         "usuario": usuario,
-    }
+        }
+
+    diferencia_fechas = date.today() - usuario.fecha_nac
+    diferencia_fechas = diferencia_fechas.days
+    edad = diferencia_fechas / 365.2425
+    edad = int(edad)
+
+
     if request.method == 'POST':
         nombre = request.POST.get("nombre")
         inicio = request.POST.get("inicio")
         fin = request.POST.get("fin")
         ubicacion = request.POST.get("ubicacion")
+        flag = 1
 
+        formacion = Formacion(nombre=nombre,inicio=inicio,fin=fin,ubicacion=ubicacion,agno=agno)               
+        formacion.save()  
+
+        
 
         data = {
+            "edad" : edad,
             "usuario": usuario,
             "nombre" : nombre,
             "inicio" : inicio,
             "fin" :  fin,
             "ubicacion" : ubicacion,
+            "flag" : flag,
             "agno" :  agno,
         }
 
         #formacion = Formacion(nombre=nombre,inicio=inicio,fin=fin,ubicacion=ubicacion,agno=agno)
         #formacion.save()
 
-        return HttpResponse(agno)
-        #return render_to_response("edt/formacion.html",data,context_instance=RequestContext(request))
+        #return HttpResponse(edad)
+        return render_to_response("edt/formacion.html",data,context_instance=RequestContext(request))
     else:
         return render_to_response("edt/formacion.html",data,context_instance=RequestContext(request))    
+
+def formacionlist(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+
+    usuario = Usuario.objects.get(id=request.session['usuario'])
+    formaciones = Formacion.objects.all()
+
+    data = {
+            "usuario" :  usuario,
+            "formaciones" : formaciones, 
+           }
+    return render_to_response("edt/formacionlist.html",data,context_instance=RequestContext(request))
+
+def formacionEdit(request,pk):
+    if not estaLogeado(request):
+            return redirect("/login")
+    hoy = datetime.now()
+    agno = hoy.year
+    flag = 0
+    usuario = Usuario.objects.get(id=request.session['usuario'])    
+    formacion = Formacion.objects.get(id=pk)
+
+    if request.POST:
+        formacion.nombre = request.POST.get('nombre')
+        formacion.ubicacion = request.POST.get('ubicacion')
+        formacion.inicio = request.POST.get('inicio')
+        formacion.fin = request.POST.get('fin')
+        formacion.save()
+        flag = 1
+
+    data = {
+
+        "formacion" : formacion,
+        "usuario" :  usuario,
+        "flag" : flag,
+    }
+         
+
+    return render_to_response("edt/formacionEdit.html",data,context_instance=RequestContext(request))
+
+
+def salidapedagogica(request):    
+    if not estaLogeado(request):
+            return redirect("/login")
+    hoy = datetime.now()
+    agno = hoy.year
+    flag = 0
+    usuario = Usuario.objects.get(id=request.session['usuario'])
+    data = {
+        "usuario": usuario,
+    }
+    
+
+    diferencia_fechas = date.today() - usuario.fecha_nac
+    diferencia_fechas = diferencia_fechas.days
+    edad = diferencia_fechas / 365.2425
+    edad = int(edad)
+
+
+    if request.method == 'POST':
+        nombre = request.POST.get("nombre")
+        inicio = request.POST.get("inicio")
+        fin = request.POST.get("fin")
+        ubicacion = request.POST.get("ubicacion")
+        flag = 1
+
+        salidapedagogica = SalidaPedagogica(nombre=nombre,inicio=inicio,fin=fin,ubicacion=ubicacion,agno=agno)
+        salidapedagogica.save()
+
+        data = { 
+            "edad" : edad,
+            "usuario": usuario,
+            "nombre" : nombre,
+            "inicio" : inicio,
+            "fin" :  fin,
+            "ubicacion" : ubicacion,
+            "flag" : flag,
+            "agno" :  agno,
+        }
+
+        #return HttpResponse(inicio)
+        return render_to_response("edt/SalidaPedagogica.html",data,context_instance=RequestContext(request))
+    else:
+        return render_to_response("edt/SalidaPedagogica.html",data,context_instance=RequestContext(request))
+
+def SalidaPedagogicalist(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+
+    usuario = Usuario.objects.get(id=request.session['usuario'])
+    SalidaPedagogicas = SalidaPedagogica.objects.all()
+
+    data = {
+            "usuario" :  usuario,
+            "SalidaPedagogicas" : SalidaPedagogicas, 
+           }
+    return render_to_response("edt/SalidaPedagogicalist.html",data,context_instance=RequestContext(request))
+
+def SalidaPedagogicaEdit(request,pk):
+    if not estaLogeado(request):
+            return redirect("/login")
+    hoy = datetime.now()
+    agno = hoy.year
+    flag = 0
+    usuario = Usuario.objects.get(id=request.session['usuario'])    
+    Salida = SalidaPedagogica.objects.get(id=pk)
+
+    if request.POST:
+        Salida.nombre = request.POST.get('nombre')
+        Salida.ubicacion = request.POST.get('ubicacion')
+        Salida.inicio = request.POST.get('inicio')
+        Salida.fin = request.POST.get('fin')
+        Salida.save()
+        flag = 1
+
+    data = {
+
+        "Salida" : Salida,
+        "usuario" :  usuario,
+        "flag" : flag, 
+    }
+
+    return render_to_response("edt/SalidaPedagogicaEdit.html",data,context_instance=RequestContext(request))
+
+
+def AusenciaLaboral(request):
+    if not estaLogeado(request):
+            return redirect("/login")
+    hoy = datetime.now()
+    agno = hoy.year
+    flag = 0
+    opt = 0
+    hoy = datetime.now()
+    agno = hoy.year        
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+    funcionarios = Usuario.objects.all().filter(estado=1)
+    reemplazantes = Usuario.objects.all().filter(estado=1)
+    formaciones = Formacion.objects.all().filter(inicio__year=agno)
+    salidaspedagogicas = SalidaPedagogica.objects.all().filter(inicio__year=agno)
+    motivos = Motivo_Ausencia_Laboral.objects.all()
+
+    if request.POST:
+        flag = 1
+        opt = request.POST.get('motivo')
+        funcionario = request.POST.get("funcionario")
+        reemplazante = request.POST.get("reemplazante")
+        funcionario_ = Usuario.objects.get(id=funcionario)
+        reemplazante_ = Usuario.objects.get(id=reemplazante)
+        motivo = Motivo_Ausencia_Laboral.objects.get(id=opt)
+
+        if opt == '1' :            
+            formacion = request.POST.get("formacion")              
+            formacion_ = Formacion.objects.get(id=formacion)
+            ausencia = Ausencia_Laboral(funcionario=funcionario_, formacion=formacion_, reemplazante=reemplazante_, motivo=motivo)
+            ausencia.save()
+
+        if opt == '2':             
+            salida = request.POST.get("salida")
+            salida_ = SalidaPedagogica.objects.get(id=salida)                     
+            ausencia = Ausencia_Laboral(funcionario=funcionario_, salida=salida_, reemplazante=reemplazante_, motivo=motivo)
+            ausencia.save()
+
+
+        if opt >= '3':
+            comentario = request.POST.get("comentario")
+            inicio = request.POST.get("inicio")
+            fin = request.POST.get("fin")
+            ausencia = Ausencia_Laboral(funcionario=funcionario_, comentario=comentario, inicio=inicio, fin=fin, reemplazante=reemplazante_, motivo=motivo)
+            ausencia.save()
+
+
+    
+    data = {
+        "usuario" : usuarioObj,
+        "funcionarios" : funcionarios,
+        "reemplazantes" :  reemplazantes,
+        "formaciones" : formaciones,
+        "salidaspedagogicas" : salidaspedagogicas,
+        "motivos" : motivos,
+        "flag" : flag,
+        "opt" : opt,
+    }
+
+
+    return render_to_response("edt/ausencia_laboral.html",data,context_instance=RequestContext(request))
+
+
+
 
 
 
@@ -2602,7 +2961,7 @@ def descontar(request):
    
 
     if  usuarioObj.rol.nivel_acceso == 0: 
-        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        usuarios = Usuario.objects.all().filter(estado=1) #.exclude(permiso__horas__horas_solicitadas=None)
 
         if request.method == 'POST':
             if "usuario" in request.POST and request.POST.get("usuario") != "":
@@ -2830,10 +3189,17 @@ def mostrar_respuesta(request, pk):
         usuarioObj = Usuario.objects.get(id=request.session['usuario'])
         idresolucion = Resolucion.objects.get(pk=int(pk))
         resolucion = Resolucion.objects.get(id=pk)
-        permiso = resolucion.permiso.id    
+        permiso = resolucion.permiso.id
 
+        data ={
+
+            "idresolucion" : idresolucion,
+            "usuario" : usuarioObj,
+            "permiso" : permiso,
+            "resolucion" : resolucion,
+        }
     
-    return render_to_response("edt/resolucion.html",{ "resolucion" : idresolucion,"usuario" : usuarioObj,"permiso" : permiso},context_instance=RequestContext(request)) 
+    return render_to_response("edt/resolucion.html",data,context_instance=RequestContext(request)) 
 
 def aprobarRechazar(request):
     if not estaLogeado(request):
@@ -2896,6 +3262,44 @@ def aprobarRechazar(request):
             horas.save()
             actividad = Actividad.objects.get(id=3)
             resu = procesa_resolucion(request,actividad,usuarioObj)        
+
+
+        if request.POST['respuesta'] == 'M' :
+            estado_permiso = Estado_Permiso.objects.get(id=4)
+            permiso = Permiso.objects.get(id=request.POST['permiso'])
+            permiso.comentario = request.POST.get('comentario')
+            permiso.sueldo = request.POST.get('sueldo')
+            permiso.devuelve_horas = request.POST.get('devuelve_horas')
+            permiso.estado = estado_permiso
+            #permiso.estado = Estado_Permiso.objects.filter(id=4) 
+            permiso.save()
+            horas = Horas.objects.get(permiso=permiso)            
+            #horas = Horas(permiso=permiso,usuario=permiso.usuario,horas_solicitadas=permiso.horas_solicitadas,horas_aprobadas=permiso.horas_solicitadas,horas_por_devolver=permiso.horas_solicitadas)
+            horas.permiso = permiso
+            horas.usuario = permiso.usuario
+            horas.horas_solicitadas = permiso.horas_solicitadas
+            horas.horas_aprobadas = permiso.horas_solicitadas
+            horas.horas_pendientes_por_aprobar = 0
+            if permiso.devuelve_horas == 'S':
+                horas.horas_por_devolver = permiso.horas_solicitadas
+                horas.horas_por_devolver_acumuladas = permiso.horas_solicitadas                
+
+            if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'S'):          
+                horas.horas_descontar = permiso.horas_solicitadas
+                horas.horas_por_devolver = 0                 
+
+            if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'C'):
+                horas.horas_descontar = 0
+                horas.horas_sin_recuperacion_con_goce = permiso.horas_solicitadas
+
+
+            horas.save()
+
+            form = PermisoFormSetEdit(request.POST,instance=permiso)
+            if form.is_valid():
+                form.save()
+            actividad = Actividad.objects.get(id=8)
+            resu = procesa_modificacion(request,actividad,usuarioObj)
 
 
         return redirect("/respuesta/%d"%(resu.id))

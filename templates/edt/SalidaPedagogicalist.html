@@ -1,0 +1,28 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+<div class="pxp">
+	<div><h3>Edición de Salidas Pedagógicas</h3></div>
+
+	
+	<div>
+	{% for SalidaPedagogica in SalidaPedagogicas %}
+
+	<div class="contenedorFormacion">
+			<a href="{% url 'edt.views.SalidaPedagogicaEdit' SalidaPedagogica.pk %}" >
+			<div class="FormacionId">{{SalidaPedagogica.id}}</div>
+			<div class="FormacionNombre"> {{SalidaPedagogica.nombre}}</div>
+			<div class="FormacionUbicacion"> {{SalidaPedagogica.ubicacion}}</div>
+			<div class="FormacionFechas" disabled>{{SalidaPedagogica.inicio|date:'l d F  Y'}}  de <b>{{SalidaPedagogica.inicio|date:'P'}} a {{SalidaPedagogica.fin|date:'P'}}</b></div>
+		</a>
+
+	</div>
+
+{% endfor %}
+
+{% endblock  %}
+
+
+

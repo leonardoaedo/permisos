@@ -1,3 +1,9 @@
+/**
+ * @preserve jQuery PeriodPicker plugin v6.3.6
+ * @homepage http://xdsoft.net/jqplugins/periodpicker/
+ * @copyright (c) 2018 xdsoft.net Chupurnov Valeriy
+ * @license PRO http://xdsoft.net/jqplugins/periodpicker/license/
+ */
 .xdsoft_noselect {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -168,6 +174,13 @@
      -moz-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
           box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
   display: none;
+}
+.periodpicker_timepicker_dialog.periodpicker_timepicker_inline {
+  display: inline-block;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+  position: relative;
 }
 .periodpicker_timepicker_dialog.visible {
   display: block;

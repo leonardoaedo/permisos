@@ -1,0 +1,27 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+<div class="pxp">
+	<div><h3>Edición de formaciones</h3></div>
+
+	
+	<div>
+	{% for formacion in formaciones %}
+
+	<div class="contenedorFormacion">
+			<a href="{% url 'edt.views.formacionEdit' formacion.pk %}" >
+			<div class="FormacionId">{{formacion.id}}</div>
+			<div class="FormacionNombre"> {{formacion.nombre}}</div>
+			<div class="FormacionUbicacion"> {{formacion.ubicacion}}</div>
+			<div class="FormacionFechas">{{formacion.inicio}}- {{formacion.fin}}</div>
+		</a>
+	</div>
+
+{% endfor %}
+
+{% endblock  %}
+
+
+

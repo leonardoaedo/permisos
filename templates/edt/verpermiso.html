@@ -24,11 +24,11 @@
 </ul>
 <ul class="list-group">
 	<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;">Detalle </h4></li>
-	{% for eventoObj in permiso.eventos_en_permisos_set.all %}	
+	{% for eventoObj in permiso.eventos_en_permisos_ordenados %}	
 
 	<li class="list-group-item" >
 	<span class="badge">{{eventoObj.delta}}</span>
-		{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|timezone:"America/Santiago"|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|timezone:"America/Santiago"|date:"G:i"}}</li><!--para el cambio de hora borrar o modificar el America/Santiago // America/Noronha  timezone   -->
+		{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|timezone:"America/Noronha"|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|timezone:"America/Noronha"|date:"G:i"}}</li><!--para el cambio de hora borrar o modificar el America/Santiago // America/Noronha  timezone   -->
 	{% endfor %}
 	<li class="list-group-item" >
 	<span class="badge">{% if permiso.usuario.jefatura.id == 1 or permiso.usuario.jefatura.id == 6 or permiso.usuario.jefatura.id == 7 %}Total{{"  "}}{{permiso.horas_solicitadas}} {% else %}

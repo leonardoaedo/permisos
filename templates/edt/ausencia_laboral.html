@@ -1,0 +1,263 @@
+{% extends "edt/base.html"%}
+
+{% block contenido %}
+<style type="text/css">
+  form{
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin: auto;
+    padding: 10px;
+    width: 600px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  input[type="text"] {
+     width: 350px;
+       display: inline;
+       margin-bottom: 10px;
+       margin-top: 5px;
+       padding: 0;
+     border: 1px solid #ced4da;
+     transition: box-shadow 0.3s, border 0.3s;
+     border-radius: 3px;
+    }
+    label {
+      font-weight: bold;
+      color: #000; 
+      display: inline-block; 
+      width: 150px;
+      padding: 5px;
+       }
+
+    .boton {
+      margin-top: 5px;
+    }
+
+ </style>
+{%if flag == 1  %}
+<div class="modal fade salida" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h3>Ingreso de Ausencias Laborales</h3>
+      </div>
+
+      <div class="modal-body">
+        
+        <div>Guardado exitosamente Opcion {{opt}}</div>
+      </div>  
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary btncerrar" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal salida-->
+
+
+{% else %}
+  <form  method="post" enctype="multipart/form-data" >{% csrf_token %}
+  <div class="container" id="container" style="margin-top: 30px;"><h3>Ingreso de Ausencias Laborales</h3></div>
+    <div>
+      <label for="funcionario">Funcionario</label>
+      <select name="funcionario" >
+        <option value="0">Seleccione Funcionario</option>
+        {% for funcionario in funcionarios %}  
+        <option value="{{funcionario.id}}" {% if funcionario.usuario_activo %}selected{% endif %}> {{funcionario}}  <!--{{persona.usuario_activo}}--> </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label for="funcionario">Reemplazante</label>
+      <select name="reemplazante" >
+        <option value="0">Seleccione Reemplazante</option>
+        {% for reemplazante in reemplazantes %}  
+        <option value="{{reemplazante.id}}" {% if reemplazante.usuario_activo %}selected{% endif %}> {{reemplazante}}  <!--{{persona.usuario_activo}}--> </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label for="motivo">Motivo</label>
+      <select name="motivo" class="motivo">
+        <option value="0">Seleccione Motivo</option>
+        {% for motivo in motivos %}
+        <option value="{{motivo.id}}" {% if motivo.motivo_activo %} selected {% endif %}>{{motivo.nombre}}</option>
+        {% endfor %}
+      </select>   
+    </div>
+
+    <div class="formacion">
+      <label for="formacion">Formación</label>
+       <select name="formacion">
+          <option value="0">Seleccione Formación</option>
+            {% for formacion in formaciones %}
+          <option value="{{formacion.id}}" {% if formacion.formacion_activo %} selected {% endif %}>{{formacion.nombre}} </option>
+            {% endfor %}
+      </select>
+    </div>
+
+    <div class="salida">
+      <label for="salida">Salida Pedagógica </label>
+      <select name="salida">
+        <option value="0">Seleccione Salida Pedagógica</option>
+        {% for salidaspedagogica in salidaspedagogicas %}
+        <option value="{{salidaspedagogica.id}}" {% if salida.salida_activa %} selected {% endif %}>{{salidaspedagogica.nombre}}</option>
+        {% endfor %}
+      </select>
+    </div> 
+
+    <div>
+      
+      <div class="form-group green-border-focus comment">
+        <label for="form10">Comentario</label>
+        <textarea  class="md-textarea form-control" rows="2"></textarea>
+        
+      </div>
+
+    </div>
+
+    <dir class="fecha">
+      <div class="form-group">
+                  <label for="dtp_input1" class="col-md-2 control-label">Inicio</label>
+                  <div class="input-group date form_datetime col-md-8" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                      <input class="form-control" size="16" name="inicio" type="text" value="" readonly>
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                  </div>
+          <input type="hidden" id="dtp_input1" value="" /><br/>
+      </div>
+
+      <div class="form-group">
+                  <label for="dtp_input2" class="col-md-2 control-label">Fin</label>
+                  <div class="input-group date form_datetime col-md-8" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                      <input class="form-control" size="16" name="fin" type="text" value="" readonly>
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                  </div>
+          <input type="hidden" id="dtp_input2" value="" /><br/>
+      </div>
+    
+    </dir>
+
+    
+
+    <div>   
+      <input  style="margin-left: 200px; margin-top: 10px" class=" btn btn-success" type="submit" value="Guardar" id="filtrar" name="filtrar" />
+    </div>
+  </form>
+{% endif %}
+
+<script type="text/javascript" src="/static/js/locales/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
+
+<script type="text/javascript">  
+    $('.motivo').on('change',function(){
+      var motivo = $(".motivo").val();
+      console.log(motivo);
+      switch(motivo){
+        case "1":
+          $('.formacion').show();
+          $('.salida').hide();
+          $('.comment').hide();
+          $('.fecha').hide();
+          break;
+        case "2":
+          $('.formacion').hide();
+          $('.salida').show();
+          $('.comment').hide();
+          $('.fecha').hide();
+          break;
+        case "3":
+          $('.formacion').hide();
+          $('.salida').hide();
+          $('.comment').show();
+          $('.fecha').show();
+          break;
+        case "4":
+          $('.formacion').hide();
+          $('.salida').hide();
+          $('.comment').show();
+          $('.fecha').show();
+          break;
+        case "5":
+          $('.formacion').hide();
+          $('.salida').hide();
+          $('.comment').show();
+          $('.fecha').show();
+          break;          
+        case "6":
+          $('.formacion').hide();
+          $('.salida').hide();
+          $('.comment').show();
+          $('.fecha').show();
+          break;
+        case "0":
+          $('.formacion').show();
+          $('.salida').show();
+          $('.comment').show();
+          $('.fecha').show();
+          break;
+      }
+    });
+</script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+      format: "yyyy-mm-dd hh:ii:ss",
+        language:  'es',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1,
+        startDate: "2019-06-11 10:00:00"
+    });
+  $('.form_date').datetimepicker({
+    format: "yyyy-mm-dd hh:ii:ss",
+        language:  'es',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+        startDate: "2019-06-11 10:00:00"
+    });
+  $('.form_time').datetimepicker({
+        format: "yyyy-mm-dd hh:ii:ss",
+        language:  'es',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0,
+        startDate: "2019-06-11 10:00:00"
+    });
+</script>
+
+<script type="text/javascript">
+var flag = {{flag}}
+$( document ).ready(function() {
+    console.log( flag );
+    if(flag == 1){
+      $('.salida').modal('show');
+    }
+    if($('.btncerrar').click(function(){
+      url = "http://cal.cdegaulle.cl/ausencia_laboral/";
+      $(location).attr("href",url);
+    }));
+    $('.salida').on('hide.bs.modal', function (e) {  
+      url = "http://cal.cdegaulle.cl/ausencia_laboral/";
+      $(location).attr("href",url);
+  });
+});
+</script>
+{% endblock  %}

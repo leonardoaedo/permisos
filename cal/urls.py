@@ -27,6 +27,8 @@ urlpatterns = [
     url(r'^permiso/','edt.views.ingresapermiso' ),
     url(r'^permisos/','edt.views.permisos' ),
     url(r'^permisolst/','edt.views.permisolst' ),
+    url(r"^modpermiso/(?P<pk>\d+)/$","edt.views.modpermiso"),
+    url(r'^modpermisolst/','edt.views.modpermisolst' ),
     url(r'^resolucion/','edt.views.aprobarRechazar' ),
     url(r"^respuesta/(?P<pk>\d+)/$","edt.views.mostrar_respuesta" ),
     url(r'^genero/','edt.views.wsGenero' ),
@@ -47,6 +49,12 @@ urlpatterns = [
     url(r'^horas/', "edt.views.horas"),
     url(r"^devolver/","edt.views.devuelvehoras"),
     url(r"^formacion/","edt.views.formacion"),
+    url(r"^formacionlist/","edt.views.formacionlist"),
+    url(r"^formacionEdit/(?P<pk>\d+)/$","edt.views.formacionEdit"),
+    url(r"^SalidaPedagogica/","edt.views.salidapedagogica"),
+    url(r"^SalidaPedagogicalist/","edt.views.SalidaPedagogicalist"),
+    url(r"^SalidaPedagogicaEdit/(?P<pk>\d+)/$","edt.views.SalidaPedagogicaEdit"),
+    url(r"^ausencia_laboral/","edt.views.AusenciaLaboral"),
     url(r"^descontar/","edt.views.descontar"),
     url(r'^bgeneral/', "edt.views.bitgeneral"),
     url(r'^anulaciones/', "edt.views.anulaciones"),
@@ -83,6 +91,7 @@ urlpatterns = [
     url(r'^UsuarioAPI/$',"edt.views.UsuarioAPI"),
     url(r'^LicenciaAPI/$',"edt.views.LicenciaAPI"),
     url(r'^ReemplazoAPI/$',"edt.views.ReemplazoAPI"),
+    url(r'^modificadosreport/',"edt.views.modpermisoreport"),
 
 
 

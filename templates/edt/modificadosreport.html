@@ -1,0 +1,11 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+
+        {% for modificado in modificados %}
+            {{modificado.permiso.usuario}} - {{modificado.usuario}}-{{modificado.comentario}}
+        {% endfor %}
+            
+{% endblock  %}

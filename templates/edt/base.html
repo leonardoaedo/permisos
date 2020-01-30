@@ -9,10 +9,7 @@
 		<!-- JS ###################################################################################-->
 		<script src="/static/js/bootstrap.js" /> </script>
 		 <script src="/static/js/jquery.timepicker.min.js" /> </script> 
-		<script src="/static/js/jquery.qtip.js" /> </script>
-		<link href="/static/css/print.css" rel="stylesheet" type="text/css" media="print" />
-		<script type="text/javascript" src="/static/js/jquery.periodpicker.full.min.js"></script>
-		<script src="/static/js/jquery.datetimepicker.full.js"></script>
+		<script src="/static/js/jquery.qtip.js" /> </script>		
 		<script type="text/javascript" src="/static/js/jquery.alerts.js"></script>
 		<script type="text/javascript" src="/static/js/jquery.ui.draggable.js"></script>		
 		<script src='/static/fullcalendar/lib/moment.min.js'></script>
@@ -22,12 +19,12 @@
 		<script src='/static/js/jquery.stickyheader.js'></script>
 		<script src="/static/js/jquery.chained.js"></script>
 		<script src="/static/js/jquery.chained.remote.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js"></script>
 
 		<!-- CSS ################################################################################# -->
-		<link rel='stylesheet' href='/static/fullcalendar/fullcalendar.css' />
-		<link rel="stylesheet" type="text/css" href="/static/css/jquery.periodpicker.min.css"/ >
+		<link href="/static/css/print.css" rel="stylesheet" type="text/css" media="print" />
+		<link rel='stylesheet' href='/static/fullcalendar/fullcalendar.css' />		
 		<link rel="icon" href="/static/img/favicon.png" type="image/x-icon"/>
-		<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
 		<link rel="stylesheet" href="/static/css/datepicker.css"> 
 		<link rel="stylesheet" href="/static/css/bootstrap.css">
 		<link rel="stylesheet" href="/static/css/style.css?version=1.2">
@@ -35,6 +32,7 @@
 		<link rel="stylesheet" href="/static/css/jquery.qtip.css">
 		<link rel="stylesheet" href="/static/css/hover-min.css" media="all">
 		<link rel="stylesheet" href="/static/css/print.css" media="print">
+		<link rel="stylesheet" href="/static/css/bootstrap-datetimepicker.min.css">
 		
 		<title>SCA - Lycée Charles de Gaulle</title>
 		</head>
@@ -53,7 +51,7 @@
 				  </div>
 				  <div class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav">
-				      {% if  usuario.rol.nivel_acceso == 0 %}
+				      {% if  usuario.id == 2 %}
 				      <li class="hvr-underline-from-center page-scroll"><a href="/">Cargar Horario</a></li>
 				      {% endif %}
 				      <li class="hvr-underline-from-center page-scroll"><a href="/main/">Solicitar</a></li>			      
@@ -69,6 +67,9 @@
 
 								  {% if  usuario.funcion.id == 36 or usuario.funcion.id == 26 or usuario.funcion.id == 31 or usuario.funcion.id == 58 %}
 				     				<li class="hvr-underline-from-center page-scroll"><a href="/licencia/">Ingresar Licencia</a></li>
+				     				<li class="hvr-underline-from-center page-scroll"><a href="/modpermisolst/">Modificación de Permisos</a></li>
+
+
 				      			  {% endif %}
 				      			  
 								  <li class="hvr-underline-from-center page-scroll"><a href="/bhoras">Informe Horas</a></li>
@@ -109,8 +110,9 @@
 					    	<li>Usuario Activo</li>
 					    	<li>
 					    		{% block usuario %}
-					    		{{ usuario.nombre }} {{usuario.apellido1}}
-					    		{% endblock %}
+					    		{{ usuario.nombre }} {{usuario.apellido1}}<br>
+					    		<!-- <span>Edad : </span>{{edad}} <span>Años</span>
+					    		{% endblock %} -->
 					    	</li>
 					    </ul>
 					</div>    

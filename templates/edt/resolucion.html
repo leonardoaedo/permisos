@@ -3,9 +3,21 @@
 
 {% block contenido %}
 
+<!-- {{resolucion.respuesta}} -->
+
+
 <script type="text/javascript">
-function redireccionar(){
-window.location="/permisolst/";
+
+var respuesta = "{{resolucion.respuesta}}";
+
+if ( respuesta == "M"){
+
+	function redireccionar(){window.location="/modpermisolst/";}
+
+}else{
+
+	function redireccionar(){window.location="/permisolst/";}
+
 }
 
 setTimeout ("redireccionar()", 2500);

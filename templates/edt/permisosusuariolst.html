@@ -29,7 +29,7 @@
 {% for hora in horas %}
       <tr {% if  hora.permiso.estado.id == 6 %} class='anulado' {% endif %} >
                 <td class="horas">
-                  <a class="list-group-item" href="{% url 'edt.views.verpermiso2' hora.permiso.pk %}"> {{forloop.counter}}</a>
+                  <a class="list-group-item" href="{% url 'edt.views.verpermiso' hora.permiso.pk %}"> {{forloop.counter}}</a>
                 </td>
           <td class="horas">{{ hora.permiso.primerEvento.numero_evento.start |date:"d F Y" }}</td>                  
                 <td class="horas">{{hora.permiso.tipo}}</td>

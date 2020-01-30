@@ -1,0 +1,80 @@
+{% extends  "edt/base.html" %}
+{% load staticfiles %}
+
+{% block contenido %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+<div id="resolucion" class="msg-comprobante">
+<ul class="list-group">
+{{form.errors}}
+<form method="post" action="/resolucion/">
+{% csrf_token %}	
+<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;width: 380px !important;">TIPO : {{permiso.tipo}} N° {{permiso.id}} </h4> <a href="/imprimepermiso?permiso={{permiso.id}}" target="_blank
+	" ><img class="imprimepermiso" src="/static/img/printer.ico"  height="24" width="24"></a></li>
+	<li class="list-group-item">Solicitante : {{permiso.usuario.nombre}},{{permiso.usuario.apellido1}}</li>
+	<li class="list-group-item">Rut : {{permiso.usuario.rut}}-{{permiso.usuario.dv}}</li>
+	<li class="list-group-item">Fecha Solicitud : {{permiso.fecha_creacion}}</li>
+	<li class="list-group-item">Motivo : {{permiso.motivo}}</li>
+	<li class="list-group-item frmcomentario">Comentario : {{permiso_formset.comentario}}</li>
+	<li class="list-group-item">Cantidad de horas/bloques solcitados : {{permiso.horas_solicitadas}}</li>
+	<li class="list-group-item">Devuelve Horas : {{permiso_formset.devuelve_horas }}</li>
+	<li class="list-group-item">Con o sin goce de sueldo : {{permiso_formset.sueldo}}</li>
+	<li class="list-group-item">Reemplazante : {{permiso.reemplazante}}</li>
+	<li class="list-group-item">Archivo Adjunto : {% if permiso.documento_adjunto.name %} <a target="_blank" href="/media/{{permiso.documento_adjunto}}">Ver Documento</a> {% else %} Sin documento adjunto{% endif %} </li>
+</ul>
+<ul class="list-group">
+	<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;">Detalle </h4></li>
+	{% for eventoObj in permiso.eventos_en_permisos_ordenados %}	
+
+	<li class="list-group-item" >
+	<span class="badge">{{eventoObj.delta}}</span>
+		{{eventoObj.numero_evento.start|date:"D d M "}}{{"   "}}{{eventoObj.numero_evento.start|timezone:"America/Noronha"|date:"G:i"}}{{"-"}} {{eventoObj.numero_evento.end|timezone:"America/Noronha"|date:"G:i"}}</li><!--para el cambio de hora borrar o modificar el America/Santiago // America/Noronha  timezone   -->
+	{% endfor %}
+	<li class="list-group-item" >
+	<span class="badge">{% if permiso.usuario.jefatura.id == 1 or permiso.usuario.jefatura.id == 6 or permiso.usuario.jefatura.id == 7 %}Total{{"  "}}{{permiso.horas_solicitadas}} {% else %}
+							   Total{{"  "}}{{permiso.horas_solicitadas}}{{"  Bloques Solicitados"}} 
+				        {% endif %}</span>
+	</li>
+</ul>
+
+
+</div>
+<div id="resolucion" class="msg-comprobante" >
+<ul class="list-group">
+	<li class="list-group-item active" ><h4 style="color:#FFFFFF !important;">Modificación</h4></li>
+	<li class="list-group-item" >
+<input type="hidden" name="permiso" value="{{permiso.id}}">
+
+	<p class="resolut">
+        
+		<div>
+		{% if revisiones %}
+			<ul class="list-group">
+				<li class="list-group-item active" ><h5 style="color:#FFFFFF !important;">Revisiones</h></li>		
+		{% for revisiones in revisiones %}
+			{% if revisiones.respuesta == "M" %}
+
+				<li class="list-group-item">Modificado  por {{revisiones.resolutor.nombre}} {{revisiones.resolutor.apellido1}} el {{ revisiones.fecha_resolucion|date:"d M"  }} </li>
+			{% endif %}
+
+		{% endfor%}
+			</ul>
+		{% endif %}	
+		
+		<label for="razon"><p class="resolut"><h3>Comentario:</h3></p>
+		<textarea class="razon" name="comentario"></textarea>
+		</label>
+		
+		<div class="botones">
+		<button type="submit" value="M" name="respuesta" id="modifica" class="btn btn-success ">Modificar</button>
+		
+	
+
+		</div>
+		</div>
+</p>
+</form></li>
+	
+</ul>
+</div>
+{% endblock %}

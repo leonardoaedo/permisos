@@ -1,3 +1,9 @@
+/**
+ * @preserve jQuery PeriodPicker plugin v6.3.6
+ * @homepage http://xdsoft.net/jqplugins/periodpicker/
+ * @copyright (c) 2018 xdsoft.net Chupurnov Valeriy
+ * @license PRO http://xdsoft.net/jqplugins/periodpicker/license/
+ */
 (function ($, window, document) {
     'use strict';
     var uniqueid = 1;
@@ -10,6 +16,7 @@
                     options.minTime = that.parse(options.minTime);
                 }
                 if (that.isValid(options.minTime)) {
+                    options.minTime = that.cloneTime(options.minTime);
                     if (now < options.minTime) {
                         now = that.cloneTime(options.minTime);
                     }
@@ -22,6 +29,7 @@
                     options.maxTime = that.parse(options.maxTime);
                 }
                 if (that.isValid(options.maxTime)) {
+                    options.maxTime = that.cloneTime(options.maxTime);
                     if (now > options.maxTime) {
                         now = that.cloneTime(options.maxTime);
                     }
@@ -61,12 +69,12 @@
             }
             return (pm && value < 12) ? value + 12 : value;
         };
-        that.change = function () {
+        that.change = function (notriggerchange) {
             var h;
             if (that.onChange.length) {
                 for (h = 0; h < that.onChange.length; h += 1) {
                     if ($.isFunction(that.onChange[h])) {
-                        that.onChange[h].call(that, that.get(), now);
+                        that.onChange[h].call(that, that.get(), now, notriggerchange);
                     }
                 }
             }
@@ -116,13 +124,13 @@
         that.parse = function (strOrDate) {
             return window.moment !== undefined ? moment(strOrDate, options.inputFormat).toDate() : Date.parse(strOrDate);
         };
-        that.set = function (strOrDate) {
-            var oldvalue = now.getTime(), buff = that.isValid(strOrDate) ? strOrDate : that.parse(strOrDate);
+        that.set = function (strOrDate, notriggerchange) {
+            var oldvalue = now.getTime(), buff = that.isValid(strOrDate) ? that.cloneTime(strOrDate) : that.parse(strOrDate);
             if (that.isValid(buff)) {
                 now = buff;
                 if (oldvalue !== now.getTime()) {
                     that.validate();
-                    that.change();
+                    that.change(notriggerchange);
                 }
             }
         };
@@ -204,6 +212,12 @@
         }
         return out;
     };
+    var deltaY = function (e) {
+        if (e.deltaY !== undefined) {
+            return e.deltaY;
+        }
+        return (e.detail || e.wheelDelta || e.originalEvent.deltaY) > 0 ? -1 : 1;
+    };
     TimePicker.prototype.init = function () {
         var that = this, start, diff, maxindex;
 
@@ -238,21 +252,22 @@
 
         that.currentime = new TimeWrapper(that.options);
 
-        if (that.startinput.length && that.startinput.val()) {
-            that.currentime.set(that.startinput.val());
-        } else {
-            that.currentime.set(that.options.defaultTime);
-        }
-
         if (that.options.onChange) {
             that.currentime.onChange.push(that.options.onChange);
         }
 
+        if (that.startinput.length && that.startinput.val()) {
+            that.currentime.set(that.startinput.val());
+        } else {
+            that.startinput.val(that.options.defaultTime);
+            that.currentime.set(that.options.defaultTime);
+        }
+
         if (that.options.saveOnChange) {
-            that.currentime.onChange.push(function (v) {
+            that.currentime.onChange.push(function (formatTime, normalTime, notriggerchange) {
                 var oldvalue = that.startinput.val();
-                that.startinput.val(v);
-                if (v !== oldvalue) {
+                that.startinput.val(formatTime);
+                if (formatTime !== oldvalue && !notriggerchange) {
                     that.startinput.trigger('change');
                 }
             });
@@ -280,8 +295,11 @@
             if (that.options.mouseWheel) {
                 var box = $(this), time = [null, null, null, null], i = parseInt($(this).data('index'), 10);
                 box.addClass('draggable');
+
+                var delta = deltaY(e);
+
                 if (i < 3) {
-                    time[i] = that.currentime.index(i) + (-e.deltaY * (that.options.inverseMouseWheel ? -1 : 1)) * that.options.steps[i];
+                    time[i] = that.currentime.index(i) + (-delta * (that.options.inverseMouseWheel ? -1 : 1)) * that.options.steps[i];
                 } else {
                     time[i] = that.currentime.index(i) - 1;
                 }
@@ -290,6 +308,7 @@
                 that.timer2 = setTimeout(function () {
                     box.removeClass('draggable');
                 }, 300);
+
                 e.preventDefault();
                 e.stopPropagation();
             }
@@ -456,12 +475,17 @@
         }
     };
 
-    $.fn.TimePicker = function (opt, opt1) {
+    $.fn.TimePicker = function (opt, opt1, opt3) {
         var returnValue = this, oldvalue;
         this.each(function () {
             var options,
                 $this = $(this),
                 timepicker = $this.data('timepicker');
+
+            // do nothing if call command instead init
+            if (!timepicker && typeof opt === 'string') {
+                return;
+            }
 
             if (!timepicker) {
                 options = $.extend(true, {}, $.fn.TimePicker.defaultOptions, opt);
@@ -484,7 +508,7 @@
                     $this.val(timepicker.currentime.get());
                     break;
                 case 'setValue':
-                    timepicker.currentime.set(opt1);
+                    timepicker.currentime.set(opt1, opt3);
                     timepicker.setTime();
                     break;
                 case 'setMin':
@@ -555,13 +579,19 @@
         that.startinput = $(startinput);
         that.picker = $('<div class="periodpicker_timepicker_dialog"></div>');
         that.startinput.TimePicker(options, that.picker);
-        $(document.body).append(that.picker);
-        that.startinput.on('focus.xdsoft' + that.uniqueid, function () {
-            that.show();
-        });
-        $(window).on('mousedown.xdsoft' + that.uniqueid, function () {
-            that.hide();
-        });
+        if (that.options.inline) {
+            that.picker.addClass('periodpicker_timepicker_inline');
+            that.startinput.after(that.picker).hide();
+            that.startinput.TimePicker('regenerate');
+        } else {
+            $(document.body).append(that.picker);
+            that.startinput.on('focus.xdsoft' + that.uniqueid, function () {
+                that.show();
+            });
+            $(window).on('mousedown.xdsoft' + that.uniqueid, function () {
+                that.hide();
+            });
+        }
     }
     TimePickerAlone.prototype.destroy = function () {
         this.startinput.TimePicker('destroy');
@@ -631,6 +661,7 @@
     };
     $.fn.timepickeralone = $.fn.TimePickerAlone;
     $.fn.TimePickerAlone.defaultOptions = {
+        inline: false,
         onHide: function () {
             return true;
         }

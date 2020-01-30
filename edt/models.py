@@ -171,7 +171,8 @@ class Permiso (models.Model):
 opciones = (
         ("A","Aprobado"),
         ("R","Rechazado"),
-        ("N","Anulado")
+        ("N","Anulado"),
+        ("M","Modificado")
 )
 
 
@@ -272,6 +273,8 @@ class Bitacora(models.Model):
     usuario = models.ForeignKey(Usuario)
     actividad = models.ForeignKey(Actividad)
     fecha = models.DateTimeField(auto_now_add=True,null=True)
+    comentario = models.CharField(max_length=300, blank=True, null=True)
+    autorizado_por = models.ForeignKey(Usuario, related_name=autorizador, null=True)
     def __unicode__(self):
         return "%s  %s"%(self.usuario,self.actividad)
 
@@ -355,8 +358,12 @@ class Licencia(models.Model):
         return  u"%s tomara licencia  %s, %s,%s - %s "%(self.funcionario,self.tipo,self.reposo,self.inicio,self.fin)
 
 
+class Motivo_Ausencia_Laboral(models.Model):
+    nombre = models.CharField(max_length=150)
 
+    def __unicode__(self):
 
+        return self.nombre
 
 class ReemplazoLicencia(models.Model):
     licencia = models.ForeignKey(Licencia)
@@ -385,13 +392,26 @@ class Formacion(models.Model):
 
 class SalidaPedagogica(models.Model):
     nombre = models.CharField(max_length=150)
-    inicio = models.DateTimeField()
-    fin = models.DateTimeField()
+    inicio = models.DateTimeField(null=True)
+    fin = models.DateTimeField(null=True)
     ubicacion = models.CharField(max_length=150)
     agno = models.CharField(max_length=4)
 
     def __unicode__(self):
         return u"%s"%(self.nombre)
+
+class Ausencia_Laboral(models.Model):
+    funcionario = models.ForeignKey(Usuario,null=True,blank=True)
+    motivo = models.ForeignKey(Motivo_Ausencia_Laboral)
+    formacion = models.ForeignKey(Formacion, blank=True, null=True)
+    salida = models.ForeignKey(SalidaPedagogica, blank=True, null=True)
+    comentario = models.CharField(max_length=300, blank=True, null=True)
+    reemplazante = models.ForeignKey(Usuario, related_name="usuario_reemplazante",default=162)
+    inicio = models.DateTimeField(null=True)
+    fin = models.DateTimeField(null=True)
+
+
+
 
 
 # class ReemplazoSalida(models.Model):

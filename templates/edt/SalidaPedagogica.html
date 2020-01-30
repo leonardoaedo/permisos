@@ -1,0 +1,168 @@
+{% extends "edt/base.html"%}
+
+{% block contenido %}
+<style type="text/css">
+	form{
+		border: 1px solid #ced4da;
+		border-radius: 5px;
+		margin-left: 5px;
+		margin: auto;
+		padding: 10px;
+		width: 600px;
+		font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+
+ 	input[type="text"] {
+	 	 width: 350px;
+	  	 display: inline;
+	  	 margin-bottom: 10px;
+	  	 margin-top: 5px;
+	  	 padding: 0;
+		 border: 1px solid #ced4da;
+		 transition: box-shadow 0.3s, border 0.3s;
+		 border-radius: 3px;
+  	}
+  	label {
+  		font-weight: bold;
+  		color: #000; 
+  		display: inline-block; 
+  		width: 150px;
+  		padding: 5px;
+  		 }
+
+  	.boton {
+  		margin-top: 5px;
+  	}
+
+ </style>
+{%if flag == 1  %}
+<div class="modal fade salida" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h3>Ingreso de Salidas Pedagógicas</h3>
+      </div>
+
+      <div class="modal-body">
+        
+        <div>La Salida Pedagógica ha sigo guardada exitosamente</div>
+      </div>  
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary btncerrar" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal salida-->
+
+
+{% else %}
+	<form  method="post" enctype="multipart/form-data" >{% csrf_token %}
+	<div class="container" id="container" style="margin-top: 30px;"><h3>Ingreso de Salida Pedagógica</h3></div>
+		<div>
+			<label for="nombre">Nombre</label>
+			<input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre de la Salida Pedagógicagica" required>
+		</div>
+		<div>
+			<label for="nombre">Locación</label>
+			<input type="text" name="ubicacion" id="ubicacion" placeholder="Ingrese el lugar de destino." required>		
+		</div>
+		<div class="form-group">
+                <label for="dtp_input1" class="col-md-2 control-label">Inicio</label>
+                <div class="input-group date form_datetime col-md-8" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" name="inicio" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                </div>
+				<input type="hidden" id="dtp_input1" value="" /><br/>
+         </div>
+
+         <div class="form-group">
+                <label for="dtp_input2" class="col-md-2 control-label">Fin</label>
+                <div class="input-group date form_datetime col-md-8" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" name="fin" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                </div>
+				<input type="hidden" id="dtp_input2" value="" /><br/>
+         </div>
+
+
+		
+
+		<div>		
+			<input  style="margin-left: 200px; margin-top: 10px" class=" btn btn-success" type="submit" value="Guardar" id="filtrar" name="filtrar" />
+		</div>
+	</form>
+{% endif %}
+
+<script type="text/javascript" src="/static/js/locales/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+    	format: "yyyy-mm-dd hh:ii:ss",
+        language:  'es',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1,
+        startDate: "2019-06-11 10:00:00"
+    });
+	$('.form_date').datetimepicker({
+		format: "yyyy-mm-dd hh:ii:ss",
+        language:  'es',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0,
+		startDate: "2019-06-11 10:00:00"
+    });
+	$('.form_time').datetimepicker({
+		format: "yyyy-mm-dd hh:ii:ss",
+        language:  'es',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0,
+		startDate: "2019-06-11 10:00:00"
+    });
+</script>
+
+<script type="text/javascript">
+var flag = {{flag}}
+
+$( document ).ready(function() {
+    console.log( flag );
+
+    if(flag == 1){
+    	$('.salida').modal('show');
+    }
+
+    if($('.btncerrar').click(function(){
+
+    	url = "http://cal.cdegaulle.cl/SalidaPedagogica";
+    	$(location).attr("href",url);
+    }));
+
+    $('.salida').on('hide.bs.modal', function (e) {  
+   		url = "http://cal.cdegaulle.cl/SalidaPedagogica";
+    	$(location).attr("href",url);
+	});
+
+});
+
+</script>
+{% endblock  %}
+
+
+

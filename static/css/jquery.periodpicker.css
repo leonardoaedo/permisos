@@ -1,11 +1,11 @@
 /**
- * @preserve jQuery PeriodPicker plugin v3.4.1
+ * @preserve jQuery PeriodPicker plugin v6.3.6
  * @homepage http://xdsoft.net/jqplugins/periodpicker/
- * @copyright (c) 2016 xdsoft.net Chupurnov Valeriy
+ * @copyright (c) 2018 xdsoft.net Chupurnov Valeriy
  * @license PRO http://xdsoft.net/jqplugins/periodpicker/license/
  */
 .xdsoft_noselect,
-.xdsoft_noselect * {
+.xdsoft_noselect *:not(input) {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -49,6 +49,18 @@
      -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
+.period_picker_input:focus:before {
+  background: #f6f6f6;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+     -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+.period_picker_input[disabled] {
+  color: #999;
+}
+.period_picker_input[disabled]:before {
+  background-color: #eee;
+}
 .period_picker_input:active:before {
   background-color: #f6f5f3;
   -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
@@ -80,6 +92,10 @@
 .period_picker_input .icon_calendar:after {
   visibility: hidden;
   content: '\00A0';
+}
+.period_picker_input[disabled] .icon_clear,
+.period_picker_input[disabled] .icon_calendar {
+  opacity: 0.5;
 }
 .period_picker_input .icon_clear {
   background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%3Cpath%20fill%3D%22%23444444%22%20d%3D%22M8%200c-4.418%200-8%203.582-8%208s3.582%208%208%208%208-3.582%208-8-3.582-8-8-8zM8%2014.5c-3.59%200-6.5-2.91-6.5-6.5s2.91-6.5%206.5-6.5%206.5%202.91%206.5%206.5-2.91%206.5-6.5%206.5z%22%3E%3C%2Fpath%3E%0A%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M10.5%204l-2.5%202.5-2.5-2.5-1.5%201.5%202.5%202.5-2.5%202.5%201.5%201.5%202.5-2.5%202.5%202.5%201.5-1.5-2.5-2.5%202.5-2.5z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
@@ -120,9 +136,11 @@
      -moz-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
           box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
   min-width: 236px;
+  max-width: 100%;
   min-height: 365px;
   padding-bottom: 80px;
   visibility: hidden;
+  display: none;
 }
 .period_picker_box,
 .period_picker_box * {
@@ -157,11 +175,18 @@
   margin-top: 0px;
   width: 100%  !important;
   height: 100%  !important;
+  max-width: 100%;
   left: 0 !important;
   top: 0  !important;
 }
+@media (max-width: 667px) {
+  .period_picker_box.period_picker_maximize {
+    min-width: 200px;
+  }
+}
 .period_picker_box.visible {
   visibility: visible;
+  display: block;
 }
 .period_picker_box.animation {
   opacity: 0;
@@ -193,6 +218,7 @@
   opacity: 1;
   margin: 0;
   z-index: 0;
+  display: inline-block;
 }
 .period_picker_box .period_picker_error {
   -webkit-box-shadow: 1px 1px 10px red!important;
@@ -221,6 +247,20 @@
   opacity: .5;
   right: 0;
 }
+.period_picker_box .period_picker_resizer:hover,
+.period_picker_box .period_picker_max_min:hover,
+.period_picker_box .period_picker_close:hover {
+  opacity: .9;
+}
+.period_picker_box .period_picker_resizer:active,
+.period_picker_box .period_picker_max_min:active,
+.period_picker_box .period_picker_close:active {
+  -webkit-transform: scale(1.2, 1.2);
+     -moz-transform: scale(1.2, 1.2);
+      -ms-transform: scale(1.2, 1.2);
+       -o-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
 .period_picker_box .period_picker_resizer {
   position: absolute;
   bottom: 0;
@@ -233,6 +273,9 @@
   z-index: 7;
   display: block;
   background-position: -42px 0;
+}
+.period_picker_box.period_picker_maximize .period_picker_resizer {
+  display: none;
 }
 .period_picker_box .period_picker_close,
 .period_picker_box .period_picker_max_min {
@@ -412,9 +455,8 @@
      -moz-border-radius: 5px;
           border-radius: 5px;
 }
-.period_picker_box .period_picker_days table table th.period_picker_holiday,
 .period_picker_box .period_picker_days table table td.period_picker_holiday {
-  color: #C11924;
+  color: #c11924;
 }
 .period_picker_box .period_picker_days table table th.period_picker_month {
   border: 0;
@@ -450,14 +492,18 @@
   bottom: 0;
   right: -5px;
 }
+.period_picker_box .period_picker_days table td.period_picker_cell_today {
+  background: #c8ffca;
+  color: #0e5632;
+}
 .period_picker_box .period_picker_days table td.period_picker_selected {
-  background: #FFEBA0;
+  background: #ffeba0;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
 }
 .period_picker_box .period_picker_days table td.period_picker_selected :hover {
-  background-color: #FFF5D0;
+  background-color: #fff5d0;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
@@ -692,6 +738,10 @@
   width: -moz-calc(100% - 174px);
   width: calc(100% - 174px);
   margin-left: 87px;
+}
+.period_picker_box.xdsoft_norange_timepickerinright.with_first_timepicker .period_picker_days {
+  margin-right: 87px;
+  margin-left: 0;
 }
 .period_picker_box .xdsoft_navigate {
   background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%0D%0A%3Csvg%20height%3D%2212px%22%20version%3D%221.1%22%20viewBox%3D%220%200%209%2012%22%20width%3D%229px%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Asketch%3D%22http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%2Fns%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0D%0A%09%3Ctitle%2F%3E%0D%0A%09%3Cdesc%2F%3E%0D%0A%09%3Cdefs%2F%3E%0D%0A%09%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%3E%0D%0A%09%09%3Cg%20fill%3D%22%23444444%22%20id%3D%22Core%22%20transform%3D%22translate(-218.000000%2C%20-90.000000)%22%3E%0D%0A%09%09%09%3Cg%20id%3D%22chevron-left%22%20transform%3D%22translate(218.500000%2C%2090.000000)%22%3E%0D%0A%09%09%09%09%3Cpath%20d%3D%22M7.4%2C1.4%20L6%2C0%20L-8.8817842e-16%2C6%20L6%2C12%20L7.4%2C10.6%20L2.8%2C6%20L7.4%2C1.4%20Z%22%20id%3D%22Shape%22%2F%3E%0D%0A%09%09%09%3C%2Fg%3E%0D%0A%09%09%3C%2Fg%3E%0D%0A%09%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E") no-repeat center center;

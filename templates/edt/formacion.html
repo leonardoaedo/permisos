@@ -7,15 +7,17 @@
 		border: 1px solid #ced4da;
 		border-radius: 5px;
 		margin-left: 5px;
+		margin: auto;
 		padding: 10px;
-		width: 500px;
+		width: 600px;
 		font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 
  	input[type="text"] {
-	 	 width: 300px;
+	 	 width: 350px;
 	  	 display: inline;
 	  	 margin-bottom: 10px;
+	  	 margin-top: 5px;
 	  	 padding: 0;
 		 border: 1px solid #ced4da;
 		 transition: box-shadow 0.3s, border 0.3s;
@@ -34,30 +36,77 @@
   	}
 
  </style>
-<form  method="post" enctype="multipart/form-data" >{% csrf_token %}
+{%if flag == 1  %}
+<div class="modal fade formacion" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h3>Ingreso de Formaciones</h3>
+      </div>
 
-	<div >
-		<label for="nombre">Nombre</label>
-		<input type="text" name="nombre" id="nombre" required>
-	</div>
-	<div>
-		<label for="nombre">Locación</label>
-		<input type="text" name="ubicacion" id="ubicacion" required>		
-	</div>
-	<div>
-		<label for="nombre">Inicio - Fin</label>	
-		<input id="inicio" type="date" placeholder="Fecha de inicio "  name="inicio" required />
-		<input id="fin" type="date" placeholder="Fecha de termino " name="fin" required />
-	</div>
+      <div class="modal-body">
+        
+        <div>La formación ha sigo guardada exitosamente</div>
+      </div>  
 
-	<div>
-		<label for="nombre"></label>
-		<input type="submit" name="guardar" value="Guardar" class="boton btn btn-success">
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary btncerrar" data-dismiss="modal">Cerrar</button>
+      </div>
 
-	</div>
-</form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal formacion-->
 
 
+{% else %}
+	<form  method="post" enctype="multipart/form-data" >{% csrf_token %}
+	<div class="container" id="container" style="margin-top: 30px;"><h3>Ingreso de Formaciones</h3></div>
+		<div>
+			<label for="nombre">Nombre</label>
+			<input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre de la formación" required>
+		</div>
+		<div>
+			<label for="nombre">Locación</label>
+			<input type="text" name="ubicacion" id="ubicacion" placeholder="Ingrese el lugar donde se efectuara la formación" required>		
+		</div>
+		<div>
+			<label for="nombre">Inicio - Fin</label>	
+			<input id="inicio" type="date"   name="inicio" required />
+			<input id="fin" type="date"  name="fin" required />
+		</div>
+
+		<div>		
+			<input  style="margin-left: 200px; margin-top: 10px" class=" btn btn-success" type="submit" value="Guardar" id="filtrar" name="filtrar" />
+		</div>
+	</form>
+{% endif %}
+
+<script type="text/javascript">
+var flag = "{{flag}}";
+
+$( document ).ready(function() {
+    console.log( flag );
+
+    if(flag == 1){
+    $('.formacion').modal('show');
+    }
+
+    if($('.btncerrar').click(function(){
+
+    	url = "http://cal.cdegaulle.cl/formacion";
+    	$(location).attr("href",url);
+    }));
+
+    $('.formacion').on('hide.bs.modal', function (e) {  
+   		url = "http://cal.cdegaulle.cl/formacion";
+    	$(location).attr("href",url);
+	});
+
+});
+
+</script>
 
 {% endblock  %}
 

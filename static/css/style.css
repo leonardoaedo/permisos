@@ -774,6 +774,23 @@ padding: 5px 5px 5px 25px;
 
 }
 
+.modal label{
+	font-size: 14px;
+	display: inline-block;
+	width: 230px;
+	height: 26px;
+  	margin-right:0.5em;
+  	padding-top:7px;
+  	text-align:left;
+  	font-weight: bold;
+  	color: #000; 
+}
+
+.modal span{
+	font-family: Helvetica;
+	margin-left: 30px;
+}
+
 .botfiltro .btn {
 	width: 120px;
 }
@@ -1309,4 +1326,42 @@ input[type="date"]:valid:before {
 	width: 150px;
 	border: 1px solid black;
 	text-align: center;
+}
+
+.FormacionId{
+	float: left;
+	font-size: 30px;
+	font-weight: bolder;
+	overflow: hidden;
+	width: 100px !important;
+	height: 50px !important;
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	padding: 4px;
+	border-right: 1px solid #000;
+	margin-right: 10px;
+}
+.contenedorFormacion a {
+	color: #000000 !important;
+	text-decoration: none !important;
+
+}
+.contenedorFormacion a:hover {
+	color: #fff !important;
+	text-decoration: none !important;
+
+}
+.contenedorFormacion {
+	border: 1px solid #000;
+	padding: 5px;
+	margin-bottom: 3px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+.contenedorFormacion:hover{
+	background-color: #503d70;
+}
+.FormacionId:hover{
+	border-right: 1px solid #fff;
 }

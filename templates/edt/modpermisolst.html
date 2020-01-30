@@ -1,0 +1,119 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+{% if usuario.rol.nivel_acceso == 0 %}
+<dir><h1>Modificación de permisos</h1></dir>
+  <div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+  <fieldset>
+  <ul>
+    <li>
+      <label class="label label-primary" > Funcionario</label>
+      <select name="persona" >
+        <option value="0">Seleccione Funcionario</option>
+        {% for persona in usuarios_filtro %}  
+        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}  <!--{{persona.usuario_activo}}--> </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <label class="label label-primary" >Estamento</label>
+      <select name="estamento">
+        <option value="0">Seleccione Estamento</option>
+        {% for estament in estamento_filtro %}
+        <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
+        {% endfor %}
+      </select>
+    </li> 
+    <li class="botfiltro">
+      <input class=" btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
+      <input class=" btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
+
+    </li>
+  </ul>
+  </fieldset> 
+  </form>
+ </div> 
+ {% endif %}
+<div class="pxp" ><h4>permisos ya resueltos <!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </h4>
+	
+	<ul class="list-group permisolst">
+	{% for permiso in permisos_list %}
+
+	<li>
+    <a class="list-group-item"  href="{% url 'edt.views.modpermiso' permiso.pk %}">
+      <div class="numeropermiso">
+          N° {{permiso.id}} 
+      </div>  
+      <div class="nombrefuncionario">
+          {{ permiso.usuario.nombre }} {{ permiso.usuario.apellido1 }}
+      </div>
+      <div class="fechapermiso">
+          {{ permiso.primerEvento.numero_evento.start |date:"d F Y" }}
+      </div>  
+      <div >
+          {{permiso.tipo}} 
+      </div>
+     <span class="badge3">{{permiso.usuario.jefatura.nombre}}</span>
+
+        <!-- {% for revisor in revisores %}
+            {% if permiso.usuario.estamento.id == 5 and revisor.estamento.id == 5 %}  
+              {%  for bitacora in bitacoras %}  
+                    {% if bitacora.permiso.id == permiso.id %}                 
+                    <span class="{% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 5 %} badgerojo {% elif  bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2  %} badge2 {% endif %}">{{revisor.primero}} </span>
+                    {% endif %} 
+                    
+                    {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.funcion.id == 29 %}
+                          <span class="badge2">{{revisor.segundo}} </span>                    
+                    {% endif %}
+
+                    {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.funcion.id == 26 %}
+                          <span class="badge2">{{revisor.tercero}} </span>                 
+                    {% endif %}               
+              
+              {% endfor %}
+            {% endif %}  
+     {% endfor %}    -->
+
+       {%  for bitacora in bitacoras %}
+
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 27 %} <span class="badge2"> Dirección Secundaria </span>{% endif %}  
+          
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 7 %} <span class="badge2"> Dirección General </span>{% endif %}
+
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 26 %} <span class="badge2"> Dirección Primaria </span>
+          {% endif %}
+
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 13 %} <span class="badge2"> Gerencia </span>
+          {% endif %}
+
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 10 %} <span class="badge2"> Encargado Mantención </span>
+          {% endif %}
+
+          {% if bitacora.permiso.id == permiso.id and bitacora.actividad.id == 2 and bitacora.usuario.cargo.id == 15 %} <span class="badge2"> CPE </span>
+          {% endif %}      
+      
+       {% endfor %}   
+           
+    </a>		
+	</li>
+
+	{% empty %}
+    <li class="list-group-item">En este momento no hay ningun elemento para mostrar</li>
+
+	{% endfor %}
+	</ul>
+ 
+		    <nav>
+			{% if permisos.has_previous %}
+				<a href="?page={{ permisos.previous_page_number }}">Página anterior</a>
+			{% endif %}
+			<p class="paginador">Página {{ permisos.number }} de {{ permisos.paginator.num_pages }}</p>
+			{% if permisos.has_next %}
+			<a href="?page={{ permisos.next_page_number }}">Página siguiente</a>
+			{% endif %} 
+	        </nav>
+</div>	        
+{% endblock  %}

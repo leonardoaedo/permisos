@@ -4,6 +4,8 @@
 {% block contenido %}
 
 {% if usuario.rol.nivel_acceso == 0 %}
+  
+
   <div class="filtros">
   <form id="horas" class="form-horizontal" method="get">
       <fieldset>
@@ -18,8 +20,8 @@
             </select>
           </li>
           <li class="botfiltro">
-            <input class=" btn btn-success" type="submit" value="filtrar" id="filtrar" name="filtrar" />
-            <input class=" btn btn-danger" type="submit" value="Limpiar" id="limpiar" name="limpiar" />
+            <input class=" btn btn-success" type="submit" value="CARGAR" id="filtrar" name="filtrar" />
+            <input class=" btn btn-danger" type="submit" value="LIMPIAR" id="limpiar" name="limpiar" />
           </li>
         </ul>
       </fieldset>
@@ -27,7 +29,6 @@
  </div> 
  {% endif %}
     
- 
 <form id="main" name="main" class="form-horizontal" action="/urlcalendario/" method="post" enctype="multipart/form-data">
   <div  class="permiso" >
     <div id="frmpermiso"> 
@@ -66,6 +67,359 @@
     <input type="hidden" id="persona-data" name="data-persona">
 
   <input class="btn btn-success btn-lg" type="submit" value="Solicitar" id="botonCalendario"  />
+
+<div class="modal fade matrimonio" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>Matrimonio o acuerdo de unión civil</h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Duración : </label>
+          <div><span>5 días hábiles continuos.</span></div>
+        </div>
+        <div>
+          <label >¿Cuándo solicitar? : </label>
+          <div><span>En el día del matrimonio y en los días inmediatamente anteriores o posteriores al de la celebración civil.</span></div>
+        </div>
+        <div>
+          <label c>¿Cuándo dar aviso? : </label>
+          <div><span>Se debe avisar con 30 días de anticipación.</span></div>
+        </div>
+        <div>
+          <label>Documentación a presentar : </label>
+          <div><span>Dentro de los 30 días siguientes a la celebración el certificado de matrimonio del Servicio de Registro Civil e Identificación.</span></div>
+        </div>  
+        <div>
+          <label >Restricción : </label>
+          <div><span>Sin restricciones.</span></div>
+        </div>          
+        <div>
+          <label>Observación</label>
+          <div><span>Sin observaciones.</span></div>
+        </div>        
+      </div>
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal matrimonio-->
+
+<div class="modal fade mamografia" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>Examen de mamografía</h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Duración : </label>
+          <div><span>Medio día.</span></div>
+        </div>
+        <div>
+          <label >¿Cuándo solicitar? : </label>
+          <div><span>una vez al año.</span></div>
+        </div>
+        <div>
+          <label c>¿Cuándo dar aviso? : </label>
+          <div><span>Se debe avisar con una semana de anticipación.</span></div>
+        </div>
+        <div>
+          <label>Documentación a presentar : </label>
+          <div><span>Con posterioridad, los comprobantes que acrediten que se los realizó en la fecha estipulada.</span></div>
+        </div>  
+        <div>
+          <label >Restricción : </label>
+          <div><span>Trabajadoras mayores de 40 años, con contrato superior a 30 días.</span></div>
+        </div>          
+        <div>
+          <label>Observación</label>
+          <div><span>Sin observaciones.</span></div>
+        </div>        
+      </div>
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal mamografia-->
+
+<div class="modal fade prostata" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>Examen de Próstata</h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Duración : </label>
+          <div><span>Medio día.</span></div>
+        </div>
+        <div>
+          <label >¿Cuándo solicitar? : </label>
+          <div><span>una vez al año.</span></div>
+        </div>
+        <div>
+          <label c>¿Cuándo dar aviso? : </label>
+          <div><span>Se debe avisar con una semana de anticipación.</span></div>
+        </div>
+        <div>
+          <label>Documentación a presentar : </label>
+          <div><span>Con posterioridad, los comprobantes que acrediten que se los realizó en la fecha estipulada.</span></div>
+        </div>  
+        <div>
+          <label >Restricción : </label>
+          <div><span>Trabajadores mayores de 50 años, con contrato superior a 30 días.</span></div>
+        </div>          
+        <div>
+          <label>Observación</label>
+          <div><span>Sin observaciones.</span></div>
+        </div>        
+      </div>
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal prostata-->
+
+<div class="modal fade fallecimientopadreomadre" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>Fallecimiento del Padre o la Madre del trabajador</h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Duración : </label>
+          <div><span>3 días hábiles.</span></div>
+        </div>
+        <div>
+          <label >¿Cuándo solicitar? : </label>
+          <div><span>A partir del respectivo fallecimiento.</span></div>
+        </div>
+        <div>
+          <label c>¿Cuándo dar aviso? : </label>
+          <div><span>No aplica.</span></div>
+        </div>
+        <div>
+          <label>Documentación a presentar : </label>
+          <div><span>Ninguno.</span></div>
+        </div>  
+        <div>
+          <label >Restricción : </label>
+          <div><span>Ninguna.</span></div>
+        </div>          
+        <div>
+          <label>Observación</label>
+          <div><span>Sin observaciones.</span></div>
+        </div>        
+      </div>
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal fallecimientopadreomadre-->
+
+<div class="modal fade fallecimientohijoengestacion" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>Fallecimiento de un hijo en período de gestación</h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Duración : </label>
+          <div><span>3 días hábiles.</span></div>
+        </div>
+        <div>
+          <label >¿Cuándo solicitar? : </label>
+          <div><span>A partir del respectivo fallecimiento.</span></div>
+        </div>
+        <div>
+          <label c>¿Cuándo dar aviso? : </label>
+          <div><span>No aplica.</span></div>
+        </div>
+        <div>
+          <label>Documentación a presentar : </label>
+          <div><span>Ninguno.</span></div>
+        </div>  
+        <div>
+          <label >Restricción : </label>
+          <div><span>Ninguna.</span></div>
+        </div>          
+        <div>
+          <label>Observación</label>
+          <div><span>Sin observaciones.</span></div>
+        </div>        
+      </div>
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal fallecimientohijoengestacion -->
+
+<div class="modal fade fallecimientoconyuge" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>Fallecimiento del cónyuge o conviviente civil</h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Duración : </label>
+          <div><span>7 días corridos.</span></div>
+        </div>
+        <div>
+          <label >¿Cuándo solicitar? : </label>
+          <div><span>A partir del respectivo fallecimiento.</span></div>
+        </div>
+        <div>
+          <label c>¿Cuándo dar aviso? : </label>
+          <div><span>No aplica.</span></div>
+        </div>
+        <div>
+          <label>Documentación a presentar : </label>
+          <div><span>Ninguno.</span></div>
+        </div>  
+        <div>
+          <label >Restricción : </label>
+          <div><span>Ninguna.</span></div>
+        </div>          
+        <div>
+          <label>Observación</label>
+          <div><span>El funcionario cuenta con 1 mes de fuero laboral a contar del respectivo fallecimiento.</span></div>
+        </div>        
+      </div>
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal fallecimientoconyuge -->
+
+<div class="modal fade fallecimientohijo" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>Fallecimiento de un hijo </h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Duración : </label>
+          <div><span>7 días corridos.</span></div>
+        </div>
+        <div>
+          <label >¿Cuándo solicitar? : </label>
+          <div><span>A partir del respectivo fallecimiento.</span></div>
+        </div>
+        <div>
+          <label c>¿Cuándo dar aviso? : </label>
+          <div><span>No aplica.</span></div>
+        </div>
+        <div>
+          <label>Documentación a presentar : </label>
+          <div><span>Ninguno.</span></div>
+        </div>  
+        <div>
+          <label >Restricción : </label>
+          <div><span>Ninguna.</span></div>
+        </div>          
+        <div>
+          <label>Observación</label>
+          <div><span>El funcionario cuenta con 1 mes de fuero laboral a contar del respectivo fallecimiento.</span></div>
+        </div>        
+      </div>
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal fallecimientohijo-->
+
+<div class="modal fade padrenacimientohijo" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>El padre por nacimiento de un hijo</h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Duración : </label>
+          <div><span>5 días.</span></div>
+        </div>
+        <div>
+          <label >¿Cuándo solicitar? : </label>
+          <div><span>Desde el momento del parto de forma continua o distribuirlo dentro del primer mes desde la fecha de nacimiento.</span></div>
+        </div>
+        <div>
+          <label c>¿Cuándo dar aviso? : </label>
+          <div><span>Solicitar por escrito.</span></div>
+        </div>
+        <div>
+          <label>Documentación a presentar : </label>
+          <div><span>Certificado de nacimiento.</span></div>
+        </div>  
+        <div>
+          <label >Restricción : </label>
+          <div><span>Debe solicitarlo y hacer uso del permiso dentro del primer mes desde la fecha de nacimiento.</span></div>
+        </div>          
+        <div>
+          <label>Observación</label>
+          <div><span>Sin observaciones.</span></div>
+        </div>        
+      </div>
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal padrenacimientohijo  -->
+
   </form>
 <script>
 //por ahora aca, a futuro un poco mas ordenado
@@ -178,29 +532,131 @@ $(document).ready(function(){
         $("#listapermisos").toggle();
     });
 
-  $("#id_tipo").change(function(e){
-    if($("#id_tipo").val() >= 4 ){
-      $("#id_devuelve_horas").prop( "readonly", true );
-      $("#id_devuelve_horas").empty().append('<option selected value="N">Desactivado</option>');
-      $("#id_sueldo").prop( "readonly", true );
-      $("#id_sueldo").empty().append('<option selected value="C">Desactivado</option>');
-
-    }else{
+  
+  function reset_select(){
       $("#id_devuelve_horas").empty()
-      $("#id_sueldo").empty()
+      $("#id_sueldo").empty();
+      $("#id_motivo").empty();
+  }
+
+  function reactiva_select(){
+
       $("#id_devuelve_horas").prop( "readonly", false );
       $("#id_devuelve_horas").append('<option value="" selected="selected">---------</option>');
       $("#id_devuelve_horas").append('<option value="S">SI</option>');
       $("#id_devuelve_horas").append('<option value="N">NO</option>');
-      $("#id_devuelve_horas option[value='D']").remove();
       $("#id_sueldo").prop( "readonly", false );
       $("#id_sueldo").append('<option value="" selected="selected">---------</option>');
       $("#id_sueldo").append('<option value="C">Con goce de suedo</option>');
       $("#id_sueldo").append('<option value="S">Sin goce de suedo</option>');
-      $("#id_sueldo option[value='D']").remove();
-      }
+      
+  }
 
-      });
+  function carga_select_default(){
+      $("#id_motivo").append('<option value="" selected="selected">---------</option>');
+      $("#id_motivo").append('<option value="1">Motivo Personal</option>');
+      $("#id_motivo").append('<option value="2">Compromisos Laborales con otro empleador</option>');
+      $("#id_motivo").append('<option value="3">Enfermedad</option>');
+      $("#id_motivo").append('<option value="4">Hora Médico</option>');
+      $("#id_motivo").append('<option value="5">Hora medico de un familiar</option>');
+      $("#id_motivo").append('<option value="6">Exámenes médicos</option>');
+      $("#id_motivo").append('<option value="7">Exámenes médicos de un familiar</option>');
+      $("#id_motivo").append('<option value="8">Urgencia medica</option>');
+      $("#id_motivo").append('<option value="9">Urgencia médica de un familiar</option>');
+      $("#id_motivo").append('<option value="10">Funerales</option>');
+      $("#id_motivo").append('<option value="11">Viaje</option>');
+      $("#id_motivo").append('<option value="12">Trámites legales y/o municipales</option>');
+      $("#id_motivo").append('<option value="13">Graduación de un familiar</option>');
+      $("#id_motivo").append('<option value="14">Otros</option>');
+  } 
+
+  function carga_select_legales(){
+      $("#id_motivo").append('<option value="" selected="selected">---------</option>');
+      $("#id_motivo").append('<option value="15">Matrimonio o acuerdo de unión civil</option>');
+      $("#id_motivo").append('<option value="16">Examen de mamografía</option>');
+      $("#id_motivo").append('<option value="17">Examen próstata</option>');
+      $("#id_motivo").append('<option value="18">Fallecimiento del Padre o la Madre del trabajador</option>');
+      $("#id_motivo").append('<option value="19">Fallecimiento de un hijo en período de gestación</option>');
+      $("#id_motivo").append('<option value="20">Fallecimiento del cónyuge o conviviente civil</option>');
+      $("#id_motivo").append('<option value="21">Fallecimiento de un hijo</option>');
+      $("#id_motivo").append('<option value="22">Nacimiento de un hijo</option>');
+  }
+  function bloquea_select(){
+      $("#id_devuelve_horas").prop( "readonly", true );
+      $("#id_devuelve_horas").empty().append('<option selected value="N">Desactivado</option>');
+      $("#id_sueldo").prop( "readonly", true );
+      $("#id_sueldo").empty().append('<option selected value="C">Desactivado</option>');
+      $("#id_motivo").empty();
+  }
+
+
+  $("#id_tipo").change(function(e){
+    if($("#id_tipo").val() >= 4 ){
+      bloquea_select();
+      carga_select_legales();
+
+
+    }else{
+          reset_select();
+          reactiva_select();
+          carga_select_default();
+
+    }//fin else
+
+  });
+
+$("#id_motivo").change(function(e){
+  
+  if($("#id_motivo").val() == 15){
+    $('.matrimonio').modal('show');
+    }
+
+  if($("#id_motivo").val() == 16 && edad >= 40 && sexo == 2){
+    $('.mamografia').modal('show');
+  }
+  if ( ($("#id_motivo").val() == 16 && edad < 40  && sexo == 2) || ( $("#id_motivo").val() == 16 && edad >= 40 && sexo == 1) || ($("#id_motivo").val() == 16 && edad < 40 && sexo == 1 ) ){
+
+    $('.requisitosmamografia').modal('show');
+      e.preventDefault();
+  } 
+  
+  if($("#id_motivo").val() == 17 && edad >= 50 && sexo == 1 ){
+    $('.prostata').modal('show');
+   }
+
+   if ( ($("#id_motivo").val() == 17 && edad < 50  && sexo == 1) || ( $("#id_motivo").val() == 17 && edad >= 50 && sexo == 2) || ($("#id_motivo").val() == 17 && edad < 50 && sexo == 2 ) ){
+    
+    $('.requisitosprostata').modal('show');
+      e.preventDefault();
+      console.log("entre");
+  }  
+  
+  if($("#id_motivo").val() == 18){
+    $('.fallecimientopadreomadre').modal('show');
+
+  }
+  
+  if($("#id_motivo").val() == 19){
+    $('.fallecimientohijoengestacion').modal('show');
+
+  }
+  
+  if($("#id_motivo").val() == 20){
+    $('.fallecimientoconyuge').modal('show');
+
+  }
+  
+  if($("#id_motivo").val() == 21){
+    $('.fallecimientohijo').modal('show');
+
+  }
+
+  if($("#id_motivo").val() == 22){
+    $('.padrenacimientohijo').modal('show');
+
+  }
+
+});
 
   $("#main").submit(function(e){
     if(seleccionados.length == 0){
@@ -209,11 +665,19 @@ $(document).ready(function(){
       }
     });
     
+  // $('#main').submit(function(e){
+  //   if($('#id_devuelve_horas').val() == "S" && $('#id_sueldo').val() =="S" && $('#id_tipo').val() < 3)
+  //     alert("Permiso CON DEVOLUCIÓN de horas debe ser CON GOCE de sueldo");
+  //             e.preventDefault(e);
+
+  // });
+
   $('#main').submit(function(e){
-    if( $('#id_devuelve_horas').val() == "N" && $('#id_sueldo').val() == "C" ){
-      alert("Permiso SIN DEVOLUCIÓN de horas debe ser SIN GOCE de sueldo");
-      e.preventDefault(e);
-     }
+     if( $('#id_devuelve_horas').val() == "N" && $('#id_sueldo').val() == "C" && $('#id_tipo').val() < 3   ){
+        alert("Permiso SIN DEVOLUCIÓN de horas debe ser SIN GOCE de sueldo");
+              e.preventDefault(e);
+    }  
+     
     $("#calendario-data").val(JSON.stringify(seleccionados));
     $("#persona-data").val(personadata);
   });
