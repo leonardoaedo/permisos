@@ -62,7 +62,6 @@ from django.views.generic import ListView,DetailView
 from django.views.generic.edit import CreateView,FormView,UpdateView
 from django.views.generic.base import ContextMixin , TemplateView
 from django.db.models import Count, Min, Sum, Avg , F
-import time
 import calendar
 import icalendar
 import pytz
@@ -1503,8 +1502,9 @@ def permisolst(request):
     rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
     gerencia = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=1).filter(usuario__estamento=1)
     dirgen = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=2).filter(usuario__jefatura=3)
+    revisado_gerente = Resolucion.objects.values_list("permiso").filter(resolutor=39)
 
-    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=1).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=1).exclude(id__in=revisado_gerente).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
     
 
     bitacoras = Bitacora.objects.all()
@@ -2617,7 +2617,10 @@ def main(request):
     if not estaLogeado(request):
             return redirect("/login")
     hoy = datetime.now()
-    this_year = hoy.year   
+    this_year = hoy.year
+    primaria = Estamento.objects.get(id=3)
+    maternelle = Estamento.objects.get(id=2)
+
 
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     permisos = Permiso.objects.filter(usuario=usuarioObj.id)
@@ -2702,6 +2705,8 @@ def main(request):
             "horas" : horass,
             "en_sindicato" : en_sindicato,
             "hoy": hoy,
+            "primaria" : primaria,
+            "maternelle" : maternelle,
             #"fech" : fech,
            }
 
@@ -3127,12 +3132,15 @@ def verpermiso(request, pk):
             
 
      if  usuarioObj.rol.id == 1:
+        bitacora = Bitacora.objects.annotate(contador=Count('actividad')).filter(permiso=permiso).filter(actividad=2)
+        cuenta = len(bitacora)
+
         if len(permiso.resolucion_set.all()) > 0:
             revisiones = Resolucion.objects.filter(permiso=permiso)
         else:
             revisiones = ""            
         #return HttpResponse(resolucion)
-        return render_to_response("edt/verpermiso.html",{ "revisiones" : revisiones,"permiso_formset" : permiso_formset,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
+        return render_to_response("edt/verpermiso.html",{"cuenta" : cuenta,"bitacora" : bitacora, "revisiones" : revisiones,"permiso_formset" : permiso_formset,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
 
      if  usuarioObj.rol.id == 2:
         return render_to_response("edt/verpermisousuario.html",{ "resolucion" : resolucion,"permiso" : idpermiso,"usuario" : usuarioObj},context_instance=RequestContext(request))
@@ -3206,12 +3214,15 @@ def aprobarRechazar(request):
     if not estaLogeado(request):
         return redirect("/login")
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])     
-   
-    if request.POST:        
+    
+
+    if request.POST:
+        permiso = Permiso.objects.get(id=request.POST['permiso'])
+        bitacora = Bitacora.objects.annotate(contador=Count('actividad')).filter(permiso=permiso).filter(actividad=2)
+        aprovaciones = len(bitacora)        
 
         if request.POST['respuesta'] == 'A' :
-            estado_permiso = Estado_Permiso.objects.get(id=4)
-            permiso = Permiso.objects.get(id=request.POST['permiso'])
+            estado_permiso = Estado_Permiso.objects.get(id=4)            
             permiso.comentario = request.POST.get('comentario')
             permiso.sueldo = request.POST.get('sueldo')
             permiso.devuelve_horas = request.POST.get('devuelve_horas')
@@ -3225,17 +3236,20 @@ def aprobarRechazar(request):
             horas.horas_solicitadas = permiso.horas_solicitadas
             horas.horas_aprobadas = permiso.horas_solicitadas
             horas.horas_pendientes_por_aprobar = 0
-            if permiso.devuelve_horas == 'S':
-                horas.horas_por_devolver = permiso.horas_solicitadas
-                horas.horas_por_devolver_acumuladas = permiso.horas_solicitadas                
+            
+            if aprovaciones == 0:
 
-            if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'S'):          
-                horas.horas_descontar = permiso.horas_solicitadas
-                horas.horas_por_devolver = 0                 
+                if permiso.devuelve_horas == 'S':
+                    horas.horas_por_devolver = permiso.horas_solicitadas
+                    horas.horas_por_devolver_acumuladas = permiso.horas_solicitadas
+                
+                if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'S'):          
+                    horas.horas_descontar = permiso.horas_solicitadas
+                    horas.horas_por_devolver = 0                 
 
-            if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'C'):
-                horas.horas_descontar = 0
-                horas.horas_sin_recuperacion_con_goce = permiso.horas_solicitadas
+                if (permiso.devuelve_horas == 'N' and permiso.sueldo == 'C'):
+                    horas.horas_descontar = 0
+                    horas.horas_sin_recuperacion_con_goce = permiso.horas_solicitadas
 
 
             horas.save()
@@ -3248,8 +3262,7 @@ def aprobarRechazar(request):
             
 
         if request.POST['respuesta'] == 'R' :
-
-            permiso = Permiso.objects.get(id=request.POST['permiso'])
+            
             horas = Horas.objects.get(permiso=permiso)
             estado_permiso = Estado_Permiso.objects.get(id=5)
             permiso.estado = estado_permiso
@@ -3266,8 +3279,7 @@ def aprobarRechazar(request):
 
 
         if request.POST['respuesta'] == 'M' :
-            estado_permiso = Estado_Permiso.objects.get(id=4)
-            permiso = Permiso.objects.get(id=request.POST['permiso'])
+            estado_permiso = Estado_Permiso.objects.get(id=4)            
             permiso.comentario = request.POST.get('comentario')
             permiso.sueldo = request.POST.get('sueldo')
             permiso.devuelve_horas = request.POST.get('devuelve_horas')

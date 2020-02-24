@@ -673,10 +673,10 @@ $("#id_motivo").change(function(e){
   // });
 
   $('#main').submit(function(e){
-     if( $('#id_devuelve_horas').val() == "N" && $('#id_sueldo').val() == "C" && $('#id_tipo').val() < 3   ){
-        alert("Permiso SIN DEVOLUCIÓN de horas debe ser SIN GOCE de sueldo");
-              e.preventDefault(e);
-    }  
+    //  if( $('#id_devuelve_horas').val() == "N" && $('#id_sueldo').val() == "C" && $('#id_tipo').val() < 3   ){
+    //     alert("Permiso SIN DEVOLUCIÓN de horas debe ser SIN GOCE de sueldo");
+    //           e.preventDefault(e);
+    // }  
      
     $("#calendario-data").val(JSON.stringify(seleccionados));
     $("#persona-data").val(personadata);

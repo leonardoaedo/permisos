@@ -8,6 +8,11 @@
 {{fech}}
 {% endfor %}  -->
 
+{{usuario.estamento.id}}
+
+{{primaria.id}}
+{{maternelle.id}}
+
 <a href="#" id="mostrarocultar" name="mostrarocultar" value="mostrarocultar" class="mostrarocultar btn btn-info btn-sm">Click para Mostrar/Ocultar Resumen</a>
 
 <div id="listapermisos" class="listapermisos"> 
@@ -143,14 +148,17 @@
 		{{form.tipo.errors}}
 		<p><label for="tipo" >Tipo de Permiso<br/> a solicitar</label>{{form.tipo}}</p>
 		</div>
-		<div id="frmpermiso">
-		{{form.devuelve_horas.errors}}
-		<p class="devuelve_horas"><label for="fecha_devuelve_horas">Me comprometo a recuperar <br/> la(s) hora(s) </label>{{form.devuelve_horas}}</p>
-		</div>
-		<div id="frmpermiso">
-		{{form.sueldo.errors}}
-		<p class="sueldo"><label for="sueldo">Solicitud con o sin <br/>goce de sueldo</label>{{form.sueldo}}</p>
-		</div>		
+
+  
+  		<div id="frmpermiso">
+  		{{form.devuelve_horas.errors}}
+  		<p class="devuelve_horas"><label for="fecha_devuelve_horas">Me comprometo a recuperar <br/> la(s) hora(s) </label>{{form.devuelve_horas}}</p>
+  		</div>
+  		<div id="frmpermiso">
+  		{{form.sueldo.errors}}
+  		<p class="sueldo"><label for="sueldo">Solicitud con o sin <br/>goce de sueldo</label>{{form.sueldo}}</p>
+  		</div>
+ 
 	</div>
 
 	<div class="permiso">
@@ -578,7 +586,7 @@
 <script>
 var usuario = {{usuario.id}};
 var seleccionados = [];
-console.log (usuario);
+console.log ("usuario", usuario);
 $(document).ready(function(){
 	$( "input[type=file]" ).last().addClass( "custom-file-input" );
   $('label[title]').qtip();
@@ -623,7 +631,7 @@ $(document).ready(function(){
 	},
 	 
    	   eventClick: function(event){
-   	   		var hoy = new Date();
+   	  var hoy = new Date();
 			var dd = hoy.getDate();
 			var mm = hoy.getMonth()+1; //hoy es 0!
 			var yyyy = hoy.getFullYear();
@@ -676,8 +684,14 @@ $(document).ready(function(){
 <script type="text/javascript">
   var edad ={{edad}};
   var sexo = {{sexo}};
-  console.log(edad);
-  console.log(sexo);
+  var primaria = {{primaria.id}};
+  var maternelle = {{maternelle.id}}
+  var estamento = {{usuario.estamento.id}}
+  console.log("edad",edad);
+  console.log("Sexo",sexo);
+  console.log("Primaria",primaria);
+  console.log("maternelle",maternelle);
+  console.log("estamento",estamento);
 
 $(document).ready(function(){
 	$("#mostrarocultar").click(function(){
@@ -739,6 +753,18 @@ $(document).ready(function(){
       $("#id_sueldo").prop( "readonly", true );
       $("#id_sueldo").empty().append('<option selected value="C">Desactivado</option>');
       $("#id_motivo").empty();
+  }
+
+  function bloquea_select_primaria(){
+      $("#id_devuelve_horas").prop( "readonly", true );
+      $("#id_devuelve_horas").empty().append('<option selected value="N">No devuelve horas</option>');
+      $("#id_sueldo").prop( "readonly", true );
+      $("#id_sueldo").empty().append('<option selected value="S">Sin goce de sueldo</option>');
+      $("#id_motivo").empty();
+  }
+
+  if (estamento == primaria || estamento == maternelle){
+      bloquea_select_primaria();
   }
 
 
