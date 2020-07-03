@@ -13,7 +13,7 @@
 	<div class="contenedorFormacion">
 			<a href="{% url 'edt.views.formacionEdit' formacion.pk %}" >
 			<div class="FormacionId">{{formacion.id}}</div>
-			<div class="FormacionNombre"> {{formacion.nombre}}</div>
+			<div class="FormacionNombre"> <b>{{formacion.nombre}}</b></div>
 			<div class="FormacionUbicacion"> {{formacion.ubicacion}}</div>
 			<div class="FormacionFechas">{{formacion.inicio}}- {{formacion.fin}}</div>
 		</a>

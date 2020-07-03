@@ -2,8 +2,6 @@
 {% load staticfiles %}
 
 {% block contenido %}
-
-
 <h3>Carga de Horarios</h3>
 <h4>Seleccione Funcionario, detalle y archivo en formato .ics</h4>
 <form  method="post" enctype="multipart/form-data" class="form-inline" >{% csrf_token %}
@@ -15,14 +13,8 @@
 			<li class="list-group-item">{{form.filename}}</li>
 			{{form.docfile.errors}}
 			<li class="list-group-item">{{form.docfile}}</li>
-		</ul>
- 		<button type="submit"  value="Solicitar Permiso" class="btn btn-success btn-lg btn-block" >Cargar</button>
+		</ul> 		
  	</div>
+ 	<button type="submit"  value="Solicitar Permiso" class="btn btn-success btn-lg btn-block " >Cargar</button>
 </form>
-
-
-
 {% endblock  %}
-
-
-

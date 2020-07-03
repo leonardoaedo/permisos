@@ -27,8 +27,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from models import * 
 from array import *
 from numpy import *
@@ -70,9 +69,9 @@ import json
 import urllib
 import time
 import tablib
+from functools32 import lru_cache
+
 # from edt.serializers import *
-
-
 
 def ReemplazoAPI(request):
     if not estaLogeado(request):
@@ -470,7 +469,7 @@ def comprobante(request, pk):
         return render_to_response("edt/comprobante.html",{ "permiso" : permiso,"usuario" : usuarioObj})
         #return HttpResponse({ "permiso" : permiso,"usuario" : usuarioObj,"evento" : evento}) 
 
-@csrf_exempt
+@csrf_exempt 
 def urlcalendario(request):
     if not estaLogeado(request):
                 return redirect("/login")
@@ -2944,6 +2943,7 @@ def AusenciaLaboral(request):
         "motivos" : motivos,
         "flag" : flag,
         "opt" : opt,
+        "agno" : agno,
     }
 
 

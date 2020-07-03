@@ -8,7 +8,8 @@
 		margin-left: 5px;
 		margin: auto;
 		padding: 10px;
-		width: 600px;
+    overflow: hidden;
+    width: 650px;
 		font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 
@@ -28,6 +29,7 @@
   		display: inline-block; 
   		width: 150px;
   		padding: 5px;
+
   		 }
 
   	.boton {
@@ -62,16 +64,16 @@
 {% else %}
 	<form  method="post" enctype="multipart/form-data" >{% csrf_token %}
 	<div class="container" id="container" style="margin-top: 30px;"><h3>Ingreso de Salida Pedagógica</h3></div>
-		<div>
-			<label for="nombre">Nombre</label>
-			<input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre de la Salida Pedagógicagica" required>
+		<div class="elemento">
+			<label for="nombre" class="label--desc">Nombre</label>
+			<input type="text" name="nombre" id="nombre" class="input--style-5" placeholder="Ingrese el nombre de la Salida Pedagógicagica" required>
 		</div>
-		<div>
-			<label for="nombre">Locación</label>
-			<input type="text" name="ubicacion" id="ubicacion" placeholder="Ingrese el lugar de destino." required>		
+		<div class="elemento">
+			<label for="nombre" class="label--desc">Locación</label>
+			<input type="text" name="ubicacion" id="ubicacion" class="input--style-5" placeholder="Ingrese el lugar de destino." required>		
 		</div>
-		<div class="form-group">
-                <label for="dtp_input1" class="col-md-2 control-label">Inicio</label>
+		<div class="form-group elemento">
+                <label for="dtp_input1" class="label--desc">Inicio</label>
                 <div class="input-group date form_datetime col-md-8" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
                     <input class="form-control" size="16" name="inicio" type="text" value="" readonly>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
@@ -79,8 +81,8 @@
 				<input type="hidden" id="dtp_input1" value="" /><br/>
          </div>
 
-         <div class="form-group">
-                <label for="dtp_input2" class="col-md-2 control-label">Fin</label>
+         <div class="form-group elemento">
+                <label for="dtp_input2" class="label--desc">Fin</label>
                 <div class="input-group date form_datetime col-md-8" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
                     <input class="form-control" size="16" name="fin" type="text" value="" readonly>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>

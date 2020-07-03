@@ -9,7 +9,7 @@
 		margin-left: 5px;
 		margin: auto;
 		padding: 10px;
-		width: 600px;
+		width: 650px;
 		font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 
@@ -63,16 +63,16 @@
 {% else %}
 	<form  method="post" enctype="multipart/form-data" >{% csrf_token %}
 	<div class="container" id="container" style="margin-top: 30px;"><h3>Ingreso de Formaciones</h3></div>
-		<div>
-			<label for="nombre">Nombre</label>
-			<input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre de la formación" required>
+		<div class="elemento">
+			<label for="nombre" class="label--desc">Nombre</label>
+			<input type="text" name="nombre" id="nombre" class="input--style-5" placeholder="Ingrese el nombre de la formación" required>
 		</div>
-		<div>
-			<label for="nombre">Locación</label>
-			<input type="text" name="ubicacion" id="ubicacion" placeholder="Ingrese el lugar donde se efectuara la formación" required>		
+		<div class="elemento">
+			<label for="nombre" class="label--desc">Locación</label>
+			<input type="text" name="ubicacion" id="ubicacion" class="input--style-5" placeholder="Ingrese el lugar donde se efectuara la formación" required>		
 		</div>
-		<div>
-			<label for="nombre">Inicio - Fin</label>	
+		<div class="elemento">
+			<label for="nombre" class="label--desc">Inicio - Fin</label>	
 			<input id="inicio" type="date"   name="inicio" required />
 			<input id="fin" type="date"  name="fin" required />
 		</div>

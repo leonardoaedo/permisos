@@ -62,9 +62,9 @@
 {% else %}
   <form  method="post" enctype="multipart/form-data" >{% csrf_token %}
   <div class="container" id="container" style="margin-top: 30px;"><h3>Ingreso de Ausencias Laborales</h3></div>
-    <div>
+    <div class="elemento">
       <label for="funcionario">Funcionario</label>
-      <select name="funcionario" >
+      <select name="funcionario" class="select-css">
         <option value="0">Seleccione Funcionario</option>
         {% for funcionario in funcionarios %}  
         <option value="{{funcionario.id}}" {% if funcionario.usuario_activo %}selected{% endif %}> {{funcionario}}  <!--{{persona.usuario_activo}}--> </option>
@@ -72,9 +72,9 @@
       </select>
     </div>
 
-    <div>
+    <div class="elemento">
       <label for="funcionario">Reemplazante</label>
-      <select name="reemplazante" >
+      <select name="reemplazante" class="select-css">
         <option value="0">Seleccione Reemplazante</option>
         {% for reemplazante in reemplazantes %}  
         <option value="{{reemplazante.id}}" {% if reemplazante.usuario_activo %}selected{% endif %}> {{reemplazante}}  <!--{{persona.usuario_activo}}--> </option>
@@ -82,9 +82,9 @@
       </select>
     </div>
 
-    <div>
+    <div class="elemento">
       <label for="motivo">Motivo</label>
-      <select name="motivo" class="motivo">
+      <select name="motivo" class="motivo select-css">
         <option value="0">Seleccione Motivo</option>
         {% for motivo in motivos %}
         <option value="{{motivo.id}}" {% if motivo.motivo_activo %} selected {% endif %}>{{motivo.nombre}}</option>
@@ -92,9 +92,9 @@
       </select>   
     </div>
 
-    <div class="formacion">
+    <div class="formacion elemento">
       <label for="formacion">Formación</label>
-       <select name="formacion">
+       <select name="formacion" class="select-css">
           <option value="0">Seleccione Formación</option>
             {% for formacion in formaciones %}
           <option value="{{formacion.id}}" {% if formacion.formacion_activo %} selected {% endif %}>{{formacion.nombre}} </option>
@@ -102,9 +102,9 @@
       </select>
     </div>
 
-    <div class="salida">
+    <div class="salida elemento">
       <label for="salida">Salida Pedagógica </label>
-      <select name="salida">
+      <select name="salida" class="select-css">
         <option value="0">Seleccione Salida Pedagógica</option>
         {% for salidaspedagogica in salidaspedagogicas %}
         <option value="{{salidaspedagogica.id}}" {% if salida.salida_activa %} selected {% endif %}>{{salidaspedagogica.nombre}}</option>

@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'edt',
     'easy_pdf',
     #'rest_framework',
-   # 'schedule',
+    #'schedule',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'cal.urls'
 WSGI_APPLICATION = 'cal.wsgi.application'
 
 # EMAIL SETTINGS
-EMAIL_HOST = "mail.cdegaulle.cl"
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = "587"
 EMAIL_HOST_USER = "scpa@cdegaulle.cl"
 EMAIL_HOST_PASSWORD = "slimstar110"

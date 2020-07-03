@@ -1,9 +1,0 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID;LANGUAGE=fr:Copyright Index-Education - Index-Education - EDT2018 2018
-METHOD:PUBLISH
-X-CALSTART:20180129T000000Z
-X-CALEND:20190112T000000Z
-X-WR-CALNAME;LANGUAGE=fr:Emploi du Temps - Vega Ramon - du 02 février 2018 au 12 janvier 2019
-X-WR-CALDESC;LANGUAGE=fr:Emploi du Temps Vega Ramon généré par le logiciel EDT (©Index-Education) le 21 févr. 2018 - INDEX EDUCATION - semaines 5 - 2
-END:VCALENDAR
