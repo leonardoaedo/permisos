@@ -30,7 +30,7 @@
 				<li class="list-group-item">
 					<span class="badge">{{evento.delta}}</span>
 					{{evento.numero_evento.start|date:"D d M "}}{{"   "}}{{evento.numero_evento.start|timezone:"America/Noronha"|date:"G:i"}}{{"-"}} {{evento.numero_evento.end|timezone:"America/Noronha"|date:"G:i"}}
-					<!--para el cambio de hora borrar o modificar el America/Santiago // America/Noronha  timezone   -->
+					<!--para el cambio de hora borrar o modificar el America/Santiago // America/Santiago  timezone   -->
 				</li>
 				{% endfor %}
 				<li class="list-group-item" >

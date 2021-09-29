@@ -2,11 +2,24 @@
 {% load staticfiles %}
 <!-- ... -->
 {% block contenido %}
+
+<div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h2 class=""></h2>
+                  <p class="card-category">{{hoy}}</p>
+                </div>  
+
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
         <th>Correlativo</th>
         <th>Funcinario</th>
+        <th>Función</th>
         <th>Cant Eventos</th>
     </tr>
   </thead>  
@@ -15,10 +28,18 @@
     <tr>
       <td scope="row">{{ forloop.counter}}</td>
       <td>{{evento.nombre}} {{evento.apellido1}} </td>
+      <td>{{evento.funcion}}</td>
       <td>{{evento.cant_eventos}} </td>
     </tr>
   </tbody>
 
 {% endfor %}
 </table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
 {% endblock  %}

@@ -27,7 +27,8 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.shortcuts import redirect
 from models import * 
 from array import *
 from numpy import *
@@ -349,8 +350,8 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         usuario_id=Usuario.objects.get(id=persona)
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Apr 06 2019 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("Apr 14 2019 01:00AM")
+        fecha_cambio_TZ = parser.parse("Sep 04 2021 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("Apr 03 2022 01:00AM")
         inicio_agno = ("2019-02-15 00:00:00")
         fecha_inicio = parser.parse("Feb 15 2019 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
@@ -376,9 +377,9 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
 
                 #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Regina')
+                    to_zone = tz.gettz('America/Sao_Paulo')
                 else:  
-                    to_zone = tz.gettz('America/Santo_Domingo') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santiago') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -409,8 +410,8 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         usuario_id=request.session['usuario']
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Apr 06 2019 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("Apr 14 2019 01:00AM")
+        fecha_cambio_TZ = parser.parse("Sep 04 2021 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("Apr 03 2022 01:00AM")
         inicio_agno = ("2019-02-15 00:00:00")
         fecha_inicio = parser.parse("Feb 15 2019 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
@@ -433,9 +434,10 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
 
                #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Regina')# Regina -06 horas
+                    to_zone = tz.gettz('America/Sao_Paulo')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santo_Domingo') # America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santiago') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -1503,7 +1505,7 @@ def permisolst(request):
     dirgen = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=2).filter(usuario__jefatura=3)
     revisado_gerente = Resolucion.objects.values_list("permiso").filter(resolutor=39)
 
-    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=1).exclude(id__in=revisado_gerente).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=1).exclude(id__in=revisado_gerente).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion")
     
 
     bitacoras = Bitacora.objects.all()
@@ -3641,9 +3643,9 @@ def licencia(request):
 
                 licencia = formset.save(commit=False)
                 licencia.inicio = request.POST.get("inicio")
-                licencia.inicio = datetime.strptime(licencia.inicio + " 00:00:00"  , "%Y-%m-%d %H:%M:%S")
+                licencia.inicio = datetime.strptime(licencia.inicio + " 00:01:00"  , "%Y-%m-%d %H:%M:%S")
                 licencia.fin = request.POST.get("fin")
-                licencia.fin = datetime.strptime(licencia.fin  + " 00:00:00" , "%Y-%m-%d %H:%M:%S")
+                licencia.fin = datetime.strptime(licencia.fin  + " 00:01:00" , "%Y-%m-%d %H:%M:%S")
                 licencia.ingresadopor = user
                 licencia.cantidad_dias = request.POST.get("cantidad_dias")
                 licencia.save()
@@ -3711,10 +3713,10 @@ def licencia(request):
 
                 #============================================= envio de emails cuando se ingresa una licencia================
                 #=============================================definicion de destinatarios
-                proviseur = 'jmblondelle@cdegaulle.cl'
+                proviseur = 'jbouthier@cdegaulle.cl'
                 dirgen = 'dirgen@cdegaulle.cl'
                 secondaire = 'secondaire@cdegaulle.cl'
-                director_primaria = 'dwuillaume@cdegaulle.cl'
+                director_primaria = 'vvanrell@cdegaulle.cl'
                 director_secundaria = 'ibarra@cdegaulle.cl'
                 primaire = 'primaire@cdegaulle.cl'
                 cpe = 'asanchez@cdegaulle.cl'
@@ -3728,6 +3730,7 @@ def licencia(request):
                 context = RequestContext(request, {'nombre' : licencias.funcionario.nombre,
                                            'apellido' : licencias.funcionario.apellido1,
                                            'rut': licencias.funcionario.rut,
+                                           'funcion' : licencias.funcionario.funcion,
                                            'dv':licencias.funcionario.dv,
                                            'cantidad_dias':licencias.cantidad_dias,
                                            'inicio': licencias.inicio,

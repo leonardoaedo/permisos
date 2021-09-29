@@ -31,6 +31,8 @@ class Estamento (models.Model):
 
 class Funcion (models.Model):
         nombre = models.CharField(max_length=128)
+        class Meta:
+            ordering = ('nombre',)
         def __unicode__(self):              # __unicode__ on Python 2
             return self.nombre            
 
@@ -107,7 +109,7 @@ class Usuario(models.Model):
 
         def __unicode__(self):
                       # __unicode__ on Python 2
-            return u"%s %s"%(self.apellido1,self.nombre)
+            return u"%s %s "%(self.apellido1,self.nombre)
 
 devuelve = (
         ("S","SI"),
