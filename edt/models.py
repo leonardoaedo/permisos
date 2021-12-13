@@ -355,6 +355,8 @@ class Licencia(models.Model):
     horas = models.FloatField(default=0)
     ingresadopor = models.ForeignKey(Usuario, related_name="ingresado_por")
 
+    class Meta:
+            ordering = ('-fin',)
 
     def __unicode__(self):
         return  u"%s tomara licencia  %s, %s,%s - %s "%(self.funcionario,self.tipo,self.reposo,self.inicio,self.fin)

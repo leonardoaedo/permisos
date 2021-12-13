@@ -81,23 +81,23 @@
         <th>Duración</th>
         <th>Inicio</th>
         <th>Fin</th>        
-        <!-- <th>Acción</th> -->
+        <th>Estado</th>
        <!--  <th>ID Licencia</th> -->
       </tr>
     </thead>
   
-   {% for licencia in licencias %}
-  <tr>
+   {% for licencia in licencias %}   
+  <tr >
+<!--      <td>{{licencia.fin|utc}} -- {{hoy|utc}}</td>  -->
      <td>{{forloop.counter}}</td>
      <td >{{licencia.funcionario}}</td>
      <td >{{licencia.fecha|date:"D j M Y"}}</td>
      <td ><b>{{licencia.cantidad_dias}} Días</b></td>
      <td ><b>{{licencia.inicio|date:"D j M Y"}}</b></td>
      <td ><b>{{licencia.fin|date:"D j M Y"}}</b></td>
+     <td class="text-center">{% if licencia.fin|utc >= hoy|utc %} <span class="glyphicon glyphicon-flag text-danger"></span> {% else %} <span class="glyphicon glyphicon-flag text-success"></span> {% endif %} </td>
      <!-- <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger">Borrar Licencia</a></td> -->
     <!--  <td class="btn-success" align="center"><h4>{{licencia.id}}</h4></td> -->
-     
-
      
   </tr>
    {% empty %}

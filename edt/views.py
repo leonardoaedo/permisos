@@ -377,9 +377,9 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
 
                 #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Sao_Paulo')
+                    to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santiago') #  America/Rio_Branco ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santo_Domingo') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -434,9 +434,9 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
 
                #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Sao_Paulo')# Regina -06 horas
+                    to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santiago') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santo_Domingo') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
@@ -4019,7 +4019,8 @@ def ConLicencia(request):
         return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
 
-    licencias = Licencia.objects.all().order_by('-inicio')
+    licencias = Licencia.objects.all().order_by('-fin')
+    hoy = datetime.now()
     inicio = " "
     fin = " "
     
@@ -4074,6 +4075,7 @@ def ConLicencia(request):
                  "usuario" : user,
                  "inicio" : inicio,
                  "fin" : fin,
+                 "hoy" : hoy,
                  "licencias_list" : licencias.object_list,
                  "months" : mkmonth_lst(),
                  "usuarios_filtro" : usuarios_filtro,
