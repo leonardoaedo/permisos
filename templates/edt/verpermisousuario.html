@@ -31,10 +31,10 @@
 	<li class="list-group-item" >
 		<ul class="detpermiso">
 			<li class="detpermisofecha" >{{eventoObj.numero_evento.start|date:"D d M "}}</li>
-			<li class="detpermisoinicio" >{{eventoObj.numero_evento.start|timezone:"America/Noronha"|date:"G:i"}}</li>
+			<li class="detpermisoinicio" >{{eventoObj.numero_evento.start|timezone:"America/Sao_Paulo"|date:"G:i"}}</li>
 			<input type="hidden" value="{{eventoObj.numero_evento}}">
 			<li>-</li>
-			<li class="detpermisofin" >{{eventoObj.numero_evento.end|timezone:"America/Noronha"|date:"G:i"}}</li>
+			<li class="detpermisofin" >{{eventoObj.numero_evento.end|timezone:"America/Sao_Paulo"|date:"G:i"}}</li>
 		</ul>	
 	
 	</li>

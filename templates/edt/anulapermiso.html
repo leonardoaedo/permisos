@@ -31,7 +31,7 @@
 	<li class="list-group-item">Reemplazante : {{permiso.reemplazante}}</li>
 	<li class="list-group-item">Archivo Adjunto : {% if permiso.documento_adjunto.name %} <a target="_blank" href="/media/{{permiso.documento_adjunto}}">Ver Documento</a> {% else %} Sin documento adjunto{% endif %} </li>
 </ul>
-<ul class="list-group">
+<!-- <ul class="list-group">
 	<li class="list-group-item active"  ><h4 style="color:#FFFFFF !important;">Detalle </h4></li>
 	{% for eventoObj in permiso.eventos_en_permisos_set.all %}	
 
@@ -42,7 +42,7 @@
 	<li class="list-group-item" >
 	<span class="badge">Total{{"  "}}{{permiso.horas_solicitadas}}</span>
 	</li>
-</ul>
+</ul> -->
 
 
 </div>

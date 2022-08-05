@@ -379,7 +379,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santo_Domingo') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Rio_Branco') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -436,7 +436,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santo_Domingo') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
@@ -472,7 +472,7 @@ def comprobante(request, pk):
         #return HttpResponse({ "permiso" : permiso,"usuario" : usuarioObj,"evento" : evento}) 
 
 @csrf_exempt 
-def urlcalendario(request):
+def urlcalendario(request): #procesa_solicitud_permiso
     if not estaLogeado(request):
                 return redirect("/login")
     
@@ -2614,7 +2614,7 @@ def upload(request, pk):
         g.close()
         return render_to_response("edt/upload.html",{ "apellido_funcionario": apellido_funcionario,"nombre_funcionario":nombre_funcionario,"user" : user , "DESCRIPTION" : DESCRIPTION, "LOCATION" : LOCATION, "contador" : contador, "DTEND" : DTEND,"DTSTART": DTSTART, "CATEGORIES" : CATEGORIES,  "SUMMARY" : SUMMARY, "usuario" : usuarioObj,"nombre" : nombre})
 
-def main(request):
+def main(request): #antes de procesa_solicitud_permiso
     if not estaLogeado(request):
             return redirect("/login")
     hoy = datetime.now()
@@ -3737,8 +3737,10 @@ def licencia(request):
                                            'fin' : licencias.fin,
                                            'fecha' : licencias.fecha,
                                            'id' : licencias.id,
+                                           'reposo' : licencias.reposo, 
                                            })
                 html = template.render(context)
+                #msg = EmailMultiAlternatives('Ingreso de licencia médica', html, 'scpa@cdegaulle.cl', [RRHH],cc=[admin],bcc=[admin]) # linea de prueba de correo de licencias
                 msg = EmailMultiAlternatives('Ingreso de licencia médica', html, 'scpa@cdegaulle.cl', [proviseur],cc=[RRHH, intendance, mantencion, dirgen, secondaire, director_primaria, director_secundaria, gerente, primaire, cpe],bcc=[admin])
                 msg.content_subtype = "html"  # Main content is now text/html
                 msg.send()
@@ -4203,35 +4205,37 @@ class ConLicenciaExcel(TemplateView):
             # Encabezados
 
             ws['B3'] = '#'
-            ws['C3'] = 'Funcionario'
-            ws['D3'] = 'Cargo'
-            ws['E3'] = 'Tipo licencia'
-            ws['F3'] = 'características del reposo'
-            ws['G3'] = 'Médico'
-            ws['H3'] = 'Especialidad'
-            ws['I3'] = 'Fecha de ingreso'            
-            ws['J3'] = 'Inicio'
-            ws['K3'] = 'Fin'
-            ws['L3'] = 'Duracion'
+            ws['C3'] = 'Rut'
+            ws['D3'] = 'Funcionario'
+            ws['E3'] = 'Cargo'
+            ws['F3'] = 'Tipo licencia'
+            ws['G3'] = 'características del reposo'
+            ws['H3'] = 'Médico'
+            ws['I3'] = 'Especialidad'
+            ws['J3'] = 'Fecha de ingreso'            
+            ws['K3'] = 'Inicio'
+            ws['L3'] = 'Fin'
+            ws['M3'] = 'Duracion'
 
             cont = 4
             contador = 1
 
             for licencia in licencias:
                 ws.cell(row=cont,column=2).value = contador
-                ws.cell(row=cont,column=3).value = licencia.funcionario.apellido1+" "+licencia.funcionario.apellido1+" "+licencia.funcionario.nombre
-                ws.cell(row=cont,column=4).value = licencia.funcionario.cargo.nombre
-                ws.cell(row=cont,column=5).value = licencia.tipo.nombre
-                ws.cell(row=cont,column=6).value = licencia.reposo.nombre
-                ws.cell(row=cont,column=7).value = licencia.medico
-                ws.cell(row=cont,column=8).value =licencia.especialidad.nombre
-                ws.cell(row=cont,column=9).value = licencia.fecha
-                ws.cell(row=cont,column=9).number_format = 'dd-mm-yyyy' #formato de salida para fecha en celda
-                ws.cell(row=cont,column=10).value = licencia.inicio
-                ws.cell(row=cont,column=10).number_format = 'dd-mm-yyyy'
-                ws.cell(row=cont,column=11).value = licencia.fin
+                ws.cell(row=cont,column=3).value = licencia.funcionario.rut+"-"+licencia.funcionario.dv 
+                ws.cell(row=cont,column=4).value = licencia.funcionario.apellido1+" "+licencia.funcionario.apellido1+" "+licencia.funcionario.nombre
+                ws.cell(row=cont,column=5).value = licencia.funcionario.cargo.nombre
+                ws.cell(row=cont,column=6).value = licencia.tipo.nombre
+                ws.cell(row=cont,column=7).value = licencia.reposo.nombre
+                ws.cell(row=cont,column=8).value = licencia.medico
+                ws.cell(row=cont,column=9).value =licencia.especialidad.nombre
+                ws.cell(row=cont,column=10).value = licencia.fecha
+                ws.cell(row=cont,column=10).number_format = 'dd-mm-yyyy' #formato de salida para fecha en celda
+                ws.cell(row=cont,column=11).value = licencia.inicio
                 ws.cell(row=cont,column=11).number_format = 'dd-mm-yyyy'
-                ws.cell(row=cont,column=12).value = licencia.cantidad_dias
+                ws.cell(row=cont,column=12).value = licencia.fin
+                ws.cell(row=cont,column=12).number_format = 'dd-mm-yyyy'
+                ws.cell(row=cont,column=13).value = licencia.cantidad_dias
 
                 cont = cont +1
                 contador = contador + 1

@@ -582,6 +582,38 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal requisitosprostata  -->
 
+<div class="modal fade permisoadministrativo" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4>REQUISITOS Y CONSIDERACIONES</h4>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <label >Importante!</label>
+          <div><span><li>Deberá pedirse con a lo menos una semana de anticipación, salvo caso fortuito o fuerza mayor.</li></span></div>
+      <br>
+      <div><span><li>No podrá, salvo fuerza mayor, ser solicitado en víspera de fin de semana con festivo, ni después de este, tampoco durante días o jornadas de capacitaciones, días de permanencias, ni tampoco en días viernes o lunes.</li></span></div>
+      <br>
+      <div><span><li>En caso de no utilizarse dentro del semestre respectivo, no se acumulará para el semestre siguiente.</li></span></div>
+      <br>
+      <div><span><li>En caso de producirse problemas administrativos que deriven en la imposibilidad de cubrir el servicio prestados por el trabajador requirente, cuando no se trate de una fuerza mayor, el colegio podrá negarse a su otorgamiento para uno o más trabajadores, sin perjuicio de lo cual propondrá otro día para hacer uso del permiso.</li></span></div>
+        </div>
+
+        </div>        
+
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal permisoadministrativo -->
+
+
 	</form>
 <script>
 var usuario = {{usuario.id}};
@@ -746,12 +778,13 @@ $(document).ready(function(){
       $("#id_motivo").append('<option value="20">Fallecimiento del cónyuge o conviviente civil</option>');
       $("#id_motivo").append('<option value="21">Fallecimiento de un hijo</option>');
       $("#id_motivo").append('<option value="22">Nacimiento de un hijo</option>');
+      $("#id_motivo").append('<option value="24">Vacunación Covid</option>');
   }
   function bloquea_select(){
       $("#id_devuelve_horas").prop( "readonly", true );
-      $("#id_devuelve_horas").empty().append('<option selected value="N">Desactivado</option>');
+      $("#id_devuelve_horas").empty().append('<option selected value="N">NO</option>');
       $("#id_sueldo").prop( "readonly", true );
-      $("#id_sueldo").empty().append('<option selected value="C">Desactivado</option>');
+      $("#id_sueldo").empty().append('<option selected value="C">Con goce de sueldo</option>');
       $("#id_motivo").empty();
   }
 
@@ -769,10 +802,14 @@ $(document).ready(function(){
 
 
   $("#id_tipo").change(function(e){
-    if($("#id_tipo").val() >= 4 ){
+    if($("#id_tipo").val() == 4 ){
       bloquea_select();
       carga_select_legales();
-
+    } else if($("#id_tipo").val() == 5){
+      reset_select();
+      carga_select_default();
+      bloquea_select();
+      $('.permisoadministrativo').modal('show');
 
     }else{
           reset_select();

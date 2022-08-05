@@ -76,6 +76,7 @@
   <thead class="thead-inverse">
       <tr>
         <th>#</th>
+        <th>Rut</th>
         <th>Funcionario</th>      
         <th>Fecha de ingreso</th>
         <th>Duración</th>
@@ -90,6 +91,7 @@
   <tr >
 <!--      <td>{{licencia.fin|utc}} -- {{hoy|utc}}</td>  -->
      <td>{{forloop.counter}}</td>
+     <td>{{licencia.funcionario.rut}}-{{licencia.funcionario.dv}}</td>
      <td >{{licencia.funcionario}}</td>
      <td >{{licencia.fecha|date:"D j M Y"}}</td>
      <td ><b>{{licencia.cantidad_dias}} Días</b></td>
