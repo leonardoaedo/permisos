@@ -13,6 +13,19 @@
 {{primaria.id}}
 {{maternelle.id}} -->
 
+<!--{{existe_permiso}} - {{inicio_semestre1}} - {{fin_semestre1}} -{{inicio_semestre2}} -{{fin_semestre2}} <br>-->
+
+<!-- {{ContPermisosAdministrativos}}
+
+{% for P in PermisosAdministrativos %}
+
+<span> --> <!-- {{P.id}} <-- </span> 
+
+{% endfor %} -->
+
+<!--<span>Primer Semestre </span>{{primersemestre}}  - <span>Segundo Semestre </span> {{segundosemestre}}
+ {{hoy}} ----  {{inicio_semestre2}} -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <a href="#" id="mostrarocultar" name="mostrarocultar" value="mostrarocultar" class="mostrarocultar btn btn-info btn-sm">Click para Mostrar/Ocultar Resumen</a>
 
 <div id="listapermisos" class="listapermisos"> 
@@ -168,7 +181,7 @@
 		</div>	
 		<div id="frmpermiso">
 		{{form.comentario.errors}}
-		<p><label for="comentario">Comentario:</label>{{form.comentario}}</p>
+		<p><label for="comentario">Comentario / Cuando devolvera horas:</label>{{form.comentario}}</p>
 		</div>	
 		<div id="frmpermiso">
 		<p class="reemplazante"><label for="reemplazante">Propuesta de Reemplazante</label>{{form.reemplazante}}</p>
@@ -183,7 +196,7 @@
 		<input type="hidden" id="calendario-data" name="data-calendario">
     <input type="hidden" id="usuario-data" name="data-usuario">
 
-	<input class="btn btn-success btn-lg" type="submit" value="Solicitar" id="botonCalendario"/>
+	<input class="btn btn-success btn-lg" type="submit" value="Solicitar" name="Solicitar" id="botonCalendario"/>
 
 <div class="modal fade matrimonio" tabindex="-1" role="dialog" aria-labelledby="mymModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -717,8 +730,10 @@ $(document).ready(function(){
   var edad ={{edad}};
   var sexo = {{sexo}};
   var primaria = {{primaria.id}};
-  var maternelle = {{maternelle.id}}
-  var estamento = {{usuario.estamento.id}}
+  var maternelle = {{maternelle.id}};
+  var estamento = {{usuario.estamento.id}};
+  var primersemestre = {{primersemestre}};
+  var segundosemestre = {{segundosemestre}};
   console.log("edad",edad);
   console.log("Sexo",sexo);
   console.log("Primaria",primaria);
@@ -726,6 +741,7 @@ $(document).ready(function(){
   console.log("estamento",estamento);
 
 $(document).ready(function(){
+
 	$("#mostrarocultar").click(function(){
         $("#listapermisos").toggle();
     });
@@ -802,25 +818,54 @@ $(document).ready(function(){
 
 
   $("#id_tipo").change(function(e){
+    
     if($("#id_tipo").val() == 4 ){
       bloquea_select();
       carga_select_legales();
+
     } else if($("#id_tipo").val() == 5){
-      reset_select();
-      carga_select_default();
+      reset_select();      
       bloquea_select();
+      carga_select_default();
+
+      if (primersemestre  >= 1 ){
+        swal("Atención" , "Permiso Adminstrativo del 1er. Semestre ya solicitado", "error");
+        document.querySelector('#botonCalendario').disabled = true;
+        e.preventDefault(); 
+      };
+
+      if (segundosemestre  >= 1 ){
+        swal("Atención", "Permiso Adminstrativo del 2do. Semestre ya solicitado", "error");
+        document.querySelector('#botonCalendario').disabled = true;
+        e.preventDefault(); 
+      };
+
+      if (segundosemestre  != 1 && primersemestre  >= 1 ){
+        swal("Atención", "Permiso Adminstrativo del 1er. Semestre ya solicitado", "error");
+        document.querySelector('#botonCalendario').disabled = false;
+        e.preventDefault(); 
+      };
+
+      if (segundosemestre  >= 1 && primersemestre  >= 1 ){
+        swal("Atención", "Ya ha solicitado todos los Permisos Administrativos permitidos", "error");
+        document.querySelector('#botonCalendario').disabled = true;
+        e.preventDefault(); 
+      };
+
+
       $('.permisoadministrativo').modal('show');
 
     }else{
           reset_select();
           reactiva_select();
           carga_select_default();
+          document.querySelector('#botonCalendario').disabled = false;
 
     }//fin else
 
   });
 
-$("#id_motivo").change(function(e){
+ $("#id_motivo").change(function(e){
   
   if($("#id_motivo").val() == 15){
     $('.matrimonio').modal('show');
@@ -875,7 +920,7 @@ $("#id_motivo").change(function(e){
 
 
 
-	$("#main").submit(function(e){
+$("#main").submit(function(e){
 		if(seleccionados.length == 0){
 			alert("Debe seleccionar al menos un bloque de su horario");
 			e.preventDefault();
@@ -884,7 +929,7 @@ $("#id_motivo").change(function(e){
 
 $('#main').ready(function(e){
   if($('#{{form.comentario.id_for_label}}').val() == ' ') {
-    alert("Debe seleccionar al menos un bloque de su horario");
+    alert("Debe Ingresar un Comentario");
       e.preventDefault();
   }
 });
@@ -901,13 +946,12 @@ $('#main').ready(function(e){
 	   if( $('#id_devuelve_horas').val() == "N" && $('#id_sueldo').val() == "C" && $('#id_tipo').val() < 3   ){
         alert("Permiso SIN DEVOLUCIÓN de horas debe ser SIN GOCE de sueldo");
               e.preventDefault();
-    }   
-  
+    }  
   $("#calendario-data").val(JSON.stringify(seleccionados));
+
   });          
 
-
-
 });
+
 </script>   
 {% endblock  %}

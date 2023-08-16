@@ -76,6 +76,7 @@
   <thead class="thead-inverse">
       <tr>
         <th>#</th>
+        <th>ID</th>
         <th>Rut</th>
         <th>Funcionario</th>      
         <th>Fecha de ingreso</th>
@@ -83,7 +84,7 @@
         <th>Inicio</th>
         <th>Fin</th>        
         <th>Estado</th>
-       <!--  <th>ID Licencia</th> -->
+        <th>Borrar</th>
       </tr>
     </thead>
   
@@ -91,6 +92,7 @@
   <tr >
 <!--      <td>{{licencia.fin|utc}} -- {{hoy|utc}}</td>  -->
      <td>{{forloop.counter}}</td>
+     <td>{{licencia.id}}</td>
      <td>{{licencia.funcionario.rut}}-{{licencia.funcionario.dv}}</td>
      <td >{{licencia.funcionario}}</td>
      <td >{{licencia.fecha|date:"D j M Y"}}</td>
@@ -98,10 +100,10 @@
      <td ><b>{{licencia.inicio|date:"D j M Y"}}</b></td>
      <td ><b>{{licencia.fin|date:"D j M Y"}}</b></td>
      <td class="text-center">{% if licencia.fin|utc >= hoy|utc %} <span class="glyphicon glyphicon-flag text-danger"></span> {% else %} <span class="glyphicon glyphicon-flag text-success"></span> {% endif %} </td>
-     <!-- <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger">Borrar Licencia</a></td> -->
+     <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger btn-sm">Borrar Licencia</a></td>
     <!--  <td class="btn-success" align="center"><h4>{{licencia.id}}</h4></td> -->
-     
-  </tr>
+    
+   </tr>
    {% empty %}
     <tr>
       <td colspan="5">En este momento no hay ningun elemento para mostrar</td>

@@ -124,6 +124,8 @@ goce = (
 
 
 
+
+
 class Permiso (models.Model):
         usuario = models.ForeignKey(Usuario,null=True,blank=True)
         fecha_creacion = models.DateTimeField(auto_now_add=True,null=True,blank=True)
@@ -177,6 +179,14 @@ opciones = (
         ("M","Modificado")
 )
 
+class PermisoAdministrativo (models.Model):
+    usuario = models.ForeignKey(Usuario,null=True,blank=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    estado = models.BooleanField(default=False)
+    permiso = models.ForeignKey(Permiso, on_delete=models.CASCADE)
+
+    def __unicode__(self):              # __unicode__ on Python 2
+                return u"%s solicitado el  %s"%(self.id,self.fecha_creacion, self.permiso)
 
 class Foliocpe(models.Model):
     permiso = models.ForeignKey(Permiso)
@@ -263,7 +273,7 @@ class Eventos_en_Permisos_Anulados(models.Model):
     #numero_permiso = models.CharField(max_length=32)
     #numero_evento = models.CharField(max_length=32) 
     def __unicode__(self):              # __unicode__ on Python 2
-            return "%s  %s"%(self.numero_permiso,self.numero_evento)               
+            return "%s  %s"%(self.permiso,self.evento)               
                 
 class Actividad(models.Model):
      nombre = models.CharField(max_length=32)

@@ -1,0 +1,102 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+
+
+{% if usuario.rol.nivel_acceso == 0 %}
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.periodpicker.min.css"/ >
+<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+<script type="text/javascript" src="/static/js/jquery.periodpicker.full.min.js"></script>
+<script src="/static/js/jquery.datetimepicker.full.js"></script>
+<!-- <div class='form-group'>
+    <div class="row">                 
+        <div class="col-lg-8">    
+                                                                 
+        </div>  
+        <div class="col-lg-1">                            
+            <a href="/conpermisoEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+                <img src="/static/img/xls.png" width="35" height="35">
+            </a>                          
+        </div>
+        
+        <div class="col-lg-1">                            
+            <a href="/conpermisoPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+                <img src="/static/img/pdf.png" width="35" height="35">
+            </a>                          
+        </div>                                                    
+    </div>
+</div> -->
+
+<div align="center"><h3>Funcionarios con permiso</h3></div>
+<div align="center"><h4>{{hoy}}</h4></div>
+<div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+  
+  </form>
+</div>
+
+<table class="table table-hover  table-bordered">
+  <thead class="thead-inverse">
+      <tr>
+        <th>#</th>
+        <th>Numero de Permiso</th>
+        <th>Solicitante</th>
+        <th>Tipo de Permiso</th>
+        <th>Fecha de Solicitud</th>
+        <th>Motivo</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Cantidad Horas</th>
+      </tr>
+    </thead>
+  
+   {% for permiso in permisos %}
+  <tr>
+     <td>{{forloop.counter}}</td>
+     <td><a class="list-group-item btn btn-info" href="{% url 'edt.views.verpermiso2' permiso.pk %}">{{permiso.id}}</a></td>
+     <td >{{permiso.usuario}}</td>
+     <td>{{permiso.tipo}}</td>
+     <td >{{permiso.fecha_creacion}}</td>
+     <td >{{permiso.motivo}}</td>
+     <td ><b>{{permiso.primerEvento.numero_evento.start|timezone:"America/Santiago"|date:"D d M G:i"}}</b></td>
+     <td ><b>{{permiso.ultimoEvento.numero_evento.end|timezone:"America/Santiago"|date:"D d M G:i"}}</b></td>
+     <td >{{permiso.horas_solicitadas}}</td>
+
+     
+  </tr>
+   {% empty %}
+    <tr>
+      <td colspan="5">En este momento no hay ningun elemento para mostrar</td>
+    </tr>
+   
+
+   {% endfor %}
+    
+</table>
+   <nav>
+      {% if permisos.has_previous %}
+        <a href="?page={{ permisos.previous_page_number }}">Página anterior</a>
+      {% endif %}
+      <p class="paginador">Página {{ permisos.number }} de {{ permisos.paginator.num_pages }}</p>
+      {% if permisos.has_next %}
+      <a href="?page={{ permisos.next_page_number }}">Página siguiente</a>
+      {% endif %} 
+    </nav>
+
+ {% endif %}
+
+  <!-- {% for permiso in permisos %}
+
+  	{{permiso}}<br>
+
+   {% endfor %}
+
+   {{hoy}} {{tomorrow}} 
+-->
+
+   {% endblock  %}

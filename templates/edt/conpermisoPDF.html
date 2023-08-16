@@ -58,6 +58,7 @@
         <th>#</th>
         <th>Numero de Permiso</th>
         <th>Solicitante</th>
+        <th>Tipo de Permiso</th>
         <th>Fecha de Solicitud</th>
         <th>Motivo</th>
         <th>Inicio</th>
@@ -71,6 +72,7 @@
      <td>{{forloop.counter}}</td>
      <td><a class="list-group-item btn btn-info" href="{% url 'edt.views.verpermiso2' permiso.pk %}">{{permiso.id}}</a></td>
      <td >{{permiso.usuario}}</td>
+     <td>{{permiso.tipo</td>
      <td >{{permiso.fecha_creacion}}</td>
      <td >{{permiso.motivo}}</td>
      <td ><b>{{permiso.primerEvento.numero_evento.start|timezone:"America/Noronha"|date:"D d M G:i"}}</b></td>

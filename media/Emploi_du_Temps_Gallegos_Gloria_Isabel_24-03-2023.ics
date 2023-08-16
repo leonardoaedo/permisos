@@ -1,0 +1,4398 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID;LANGUAGE=fr:Copyright Index-Education - Index-Education - EDT2023 2023
+METHOD:PUBLISH
+X-CALSTART:20230102T000000Z
+X-CALEND:20231231T000000Z
+X-WR-CALNAME;LANGUAGE=fr:Emploi du Temps - Gallegos Gloria Isabel - du 06 janvier au 31 décembre 2023
+X-WR-CALDESC;LANGUAGE=fr:Emploi du Temps Gallegos Gloria Isabel généré par le logiciel EDT (©INDEX ÉDUCATION) le 24 mars 2023 - INDEX EDUCATION - semaines 1 - 52
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-1-20230324T124509Z-Index-Education
+DTSTART:20230106T124500Z
+DTEND:20230106T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-2-20230324T124509Z-Index-Education
+DTSTART:20230109T163000Z
+DTEND:20230109T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-2-20230324T124509Z-Index-Education
+DTSTART:20230109T173000Z
+DTEND:20230109T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-2-20230324T124509Z-Index-Education
+DTSTART:20230109T183000Z
+DTEND:20230109T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-2-20230324T124509Z-Index-Education
+DTSTART:20230110T183000Z
+DTEND:20230110T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-2-20230324T124509Z-Index-Education
+DTSTART:20230110T133000Z
+DTEND:20230110T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-2-20230324T124509Z-Index-Education
+DTSTART:20230111T163000Z
+DTEND:20230111T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-2-20230324T124509Z-Index-Education
+DTSTART:20230113T124500Z
+DTEND:20230113T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-3-20230324T124509Z-Index-Education
+DTSTART:20230116T163000Z
+DTEND:20230116T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-3-20230324T124509Z-Index-Education
+DTSTART:20230116T173000Z
+DTEND:20230116T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-3-20230324T124509Z-Index-Education
+DTSTART:20230116T183000Z
+DTEND:20230116T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-3-20230324T124509Z-Index-Education
+DTSTART:20230117T183000Z
+DTEND:20230117T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-3-20230324T124509Z-Index-Education
+DTSTART:20230117T133000Z
+DTEND:20230117T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-3-20230324T124509Z-Index-Education
+DTSTART:20230118T163000Z
+DTEND:20230118T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-3-20230324T124509Z-Index-Education
+DTSTART:20230120T124500Z
+DTEND:20230120T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-4-20230324T124509Z-Index-Education
+DTSTART:20230123T163000Z
+DTEND:20230123T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-4-20230324T124509Z-Index-Education
+DTSTART:20230123T173000Z
+DTEND:20230123T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-4-20230324T124509Z-Index-Education
+DTSTART:20230123T183000Z
+DTEND:20230123T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-4-20230324T124509Z-Index-Education
+DTSTART:20230124T183000Z
+DTEND:20230124T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-4-20230324T124509Z-Index-Education
+DTSTART:20230124T133000Z
+DTEND:20230124T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-4-20230324T124509Z-Index-Education
+DTSTART:20230125T163000Z
+DTEND:20230125T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-4-20230324T124509Z-Index-Education
+DTSTART:20230127T124500Z
+DTEND:20230127T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-5-20230324T124509Z-Index-Education
+DTSTART:20230130T163000Z
+DTEND:20230130T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-5-20230324T124509Z-Index-Education
+DTSTART:20230130T173000Z
+DTEND:20230130T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-5-20230324T124509Z-Index-Education
+DTSTART:20230130T183000Z
+DTEND:20230130T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-5-20230324T124509Z-Index-Education
+DTSTART:20230131T183000Z
+DTEND:20230131T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-5-20230324T124509Z-Index-Education
+DTSTART:20230131T133000Z
+DTEND:20230131T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-5-20230324T124509Z-Index-Education
+DTSTART:20230201T163000Z
+DTEND:20230201T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-5-20230324T124509Z-Index-Education
+DTSTART:20230203T124500Z
+DTEND:20230203T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-6-20230324T124509Z-Index-Education
+DTSTART:20230206T163000Z
+DTEND:20230206T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-6-20230324T124509Z-Index-Education
+DTSTART:20230206T173000Z
+DTEND:20230206T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-6-20230324T124509Z-Index-Education
+DTSTART:20230206T183000Z
+DTEND:20230206T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-6-20230324T124509Z-Index-Education
+DTSTART:20230207T183000Z
+DTEND:20230207T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-6-20230324T124509Z-Index-Education
+DTSTART:20230207T133000Z
+DTEND:20230207T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-6-20230324T124509Z-Index-Education
+DTSTART:20230208T163000Z
+DTEND:20230208T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-6-20230324T124509Z-Index-Education
+DTSTART:20230210T124500Z
+DTEND:20230210T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-7-20230324T124509Z-Index-Education
+DTSTART:20230213T163000Z
+DTEND:20230213T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-7-20230324T124509Z-Index-Education
+DTSTART:20230213T173000Z
+DTEND:20230213T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-7-20230324T124509Z-Index-Education
+DTSTART:20230213T183000Z
+DTEND:20230213T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-7-20230324T124509Z-Index-Education
+DTSTART:20230214T183000Z
+DTEND:20230214T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-7-20230324T124509Z-Index-Education
+DTSTART:20230214T133000Z
+DTEND:20230214T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-7-20230324T124509Z-Index-Education
+DTSTART:20230215T163000Z
+DTEND:20230215T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-7-20230324T124509Z-Index-Education
+DTSTART:20230217T124500Z
+DTEND:20230217T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-8-20230324T124509Z-Index-Education
+DTSTART:20230220T163000Z
+DTEND:20230220T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-8-20230324T124509Z-Index-Education
+DTSTART:20230220T173000Z
+DTEND:20230220T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-8-20230324T124509Z-Index-Education
+DTSTART:20230220T183000Z
+DTEND:20230220T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-8-20230324T124509Z-Index-Education
+DTSTART:20230221T183000Z
+DTEND:20230221T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-8-20230324T124509Z-Index-Education
+DTSTART:20230221T133000Z
+DTEND:20230221T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-8-20230324T124509Z-Index-Education
+DTSTART:20230222T163000Z
+DTEND:20230222T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-8-20230324T124509Z-Index-Education
+DTSTART:20230224T124500Z
+DTEND:20230224T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-9-20230324T124509Z-Index-Education
+DTSTART:20230227T163000Z
+DTEND:20230227T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-9-20230324T124509Z-Index-Education
+DTSTART:20230227T173000Z
+DTEND:20230227T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-9-20230324T124509Z-Index-Education
+DTSTART:20230227T183000Z
+DTEND:20230227T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-9-20230324T124509Z-Index-Education
+DTSTART:20230228T183000Z
+DTEND:20230228T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-9-20230324T124509Z-Index-Education
+DTSTART:20230228T133000Z
+DTEND:20230228T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-9-20230324T124509Z-Index-Education
+DTSTART:20230301T163000Z
+DTEND:20230301T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-9-20230324T124509Z-Index-Education
+DTSTART:20230303T124500Z
+DTEND:20230303T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-10-20230324T124509Z-Index-Education
+DTSTART:20230306T163000Z
+DTEND:20230306T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-10-20230324T124509Z-Index-Education
+DTSTART:20230306T173000Z
+DTEND:20230306T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-10-20230324T124509Z-Index-Education
+DTSTART:20230306T183000Z
+DTEND:20230306T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-10-20230324T124509Z-Index-Education
+DTSTART:20230307T183000Z
+DTEND:20230307T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-10-20230324T124509Z-Index-Education
+DTSTART:20230307T133000Z
+DTEND:20230307T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-10-20230324T124509Z-Index-Education
+DTSTART:20230308T163000Z
+DTEND:20230308T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-10-20230324T124509Z-Index-Education
+DTSTART:20230310T124500Z
+DTEND:20230310T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10721-11-20230324T124509Z-Index-Education
+DTSTART:20230313T163000Z
+DTEND:20230313T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10722-11-20230324T124509Z-Index-Education
+DTSTART:20230313T173000Z
+DTEND:20230313T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10723-11-20230324T124509Z-Index-Education
+DTSTART:20230313T183000Z
+DTEND:20230313T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10724-11-20230324T124509Z-Index-Education
+DTSTART:20230314T183000Z
+DTEND:20230314T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10725-11-20230324T124509Z-Index-Education
+DTSTART:20230314T133000Z
+DTEND:20230314T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10726-11-20230324T124509Z-Index-Education
+DTSTART:20230315T163000Z
+DTEND:20230315T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T152419Z
+UID:Cours-10727-11-20230324T124509Z-Index-Education
+DTSTART:20230317T124500Z
+DTEND:20230317T134500Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-12-20230324T124509Z-Index-Education
+DTSTART:20230323T143000Z
+DTEND:20230323T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-12-20230324T124509Z-Index-Education
+DTSTART:20230323T173000Z
+DTEND:20230323T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-12-20230324T124509Z-Index-Education
+DTSTART:20230324T123000Z
+DTEND:20230324T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-12-20230324T124509Z-Index-Education
+DTSTART:20230324T143000Z
+DTEND:20230324T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-12-20230324T124509Z-Index-Education
+DTSTART:20230324T153000Z
+DTEND:20230324T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-12-20230324T124509Z-Index-Education
+DTSTART:20230324T183000Z
+DTEND:20230324T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-12-20230324T124509Z-Index-Education
+DTSTART:20230324T193000Z
+DTEND:20230324T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-12-20230324T124509Z-Index-Education
+DTSTART:20230323T183000Z
+DTEND:20230323T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-13-20230324T124509Z-Index-Education
+DTSTART:20230330T143000Z
+DTEND:20230330T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-13-20230324T124509Z-Index-Education
+DTSTART:20230330T173000Z
+DTEND:20230330T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-13-20230324T124509Z-Index-Education
+DTSTART:20230331T123000Z
+DTEND:20230331T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-13-20230324T124509Z-Index-Education
+DTSTART:20230331T143000Z
+DTEND:20230331T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-13-20230324T124509Z-Index-Education
+DTSTART:20230331T153000Z
+DTEND:20230331T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-13-20230324T124509Z-Index-Education
+DTSTART:20230331T183000Z
+DTEND:20230331T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-13-20230324T124509Z-Index-Education
+DTSTART:20230331T193000Z
+DTEND:20230331T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-13-20230324T124509Z-Index-Education
+DTSTART:20230330T183000Z
+DTEND:20230330T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-14-20230324T124509Z-Index-Education
+DTSTART:20230406T153000Z
+DTEND:20230406T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-14-20230324T124509Z-Index-Education
+DTSTART:20230406T183000Z
+DTEND:20230406T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-14-20230324T124509Z-Index-Education
+DTSTART:20230407T133000Z
+DTEND:20230407T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-14-20230324T124509Z-Index-Education
+DTSTART:20230407T153000Z
+DTEND:20230407T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-14-20230324T124509Z-Index-Education
+DTSTART:20230407T163000Z
+DTEND:20230407T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-14-20230324T124509Z-Index-Education
+DTSTART:20230407T193000Z
+DTEND:20230407T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-14-20230324T124509Z-Index-Education
+DTSTART:20230407T203000Z
+DTEND:20230407T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-14-20230324T124509Z-Index-Education
+DTSTART:20230406T193000Z
+DTEND:20230406T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-15-20230324T124509Z-Index-Education
+DTSTART:20230413T153000Z
+DTEND:20230413T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-15-20230324T124509Z-Index-Education
+DTSTART:20230413T183000Z
+DTEND:20230413T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-15-20230324T124509Z-Index-Education
+DTSTART:20230414T133000Z
+DTEND:20230414T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-15-20230324T124509Z-Index-Education
+DTSTART:20230414T153000Z
+DTEND:20230414T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-15-20230324T124509Z-Index-Education
+DTSTART:20230414T163000Z
+DTEND:20230414T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-15-20230324T124509Z-Index-Education
+DTSTART:20230414T193000Z
+DTEND:20230414T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-15-20230324T124509Z-Index-Education
+DTSTART:20230414T203000Z
+DTEND:20230414T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-15-20230324T124509Z-Index-Education
+DTSTART:20230413T193000Z
+DTEND:20230413T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-16-20230324T124509Z-Index-Education
+DTSTART:20230420T153000Z
+DTEND:20230420T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-16-20230324T124509Z-Index-Education
+DTSTART:20230420T183000Z
+DTEND:20230420T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-16-20230324T124509Z-Index-Education
+DTSTART:20230421T133000Z
+DTEND:20230421T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-16-20230324T124509Z-Index-Education
+DTSTART:20230421T153000Z
+DTEND:20230421T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-16-20230324T124509Z-Index-Education
+DTSTART:20230421T163000Z
+DTEND:20230421T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-16-20230324T124509Z-Index-Education
+DTSTART:20230421T193000Z
+DTEND:20230421T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-16-20230324T124509Z-Index-Education
+DTSTART:20230421T203000Z
+DTEND:20230421T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-16-20230324T124509Z-Index-Education
+DTSTART:20230420T193000Z
+DTEND:20230420T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-17-20230324T124509Z-Index-Education
+DTSTART:20230427T153000Z
+DTEND:20230427T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-17-20230324T124509Z-Index-Education
+DTSTART:20230427T183000Z
+DTEND:20230427T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-17-20230324T124509Z-Index-Education
+DTSTART:20230428T133000Z
+DTEND:20230428T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-17-20230324T124509Z-Index-Education
+DTSTART:20230428T153000Z
+DTEND:20230428T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-17-20230324T124509Z-Index-Education
+DTSTART:20230428T163000Z
+DTEND:20230428T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-17-20230324T124509Z-Index-Education
+DTSTART:20230428T193000Z
+DTEND:20230428T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-17-20230324T124509Z-Index-Education
+DTSTART:20230428T203000Z
+DTEND:20230428T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-17-20230324T124509Z-Index-Education
+DTSTART:20230427T193000Z
+DTEND:20230427T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-18-20230324T124509Z-Index-Education
+DTSTART:20230504T153000Z
+DTEND:20230504T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-18-20230324T124509Z-Index-Education
+DTSTART:20230504T183000Z
+DTEND:20230504T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-18-20230324T124509Z-Index-Education
+DTSTART:20230505T133000Z
+DTEND:20230505T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-18-20230324T124509Z-Index-Education
+DTSTART:20230505T153000Z
+DTEND:20230505T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-18-20230324T124509Z-Index-Education
+DTSTART:20230505T163000Z
+DTEND:20230505T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-18-20230324T124509Z-Index-Education
+DTSTART:20230505T193000Z
+DTEND:20230505T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-18-20230324T124509Z-Index-Education
+DTSTART:20230505T203000Z
+DTEND:20230505T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-18-20230324T124509Z-Index-Education
+DTSTART:20230504T193000Z
+DTEND:20230504T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-19-20230324T124509Z-Index-Education
+DTSTART:20230511T153000Z
+DTEND:20230511T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-19-20230324T124509Z-Index-Education
+DTSTART:20230511T183000Z
+DTEND:20230511T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-19-20230324T124509Z-Index-Education
+DTSTART:20230512T133000Z
+DTEND:20230512T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-19-20230324T124509Z-Index-Education
+DTSTART:20230512T153000Z
+DTEND:20230512T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-19-20230324T124509Z-Index-Education
+DTSTART:20230512T163000Z
+DTEND:20230512T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-19-20230324T124509Z-Index-Education
+DTSTART:20230512T193000Z
+DTEND:20230512T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-19-20230324T124509Z-Index-Education
+DTSTART:20230512T203000Z
+DTEND:20230512T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-19-20230324T124509Z-Index-Education
+DTSTART:20230511T193000Z
+DTEND:20230511T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-20-20230324T124509Z-Index-Education
+DTSTART:20230518T153000Z
+DTEND:20230518T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-20-20230324T124509Z-Index-Education
+DTSTART:20230518T183000Z
+DTEND:20230518T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-20-20230324T124509Z-Index-Education
+DTSTART:20230519T133000Z
+DTEND:20230519T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-20-20230324T124509Z-Index-Education
+DTSTART:20230519T153000Z
+DTEND:20230519T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-20-20230324T124509Z-Index-Education
+DTSTART:20230519T163000Z
+DTEND:20230519T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-20-20230324T124509Z-Index-Education
+DTSTART:20230519T193000Z
+DTEND:20230519T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-20-20230324T124509Z-Index-Education
+DTSTART:20230519T203000Z
+DTEND:20230519T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-20-20230324T124509Z-Index-Education
+DTSTART:20230518T193000Z
+DTEND:20230518T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-21-20230324T124509Z-Index-Education
+DTSTART:20230525T153000Z
+DTEND:20230525T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-21-20230324T124509Z-Index-Education
+DTSTART:20230525T183000Z
+DTEND:20230525T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-21-20230324T124509Z-Index-Education
+DTSTART:20230526T133000Z
+DTEND:20230526T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-21-20230324T124509Z-Index-Education
+DTSTART:20230526T153000Z
+DTEND:20230526T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-21-20230324T124509Z-Index-Education
+DTSTART:20230526T163000Z
+DTEND:20230526T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-21-20230324T124509Z-Index-Education
+DTSTART:20230526T193000Z
+DTEND:20230526T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-21-20230324T124509Z-Index-Education
+DTSTART:20230526T203000Z
+DTEND:20230526T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-21-20230324T124509Z-Index-Education
+DTSTART:20230525T193000Z
+DTEND:20230525T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-22-20230324T124509Z-Index-Education
+DTSTART:20230601T153000Z
+DTEND:20230601T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-22-20230324T124509Z-Index-Education
+DTSTART:20230601T183000Z
+DTEND:20230601T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-22-20230324T124509Z-Index-Education
+DTSTART:20230602T133000Z
+DTEND:20230602T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-22-20230324T124509Z-Index-Education
+DTSTART:20230602T153000Z
+DTEND:20230602T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-22-20230324T124509Z-Index-Education
+DTSTART:20230602T163000Z
+DTEND:20230602T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-22-20230324T124509Z-Index-Education
+DTSTART:20230602T193000Z
+DTEND:20230602T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-22-20230324T124509Z-Index-Education
+DTSTART:20230602T203000Z
+DTEND:20230602T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-22-20230324T124509Z-Index-Education
+DTSTART:20230601T193000Z
+DTEND:20230601T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-23-20230324T124509Z-Index-Education
+DTSTART:20230608T153000Z
+DTEND:20230608T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-23-20230324T124509Z-Index-Education
+DTSTART:20230608T183000Z
+DTEND:20230608T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-23-20230324T124509Z-Index-Education
+DTSTART:20230609T133000Z
+DTEND:20230609T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-23-20230324T124509Z-Index-Education
+DTSTART:20230609T153000Z
+DTEND:20230609T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-23-20230324T124509Z-Index-Education
+DTSTART:20230609T163000Z
+DTEND:20230609T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-23-20230324T124509Z-Index-Education
+DTSTART:20230609T193000Z
+DTEND:20230609T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-23-20230324T124509Z-Index-Education
+DTSTART:20230609T203000Z
+DTEND:20230609T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-23-20230324T124509Z-Index-Education
+DTSTART:20230608T193000Z
+DTEND:20230608T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-24-20230324T124509Z-Index-Education
+DTSTART:20230615T153000Z
+DTEND:20230615T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-24-20230324T124509Z-Index-Education
+DTSTART:20230615T183000Z
+DTEND:20230615T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-24-20230324T124509Z-Index-Education
+DTSTART:20230616T133000Z
+DTEND:20230616T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-24-20230324T124509Z-Index-Education
+DTSTART:20230616T153000Z
+DTEND:20230616T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-24-20230324T124509Z-Index-Education
+DTSTART:20230616T163000Z
+DTEND:20230616T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-24-20230324T124509Z-Index-Education
+DTSTART:20230616T193000Z
+DTEND:20230616T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-24-20230324T124509Z-Index-Education
+DTSTART:20230616T203000Z
+DTEND:20230616T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-24-20230324T124509Z-Index-Education
+DTSTART:20230615T193000Z
+DTEND:20230615T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-25-20230324T124509Z-Index-Education
+DTSTART:20230622T153000Z
+DTEND:20230622T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-25-20230324T124509Z-Index-Education
+DTSTART:20230622T183000Z
+DTEND:20230622T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-25-20230324T124509Z-Index-Education
+DTSTART:20230623T133000Z
+DTEND:20230623T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-25-20230324T124509Z-Index-Education
+DTSTART:20230623T153000Z
+DTEND:20230623T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-25-20230324T124509Z-Index-Education
+DTSTART:20230623T163000Z
+DTEND:20230623T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-25-20230324T124509Z-Index-Education
+DTSTART:20230623T193000Z
+DTEND:20230623T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-25-20230324T124509Z-Index-Education
+DTSTART:20230623T203000Z
+DTEND:20230623T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-25-20230324T124509Z-Index-Education
+DTSTART:20230622T193000Z
+DTEND:20230622T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-26-20230324T124509Z-Index-Education
+DTSTART:20230629T153000Z
+DTEND:20230629T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-26-20230324T124509Z-Index-Education
+DTSTART:20230629T183000Z
+DTEND:20230629T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-26-20230324T124509Z-Index-Education
+DTSTART:20230630T133000Z
+DTEND:20230630T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-26-20230324T124509Z-Index-Education
+DTSTART:20230630T153000Z
+DTEND:20230630T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-26-20230324T124509Z-Index-Education
+DTSTART:20230630T163000Z
+DTEND:20230630T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-26-20230324T124509Z-Index-Education
+DTSTART:20230630T193000Z
+DTEND:20230630T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-26-20230324T124509Z-Index-Education
+DTSTART:20230630T203000Z
+DTEND:20230630T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-26-20230324T124509Z-Index-Education
+DTSTART:20230629T193000Z
+DTEND:20230629T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-27-20230324T124509Z-Index-Education
+DTSTART:20230706T153000Z
+DTEND:20230706T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-27-20230324T124509Z-Index-Education
+DTSTART:20230706T183000Z
+DTEND:20230706T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-27-20230324T124509Z-Index-Education
+DTSTART:20230707T133000Z
+DTEND:20230707T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-27-20230324T124509Z-Index-Education
+DTSTART:20230707T153000Z
+DTEND:20230707T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-27-20230324T124509Z-Index-Education
+DTSTART:20230707T163000Z
+DTEND:20230707T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-27-20230324T124509Z-Index-Education
+DTSTART:20230707T193000Z
+DTEND:20230707T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-27-20230324T124509Z-Index-Education
+DTSTART:20230707T203000Z
+DTEND:20230707T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-27-20230324T124509Z-Index-Education
+DTSTART:20230706T193000Z
+DTEND:20230706T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-28-20230324T124509Z-Index-Education
+DTSTART:20230713T153000Z
+DTEND:20230713T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-28-20230324T124509Z-Index-Education
+DTSTART:20230713T183000Z
+DTEND:20230713T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-28-20230324T124509Z-Index-Education
+DTSTART:20230714T133000Z
+DTEND:20230714T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-28-20230324T124509Z-Index-Education
+DTSTART:20230714T153000Z
+DTEND:20230714T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-28-20230324T124509Z-Index-Education
+DTSTART:20230714T163000Z
+DTEND:20230714T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-28-20230324T124509Z-Index-Education
+DTSTART:20230714T193000Z
+DTEND:20230714T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-28-20230324T124509Z-Index-Education
+DTSTART:20230714T203000Z
+DTEND:20230714T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-28-20230324T124509Z-Index-Education
+DTSTART:20230713T193000Z
+DTEND:20230713T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-29-20230324T124509Z-Index-Education
+DTSTART:20230720T153000Z
+DTEND:20230720T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-29-20230324T124509Z-Index-Education
+DTSTART:20230720T183000Z
+DTEND:20230720T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-29-20230324T124509Z-Index-Education
+DTSTART:20230721T133000Z
+DTEND:20230721T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-29-20230324T124509Z-Index-Education
+DTSTART:20230721T153000Z
+DTEND:20230721T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-29-20230324T124509Z-Index-Education
+DTSTART:20230721T163000Z
+DTEND:20230721T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-29-20230324T124509Z-Index-Education
+DTSTART:20230721T193000Z
+DTEND:20230721T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-29-20230324T124509Z-Index-Education
+DTSTART:20230721T203000Z
+DTEND:20230721T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-29-20230324T124509Z-Index-Education
+DTSTART:20230720T193000Z
+DTEND:20230720T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-30-20230324T124509Z-Index-Education
+DTSTART:20230727T153000Z
+DTEND:20230727T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-30-20230324T124509Z-Index-Education
+DTSTART:20230727T183000Z
+DTEND:20230727T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-30-20230324T124509Z-Index-Education
+DTSTART:20230728T133000Z
+DTEND:20230728T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-30-20230324T124509Z-Index-Education
+DTSTART:20230728T153000Z
+DTEND:20230728T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-30-20230324T124509Z-Index-Education
+DTSTART:20230728T163000Z
+DTEND:20230728T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-30-20230324T124509Z-Index-Education
+DTSTART:20230728T193000Z
+DTEND:20230728T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-30-20230324T124509Z-Index-Education
+DTSTART:20230728T203000Z
+DTEND:20230728T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-30-20230324T124509Z-Index-Education
+DTSTART:20230727T193000Z
+DTEND:20230727T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-31-20230324T124509Z-Index-Education
+DTSTART:20230803T153000Z
+DTEND:20230803T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-31-20230324T124509Z-Index-Education
+DTSTART:20230803T183000Z
+DTEND:20230803T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-31-20230324T124509Z-Index-Education
+DTSTART:20230804T133000Z
+DTEND:20230804T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-31-20230324T124509Z-Index-Education
+DTSTART:20230804T153000Z
+DTEND:20230804T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-31-20230324T124509Z-Index-Education
+DTSTART:20230804T163000Z
+DTEND:20230804T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-31-20230324T124509Z-Index-Education
+DTSTART:20230804T193000Z
+DTEND:20230804T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-31-20230324T124509Z-Index-Education
+DTSTART:20230804T203000Z
+DTEND:20230804T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-31-20230324T124509Z-Index-Education
+DTSTART:20230803T193000Z
+DTEND:20230803T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-32-20230324T124509Z-Index-Education
+DTSTART:20230810T153000Z
+DTEND:20230810T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-32-20230324T124509Z-Index-Education
+DTSTART:20230810T183000Z
+DTEND:20230810T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-32-20230324T124509Z-Index-Education
+DTSTART:20230811T133000Z
+DTEND:20230811T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-32-20230324T124509Z-Index-Education
+DTSTART:20230811T153000Z
+DTEND:20230811T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-32-20230324T124509Z-Index-Education
+DTSTART:20230811T163000Z
+DTEND:20230811T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-32-20230324T124509Z-Index-Education
+DTSTART:20230811T193000Z
+DTEND:20230811T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-32-20230324T124509Z-Index-Education
+DTSTART:20230811T203000Z
+DTEND:20230811T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-32-20230324T124509Z-Index-Education
+DTSTART:20230810T193000Z
+DTEND:20230810T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-33-20230324T124509Z-Index-Education
+DTSTART:20230817T153000Z
+DTEND:20230817T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-33-20230324T124509Z-Index-Education
+DTSTART:20230817T183000Z
+DTEND:20230817T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-33-20230324T124509Z-Index-Education
+DTSTART:20230818T133000Z
+DTEND:20230818T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-33-20230324T124509Z-Index-Education
+DTSTART:20230818T153000Z
+DTEND:20230818T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-33-20230324T124509Z-Index-Education
+DTSTART:20230818T163000Z
+DTEND:20230818T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-33-20230324T124509Z-Index-Education
+DTSTART:20230818T193000Z
+DTEND:20230818T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-33-20230324T124509Z-Index-Education
+DTSTART:20230818T203000Z
+DTEND:20230818T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-33-20230324T124509Z-Index-Education
+DTSTART:20230817T193000Z
+DTEND:20230817T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-34-20230324T124509Z-Index-Education
+DTSTART:20230824T153000Z
+DTEND:20230824T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-34-20230324T124509Z-Index-Education
+DTSTART:20230824T183000Z
+DTEND:20230824T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-34-20230324T124509Z-Index-Education
+DTSTART:20230825T133000Z
+DTEND:20230825T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-34-20230324T124509Z-Index-Education
+DTSTART:20230825T153000Z
+DTEND:20230825T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-34-20230324T124509Z-Index-Education
+DTSTART:20230825T163000Z
+DTEND:20230825T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-34-20230324T124509Z-Index-Education
+DTSTART:20230825T193000Z
+DTEND:20230825T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-34-20230324T124509Z-Index-Education
+DTSTART:20230825T203000Z
+DTEND:20230825T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-34-20230324T124509Z-Index-Education
+DTSTART:20230824T193000Z
+DTEND:20230824T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-35-20230324T124509Z-Index-Education
+DTSTART:20230831T153000Z
+DTEND:20230831T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-35-20230324T124509Z-Index-Education
+DTSTART:20230831T183000Z
+DTEND:20230831T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-35-20230324T124509Z-Index-Education
+DTSTART:20230901T133000Z
+DTEND:20230901T143000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-35-20230324T124509Z-Index-Education
+DTSTART:20230901T153000Z
+DTEND:20230901T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-35-20230324T124509Z-Index-Education
+DTSTART:20230901T163000Z
+DTEND:20230901T173000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-35-20230324T124509Z-Index-Education
+DTSTART:20230901T193000Z
+DTEND:20230901T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-35-20230324T124509Z-Index-Education
+DTSTART:20230901T203000Z
+DTEND:20230901T213000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-35-20230324T124509Z-Index-Education
+DTSTART:20230831T193000Z
+DTEND:20230831T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-36-20230324T124509Z-Index-Education
+DTSTART:20230907T143000Z
+DTEND:20230907T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-36-20230324T124509Z-Index-Education
+DTSTART:20230907T173000Z
+DTEND:20230907T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-36-20230324T124509Z-Index-Education
+DTSTART:20230908T123000Z
+DTEND:20230908T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-36-20230324T124509Z-Index-Education
+DTSTART:20230908T143000Z
+DTEND:20230908T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-36-20230324T124509Z-Index-Education
+DTSTART:20230908T153000Z
+DTEND:20230908T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-36-20230324T124509Z-Index-Education
+DTSTART:20230908T183000Z
+DTEND:20230908T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-36-20230324T124509Z-Index-Education
+DTSTART:20230908T193000Z
+DTEND:20230908T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-36-20230324T124509Z-Index-Education
+DTSTART:20230907T183000Z
+DTEND:20230907T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-37-20230324T124509Z-Index-Education
+DTSTART:20230914T143000Z
+DTEND:20230914T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-37-20230324T124509Z-Index-Education
+DTSTART:20230914T173000Z
+DTEND:20230914T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-37-20230324T124509Z-Index-Education
+DTSTART:20230915T123000Z
+DTEND:20230915T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-37-20230324T124509Z-Index-Education
+DTSTART:20230915T143000Z
+DTEND:20230915T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-37-20230324T124509Z-Index-Education
+DTSTART:20230915T153000Z
+DTEND:20230915T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-37-20230324T124509Z-Index-Education
+DTSTART:20230915T183000Z
+DTEND:20230915T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-37-20230324T124509Z-Index-Education
+DTSTART:20230915T193000Z
+DTEND:20230915T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-37-20230324T124509Z-Index-Education
+DTSTART:20230914T183000Z
+DTEND:20230914T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-38-20230324T124509Z-Index-Education
+DTSTART:20230921T143000Z
+DTEND:20230921T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-38-20230324T124509Z-Index-Education
+DTSTART:20230921T173000Z
+DTEND:20230921T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-38-20230324T124509Z-Index-Education
+DTSTART:20230922T123000Z
+DTEND:20230922T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-38-20230324T124509Z-Index-Education
+DTSTART:20230922T143000Z
+DTEND:20230922T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-38-20230324T124509Z-Index-Education
+DTSTART:20230922T153000Z
+DTEND:20230922T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-38-20230324T124509Z-Index-Education
+DTSTART:20230922T183000Z
+DTEND:20230922T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-38-20230324T124509Z-Index-Education
+DTSTART:20230922T193000Z
+DTEND:20230922T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-38-20230324T124509Z-Index-Education
+DTSTART:20230921T183000Z
+DTEND:20230921T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-39-20230324T124509Z-Index-Education
+DTSTART:20230928T143000Z
+DTEND:20230928T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-39-20230324T124509Z-Index-Education
+DTSTART:20230928T173000Z
+DTEND:20230928T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-39-20230324T124509Z-Index-Education
+DTSTART:20230929T123000Z
+DTEND:20230929T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-39-20230324T124509Z-Index-Education
+DTSTART:20230929T143000Z
+DTEND:20230929T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-39-20230324T124509Z-Index-Education
+DTSTART:20230929T153000Z
+DTEND:20230929T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-39-20230324T124509Z-Index-Education
+DTSTART:20230929T183000Z
+DTEND:20230929T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-39-20230324T124509Z-Index-Education
+DTSTART:20230929T193000Z
+DTEND:20230929T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-39-20230324T124509Z-Index-Education
+DTSTART:20230928T183000Z
+DTEND:20230928T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-40-20230324T124509Z-Index-Education
+DTSTART:20231005T143000Z
+DTEND:20231005T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-40-20230324T124509Z-Index-Education
+DTSTART:20231005T173000Z
+DTEND:20231005T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-40-20230324T124509Z-Index-Education
+DTSTART:20231006T123000Z
+DTEND:20231006T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-40-20230324T124509Z-Index-Education
+DTSTART:20231006T143000Z
+DTEND:20231006T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-40-20230324T124509Z-Index-Education
+DTSTART:20231006T153000Z
+DTEND:20231006T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-40-20230324T124509Z-Index-Education
+DTSTART:20231006T183000Z
+DTEND:20231006T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-40-20230324T124509Z-Index-Education
+DTSTART:20231006T193000Z
+DTEND:20231006T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-40-20230324T124509Z-Index-Education
+DTSTART:20231005T183000Z
+DTEND:20231005T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-41-20230324T124509Z-Index-Education
+DTSTART:20231012T143000Z
+DTEND:20231012T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-41-20230324T124509Z-Index-Education
+DTSTART:20231012T173000Z
+DTEND:20231012T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-41-20230324T124509Z-Index-Education
+DTSTART:20231013T123000Z
+DTEND:20231013T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-41-20230324T124509Z-Index-Education
+DTSTART:20231013T143000Z
+DTEND:20231013T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-41-20230324T124509Z-Index-Education
+DTSTART:20231013T153000Z
+DTEND:20231013T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-41-20230324T124509Z-Index-Education
+DTSTART:20231013T183000Z
+DTEND:20231013T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-41-20230324T124509Z-Index-Education
+DTSTART:20231013T193000Z
+DTEND:20231013T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-41-20230324T124509Z-Index-Education
+DTSTART:20231012T183000Z
+DTEND:20231012T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-42-20230324T124509Z-Index-Education
+DTSTART:20231019T143000Z
+DTEND:20231019T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-42-20230324T124509Z-Index-Education
+DTSTART:20231019T173000Z
+DTEND:20231019T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-42-20230324T124509Z-Index-Education
+DTSTART:20231020T123000Z
+DTEND:20231020T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-42-20230324T124509Z-Index-Education
+DTSTART:20231020T143000Z
+DTEND:20231020T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-42-20230324T124509Z-Index-Education
+DTSTART:20231020T153000Z
+DTEND:20231020T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-42-20230324T124509Z-Index-Education
+DTSTART:20231020T183000Z
+DTEND:20231020T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-42-20230324T124509Z-Index-Education
+DTSTART:20231020T193000Z
+DTEND:20231020T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-42-20230324T124509Z-Index-Education
+DTSTART:20231019T183000Z
+DTEND:20231019T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-43-20230324T124509Z-Index-Education
+DTSTART:20231026T143000Z
+DTEND:20231026T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-43-20230324T124509Z-Index-Education
+DTSTART:20231026T173000Z
+DTEND:20231026T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-43-20230324T124509Z-Index-Education
+DTSTART:20231027T123000Z
+DTEND:20231027T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-43-20230324T124509Z-Index-Education
+DTSTART:20231027T143000Z
+DTEND:20231027T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-43-20230324T124509Z-Index-Education
+DTSTART:20231027T153000Z
+DTEND:20231027T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-43-20230324T124509Z-Index-Education
+DTSTART:20231027T183000Z
+DTEND:20231027T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-43-20230324T124509Z-Index-Education
+DTSTART:20231027T193000Z
+DTEND:20231027T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-43-20230324T124509Z-Index-Education
+DTSTART:20231026T183000Z
+DTEND:20231026T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-44-20230324T124509Z-Index-Education
+DTSTART:20231102T143000Z
+DTEND:20231102T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-44-20230324T124509Z-Index-Education
+DTSTART:20231102T173000Z
+DTEND:20231102T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-44-20230324T124509Z-Index-Education
+DTSTART:20231103T123000Z
+DTEND:20231103T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-44-20230324T124509Z-Index-Education
+DTSTART:20231103T143000Z
+DTEND:20231103T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-44-20230324T124509Z-Index-Education
+DTSTART:20231103T153000Z
+DTEND:20231103T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-44-20230324T124509Z-Index-Education
+DTSTART:20231103T183000Z
+DTEND:20231103T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-44-20230324T124509Z-Index-Education
+DTSTART:20231103T193000Z
+DTEND:20231103T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-44-20230324T124509Z-Index-Education
+DTSTART:20231102T183000Z
+DTEND:20231102T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-45-20230324T124509Z-Index-Education
+DTSTART:20231109T143000Z
+DTEND:20231109T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-45-20230324T124509Z-Index-Education
+DTSTART:20231109T173000Z
+DTEND:20231109T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-45-20230324T124509Z-Index-Education
+DTSTART:20231110T123000Z
+DTEND:20231110T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-45-20230324T124509Z-Index-Education
+DTSTART:20231110T143000Z
+DTEND:20231110T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-45-20230324T124509Z-Index-Education
+DTSTART:20231110T153000Z
+DTEND:20231110T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-45-20230324T124509Z-Index-Education
+DTSTART:20231110T183000Z
+DTEND:20231110T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-45-20230324T124509Z-Index-Education
+DTSTART:20231110T193000Z
+DTEND:20231110T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-45-20230324T124509Z-Index-Education
+DTSTART:20231109T183000Z
+DTEND:20231109T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-46-20230324T124509Z-Index-Education
+DTSTART:20231116T143000Z
+DTEND:20231116T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-46-20230324T124509Z-Index-Education
+DTSTART:20231116T173000Z
+DTEND:20231116T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-46-20230324T124509Z-Index-Education
+DTSTART:20231117T123000Z
+DTEND:20231117T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-46-20230324T124509Z-Index-Education
+DTSTART:20231117T143000Z
+DTEND:20231117T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-46-20230324T124509Z-Index-Education
+DTSTART:20231117T153000Z
+DTEND:20231117T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-46-20230324T124509Z-Index-Education
+DTSTART:20231117T183000Z
+DTEND:20231117T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-46-20230324T124509Z-Index-Education
+DTSTART:20231117T193000Z
+DTEND:20231117T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-46-20230324T124509Z-Index-Education
+DTSTART:20231116T183000Z
+DTEND:20231116T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-47-20230324T124509Z-Index-Education
+DTSTART:20231123T143000Z
+DTEND:20231123T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-47-20230324T124509Z-Index-Education
+DTSTART:20231123T173000Z
+DTEND:20231123T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-47-20230324T124509Z-Index-Education
+DTSTART:20231124T123000Z
+DTEND:20231124T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-47-20230324T124509Z-Index-Education
+DTSTART:20231124T143000Z
+DTEND:20231124T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-47-20230324T124509Z-Index-Education
+DTSTART:20231124T153000Z
+DTEND:20231124T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-47-20230324T124509Z-Index-Education
+DTSTART:20231124T183000Z
+DTEND:20231124T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-47-20230324T124509Z-Index-Education
+DTSTART:20231124T193000Z
+DTEND:20231124T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-47-20230324T124509Z-Index-Education
+DTSTART:20231123T183000Z
+DTEND:20231123T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-48-20230324T124509Z-Index-Education
+DTSTART:20231130T143000Z
+DTEND:20231130T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-48-20230324T124509Z-Index-Education
+DTSTART:20231130T173000Z
+DTEND:20231130T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-48-20230324T124509Z-Index-Education
+DTSTART:20231201T123000Z
+DTEND:20231201T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-48-20230324T124509Z-Index-Education
+DTSTART:20231201T143000Z
+DTEND:20231201T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-48-20230324T124509Z-Index-Education
+DTSTART:20231201T153000Z
+DTEND:20231201T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-48-20230324T124509Z-Index-Education
+DTSTART:20231201T183000Z
+DTEND:20231201T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-48-20230324T124509Z-Index-Education
+DTSTART:20231201T193000Z
+DTEND:20231201T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-48-20230324T124509Z-Index-Education
+DTSTART:20231130T183000Z
+DTEND:20231130T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-49-20230324T124509Z-Index-Education
+DTSTART:20231207T143000Z
+DTEND:20231207T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-49-20230324T124509Z-Index-Education
+DTSTART:20231207T173000Z
+DTEND:20231207T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-49-20230324T124509Z-Index-Education
+DTSTART:20231208T123000Z
+DTEND:20231208T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-49-20230324T124509Z-Index-Education
+DTSTART:20231208T143000Z
+DTEND:20231208T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-49-20230324T124509Z-Index-Education
+DTSTART:20231208T153000Z
+DTEND:20231208T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-49-20230324T124509Z-Index-Education
+DTSTART:20231208T183000Z
+DTEND:20231208T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-49-20230324T124509Z-Index-Education
+DTSTART:20231208T193000Z
+DTEND:20231208T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-49-20230324T124509Z-Index-Education
+DTSTART:20231207T183000Z
+DTEND:20231207T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-50-20230324T124509Z-Index-Education
+DTSTART:20231214T143000Z
+DTEND:20231214T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-50-20230324T124509Z-Index-Education
+DTSTART:20231214T173000Z
+DTEND:20231214T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-50-20230324T124509Z-Index-Education
+DTSTART:20231215T123000Z
+DTEND:20231215T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-50-20230324T124509Z-Index-Education
+DTSTART:20231215T143000Z
+DTEND:20231215T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-50-20230324T124509Z-Index-Education
+DTSTART:20231215T153000Z
+DTEND:20231215T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-50-20230324T124509Z-Index-Education
+DTSTART:20231215T183000Z
+DTEND:20231215T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-50-20230324T124509Z-Index-Education
+DTSTART:20231215T193000Z
+DTEND:20231215T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-50-20230324T124509Z-Index-Education
+DTSTART:20231214T183000Z
+DTEND:20231214T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-51-20230324T124509Z-Index-Education
+DTSTART:20231221T143000Z
+DTEND:20231221T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-51-20230324T124509Z-Index-Education
+DTSTART:20231221T173000Z
+DTEND:20231221T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-51-20230324T124509Z-Index-Education
+DTSTART:20231222T123000Z
+DTEND:20231222T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-51-20230324T124509Z-Index-Education
+DTSTART:20231222T143000Z
+DTEND:20231222T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-51-20230324T124509Z-Index-Education
+DTSTART:20231222T153000Z
+DTEND:20231222T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-51-20230324T124509Z-Index-Education
+DTSTART:20231222T183000Z
+DTEND:20231222T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-51-20230324T124509Z-Index-Education
+DTSTART:20231222T193000Z
+DTEND:20231222T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-51-20230324T124509Z-Index-Education
+DTSTART:20231221T183000Z
+DTEND:20231221T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153050Z
+UID:Cours-10728-52-20230324T124509Z-Index-Education
+DTSTART:20231228T143000Z
+DTEND:20231228T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153058Z
+UID:Cours-10729-52-20230324T124509Z-Index-Education
+DTSTART:20231228T173000Z
+DTEND:20231228T183000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153109Z
+UID:Cours-10730-52-20230324T124509Z-Index-Education
+DTSTART:20231229T123000Z
+DTEND:20231229T133000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153116Z
+UID:Cours-10731-52-20230324T124509Z-Index-Education
+DTSTART:20231229T143000Z
+DTEND:20231229T153000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153121Z
+UID:Cours-10732-52-20230324T124509Z-Index-Education
+DTSTART:20231229T153000Z
+DTEND:20231229T163000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153128Z
+UID:Cours-10733-52-20230324T124509Z-Index-Education
+DTSTART:20231229T183000Z
+DTEND:20231229T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153136Z
+UID:Cours-10734-52-20230324T124509Z-Index-Education
+DTSTART:20231229T193000Z
+DTEND:20231229T203000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Emploi du Temps
+DTSTAMP:20230324T154509Z
+LAST-MODIFIED:20230324T153141Z
+UID:Cours-10735-52-20230324T124509Z-Index-Education
+DTSTART:20231228T183000Z
+DTEND:20231228T193000Z
+SUMMARY;LANGUAGE=fr:Matière non désignée
+DESCRIPTION;LANGUAGE=fr:Matière : Matière non désignée\nProfesseur : Gallegos\n
+X-ALT-DESC;FMTTYPE=text/html:Matière : Matière non désignée<br/>Professeur : Gallegos<br/>
+END:VEVENT
+END:VCALENDAR

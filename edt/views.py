@@ -221,6 +221,8 @@ def rl(request):
     return render_to_response("edt/rl.html",data,context_instance=RequestContext(request))
 
 def InformeReemplazos(request):
+    if not estaLogeado(request):
+        return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
     licencias = Licencia.objects.all().values('funcionario').order_by("-inicio")
     funcionarios = Usuario.objects.all().filter(estado=1).filter(id__in=licencias)
@@ -289,7 +291,7 @@ def funcionarioEvento(request):
         return redirect("/login")
     user = Usuario.objects.get(id=request.session['usuario'])
 
-    if  user.rol.id == 1:
+    if  user.rol.id == 1 and user.estado.id == 1:
         eventos = Usuario.objects.annotate(cant_eventos=Count('edt_user')).order_by("cant_eventos").filter(estado=1)
 
    
@@ -350,10 +352,10 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         usuario_id=Usuario.objects.get(id=persona)
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Sep 04 2021 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("Apr 03 2022 01:00AM")
-        inicio_agno = ("2019-02-15 00:00:00")
-        fecha_inicio = parser.parse("Feb 15 2019 01:00AM")        
+        fecha_cambio_TZ = parser.parse("Mar 24 2023 01:00AM") 
+        fecha_cambio_TZ2 = parser.parse("Sep 10 2023 01:00AM")
+        inicio_agno = ("2023-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2023 01:00AM")      
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
         contador = 0
 
@@ -379,7 +381,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Rio_Branco') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santiago') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -410,10 +412,10 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         usuario_id=request.session['usuario']
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Sep 04 2021 01:00AM")
-        fecha_cambio_TZ2 = parser.parse("Apr 03 2022 01:00AM")
-        inicio_agno = ("2019-02-15 00:00:00")
-        fecha_inicio = parser.parse("Feb 15 2019 01:00AM")        
+        fecha_cambio_TZ = parser.parse("Mar 24 2023 01:00AM") 
+        fecha_cambio_TZ2 = parser.parse("Sep 10 2023 01:00AM")
+        inicio_agno = ("2023-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2023 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
         contador = 0
         ids = []
@@ -436,7 +438,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Rio_Branco') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santiago') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
@@ -464,9 +466,7 @@ def comprobante(request, pk):
             
         #idpermiso = Permiso.objects.get(id=int(pk))        
         permiso = Permiso.objects.get(id=pk)
-        #evento = Eventos_en_Permisos.objects.filter(numero_permiso=idpermiso)
-	
-	
+        #evento = Eventos_en_Permisos.objects.filter(numero_permiso=idpermiso)	
  
         return render_to_response("edt/comprobante.html",{ "permiso" : permiso,"usuario" : usuarioObj})
         #return HttpResponse({ "permiso" : permiso,"usuario" : usuarioObj,"evento" : evento}) 
@@ -475,21 +475,13 @@ def comprobante(request, pk):
 def urlcalendario(request): #procesa_solicitud_permiso
     if not estaLogeado(request):
                 return redirect("/login")
-    
-    
-
     if request.POST.get('data-persona'):
-
         datapersona = request.POST.get('data-persona')        
         usuarioObj = Usuario.objects.get(id=datapersona)
-
-
     else:
         usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-
     actividad = Actividad.objects.get(id=5)
     usuario_id=request.session['usuario']
-
 
     if request.method == 'POST':
         arrayDeEventos = json.loads(request.POST['data-calendario'])  #cargo los id de los eventos seleccionados
@@ -501,14 +493,15 @@ def urlcalendario(request): #procesa_solicitud_permiso
         documento_adjunto = request.POST.get('documento_adjunto')
         #documento_adjunto = documento_adjunto.decode('latin1','replace')# codificacion para tildes
         motivo = request.POST.get('motivo')
+        tipo = request.POST.get('tipo')
                                                                       #en el calendario en formato json a una lista           
         eventos = Evento.objects.filter(id__in=arrayDeEventos) #consulto los eventos en la tabla Eventos segun los Id de la lista
 
         
-
+        
     formset = PermisoFormSet(request.POST, request.FILES) 
    
-    ############ #########guardado  de   permiso ############################
+    #####################guardado  de   permiso ############################
 
     if formset.is_valid():
         
@@ -532,7 +525,13 @@ def urlcalendario(request): #procesa_solicitud_permiso
         sumafuncionario = 0
         i = 0
         deltas = []
-        deltaf = []  
+        deltaf = []
+
+        if  tipo == '5':
+            permiso_administrativo = PermisoAdministrativo(permiso = ultimopermiso, estado=True ,usuario=usuarioObj)
+            permiso_administrativo.save()
+
+        
 
         for evento in eventos:
             delta = evento.end - evento.start # calculo de la cantidad de horas solicitadas en segundos
@@ -712,7 +711,7 @@ def EstadisticaPermisos(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     if usuarioObj.rol.id == 1:
 
-        permisos = Permiso.objects.all().order_by("usuario__apellido1").filter(usuario__estado=1)
+        permisos = Permiso.objects.all().order_by("usuario__apellido1").filter(usuario__estado=1).select_related('usuario', 'motivo','tipo','estado')
         estamento = Estamento.objects.all()
         usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
@@ -1477,7 +1476,7 @@ def bitfuncionario(request):
 def index(request):
         if not estaLogeado(request):
                 return redirect("/login")
-        usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+        usuarioObj = Usuario.objects.get(id=request.session['usuario'])        
 	
         if  usuarioObj.rol.id == 1:
 
@@ -1506,6 +1505,7 @@ def permisolst(request):
     revisado_gerente = Resolucion.objects.values_list("permiso").filter(resolutor=39)
 
     permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=1).exclude(id__in=revisado_gerente).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion")
+    permisos = permisos.select_related('usuario', 'motivo', 'reemplazante', 'tipo', 'estado')
     
 
     bitacoras = Bitacora.objects.all()
@@ -1540,8 +1540,10 @@ def permisolst(request):
                 for estament in estamento_filtro:
                     estament.estamento_activo = estament.id == int(estamento)   
         elif "limpiar" in request.GET:
-            return redirect("/permisolst")       
-        
+            return redirect("/permisolst")
+
+        permisos = permisos.select_related('usuario', 'motivo', 'reemplazante', 'tipo', 'estado')
+
         paginator = Paginator(permisos,30)
         
         try: pagina = int(request.GET.get("page",'1'))
@@ -1550,8 +1552,7 @@ def permisolst(request):
         try:
             permisos = paginator.page(pagina)
         except (InvalidPage, EmptyPage):
-            permisos = paginator.page(paginator.num_pages)
-
+            permisos = paginator.page(paginator.num_pages)       
 
         data = {
                  "estamento":estamento,
@@ -1577,6 +1578,7 @@ def permisolst(request):
         if  usuarioObj.rol.nivel_acceso == 1:
             ids = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
             permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(usuario=usuarioObj.id).exclude(id__in=ids).order_by("-fecha_creacion")
+            permisos = permisos.select_related('usuario', 'motivo', 'reemplazante', 'tipo', 'estado')
             
 
             paginator = Paginator(permiso,10)       
@@ -1586,6 +1588,8 @@ def permisolst(request):
                 permiso = paginator.page(pagina)
             except (InvalidPage, EmptyPage):
                 permiso = paginator.page(paginator.num_pages)
+
+
 
         data = {
                  "foliocpe":foliocpe,
@@ -1922,6 +1926,51 @@ class ImprimePermisoPDF(PDFTemplateView):
 
         return context
 
+def ConPermisHoy(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    hoy = datetime.now().date()
+    tomorrow = hoy + timedelta(days=1)
+
+    if  usuarioObj.rol.nivel_acceso == 0:
+        estamento = Estamento.objects.all()
+        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        estamento_filtro = Estamento.objects.all()
+        permisos = permisos.filter(eventos_en_permisos__numero_evento__start__gte=hoy)
+        permisos = permisos.filter(eventos_en_permisos__numero_evento__end__lte=tomorrow)
+
+        paginator = Paginator(permisos,30)
+        
+        try: pagina = int(request.GET.get("page",'1'))
+        except ValueError: pagina = 1
+            
+        try:
+            permisos = paginator.page(pagina)
+        except (InvalidPage, EmptyPgae):
+            permisos = paginator.page(paginator.num_pages)
+
+        data = {
+                 "estamento":estamento,                 
+                 "permisos": permisos,
+                 "usuario" : usuarioObj,
+                 "hoy" : hoy,
+                 "tomorrow" : tomorrow,
+                 "permisos_list" : permisos.object_list,
+                 "months" : mkmonth_lst(),
+                 "query_string" : request.META["QUERY_STRING"]
+        }
+
+        return render_to_response("edt/permiso_hoy.html",data)
+        #return HttpResponse("hola")
+    else:
+        return redirect("/main")
+
+
+
 def ConPermiso(request):
     if not estaLogeado(request):
         return redirect("/login")
@@ -1930,7 +1979,8 @@ def ConPermiso(request):
     rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
     end = " "
     start = " "
-    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=5).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    #permisos = Permiso.objects.all().filter(estado=4).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
 
     if  usuarioObj.rol.nivel_acceso == 0:
 
@@ -2007,7 +2057,7 @@ class ConPermisoPDF(PDFTemplateView):
         end = " "
         start = " "
 
-        permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=5).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+        permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
 
         if  usuarioObj.rol.nivel_acceso == 0:
             
@@ -2058,7 +2108,7 @@ class ConPermisoExcel(TemplateView):
         anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
         rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
 
-        permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=5).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+        permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
 
         if  usuarioObj.rol.nivel_acceso == 0:
 
@@ -2110,11 +2160,12 @@ class ConPermisoExcel(TemplateView):
             ws['B3'] = '#'
             ws['C3'] = 'Numero de Permiso'
             ws['D3'] = 'Solicitante'
-            ws['E3'] = 'Fecha de Solicitud'
-            ws['F3'] = 'Motivo'
-            ws['G3'] = 'Inicio'
-            ws['H3'] = 'Fin'
-            ws['I3'] = 'Cantidad de Horas'
+            ws['E4'] = 'Tipo de Permiso'
+            ws['F3'] = 'Fecha de Solicitud'
+            ws['G3'] = 'Motivo'
+            ws['H3'] = 'Inicio'
+            ws['I3'] = 'Fin'
+            ws['J3'] = 'Cantidad de Horas'
 
             cont = 4
             contador = 1
@@ -2124,20 +2175,21 @@ class ConPermisoExcel(TemplateView):
                 ws.cell(row=cont,column=2).value = contador
                 ws.cell(row=cont,column=3).value = permiso.id
                 ws.cell(row=cont,column=4).value = permiso.usuario.apellido1+" "+permiso.usuario.apellido2+" "+permiso.usuario.nombre
-                ws.cell(row=cont,column=5).value = permiso.fecha_creacion
-                ws.cell(row=cont,column=6).value = str(permiso.motivo)
+                ws.cell(row=cont,column=5).value = permiso.tipo.nombre
+                ws.cell(row=cont,column=6).value = permiso.fecha_creacion
+                ws.cell(row=cont,column=7).value = str(permiso.motivo)
                 
                 if len(permiso.eventos_en_permisos_set.all()) < 1:
-                    ws.cell(row=cont,column=7).value = "Vacio"
+                    ws.cell(row=cont,column=8).value = "Vacio"
                 else: 
-                    ws.cell(row=cont,column=7).value = permiso.primerEvento().numero_evento.start
+                    ws.cell(row=cont,column=8).value = permiso.primerEvento().numero_evento.start
 
                 if len(permiso.eventos_en_permisos_set.all()) < 1:
-                    ws.cell(row=cont,column=8).value = "Vacio"
+                    ws.cell(row=cont,column=9).value = "Vacio"
                 else:
-                    ws.cell(row=cont,column=8).value = permiso.ultimoEvento().numero_evento.end
+                    ws.cell(row=cont,column=9).value = permiso.ultimoEvento().numero_evento.end
 
-                ws.cell(row=cont,column=9).value = permiso.horas_solicitadas
+                ws.cell(row=cont,column=10).value = permiso.horas_solicitadas
 
                 cont = cont +1
                 contador = contador + 1
@@ -2619,11 +2671,56 @@ def main(request): #antes de procesa_solicitud_permiso
             return redirect("/login")
     hoy = datetime.now()
     this_year = hoy.year
+
+    ########## Inicio y fin de semestres ######
+    inicio_semestre1 = datetime(this_year,1,1)
+    fin_semestre1 = datetime(this_year,6,30)
+    inicio_semestre2 = datetime(this_year,7,1)
+    fin_semestre2 = datetime(this_year,12,31)
+    ##########################################
+
     primaria = Estamento.objects.get(id=3)
     maternelle = Estamento.objects.get(id=2)
 
-
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+
+    #validacion permiso administrativo
+    permiso_administrativo = Tipo_Permiso.objects.get(id=5)
+    #estado de permisos aprovado o solicitado
+    PA_R = Estado_Permiso.objects.filter(id=5)#rechazado
+    PA_A = Estado_Permiso.objects.filter(id=6)#anulado
+    primersemestre = 0
+    segundosemestre = 0
+    #####
+    if PermisoAdministrativo.objects.filter(usuario=request.session['usuario']):
+        existe_permiso = True
+        ContPermisosAdministrativos = len(Permiso.objects.filter(usuario=request.session['usuario']).filter(tipo=permiso_administrativo).exclude(estado=PA_R).exclude(estado=PA_A))
+        PermisosAdministrativos = Permiso.objects.filter(usuario=request.session['usuario']).filter(tipo=permiso_administrativo).exclude(estado=PA_R).exclude(estado=PA_A)
+
+        for PA in PermisosAdministrativos:
+
+            if hoy >= inicio_semestre2:
+
+                primersemestre += 1 #Bloqueda Primer Semestre
+
+            if Eventos_en_Permisos.objects.filter(numero_permiso=PA).filter(numero_evento__start__range=(inicio_semestre1, fin_semestre1)):
+                primersemestre += 1 #bloquea Primer Semestre
+
+            elif Eventos_en_Permisos.objects.filter(numero_permiso=PA).filter(numero_evento__start__range=(inicio_semestre2, fin_semestre2)):
+                segundosemestre  += 1 #Bloqueda Segundo Semestre
+
+            else:
+                primersemestre = 0 #habilita Primer Semestre
+                segundosemestre = 0 #habilita Segundo Semestre
+
+    else:
+        existe_permiso = False
+        ContPermisosAdministrativos = 0
+        PermisosAdministrativos = "Sin permisos Administrativos asociados"
+        primersemestre = 0
+        segundosemestre  = 0
+    #fin validacion permiso administrativo
+
     permisos = Permiso.objects.filter(usuario=usuarioObj.id)
     bitacoras = Bitacora.objects.all()
     horass = Horas.objects.filter(usuario=usuarioObj.id).filter(permiso__fecha_creacion__year=this_year)
@@ -2694,6 +2791,8 @@ def main(request): #antes de procesa_solicitud_permiso
             usuarios[idUsuario]["pendientes_por_aprobar"] += hora.horas_pendientes_por_aprobar
          
     usuariosLista = [value for key,value in usuarios.iteritems()]
+
+
    
     data = {
             "sexo" : sexo,
@@ -2709,6 +2808,16 @@ def main(request): #antes de procesa_solicitud_permiso
             "primaria" : primaria,
             "maternelle" : maternelle,
             #"fech" : fech,
+           "existe_permiso" : existe_permiso,
+           "inicio_semestre1" : inicio_semestre1,
+           "fin_semestre1" : fin_semestre1,
+           "inicio_semestre2" : inicio_semestre2,
+           "fin_semestre2" : fin_semestre2,
+           "ContPermisosAdministrativos" : ContPermisosAdministrativos,
+           "PermisosAdministrativos" : PermisosAdministrativos,
+           "primersemestre" : primersemestre,
+           "segundosemestre" : segundosemestre,
+
            }
 
     
@@ -3434,23 +3543,27 @@ def anula(request):
 
             #arrayAnular = []
 
-            para_anular = Eventos_en_Permisos.objects.filter(numero_permiso=permiso) 
+            para_anular = Eventos_en_Permisos.objects.filter(numero_permiso=permiso)
 
-            for evento_anulado in para_anular :#aqui
-                anulados = Eventos_en_Permisos_Anulados(evento=evento_anulado.numero_evento,permiso=permiso,deltafuncionario=evento_anulado.deltafuncionario,deltainforme=evento_anulado.deltainforme)
-                anulados.save()
+            if len(para_anular) != 0 : 
+
+                for evento_anulado in para_anular :#aqui
+                    anulados = Eventos_en_Permisos_Anulados(evento=evento_anulado.numero_evento,permiso=permiso,deltafuncionario=evento_anulado.deltafuncionario,deltainforme=evento_anulado.deltainforme)
+                    anulados.save()
+                    
                 
-            
-            #libero los eventos para poder ser reutilizados
-            eventos = Eventos_en_Permisos.objects.filter(numero_permiso=permiso).delete()            
-            #guardo en horas reseteando las horas_solicitadas a 0 
-            horas = Horas.objects.get(permiso=permiso)
-            horas.horas_solicitadas = 0
-            horas.horas_descontar = 0
-            horas.horas_por_devolver = 0
-            horas.horas_aprobadas = 0
-            horas.horas_pendientes_por_aprobar = 0 
-            horas.save()
+                #libero los eventos para poder ser reutilizados
+                eventos = Eventos_en_Permisos.objects.filter(numero_permiso=permiso).delete()
+                #borro permiso administrativo 
+                permiso_administrativo = PermisoAdministrativo.objects.filter(permiso=permiso).delete()            
+                #guardo en horas reseteando las horas_solicitadas a 0 
+                horas = Horas.objects.get(permiso=permiso)
+                horas.horas_solicitadas = 0
+                horas.horas_descontar = 0
+                horas.horas_por_devolver = 0
+                horas.horas_aprobadas = 0
+                horas.horas_pendientes_por_aprobar = 0 
+                horas.save()
 
 
         if request.POST.get('cancelar') == 'Cancelado':
@@ -3720,11 +3833,13 @@ def licencia(request):
                 director_secundaria = 'ibarra@cdegaulle.cl'
                 primaire = 'primaire@cdegaulle.cl'
                 cpe = 'asanchez@cdegaulle.cl'
+                cpe2 = 'momnes@cdegaulle.cl'
                 mantencion = 'lcancino@cdegaulle.cl'
                 gerente = 'mdiaz@cdegaulle.cl'
                 intendance = 'intendance@cdegaulle.cl'
                 admin = 'scpa@cdegaulle.cl'
                 RRHH = 'ifuentes@cdegaulle.cl'
+                enfermeria = 'enfermeria@cdegaulle.cl'
 
                 template = loader.get_template('edt/email_licencia.html')
                 context = RequestContext(request, {'nombre' : licencias.funcionario.nombre,
@@ -3741,7 +3856,7 @@ def licencia(request):
                                            })
                 html = template.render(context)
                 #msg = EmailMultiAlternatives('Ingreso de licencia médica', html, 'scpa@cdegaulle.cl', [RRHH],cc=[admin],bcc=[admin]) # linea de prueba de correo de licencias
-                msg = EmailMultiAlternatives('Ingreso de licencia médica', html, 'scpa@cdegaulle.cl', [proviseur],cc=[RRHH, intendance, mantencion, dirgen, secondaire, director_primaria, director_secundaria, gerente, primaire, cpe],bcc=[admin])
+                msg = EmailMultiAlternatives('Ingreso de licencia médica', html, 'scpa@cdegaulle.cl', [proviseur],cc=[enfermeria, RRHH, intendance, mantencion, dirgen, secondaire, director_primaria, director_secundaria, gerente, primaire, cpe2],bcc=[admin])
                 msg.content_subtype = "html"  # Main content is now text/html
                 msg.send()
                 
