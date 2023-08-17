@@ -58,7 +58,7 @@
    {% for permiso in permisos %}
   <tr>
      <td>{{forloop.counter}}</td>
-     <td><a class="list-group-item btn btn-info" href="{% url 'edt.views.verpermiso2' permiso.pk %}">{{permiso.id}}</a></td>
+     <td><a class="list-group-item btn btn-lg btn-success" href="{% url 'edt.views.verpermiso2' permiso.pk %}">{{permiso.id}}</a></td>
      <td >{{permiso.usuario}}</td>
      <td>{{permiso.tipo}}</td>
      <td >{{permiso.fecha_creacion}}</td>
