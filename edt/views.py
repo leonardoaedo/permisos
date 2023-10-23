@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
+
 from xhtml2pdf import pisa
 from easy_pdf.rendering import render_to_pdf_response
 from easy_pdf.views import PDFTemplateView
@@ -353,7 +354,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
         fecha_cambio_TZ = parser.parse("Mar 24 2023 01:00AM") 
-        fecha_cambio_TZ2 = parser.parse("Sep 10 2023 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("Sep 04 2023 01:00AM")
         inicio_agno = ("2023-02-15 00:00:00")
         fecha_inicio = parser.parse("Feb 15 2023 01:00AM")      
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
@@ -381,7 +382,7 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santiago') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santo_Domingo') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -413,7 +414,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
         fecha_cambio_TZ = parser.parse("Mar 24 2023 01:00AM") 
-        fecha_cambio_TZ2 = parser.parse("Sep 10 2023 01:00AM")
+        fecha_cambio_TZ2 = parser.parse("Sep 04 2023 01:00AM")
         inicio_agno = ("2023-02-15 00:00:00")
         fecha_inicio = parser.parse("Feb 15 2023 01:00AM")        
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
@@ -438,7 +439,7 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
                     to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santiago') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santo_Domingo') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
@@ -1943,6 +1944,7 @@ def ConPermisHoy(request):
         permisos = permisos.filter(eventos_en_permisos__numero_evento__start__gte=hoy)
         permisos = permisos.filter(eventos_en_permisos__numero_evento__end__lte=tomorrow)
 
+        
         paginator = Paginator(permisos,30)
         
         try: pagina = int(request.GET.get("page",'1'))
@@ -1952,6 +1954,15 @@ def ConPermisHoy(request):
             permisos = paginator.page(pagina)
         except (InvalidPage, EmptyPgae):
             permisos = paginator.page(paginator.num_pages)
+
+        #email funcionarios con permiso
+        # miemail = usuarioObj.correo
+        # template = loader.get_template('edt/email_con_permiso.html')
+        # context = RequestContext(request, {'permisos' : permisos})
+        # html = template.render(context)
+        # msg = EmailMessage('Funcionarios con permiso' , html, 'scpa@cdegaulle.cl', [miemail])
+        # msg.content_subtype = "html"  # Main content is now text/html
+        # msg.send()
 
         data = {
                  "estamento":estamento,                 
@@ -1969,7 +1980,135 @@ def ConPermisHoy(request):
     else:
         return redirect("/main")
 
+def ConPermisoSiguienteDia(request):
+    if not estaLogeado(request):
+        return redirect("/login")
 
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion")
+    hoy = datetime.now().date()
+    pasadomagnana = hoy + timedelta(days=2)
+    magnana = hoy + timedelta(days=1)
+    fechasig = pasadomagnana -timedelta(days=1)
+    texto = ""
+    
+
+    if  usuarioObj.rol.nivel_acceso == 0:
+        estamento = Estamento.objects.all()
+        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        estamento_filtro = Estamento.objects.all()
+        permisos = permisos.filter(eventos_en_permisos__numero_evento__start__gte=magnana)
+        permisos = permisos.filter(eventos_en_permisos__numero_evento__end__lte=pasadomagnana)
+
+        contador = len(permisos)
+        
+        while contador == 0:
+            texto = "no hay permisos este dia"
+            permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion")
+            magnana = magnana + timedelta(days=1) 
+            pasadomagnana = magnana + timedelta(days=2)
+            permisos = permisos.filter(eventos_en_permisos__numero_evento__start__gte=magnana)
+            permisos = permisos.filter(eventos_en_permisos__numero_evento__end__lte=pasadomagnana)
+            contador = len(permisos)
+            fechasig = pasadomagnana -timedelta(days=1)
+            if contador > 0 :
+                    break 
+
+
+        paginator = Paginator(permisos,30)
+
+        try: pagina = int(request.GET.get("page",'1'))
+        except ValueError: pagina = 1
+            
+        try:
+            permisos = paginator.page(pagina)
+        except (InvalidPage, EmptyPgae):
+            permisos = paginator.page(paginator.num_pages)
+
+        #email funcionarios con permiso
+        # miemail = usuarioObj.correo
+        # template = loader.get_template('edt/email_con_permiso.html')
+        # context = RequestContext(request, {'permisos' : permisos})
+        # html = template.render(context)
+        # msg = EmailMessage('Funcionarios con permiso' , html, 'scpa@cdegaulle.cl', [miemail])
+        # msg.content_subtype = "html"  # Main content is now text/html
+        # msg.send()
+
+        data = {
+                 "estamento":estamento,                 
+                 "permisos": permisos,
+                 "usuario" : usuarioObj,
+                 "hoy" : hoy,
+                 "fecha" : magnana,
+                 "fechasig" : fechasig,
+                 "contador" : contador,
+                 "texto" : texto,
+                 "permisos_list" : permisos.object_list,
+                 "months" : mkmonth_lst(),
+                 "query_string" : request.META["QUERY_STRING"]
+        }
+        return render_to_response("edt/permiso_siguiente_dia.html",data)
+
+    else:
+        return redirect("/main")
+
+def EnviarMailConPermisHoy(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+    hoy = datetime.now().date()
+    tomorrow = hoy + timedelta(days=1)
+    fecha_actual = datetime.now().strftime('%d-%m-%Y')
+
+    asunto = 'Funcionarios con permiso - {}'.format(fecha_actual)
+
+    if  usuarioObj.rol.nivel_acceso == 0:
+        estamento = Estamento.objects.all()
+        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        estamento_filtro = Estamento.objects.all()
+        permisos = permisos.filter(eventos_en_permisos__numero_evento__start__gte=hoy)
+        permisos = permisos.filter(eventos_en_permisos__numero_evento__end__lte=tomorrow)
+
+        
+        paginator = Paginator(permisos,30)
+        
+        try: pagina = int(request.GET.get("page",'1'))
+        except ValueError: pagina = 1
+            
+        try:
+            permisos = paginator.page(pagina)
+        except (InvalidPage, EmptyPgae):
+            permisos = paginator.page(paginator.num_pages)
+
+        #email funcionarios con permiso
+        miemail = usuarioObj.correo
+        template = loader.get_template('edt/email_con_permiso.html')
+        context = RequestContext(request, {'permisos' : permisos, 'hoy' : hoy})
+        html = template.render(context)
+        msg = EmailMessage(asunto , html, 'scpa@cdegaulle.cl', [miemail])
+        msg.content_subtype = "html"  # Main content is now text/html
+        msg.send()
+
+        data = {
+                 "estamento":estamento,                 
+                 "permisos": permisos,
+                 "usuario" : usuarioObj,
+                 "hoy" : hoy,
+                 "tomorrow" : tomorrow,
+                 "permisos_list" : permisos.object_list,
+                 "months" : mkmonth_lst(),
+                 "query_string" : request.META["QUERY_STRING"]
+        }
+
+        return render_to_response("edt/enviando_email.html",data)
+        #return HttpResponse("hola")
+    else:
+        return redirect("/main")
 
 def ConPermiso(request):
     if not estaLogeado(request):
@@ -2008,7 +2147,8 @@ def ConPermiso(request):
                 estamento = request.GET.get("estamento")
                 permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
                 for estament in estamento_filtro:
-                    estament.estamento_activo = estament.id == int(estamento)   
+                    estament.estamento_activo = estament.id == int(estamento)
+            permisos = permisos.select_related()   
         elif "limpiar" in request.GET:
             return redirect("/conpermiso")
 
@@ -2042,6 +2182,41 @@ def ConPermiso(request):
     else:
         return redirect("/main")
 
+class PermisoHoyPDF(PDFTemplateView):
+    template_name="edt/PermisoHoyPDF.html"
+
+    def get_context_data(self,**kwargs):
+        context  =super(PermisoHoyPDF,self).get_context_data(
+            pagesize="letter",
+            title="Funcionarios con permiso hoy",
+            **kwargs
+            )
+        usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])
+        anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+        rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
+        permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+        hoy = datetime.now().date()
+        tomorrow = hoy + timedelta(days=1)
+
+        if  usuarioObj.rol.nivel_acceso == 0:
+
+            estamento = Estamento.objects.all()
+            usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+            estamento_filtro = Estamento.objects.all()
+            permisos = permisos.filter(eventos_en_permisos__numero_evento__start__gte=hoy)
+            permisos = permisos.filter(eventos_en_permisos__numero_evento__end__lte=tomorrow)
+
+            context = {       
+                     "permisos": permisos,
+                     "usuario" : usuarioObj,
+                     "months" : mkmonth_lst(),
+                     }
+            context['hoy'] =  datetime.now()
+
+            return context
+
+
+
 class ConPermisoPDF(PDFTemplateView):
     template_name="edt/conpermisoPDF.html"
 
@@ -2058,6 +2233,7 @@ class ConPermisoPDF(PDFTemplateView):
         start = " "
 
         permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=0).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion") 
+        permisos = permisos.select_related()
 
         if  usuarioObj.rol.nivel_acceso == 0:
             
@@ -2086,6 +2262,7 @@ class ConPermisoPDF(PDFTemplateView):
                     permisos = permisos.filter(usuario__estamento=self.request.GET.get("estamento"))
                     for estament in estamento_filtro:
                         estament.estamento_activo = estament.id == int(estamento)
+                permisos = permisos.select_related()
 
             context = {
                      "start":start,
@@ -4446,3 +4623,41 @@ def GraficoPermisos (request):
 
     #return HttpResponse(data)
     return render_to_response("edt/gpermisos.html",{"usuario": usuarioObj,"gpermisos":data},context_instance=RequestContext(request))
+
+
+def HorasTrabajadas (request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    hoy = datetime.now()
+    this_year = hoy.year
+
+
+    usuarios = Usuario.objects.all().filter(estado=1)
+
+    # Obtener los eventos para cada usuario en un rango de fechas (de lunes a viernes)
+    horas_por_dia = {}
+
+    for usuario in usuarios:
+        eventos_usuario = Evento.objects.filter(usuario=usuario)
+        
+        horas_por_usuario = {}
+        for evento in eventos_usuario:
+            if evento.start.weekday() <= 4:
+                dia_semana = evento.start.strftime('%A').lower()  # Obtener el día de la semana en minúsculas
+                horas_trabajadas = (evento.end - evento.start).seconds / 3600.0  # Convertir a horas
+            
+                if dia_semana not in horas_por_usuario:
+                    horas_por_usuario[dia_semana] = 0
+                
+                horas_por_usuario[dia_semana] += horas_trabajadas
+        
+        horas_por_dia[usuario] = horas_por_usuario
+        
+        data = {
+
+                "horas_por_dia" : horas_por_dia,
+
+        }
+
+    return render_to_response("edt/horastrabajadas.html",data)

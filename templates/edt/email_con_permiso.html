@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<!-- If you delete this meta tag, Half Life 3 will never be released. -->
+<meta name="viewport" content="width=device-width" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Funcionarios con permiso hoy</title>
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+<table role="presentation" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td >
+          <div >
+
+            <!-- START CENTERED WHITE CONTAINER -->
+            <table role="presentation" >
+
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td >
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>
+						<div align="center">
+							<img src="http://cal.cdegaulle.cl/static/img/bsup_correo_permisos.png">
+							<p ><h1><b>Funcionarios con permiso {{hoy}}</b></h1></p>							
+					    </div>
+						  <br>
+					  
+					  
+						<table border='1' style="border-collapse:collapse ">
+						  <thead style="background-color: #009879; color: #ffffff;">
+							  <tr>
+								<th style="text-align:center; padding: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); ">#</th>
+								<th>Numero de Permiso</th>
+								<th>Solicitante</th>
+								<th>Tipo de Permiso</th>
+								<th>Fecha de Solicitud</th>
+								<th >Motivo</th>
+								<th >Inicio</th>
+								<th >Fin</th>
+								<th>Cantidad Horas</th>
+							  </tr>
+							</thead>
+
+						   {% for permiso in permisos %}
+						  <tr >
+							 <td style="text-align:center; padding: 20px; " >{{forloop.counter}}</td>
+							 <td style="text-align:center; width: 150px; ">{{permiso.id}}</td>
+							 <td style="text-align:center; width: 200px; ">{{permiso.usuario}}</td>
+							 <td style="text-align:center; width: 150px;">{{permiso.tipo}}</td>
+							 <td style="text-align:center; width: 150px;">{{permiso.fecha_creacion|date:"d-m-Y " }}</td>
+							 <td style="text-align:center; width: 200px; ">{{permiso.motivo}}</td>
+							 <td style="text-align:center; width: 120px; "><b>{{permiso.primerEvento.numero_evento.start|timezone:"America/Noronha"|date:"D d M G:i"}}</b></td>
+							 <td style="text-align:center; width: 120px;"><b>{{permiso.ultimoEvento.numero_evento.end|timezone:"America/Noronha"|date:"D d M  G:i"}}</b></td>
+							 <td style="text-align:center; width: 150px;">{{permiso.horas_solicitadas}}</td>
+
+
+						  </tr>
+						   {% empty %}
+							<tr>
+							  <td colspan="5">En este momento no hay ningun elemento para mostrar</td>
+							</tr>
+
+
+						   {% endfor %}
+
+						</table>
+
+
+                        
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+				<tr>
+		  		<td>	  		
+					
+		  		</td>
+			</tr>	
+              </tr>
+
+            <!-- END MAIN CONTENT AREA -->
+            </table>
+            <!-- END CENTERED WHITE CONTAINER -->
+
+            <!-- START FOOTER -->
+            <div class="footer">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="content-block centrar">
+                    <div style="color:#999999;font-size:14px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:15px;padding-top:15px;padding-bottom:15px">Este correo ha sido generado de forma automática desde una cuenta de correos no monitorizada, por favor no responder.</div>
+  					<div style="font-family:Roboto-Regular,Helvetica,Arial,sans-serif; font-size:13px; color:#666666; line-height:18px; padding-bottom:10px"> © Lycée Charles de Gaulle, Colo Colo 51, Concepción, Chile.
+					</div>
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td class="content-block powered-by">
+                 
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- END FOOTER -->
+
+          </div>
+        </td>
+        <td></td>
+      </tr>
+
+    </table>
+</body>
+</html>
+
+
+</body>
+</html>

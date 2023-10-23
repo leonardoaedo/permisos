@@ -1,0 +1,41 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+
+
+{% if usuario.rol.nivel_acceso == 0 %}
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.periodpicker.min.css"/ >
+<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+<script type="text/javascript" src="/static/js/jquery.periodpicker.full.min.js"></script>
+<script src="/static/js/jquery.datetimepicker.full.js"></script>
+               
+        <div align="center">
+            <h1>
+                <p align="center">
+
+                  Correo electrónico enviado con exito , <br><br><br>  <button class="btn btn-danger btn-block" id="cerrar" onclick="cerrarVentana()">Cerrar Ventana</button> 
+            
+                </p>
+            </h1>
+        </div>
+
+
+  
+
+<script>
+function cerrarVentana() {
+    window.close(); // Cierra la ventana actual
+}
+</script>
+{% else %}
+
+<p>Acceso Restingido , <button id="cerrar" onclick="cerrarVentana()">Cerrar Ventana</button> </p>
+
+{% endif %}
+
+{% endblock  %}

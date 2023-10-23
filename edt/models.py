@@ -253,7 +253,7 @@ class Evento (models.Model):
     start = models.DateTimeField(null=True)
     end = models.DateTimeField(null=True)
     def __unicode__(self):
-            return " %d - %s %s"%(self.id ,self.usuario.nombre, self.usuario.apellido1)
+            return " %d - %s %s /  %s - %s"%(self.id ,self.usuario.nombre, self.usuario.apellido1, self.start, self.end)
 
 class Eventos_en_Permisos(models.Model):
     numero_permiso = models.ForeignKey(Permiso)

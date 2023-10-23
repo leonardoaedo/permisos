@@ -1,0 +1,45 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+
+<!-- {% for suma in sumas %}
+	
+	{{suma}}<br>
+
+{% endfor %} -->
+
+<h1>Horas Trabajadas por Día</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Usuario</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario, horas_por_dia_usuario in horas_por_dia.items %}
+                <tr>
+                	<td>{{forloop.counter}}</td>
+                    <td> {{ usuario.apellido1 }} {{ usuario.apellido2 }} {{ usuario.nombre }} </td>
+
+                    <td>{{ horas_por_dia_usuario.lunes|default:0 }}</td>
+                    <td>{{ horas_por_dia_usuario.martes|default:0 }}</td>
+                    
+                    <td>{{ horas_por_dia_usuario.jueves|default:0 }}</td>
+                    <td>{{ horas_por_dia_usuario.viernes|default:0 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+  {% endblock  %}

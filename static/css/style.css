@@ -867,6 +867,7 @@ padding: 5px 5px 5px 25px;
   float: left; 
   border-collapse:collapse;
   font-size: 12px;
+  border:#000000 1px solid;
 }
 .DEVtable caption {
 	font-size: 18px;
@@ -1565,3 +1566,4 @@ table.tablainforme tfoot td {
   font-size: 16px;
   color: #555;
 }
+

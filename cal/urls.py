@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls import *
-from edt.views import ReemplazosExcel,ReemplazosPDF,ImprimePermisoPDF,PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF,AnuladosPDF,AnuladosExcel,DescontadosExcel,DescontadosPDF,DevueltosExcel,DevueltosPDF,ConPermisoPDF,ConPermisoExcel,ConLicenciaPDF,ConLicenciaExcel
+from edt.views import ConPermisoSiguienteDia, EnviarMailConPermisHoy, PermisoHoyPDF,ReemplazosExcel,ReemplazosPDF,ImprimePermisoPDF,PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF,AnuladosPDF,AnuladosExcel,DescontadosExcel,DescontadosPDF,DevueltosExcel,DevueltosPDF,ConPermisoPDF,ConPermisoExcel,ConLicenciaPDF,ConLicenciaExcel
 urlpatterns = [
 
     # Examples:
@@ -84,7 +84,10 @@ urlpatterns = [
     url(r'^estadisticapermisos/',"edt.views.EstadisticaPermisos"),
     url(r'^gpermisos/','edt.views.GraficoPermisos' ),
     url(r'^conpermiso/','edt.views.ConPermiso' ),
+    url(r'^permisohoyPDF/', PermisoHoyPDF.as_view(), name="PermisoHoyPDF"),
     url(r'^conpermisohoy/', 'edt.views.ConPermisHoy'),
+    url(r'^conpermisosd/', 'edt.views.ConPermisoSiguienteDia'),
+    url(r'^enviarmail/', 'edt.views.EnviarMailConPermisHoy'),
     url(r'^conpermisoPDF/',ConPermisoPDF.as_view()),
     url(r'^conpermisoEXCEL/$',ConPermisoExcel.as_view(), name="ConPermisoExcel"),
     url(r'^funcevento/','edt.views.funcionarioEvento' ),
@@ -93,13 +96,7 @@ urlpatterns = [
     url(r'^LicenciaAPI/$',"edt.views.LicenciaAPI"),
     url(r'^ReemplazoAPI/$',"edt.views.ReemplazoAPI"),
     url(r'^modificadosreport/',"edt.views.modpermisoreport"),
-
-
-
-
-
-
-
+    url(r'^horastrabajadas',"edt.views.HorasTrabajadas" ),
     # url(r'^(?P<slug>[-\w]+)/$', PermisoDetailView.as_view(), name='permiso-detail'),
 
 ]
