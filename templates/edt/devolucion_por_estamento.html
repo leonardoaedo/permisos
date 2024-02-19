@@ -1,0 +1,126 @@
+{% extends "edt/base.html"%}
+{% load staticfiles %}
+
+{% block contenido %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+
+{% if usuario.rol.nivel_acceso == 0 %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.periodpicker.min.css"/ >
+<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+<script type="text/javascript" src="/static/js/jquery.periodpicker.full.min.js"></script>
+<script src="/static/js/jquery.datetimepicker.full.js"></script>
+
+<div class='form-group'>
+    <div class="row">                 
+        <div class="col-lg-8">    
+                                                                 
+        </div>  
+        <div class="col-lg-1">                            
+            <a href="/devestamentoEXCEL?{{query_string}}" class="btn btn-block" target="_self">
+                <img src="/static/img/xls.png" width="35" height="35">
+            </a>                          
+        </div>                                
+    </div>
+</div>
+
+
+<h3 align="center">Devolución de horas por estamento</h3>
+
+<div class="filtros">
+  <form id="horas" class="form-horizontal" method="get">
+  <fieldset>
+  <ul>
+    <li>
+      <label class="label label-primary" > Funcionario</label>
+      <select name="persona" >
+        <option value="0">Seleccione Funcionario</option>
+        {% for persona in usuarios_filtro %}  
+        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}  <!--{{persona.usuario_activo}}--> </option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <label class="label label-primary" >Estamento</label>
+      <select name="estamento">
+        <option value="0">Seleccione Estamento</option>
+        {% for estament in estamento_filtro %}
+        <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
+        {% endfor %}
+      </select>
+    </li> 
+    <li class="botfiltro">
+      <input class=" btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
+      <input class=" btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
+
+    </li>
+  </ul>
+  </fieldset> 
+  </form>
+</div> 
+ {% endif %}
+<div class="pxp" ><h4> <!-- Secundaria : {{foliosecundaria}} Primaria {{folioprimaria}} CPE {{foliocpe}} --> </h4>
+	
+	<!-- <ul class="list-group permisolst"> -->
+	<table class=" table-bordered table-hover TFtable ">
+  <tr>
+    
+    <th>Estamento</th>
+    <th>Funcionario</th>
+    <th>ID Permiso</th>
+    <th>Tipo</th>
+    <th>Con o sin Goce de sueldo</th>
+    <th>Fecha </th>
+    <th>Horas solicitadas</th>
+    <th>¿Devuelve Horas?</th>
+    <th>N° horas devueltas</th>
+    <th>Fecha ingreso devolución</th>
+    <th>Horas por devolver</th>
+    
+  </tr>
+
+	{% for hora in horas %}
+	<tr>
+    <td>{{hora.permiso.usuario.estamento}}</td>
+    <td>{{hora.permiso.usuario.apellido1}} {{hora.permiso.usuario.apellido2}} {{hora.permiso.usuario.nombre }}</td>
+    <td>{{hora.permiso.id}}</td>
+    <td>{{hora.permiso.tipo}}</td>
+    <td>{{hora.permiso.sueldo}}</td>
+    <td>{{hora.permiso.primerEvento.numero_evento.start |date:"d-m-Y" }}</td>
+    <td>{{hora.permiso.horas_solicitadas}}</td>
+    <td><b>{{hora.permiso.devuelve_horas}}</b></td>
+    <td>{{hora.horas_devueltas}}</td>
+
+	<td>
+		<b>	{% for devuelto in devueltos %}
+			    {% if devuelto.permiso.id == hora.permiso.id %}
+			   		{{devuelto.fecha |date:"d-m-Y"}}
+			    {% endif %}
+	    	{% endfor %}
+	    </b>
+    </td>
+
+    <td>{{hora.horas_por_devolver}}</td>
+    
+  	</tr>
+
+	{% empty %}
+    <li class="list-group-item">En este momento no hay ningun elemento para mostrar</li>
+
+	{% endfor %}
+	</table>
+ 
+		    <nav>
+			{% if horas.has_previous %}
+				<a href="?page={{ horas.previous_page_number }}">Página anterior</a>
+			{% endif %}
+			<p class="paginador">Página {{ horas.number }} de {{ horas.paginator.num_pages }}</p>
+			{% if horas.has_next %}
+			<a href="?page={{ horas.next_page_number }}">Página siguiente</a>
+			{% endif %} 
+	        </nav>
+</div>	        
+
+
+{% endblock %}

@@ -4661,3 +4661,176 @@ def HorasTrabajadas (request):
         }
 
     return render_to_response("edt/horastrabajadas.html",data)
+
+def DevolucionEstamento(request):
+    if not estaLogeado(request):
+        return redirect("/login")
+    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
+    permisos = Permiso.objects.all().order_by("-fecha_creacion")
+    bitacoras = Bitacora.objects.all().filter(actividad=6)
+    revisores = Revisor.objects.all()
+    horas = Horas.objects.all().order_by("-fecha")
+    devueltos = Devuelto.objects.all()
+
+    if  usuarioObj.rol.nivel_acceso == 0:
+
+        
+        estamento = Estamento.objects.all()
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        estamento_filtro = Estamento.objects.all()
+
+        if "filtrar" in request.GET:           
+
+            if "persona" in request.GET and request.GET.get("persona") != "0":
+                persona = request.GET.get("persona")
+                horas = horas.filter(usuario=request.GET.get("persona"))
+                for usuario in usuarios_filtro:
+                    usuario.usuario_activo = usuario.id == int(persona)
+
+            if "estamento" in request.GET and request.GET.get("estamento") != "0":
+                estamento = request.GET.get("estamento")
+                horas = horas.filter(usuario__estamento=request.GET.get("estamento"))
+                for estament in estamento_filtro:
+                    estament.estamento_activo = estament.id == int(estamento)
+
+        elif "limpiar" in request.GET:
+            return redirect("/devolucionestamento")
+
+        paginator = Paginator(horas,30)
+        
+        try: pagina = int(request.GET.get("page",'1'))
+        except ValueError: pagina = 1
+            
+        try:
+            horas = paginator.page(pagina)
+        except (InvalidPage, EmptyPage):
+            horas = paginator.page(paginator.num_pages)
+
+        data = {
+                 "estamento":estamento,                 
+                 "permisos": permisos,
+                 "horas" : horas,
+                 "devueltos" : devueltos,
+                 "usuario" : usuarioObj,
+                 "usuarios_filtro" : usuarios_filtro,
+                 "estamento_filtro" : estamento_filtro,
+                 "bitacoras" : bitacoras,
+                 "revisores" : revisores,
+                 "query_string" : request.META["QUERY_STRING"] 
+                 }
+
+
+        return render_to_response("edt/devolucion_por_estamento.html",data,context_instance=RequestContext(request))
+        #return HttpResponse(administracion)
+
+    else:
+        #if     usuarioObj.username == request.session['usuario']:
+        if  usuarioObj.rol.nivel_acceso == 1:
+            ids = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
+            permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(usuario=usuarioObj.id).exclude(id__in=ids).order_by("-fecha_creacion")
+            
+
+            paginator = Paginator(horas,30)       
+            try: pagina = int(request.GET.get("page",'1'))
+            except ValueError: pagina = 1       
+            try:
+                horas = paginator.page(pagina)
+            except (InvalidPage, EmptyPage):
+                horas = paginator.page(paginator.num_pages)
+
+        data = {
+                 "foliocpe":foliocpe,
+                 "folioprimaria" :folioprimaria,
+                 "foliosecundaria" :foliosecundaria ,
+                 "devueltos" : devueltos,
+                 "permisos": permiso,
+                 "usuario" : usuario,
+                 "horas" : horas,
+                 "months" : mkmonth_lst(),
+                 "bitacoras" : bitacoras,
+                 "query_string" : request.META["QUERY_STRING"] 
+               }
+            
+        return render_to_response("edt/devolucion_por_estamento.html",data,context_instance=RequestContext(request))
+
+
+class DevolucionEstamentoExcel(TemplateView):
+    """docstring for DevolucionEstamentoExcel"""
+    def get(self,request,*args,**kwargs):
+
+        usuarioObj = Usuario.objects.get(id=self.request.session['usuario'])  
+        horas = Horas.objects.all().order_by("-fecha")
+        devueltos = Devuelto.objects.all()
+
+        if  usuarioObj.rol.nivel_acceso == 0:
+            usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+            estamento_filtro = Estamento.objects.all()
+            
+            if "filtrar" in self.request.GET:
+
+                if "persona" in self.request.GET and self.request.GET.get("persona") != "0":
+                    persona = self.request.GET.get("persona")
+                    horas = horas.filter(usuario=self.request.GET.get("persona"))
+                    for usuario in usuarios_filtro:
+                        usuario.usuario_activo = usuario.id == int(persona)
+
+                if "estamento" in self.request.GET and self.request.GET.get("estamento") != "0":
+                    estamento = self.request.GET.get("estamento")
+                    horas = horas.filter(usuario__estamento=self.request.GET.get("estamento"))
+                    for estament in estamento_filtro:
+                        estament.estamento_activo = estament.id == int(estamento)
+
+            hoy = datetime.now()
+            #Creamos el libro de trabajo
+            wb = Workbook()
+            #Definimos como nuestra hoja de trabajo, la hoja activa, por defecto la primera del libro
+            ws = wb.active
+            ws['B1'] = 'Detalle devolución de Horas'
+            #Juntamos las celdas desde la B1 hasta la E1, formando una sola celda
+            ws.merge_cells('B1:E1')
+
+            # Encabezados
+
+            ws['B3'] = 'N°'
+            ws['C3'] = 'Estamento'            
+            ws['D3'] = 'Funcionario'
+            ws['E3'] = 'Id Permiso'
+            ws['F3'] = 'Tipo'
+            ws['G3'] = 'con o sin Goce de Sueldo'
+            ws['H3'] = 'Fecha'
+            ws['I3'] = 'Horas Solicitadas'
+            ws['J3'] = 'N° horas devueltas'
+            ws['K3'] = 'Fecha de devolución'            
+            ws['L3'] = 'Horas por Devolver'
+
+            cont = 4
+            contador = 1
+
+            for hora in horas:
+
+                ws.cell(row=cont,column=2).value = contador
+                ws.cell(row=cont,column=3).value = hora.permiso.usuario.estamento.nombre
+                ws.cell(row=cont,column=4).value = hora.permiso.usuario.apellido1+" "+hora.permiso.usuario.apellido2+" "+hora.permiso.usuario.nombre
+                ws.cell(row=cont,column=5).value = hora.permiso.id
+                ws.cell(row=cont,column=6).value = hora.permiso.tipo.nombre
+                ws.cell(row=cont,column=7).value = hora.permiso.sueldo
+                ws.cell(row=cont,column=8).value = hora.permiso.fecha_creacion
+                ws.cell(row=cont,column=8).number_format = 'dd-mm-yyyy'
+                ws.cell(row=cont,column=9).value = hora.permiso.horas_solicitadas
+                ws.cell(row=cont,column=10).value = hora.permiso.devuelve_horas
+                for devuelto in devueltos:
+                    if devuelto.permiso.id == hora.permiso.id :
+                        ws.cell(row=cont,column=11).value = devuelto.fecha
+                        ws.cell(row=cont,column=11).number_format = 'dd-mm-yyyy'
+
+                ws.cell(row=cont,column=12).value =hora.horas_devueltas
+
+                cont = cont +1
+                contador = contador + 1
+        #Establecemos el nombre del archivo
+        nombre_archivo ="OoO.xlsx"
+        response = HttpResponse(content_type="application/ms-excel")
+        contenido = "attachment; filename={0}".format(nombre_archivo)
+        response["Content-Disposition"] = contenido
+        wb.save(response)
+        return response

@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls import *
-from edt.views import ConPermisoSiguienteDia, EnviarMailConPermisHoy, PermisoHoyPDF,ReemplazosExcel,ReemplazosPDF,ImprimePermisoPDF,PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF,AnuladosPDF,AnuladosExcel,DescontadosExcel,DescontadosPDF,DevueltosExcel,DevueltosPDF,ConPermisoPDF,ConPermisoExcel,ConLicenciaPDF,ConLicenciaExcel
+from edt.views import DevolucionEstamentoExcel, DevolucionEstamento, ConPermisoSiguienteDia, EnviarMailConPermisHoy, PermisoHoyPDF,ReemplazosExcel,ReemplazosPDF,ImprimePermisoPDF,PermisoListView,BitHorasPDF,BitHorasExcel,EstadisticaPermisosExcel,EstadisticaPermisosPDF,AnuladosPDF,AnuladosExcel,DescontadosExcel,DescontadosPDF,DevueltosExcel,DevueltosPDF,ConPermisoPDF,ConPermisoExcel,ConLicenciaPDF,ConLicenciaExcel
 urlpatterns = [
 
     # Examples:
@@ -97,6 +97,8 @@ urlpatterns = [
     url(r'^ReemplazoAPI/$',"edt.views.ReemplazoAPI"),
     url(r'^modificadosreport/',"edt.views.modpermisoreport"),
     url(r'^horastrabajadas',"edt.views.HorasTrabajadas" ),
+    url(r'^devolucionestamento', 'edt.views.DevolucionEstamento'),
+    url(r'^devestamentoEXCEL/$', DevolucionEstamentoExcel.as_view(), name='devolucionestamentoEXCEL'),
     # url(r'^(?P<slug>[-\w]+)/$', PermisoDetailView.as_view(), name='permiso-detail'),
 
 ]

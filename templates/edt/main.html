@@ -392,7 +392,7 @@
           <div><span>A partir del respectivo fallecimiento.</span></div>
         </div>
         <div>
-          <label c>¿Cuándo dar aviso? : </label>
+          <label>¿Cuándo dar aviso? : </label>
           <div><span>No aplica.</span></div>
         </div>
         <div>
@@ -675,7 +675,7 @@ $(document).ready(function(){
 			}	
 	},
 	 
-   	   eventClick: function(event){
+   	  eventClick: function(event){
    	  var hoy = new Date();
 			var dd = hoy.getDate();
 			var mm = hoy.getMonth()+1; //hoy es 0!
@@ -718,15 +718,15 @@ $(document).ready(function(){
 
 			}
 				//console.log(event.start);
-				var ordenado = seleccionados.sort();//ordeno el arreglo para su correcto guadado
-				console.log(ordenado);
+		var ordenado = seleccionados.sort();//ordeno el arreglo para su correcto guadado
+		console.log(ordenado);
 			// }	//fin comprobacion de 48 horas	
 								}, // end fullcalendar       						 		
 		
 		})//end function 
 })// end ready
-</script>
-<script type="text/javascript">
+
+
   var edad ={{edad}};
   var sexo = {{sexo}};
   var primaria = {{primaria.id}};
@@ -734,6 +734,7 @@ $(document).ready(function(){
   var estamento = {{usuario.estamento.id}};
   var primersemestre = {{primersemestre}};
   var segundosemestre = {{segundosemestre}};
+
   console.log("edad",edad);
   console.log("Sexo",sexo);
   console.log("Primaria",primaria);

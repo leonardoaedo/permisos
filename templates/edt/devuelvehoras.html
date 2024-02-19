@@ -2,26 +2,44 @@
 {% load staticfiles %}
 
 {% block contenido %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script type="text/javascript">
   $(document).ready(function(){
     $("#devolver").click(function(e){  
       if( !$("#main input[name='permisoid']:radio").is(':checked')) {        
-        alert("Seleccione un permiso");
+        swal("Atención","Seleccione un permiso", "error");
           e.preventDefault(e);
       }else{
                var permisoid = $('input:radio[name=permisoid]:checked').val();
-               var horas_solicitadas = $('input:radio[name=permisoid]:checked').data("valor"); 
-               var horas_devolver = $('input[name=horasdevolver]').val();
-               // if ((horas_descontar > horas_solicitadas)){
-               //    if((horas_descontar == horas_solicitadas)){
-               //        continue
-               //    }else{
-               //          alert('Las horas a devolver no pueden ser mayores a las horas solicitadas');
-               //          e.preventDefault(e);
-               //  }
-               // }
-               if (horas_devolver <= 0 ){
-                alert('Las horas a devolver deben ser mayor que 0');
+               var horas_por_devolver = $('input:radio[name=permisoid]:checked').data("valor2"); 
+               var horas_devueltas = $('input[name=horasdevolver]').val();
+
+
+               console.log(permisoid);
+               console.log(typeof horas_por_devolver);
+               console.log(typeof horas_devueltas);
+               console.log(horas_por_devolver);
+               horas_por_devolver = horas_por_devolver.replace(',', '.');
+               horas_por_devolver = parseFloat(horas_por_devolver);
+               horas_devueltas = parseFloat(horas_devueltas);
+               horas_por_devolver = horas_por_devolver.toFixed(2);
+
+               console.log(typeof horas_por_devolver);
+               console.log(horas_por_devolver);
+               console.log(typeof horas_devueltas);
+               console.log(horas_devueltas);
+
+               if ((horas_devueltas > horas_por_devolver)){
+                  if((horas_devueltas == horas_por_devolver)){
+                      console.log(permisoid);
+                  }else{
+                        swal("Atención", "Las horas ingresadas exceden a las horas pendientes por devolver", "error");
+                        e.preventDefault(e);
+                }
+               }
+               if (horas_devueltas <= 0 || horas_devueltas==null || !horas_devueltas){
+                swal("Atención","Las horas a devolver deben ser mayor que 0", "error");
                 e.preventDefault(e);
                }
            }          
@@ -75,7 +93,7 @@
             <tbody>   
   {% for horas in horas %}     
             <tr {% if  horas.permiso.ultimaBitacora.actividad.nombre == 'Anulado' %} class='anulado' {% endif %} >
-                <td><input type="radio" value="{{horas.permiso.id}}" id="{{horas.permiso.id}}" name="permisoid" data-valor="{{horas.horas_solicitadas}}"></td>
+                <td><input type="radio" value="{{horas.permiso.id}}" id="{{horas.permiso.id}}" name="permisoid" data-valor="{{horas.horas_solicitadas}}" data-valor2="{{horas.horas_por_devolver}}"></td>
                 <td><a  href="{% url 'edt.views.verpermiso2' horas.permiso.pk %}">{{horas.permiso.id}}</a></td>                  
                 <td class="horas">{{horas.horas_solicitadas}}</td>
                 <td class="horas">{{horas.horas_por_devolver}}</td>

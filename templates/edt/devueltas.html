@@ -1,11 +1,23 @@
 {% extends  "edt/base.html" %}
 {% load staticfiles %}
 {% block contenido %}
-<div class="exito">
+
+<style type="text/css">	
+h4 { color: #FFF !important}
+</style>
+<div class="msg-comprobante" role="alert">
 		<!-- <img src="/media/tick.png" /> -->
-		<h1>Resumen de horas devueltas</h1>
-		<p>Funcionario :{{permiso.usuario.nombre}}  {{permiso.usuario.apellido1}}  {{permiso.usuario.apellido2}} </p>
-		<p>Horas Devueltas : {{horasdevueltas}}</p>
-		<p></p>
+		<h3>Resumen de horas devueltas</h3>
+		<ul class="list-group">		
+			<li class="list-group-item active"><h4>Permiso n° :  {{permiso.id}}</h4></li>
+			<li class="list-group-item">Funcionario : {{permiso.usuario.nombre}}  {{permiso.usuario.apellido1}}  {{permiso.usuario.apellido2}}</li>
+			<li class="list-group-item">Horas Devueltas : <b>{{horasdevueltas}}</b></li>		
+		</ul>		
 	</div>
+<script>
+	function redireccionarPagina() {
+  		window.location = "http://cal.cdegaulle.cl/devolver/";
+		}
+		setTimeout("redireccionarPagina()", 1500);
+</script>	
 {% endblock %}
