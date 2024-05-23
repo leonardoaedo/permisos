@@ -217,15 +217,37 @@ function sumaFecha(iniciolic,diaslic)
 	 
 	 if (es_chrome){
 	 	var dia= fecha.getDate() - 1; // quitar -1 si  cambia comportamiento del navegador
+
+	 	if (dia == "00"){
+	 		dia = "31"
+	 		mes = mes -1
+	 		}
+
+	 	if (dia == "31" && mes =="04" || dia == "31" && mes =="06" || dia == "31" && mes =="09" || dia == "31" && mes =="11"){
+
+	 		dia = "30"
+	 	}		
 	 }
 
 	 if(es_firefox){
-	 	var dia= fecha.getDate();
+	 	var dia= fecha.getDate() - 1;
+
+	 	if (dia == "00"){
+	 		dia = "31"
+	 		mes = mes -1
+	 	}
+	 	if (dia == "31" && mes == "04" || dia == "31" && mes =="06" || dia == "31" && mes =="09" || dia == "31" && mes =="11"){
+
+	 		dia = "30"
+	 	}		
 	 }
 	 
 	 mes = (mes < 10) ? ("0" + mes) : mes;
 	 dia = (dia < 10) ? ("0" + dia) : dia;
 	 var fechaFinal = anno+sep+mes+sep+dia;
+
+	 
+
 	 console.log(fechaFinal);
 	 document.getElementById("fin").value = fechaFinal;
 	 return (fechaFinal);

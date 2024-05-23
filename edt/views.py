@@ -72,6 +72,7 @@ import urllib
 import time
 import tablib
 from functools32 import lru_cache
+from django.db.models import Q
 
 # from edt.serializers import *
 
@@ -310,7 +311,7 @@ def permiso_jefatura(request):
     formset.fields["reemplazante"].queryset = Usuario.objects.filter(estado=1)            
 
     if  user.rol.id == 1:
-        usuarios_filtro = Usuario.objects.all().filter(estado=1)
+        usuarios_filtro = Usuario.objects.all().filter(~Q(estado=2))
 
         if "filtrar" in request.GET:
             if "persona" in request.GET and request.GET.get("persona") != "0":
@@ -353,10 +354,10 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         usuario_id=Usuario.objects.get(id=persona)
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Mar 24 2023 01:00AM") 
-        fecha_cambio_TZ2 = parser.parse("Sep 04 2023 01:00AM")
-        inicio_agno = ("2023-02-15 00:00:00")
-        fecha_inicio = parser.parse("Feb 15 2023 01:00AM")      
+        fecha_cambio_TZ = parser.parse("Apr 06 2024 01:00AM") 
+        fecha_cambio_TZ2 = parser.parse("Sep 07 2024 01:00AM")
+        inicio_agno = ("2024-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2024 01:00AM")      
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
         contador = 0
 
@@ -380,9 +381,9 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
 
                 #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
+                    to_zone = tz.gettz('America/Santo_Domingo')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santo_Domingo') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Punta_Arenas') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -413,10 +414,10 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         usuario_id=request.session['usuario']
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Mar 24 2023 01:00AM") 
-        fecha_cambio_TZ2 = parser.parse("Sep 04 2023 01:00AM")
-        inicio_agno = ("2023-02-15 00:00:00")
-        fecha_inicio = parser.parse("Feb 15 2023 01:00AM")        
+        fecha_cambio_TZ = parser.parse("Apr 06 2024 01:00AM") 
+        fecha_cambio_TZ2 = parser.parse("Sep 07 2024 01:00AM")
+        inicio_agno = ("2024-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2024 01:00AM")         
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
         contador = 0
         ids = []
@@ -437,9 +438,9 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
 
                #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Rio_Branco')# Regina -06 horas
+                    to_zone = tz.gettz('America/Santo_Domingo')# Regina -06 horas
                 else:  
-                    to_zone = tz.gettz('America/Santo_Domingo') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Punta_Arenas') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
@@ -793,9 +794,9 @@ def bithoras(request):
     usuarioObj = Usuario.objects.get(id=request.session['usuario'])
     if usuarioObj.rol.id == 1:
 
-        permisos = Permiso.objects.all().order_by("usuario__apellido1").filter(usuario__estado=1)
+        permisos = Permiso.objects.all().order_by("usuario__apellido1").filter(~Q(usuario__estado=2))
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(~Q(estado=2))
         estamento_filtro = Estamento.objects.all()
         thora = "Seleccione Opción";
          
@@ -832,8 +833,6 @@ def bithoras(request):
                     permisos = permisos.filter(horas__horas_descontadas__gt=0)
                 if thora == 'Horas Devueltas':
                     permisos = permisos.filter(horas__horas_devueltas__gt=0)
-
-
         elif "limpiar" in request.GET:
             return redirect("/bhoras")
 
@@ -864,6 +863,9 @@ def bithoras(request):
                  }
              
             horas = permiso.horas_set.all()
+
+
+
             #traspaso de datos a otra columna
             # for hora in horas :
             #     hora.horas_por_devolver_acumuladas = hora.horas_por_devolver
@@ -887,14 +889,13 @@ def bithoras(request):
             usuarios[idUsuario]["pendientes_por_aprobar"] += hora.horas_pendientes_por_aprobar
              
         usuariosLista = [value for key,value in usuarios.iteritems()]
+        
  
         # headers = ('Nombre','Estamento','Horas solicitadas')
         # excel = []
         # excel = tablib.Dataset()
         # excel.headers = 
-
         data = {
-
             "usuario": usuarioObj,
             "usuarios" : usuariosLista,
             "usuarios_filtro" : usuarios_filtro,
@@ -902,7 +903,6 @@ def bithoras(request):
             "thora" :thora,
             "query_string" : request.META["QUERY_STRING"]
                 }
-
         #Filtros para generar la fecha e el Titulo
         if "filtrar" in request.GET:
             if "start" in request.GET and request.GET.get("start") != "":
@@ -3317,7 +3317,8 @@ def devuelvehoras(request):
    
 
     if  usuarioObj.rol.nivel_acceso == 0: 
-        usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        #usuarios = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        usuarios = Usuario.objects.all().filter(~Q(estado=2))
 
         if request.method == 'POST':
             if "usuario" in request.POST and request.POST.get("usuario") != "":
