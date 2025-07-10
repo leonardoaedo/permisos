@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'edt',
     'easy_pdf',
+    'widget_tweaks'
     #'rest_framework',
     #'schedule',
 )
@@ -63,7 +64,7 @@ WSGI_APPLICATION = 'cal.wsgi.application'
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = "587"
 EMAIL_HOST_USER = "scpa@cdegaulle.cl"
-EMAIL_HOST_PASSWORD = "slimstar110"
+EMAIL_HOST_PASSWORD = "tsvl nroo ltam umox "
 EMAIL_USE_TLS = True
 
 # Database

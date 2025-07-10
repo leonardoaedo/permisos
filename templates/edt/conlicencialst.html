@@ -1,147 +1,154 @@
 {% extends "edt/base.html"%}
 {% load staticfiles %}
-
 {% block contenido %}
 {% load tz %}
 {% get_current_timezone as TIME_ZONE %}
 
 {% if usuario.rol.nivel_acceso == 0 %}
 
-<link rel="stylesheet" type="text/css" href="/static/css/jquery.periodpicker.min.css"/ >
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.periodpicker.min.css"/>
 <link rel="stylesheet" href="/static/css/jquery.timepicker.css">
-<script type="text/javascript" src="/static/js/jquery.periodpicker.full.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.periodpicker.full.min.js" ></script>
 <script src="/static/js/jquery.datetimepicker.full.js"></script>
+
 <div class='form-group'>
-    <div class="row">                 
-        <div class="col-lg-8">    
-                                                                 
-        </div>  
-        <div class="col-lg-1">                            
-            <a href="/conlicenciaEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
-                <img src="/static/img/xls.png" width="35" height="35">
-            </a>                          
-        </div>
-        
-        <div class="col-lg-1">                            
-            <a href="/conlicenciaPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
-                <img src="/static/img/pdf.png" width="35" height="35">
-            </a>                          
-        </div>                                                    
+  <div class="row">                 
+    <div class="col-lg-8"></div>  
+    <div class="col-lg-1">                            
+      <a href="/conlicenciaEXCEL?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+        <img src="/static/img/xls.png" width="35" height="35">
+      </a>                          
     </div>
+    <div class="col-lg-1">                            
+      <a href="/conlicenciaPDF?{{query_string}}" class="btn btn-success btn-block" target="_blank">
+        <img src="/static/img/pdf.png" width="35" height="35">
+      </a>                          
+    </div>                                                    
+  </div>
 </div>
 
 <div align="center"><h3>Funcionarios con licencia</h3></div>
-<div align="center"><h4>Periodo comprendido entre {{inicio|date:"d "}} y  {{fin|date:"d"}} de {{inicio|date:"F Y"}}</h4></div>
+<div align="center">
+  <h4>Periodo comprendido entre {{inicio|date:"d "}} y {{fin|date:"d"}} de {{inicio|date:"F Y"}}</h4>
+</div>
+
+<div id="loading" style="display:none;text-align:center;">
+  <img src="{% static 'img/loading.gif' %}" alt="Cargando..." width="80">
+</div>
 
 <div class="filtros">
   <form id="horas" class="form-horizontal" method="get">
-  <fieldset>
-  <ul>
-    <li>
-      <label class="label label-primary" > Funcionario</label>
-      <select name="persona" >
-        <option value="0">Seleccione Funcionario</option>
-        {% for persona in usuarios_filtro %}  
-        <option value="{{persona.id}}" {% if persona.usuario_activo %}selected{% endif %}> {{persona}}   </option>
-        {% endfor %}
-      </select>
-    </li>
-    <li>
-      <label class="label label-primary" >Estamento</label>
-      <select name="estamento">
-        <option value="0">Seleccione Estamento</option>
-        {% for estament in estamento_filtro %}
-        <option value="{{estament.id}}" {% if estament.estamento_activo %}selected{% endif %}> {{estament}}<!-- -{{estament.estamento_activo}} --> </option>
-        {% endfor %}
-      </select>
-    </li>
-    <li>
-      <label class="label label-primary" >Rango de fechas</label>
-      <input id="periodpickerstart" type="text" name="start" value="{{start}}"/>
-      <input id="periodpickerend" type="text" name="end" value="{{end}}"/>      
-    </li>
-    <li class="botfiltro">
-      <input class=" btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
-      <input class=" btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
-
-    </li>
-
-  </ul>
-  </fieldset> 
+    <fieldset>
+      <ul>
+        <li>
+          <label class="label label-primary"> Funcionario</label>
+          <select name="persona">
+            <option value="0">Seleccione Funcionario</option>
+            {% for persona in usuarios_filtro %}  
+            <option value="{{persona.id}}" {% if persona.id|stringformat:"s" == request.GET.persona %}selected{% endif %}>
+              {{persona}}
+            </option>
+            {% endfor %}
+          </select>
+        </li>
+        <li>
+          <label class="label label-primary">Estamento</label>
+          <select name="estamento">
+            <option value="0">Seleccione Estamento</option>
+            {% for estament in estamento_filtro %}
+            <option value="{{estament.id}}" {% if estament.id|stringformat:"s" == request.GET.estamento %}selected{% endif %}>
+              {{estament}}
+            </option>
+            {% endfor %}
+          </select>
+        </li>
+        <li>
+          <label class="label label-primary">Rango de fechas</label>
+          <input id="periodpickerstart" type="text" name="start" value="{{start}}"/>
+          <input id="periodpickerend" type="text" name="end" value="{{end}}"/>      
+        </li>
+        <li class="botfiltro">
+          <input class="btn btn-success" type="submit" value="Filtrar" id="filtrar" name="filtrar" />
+          <input class="btn btn-danger" type="submit" value="Quitar Filtros" id="limpiar" name="limpiar" />
+        </li>
+      </ul>
+    </fieldset> 
   </form>
 </div> 
- {% endif %}
+{% endif %}
 
-<table class="table table-hover  table-bordered">
+<table class="table table-hover table-bordered">
   <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th>ID</th>
-        <th>Rut</th>
-        <th>Funcionario</th>      
-        <th>Fecha de ingreso</th>
-        <th>Duración</th>
-        <th>Inicio</th>
-        <th>Fin</th>        
-        <th>Estado</th>
-        <th>Borrar</th>
-      </tr>
-    </thead>
-  
-   {% for licencia in licencias %}   
-  <tr >
-<!--      <td>{{licencia.fin|utc}} -- {{hoy|utc}}</td>  -->
-     <td>{{forloop.counter}}</td>
-     <td>{{licencia.id}}</td>
-     <td>{{licencia.funcionario.rut}}-{{licencia.funcionario.dv}}</td>
-     <td >{{licencia.funcionario}}</td>
-     <td >{{licencia.fecha|date:"D j M Y"}}</td>
-     <td ><b>{{licencia.cantidad_dias}} Días</b></td>
-     <td ><b>{{licencia.inicio|date:"D j M Y"}}</b></td>
-     <td ><b>{{licencia.fin|date:"D j M Y"}}</b></td>
-     <td class="text-center">{% if licencia.fin|utc >= hoy|utc %} <span class="glyphicon glyphicon-flag text-danger"></span> {% else %} <span class="glyphicon glyphicon-flag text-success"></span> {% endif %} </td>
-     <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger btn-sm">Borrar Licencia</a></td>
-    <!--  <td class="btn-success" align="center"><h4>{{licencia.id}}</h4></td> -->
-    
-   </tr>
-   {% empty %}
     <tr>
-      <td colspan="5">En este momento no hay ningun elemento para mostrar</td>
+      <th>#</th>
+      <th>ID</th>
+      <th>Rut</th>
+      <th>Funcionario</th>      
+      <th>Fecha de ingreso</th>
+      <th>Duración</th>
+      <th>Inicio</th>
+      <th>Fin</th>        
+      <th>Estado</th>
+      <th>Borrar</th>
     </tr>
-   
-
-   {% endfor %}
-    
-</table>
-   <nav>
-      {% if licencias.has_previous %}
-        <a href="?page={{ licencias.previous_page_number }}" class="button">Página anterior</a>
+  </thead>
+  {% for licencia in licencias %}   
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{licencia.id}}</td>
+    <td>{{licencia.funcionario.rut}}-{{licencia.funcionario.dv}}</td>
+    <td>{{licencia.funcionario}}</td>
+    <td>{{licencia.fecha|date:"D j M Y"}}</td>
+    <td><b>{{licencia.cantidad_dias}} Días</b></td>
+    <td><b>{{licencia.inicio|date:"D j M Y"}}</b></td>
+    <td><b>{{licencia.fin|date:"D j M Y"}}</b></td>
+    <td class="text-center">
+      {% if licencia.fin|utc >= hoy|utc %}
+        <span class="glyphicon glyphicon-flag text-danger"></span>
+      {% else %}
+        <span class="glyphicon glyphicon-flag text-success"></span>
       {% endif %}
-      <p class="paginador">Página {{ licencias.number }} de {{ licencias.paginator.num_pages }}</p>
-      {% if licencias.has_next %}
-      <a href="?page={{ licencias.next_page_number }}" class="button">Página siguiente</a>
-      {% endif %} 
-    </nav>
+    </td>
+    <td><a href="/borralicencia/{{licencia.id}}" class="btn btn-danger btn-sm">Borrar Licencia</a></td>
+  </tr>
+  {% empty %}
+  <tr>
+    <td colspan="10">En este momento no hay ningún elemento para mostrar</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<nav>
+  {% if licencias.has_previous %}
+    <a href="?{{ query_string }}&page={{ licencias.previous_page_number }}" class="button">Página anterior</a>
+  {% endif %}
+  <p class="paginador">Página {{ licencias.number }} de {{ licencias.paginator.num_pages }}</p>
+  {% if licencias.has_next %}
+    <a href="?{{ query_string }}&page={{ licencias.next_page_number }}" class="button">Página siguiente</a>
+  {% endif %} 
+</nav>
 
 <script>
+  jQuery('#periodpickerstart').periodpicker({
+    end: '#periodpickerend',
+    lang :'es',
+    resizeButton: false,
+    fullsizeButton: false,
+    fullsizeOnDblClick: false,
+    clearButtonInButton: true,
+    timepicker: true,
+    timepickerOptions: {
+      hours: true,
+      minutes: true,
+      seconds: false,
+      ampm: true
+    },
+    formatDateTime: 'YYYY-MM-DD HH:mm:ss',
+    cells: [1, 3]
+  });
 
-jQuery('#periodpickerstart').periodpicker({
- end: '#periodpickerend', 
- lang :'es',
- resizeButton: false, // deny resize picker
- fullsizeButton: false,
- fullsizeOnDblClick: false,
- clearButtonInButton: true,
- timepicker: true, // use timepicker
- timepickerOptions: {
-    hours: true,
-    minutes: true,
-    seconds: false,
-    ampm: true
-  },
- formatDateTime: 'YYYY-MM-DD HH:mm:ss',
- cells: [1, 3],
-
-});
+  document.getElementById('horas').addEventListener('submit', function() {
+    document.getElementById('loading').style.display = 'block';
+  });
 </script>        
-{% endblock  %}
+{% endblock %}

@@ -43,7 +43,7 @@ from django.forms import ModelForm
 from django import forms
 from calendar import month_name
 from django.core.context_processors import csrf
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.core.mail import EmailMessage
@@ -62,7 +62,7 @@ from collections import Counter
 from django.views.generic import ListView,DetailView
 from django.views.generic.edit import CreateView,FormView,UpdateView
 from django.views.generic.base import ContextMixin , TemplateView
-from django.db.models import Count, Min, Sum, Avg , F
+from django.db.models import Count, Min, Sum, Avg , F, Prefetch
 import calendar
 import icalendar
 import pytz
@@ -72,7 +72,10 @@ import urllib
 import time
 import tablib
 from functools32 import lru_cache
-from django.db.models import Q
+from django.core.cache import cache
+import unicodedata
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
+
 
 # from edt.serializers import *
 
@@ -306,9 +309,77 @@ def permiso_jefatura(request):
 
     if not estaLogeado(request):
                 return redirect("/login")
+
+    hoy = datetime.now()
+    this_year = hoy.year
+
+    ########## Inicio y fin de semestres ######
+    inicio_semestre1 = datetime(this_year,1,1)
+    fin_semestre1 = datetime(this_year,6,30)
+    inicio_semestre2 = datetime(this_year,7,1)
+    fin_semestre2 = datetime(this_year,12,31)
+    ##########################################
+
+    primaria = Estamento.objects.get(id=3)
+    maternelle = Estamento.objects.get(id=2)
+
+    #validacion permiso administrativo
+    permiso_administrativo = Tipo_Permiso.objects.get(id=5)
+    #estado de permisos aprovado o solicitado
+    PA_R = Estado_Permiso.objects.filter(id=5)#rechazado
+    PA_A = Estado_Permiso.objects.filter(id=6)#anulado
+    primersemestre = 0
+    segundosemestre = 0
+    #####
+    if PermisoAdministrativo.objects.filter(usuario=request.session['usuario']):
+        existe_permiso = True
+        ContPermisosAdministrativos = len(Permiso.objects.filter(usuario=request.session['usuario']).filter(tipo=permiso_administrativo).exclude(estado=PA_R).exclude(estado=PA_A))
+        PermisosAdministrativos = Permiso.objects.filter(usuario=request.session['usuario']).filter(tipo=permiso_administrativo).exclude(estado=PA_R).exclude(estado=PA_A)
+
+        for PA in PermisosAdministrativos:
+
+            if hoy >= inicio_semestre2:
+
+                primersemestre += 1 #Bloqueda Primer Semestre
+
+            if Eventos_en_Permisos.objects.filter(numero_permiso=PA).filter(numero_evento__start__range=(inicio_semestre1, fin_semestre1)):
+                primersemestre += 1 #bloquea Primer Semestre
+
+            elif Eventos_en_Permisos.objects.filter(numero_permiso=PA).filter(numero_evento__start__range=(inicio_semestre2, fin_semestre2)):
+                segundosemestre  += 1 #Bloqueda Segundo Semestre
+
+            else:
+                primersemestre = 0 #habilita Primer Semestre
+                segundosemestre = 0 #habilita Segundo Semestre
+
+    else:
+        existe_permiso = False
+        ContPermisosAdministrativos = 0
+        PermisosAdministrativos = "Sin permisos Administrativos asociados"
+        primersemestre = 0
+        segundosemestre  = 0
+    #fin validacion permiso administrativo
+
+
     user = Usuario.objects.get(id=request.session['usuario'])
+
     formset = PermisoFormSet()
-    formset.fields["reemplazante"].queryset = Usuario.objects.filter(estado=1)            
+
+    permisos = Permiso.objects.filter(usuario=user.id)
+    bitacoras = Bitacora.objects.all()
+    horass = Horas.objects.filter(usuario=user.id).filter(permiso__fecha_creacion__year=this_year)
+
+    formset = PermisoFormSet()
+
+    diferencia_fechas = date.today() - user.fecha_nac
+    diferencia_fechas = diferencia_fechas.days
+    edad = diferencia_fechas / 365.2425
+    edad = int(edad)
+    sexo = user.sexo.id
+
+    en_sindicato = [sindi.usuario.pk for sindi in Sindicato.objects.all()]
+    if user.id not in en_sindicato:
+        formset.fields["tipo"].queryset = Tipo_Permiso.objects.exclude(id__in=[3])            
 
     if  user.rol.id == 1:
         usuarios_filtro = Usuario.objects.all().filter(~Q(estado=2))
@@ -328,7 +399,23 @@ def permiso_jefatura(request):
                 "usuarios_filtro" : usuarios_filtro,
                 "usuario" : user,
                 "persona" : request.GET.get("persona",None),
-                "query_string" : request.META["QUERY_STRING"]           
+                "query_string" : request.META["QUERY_STRING"],
+                "sexo" : sexo,
+                "edad" : edad,
+                "horas" : horass,
+                "en_sindicato" : en_sindicato,
+                "hoy": hoy,
+                "primaria" : primaria,
+                "maternelle" : maternelle,
+                "existe_permiso" : existe_permiso,
+                "inicio_semestre1" : inicio_semestre1,
+                "fin_semestre1" : fin_semestre1,
+                "inicio_semestre2" : inicio_semestre2,
+                "fin_semestre2" : fin_semestre2,
+                "ContPermisosAdministrativos" : ContPermisosAdministrativos,
+                "PermisosAdministrativos" : PermisosAdministrativos,
+                "primersemestre" : primersemestre,
+                "segundosemestre" : segundosemestre,           
         }
 
         return render_to_response("edt/permiso_jefatura.html",data,context_instance=RequestContext(request))
@@ -354,10 +441,10 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
         usuario_id=Usuario.objects.get(id=persona)
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Apr 06 2024 01:00AM") 
-        fecha_cambio_TZ2 = parser.parse("Sep 07 2024 01:00AM")
-        inicio_agno = ("2024-02-15 00:00:00")
-        fecha_inicio = parser.parse("Feb 15 2024 01:00AM")      
+        fecha_cambio_TZ = parser.parse("Mar 25 2025 01:00AM") 
+        fecha_cambio_TZ2 = parser.parse("Apr 06 2025 01:00AM")
+        inicio_agno = ("2025-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2025 01:00AM")      
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
         contador = 0
 
@@ -381,9 +468,9 @@ def wsPermiso_Jefatura(request): # Web service que  genera calendario para carga
 
                 #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Santo_Domingo')# Regina -06 horas
+                    to_zone = tz.gettz('America/Sao_Paulo')# Regina -06 horas ->"IMPORTANTE : verificar que dia se cambia la hora en francia , ya que obtenemos los horarios desde EDT Monoposte"
                 else:  
-                    to_zone = tz.gettz('America/Punta_Arenas') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santo_Domingo') #  America/Rio_Branco  -05 ----------  America/Santo_Domingo : -04 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
                 start = 1000*(time.mktime(start.timetuple()))
@@ -414,10 +501,10 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
         usuario_id=request.session['usuario']
         #lista de los ids de los eventos ya ocupados
         hoy = datetime.now()
-        fecha_cambio_TZ = parser.parse("Apr 06 2024 01:00AM") 
-        fecha_cambio_TZ2 = parser.parse("Sep 07 2024 01:00AM")
-        inicio_agno = ("2024-02-15 00:00:00")
-        fecha_inicio = parser.parse("Feb 15 2024 01:00AM")         
+        fecha_cambio_TZ = parser.parse("Mar 25 2025 01:00AM") 
+        fecha_cambio_TZ2 = parser.parse("Apr 06 2025 01:00AM")
+        inicio_agno = ("2025-02-15 00:00:00")
+        fecha_inicio = parser.parse("Feb 15 2025 01:00AM")         
         fecha_inicio = 1000*(time.mktime(fecha_inicio.timetuple()))
         contador = 0
         ids = []
@@ -438,9 +525,9 @@ def wsCalendario(request): # Web service que  genera calendario para cargar en p
 
                #automatizacion de cambio de  TZ a partir del 01 de noviembre
                 if start >= fecha_cambio_TZ  and start <= fecha_cambio_TZ2:                   
-                    to_zone = tz.gettz('America/Santo_Domingo')# Regina -06 horas
+                    to_zone = tz.gettz('America/Sao_Paulo')# Regina -06 horas ->"IMPORTANTE : verificar que dia se cambia la hora en francia , ya que obtenemos los horarios desde EDT Monoposte"
                 else:  
-                    to_zone = tz.gettz('America/Punta_Arenas') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
+                    to_zone = tz.gettz('America/Santo_Domingo') # America/Santo_Domingo : -05 desde 25-05 hasta ??? // resto del año America/Santiago - 03 // Noronha -02
                 
                 start = start.replace(tzinfo=from_zone)
                 start = start.astimezone(to_zone)
@@ -468,7 +555,7 @@ def comprobante(request, pk):
             
         #idpermiso = Permiso.objects.get(id=int(pk))        
         permiso = Permiso.objects.get(id=pk)
-        #evento = Eventos_en_Permisos.objects.filter(numero_permiso=idpermiso)	
+        #evento = Eventos_en_Permisos.objects.filter(numero_permiso=idpermiso)  
  
         return render_to_response("edt/comprobante.html",{ "permiso" : permiso,"usuario" : usuarioObj})
         #return HttpResponse({ "permiso" : permiso,"usuario" : usuarioObj,"evento" : evento}) 
@@ -492,8 +579,15 @@ def urlcalendario(request): #procesa_solicitud_permiso
         sueldo = request.POST.get('sueldo')
         comentario = request.POST.get('comentario')
         #comentario = comentario.decode('latin1','replace')# codificacion para tildes
-        documento_adjunto = request.POST.get('documento_adjunto')
+        #documento_adjunto = request.POST.get('documento_adjunto')
         #documento_adjunto = documento_adjunto.decode('latin1','replace')# codificacion para tildes
+        # Procesar el archivo adjunto si se proporciona
+        documento_adjunto = request.FILES.get('documento_adjunto')
+        if documento_adjunto:
+            # Normalizar el nombre del archivo adjunto
+            documento_adjunto.name = normalize_filename(documento_adjunto.name)
+
+
         motivo = request.POST.get('motivo')
         tipo = request.POST.get('tipo')
                                                                       #en el calendario en formato json a una lista           
@@ -1474,11 +1568,18 @@ def bitfuncionario(request):
     # else:
     #  return redirect("/main")        
 
+def normalize_filename(filename):
+    # Normalizar el nombre para eliminar caracteres especiales y tildes
+    filename = unicodedata.normalize('NFKD', filename).encode('ascii', 'ignore').decode('ascii')
+    return filename
+
+
 def index(request):
         if not estaLogeado(request):
                 return redirect("/login")
+
         usuarioObj = Usuario.objects.get(id=request.session['usuario'])        
-	
+    
         if  usuarioObj.rol.id == 1:
 
             if request.method == 'POST':
@@ -1487,7 +1588,7 @@ def index(request):
                         document= formset.save(commit=False)
                         document.save()
                         return redirect('/upload/%d'%(document.id))
-            
+                
                 
             formset = DocumentFormSet()
             
@@ -1495,114 +1596,115 @@ def index(request):
         else:
                 return redirect("/main") 
 
+
+
 def permisolst(request):
     if not estaLogeado(request):
         return redirect("/login")
-    usuarioObj = Usuario.objects.get(id=request.session['usuario'])
-    anulados = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
-    rechazados = Resolucion.objects.values_list("permiso").filter(respuesta='R')
-    gerencia = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=1).filter(usuario__estamento=1)
-    dirgen = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__gte=2).filter(usuario__jefatura=3)
-    revisado_gerente = Resolucion.objects.values_list("permiso").filter(resolutor=39)
 
-    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(num_b__lte=1).exclude(id__in=revisado_gerente).exclude(id__in=dirgen).exclude(id__in=gerencia).exclude(id__in=anulados).exclude(id__in=rechazados).order_by("-fecha_creacion")
-    permisos = permisos.select_related('usuario', 'motivo', 'reemplazante', 'tipo', 'estado')
-    
+    usuarioObj = Usuario.objects.select_related('rol').get(id=request.session['usuario'])
 
-    bitacoras = Bitacora.objects.all()
-    revisores = Revisor.objects.all()
+    # Consultas iniciales optimizadas
+    anulados = set(Bitacora.objects.filter(actividad__id=4).values_list("permiso", flat=True).distinct())
+    rechazados = set(Resolucion.objects.filter(respuesta='R').values_list("permiso", flat=True))
+    revisado_gerente = set(Resolucion.objects.filter(resolutor=39).values_list("permiso", flat=True))
 
+    gerencia = Permiso.objects.filter(usuario__estamento=1).annotate(num_b=Count('resolucion')).filter(num_b__gte=1).values_list('id', flat=True)
+    dirgen = Permiso.objects.filter(usuario__jefatura=3).annotate(num_b=Count('resolucion')).filter(num_b__gte=2).values_list('id', flat=True)
 
-    cpe = Usuario.objects.values_list("jefatura").filter(jefatura__id=1).filter(estado=1)
-    foliocpe = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=cpe))    
-    primaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=4).filter(estado=1)
-    folioprimaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=primaria))
-    secundaria = Usuario.objects.values_list("jefatura").filter(jefatura__id=5).filter(estado=1)
-    foliosecundaria = len(Permiso.objects.annotate(sec=Count('usuario')).filter(usuario__jefatura=secundaria))    
+    permisos = Permiso.objects.annotate(num_b=Count('resolucion')).filter(
+        num_b__lte=1
+    ).exclude(
+        id__in=revisado_gerente | set(dirgen) | set(gerencia) | anulados | rechazados
+    ).select_related(
+        'usuario', 'motivo', 'reemplazante', 'tipo', 'estado'
+    ).order_by("-fecha_creacion")
 
-    if  usuarioObj.rol.nivel_acceso == 0:
+    # Cálculo de folios
+    cpe_folio = Permiso.objects.filter(usuario__jefatura=1, usuario__estado=1).count()
+    primaria_folio = Permiso.objects.filter(usuario__jefatura=4, usuario__estado=1).count()
+    secundaria_folio = Permiso.objects.filter(usuario__jefatura=5, usuario__estado=1).count()
 
-        
+    if usuarioObj.rol.nivel_acceso == 0:
         estamento = Estamento.objects.all()
-        usuarios_filtro = Usuario.objects.all().exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
+        usuarios_filtro = Usuario.objects.exclude(permiso__horas__horas_solicitadas=None).filter(estado=1)
         estamento_filtro = Estamento.objects.all()
 
-        if "filtrar" in request.GET:           
+        if "filtrar" in request.GET:
+            persona_id = request.GET.get("persona")
+            estamento_id = request.GET.get("estamento")
 
-            if "persona" in request.GET and request.GET.get("persona") != "0":
-                persona = request.GET.get("persona")
-                permisos = permisos.filter(usuario=request.GET.get("persona"))
-                for usuario in usuarios_filtro:
-                    usuario.usuario_activo = usuario.id == int(persona)
+            if persona_id and persona_id != "0":
+                permisos = permisos.filter(usuario=persona_id)
+                usuarios_filtro = usuarios_filtro.annotate(usuario_activo=Q(id=persona_id))
 
-            if "estamento" in request.GET and request.GET.get("estamento") != "0":
-                estamento = request.GET.get("estamento")
-                permisos = permisos.filter(usuario__estamento=request.GET.get("estamento"))
-                for estament in estamento_filtro:
-                    estament.estamento_activo = estament.id == int(estamento)   
+            if estamento_id and estamento_id != "0":
+                permisos = permisos.filter(usuario__estamento=estamento_id)
+                estamento_filtro = estamento_filtro.annotate(estamento_activo=Q(id=estamento_id))
+
         elif "limpiar" in request.GET:
             return redirect("/permisolst")
 
-        permisos = permisos.select_related('usuario', 'motivo', 'reemplazante', 'tipo', 'estado')
-
-        paginator = Paginator(permisos,30)
-        
-        try: pagina = int(request.GET.get("page",'1'))
-        except ValueError: pagina = 1
-            
+        # Paginación
+        paginator = Paginator(permisos, 30)
+        page_number = request.GET.get("page", '1')
         try:
-            permisos = paginator.page(pagina)
+            permisos_paged = paginator.page(page_number)
         except (InvalidPage, EmptyPage):
-            permisos = paginator.page(paginator.num_pages)       
+            permisos_paged = paginator.page(paginator.num_pages)
+
+        # Manejo de solicitud AJAX para lazy loading
+        if request.is_ajax():
+            permisos_html = render_to_string("edt/permisos_list.html", {"permisos": permisos_paged})
+            return JsonResponse({"permisos_html": permisos_html})
 
         data = {
-                 "estamento":estamento,
-                 "foliocpe":foliocpe,
-                 "folioprimaria" :folioprimaria,
-                 "foliosecundaria" :foliosecundaria ,
-                 "permisos": permisos,
-                 "usuario" : usuarioObj,
-                 "permisos_list" : permisos.object_list,
-                 "months" : mkmonth_lst(),
-                 "usuarios_filtro" : usuarios_filtro,
-                 "estamento_filtro" : estamento_filtro,
-                 "bitacoras" : bitacoras,
-                 "revisores" : revisores,
-                 }
+            "estamento": estamento,
+            "foliocpe": cpe_folio,
+            "folioprimaria": primaria_folio,
+            "foliosecundaria": secundaria_folio,
+            "permisos": permisos_paged,
+            "usuario": usuarioObj,
+            "permisos_list": permisos_paged.object_list,
+            "months": mkmonth_lst(),
+            "usuarios_filtro": usuarios_filtro,
+            "estamento_filtro": estamento_filtro,
+            "bitacoras": Bitacora.objects.all(),
+            "revisores": Revisor.objects.all(),
+        }
 
+        return render(request, "edt/permisolst.html", data)
 
-        return render_to_response("edt/permisolst.html",data)
-        #return HttpResponse(administracion)
+    elif usuarioObj.rol.nivel_acceso == 1:
+        # Consultar solo permisos para el usuario logueado con nivel de acceso 1
+        ids_anulados = set(Bitacora.objects.filter(actividad__id=4).values_list("permiso", flat=True))
+        permisos_usuario = Permiso.objects.filter(usuario=usuarioObj.id).exclude(id__in=ids_anulados).select_related(
+            'usuario', 'motivo', 'reemplazante', 'tipo', 'estado'
+        ).order_by("-fecha_creacion")
 
-    else:
-        #if     usuarioObj.username == request.session['usuario']:
-        if  usuarioObj.rol.nivel_acceso == 1:
-            ids = Bitacora.objects.values_list("permiso").filter(actividad__id=4).distinct()
-            permiso = Permiso.objects.annotate(num_b=Count('resolucion')).filter(usuario=usuarioObj.id).exclude(id__in=ids).order_by("-fecha_creacion")
-            permisos = permisos.select_related('usuario', 'motivo', 'reemplazante', 'tipo', 'estado')
-            
+        paginator = Paginator(permisos_usuario, 10)
+        page_number = request.GET.get("page", '1')
 
-            paginator = Paginator(permiso,10)       
-            try: pagina = int(request.GET.get("page",'1'))
-            except ValueError: pagina = 1       
-            try:
-                permiso = paginator.page(pagina)
-            except (InvalidPage, EmptyPage):
-                permiso = paginator.page(paginator.num_pages)
+        try:
+            permisos_paged = paginator.page(page_number)
+        except (InvalidPage, EmptyPage):
+            permisos_paged = paginator.page(paginator.num_pages)
 
-
+        if request.is_ajax():
+            permisos_html = render_to_string("edt/permisos_list.html", {"permisos": permisos_paged})
+            return JsonResponse({"permisos_html": permisos_html})
 
         data = {
-                 "foliocpe":foliocpe,
-                 "folioprimaria" :folioprimaria,
-                 "foliosecundaria" :foliosecundaria ,
-                 "permisos": permiso,
-                 "usuario" : usuarioObj,
-                 "permisos_list" : permiso.object_list,
-                 "months" : mkmonth_lst(),
-               }
-            
-        return render_to_response("edt/permisolst.html",data)
+            "foliocpe": cpe_folio,
+            "folioprimaria": primaria_folio,
+            "foliosecundaria": secundaria_folio,
+            "permisos": permisos_paged,
+            "usuario": usuarioObj,
+            "permisos_list": permisos_paged.object_list,
+            "months": mkmonth_lst(),
+        }
+
+        return render(request, "edt/permisolst.html", data)
 
 
 def modpermisolst(request):
@@ -2814,7 +2916,7 @@ def upload(request, pk):
         iddocument = Document.objects.get(pk=int(pk))
         nombre = Document.objects.get(id=pk)
         
-       	nombre_archivo = nombre.docfile.name
+        nombre_archivo = nombre.docfile.name
         folder = os.path.join(BASE_DIR, 'media/')
         contador = 0
         g = open(folder + nombre_archivo,'rb')
@@ -4315,7 +4417,7 @@ def ConLicencia(request):
     user = Usuario.objects.get(id=request.session['usuario'])
 
     licencias = Licencia.objects.all().order_by('-fin')
-    hoy = datetime.now()
+    hoy = datetime.now() - timedelta(days=1)#cuadro dia para mostrar bandera roja o verde segun corresponda
     inicio = " "
     fin = " "
     
